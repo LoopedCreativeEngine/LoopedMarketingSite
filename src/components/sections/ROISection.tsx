@@ -21,8 +21,7 @@ function DaysStatCard(): React.ReactElement {
       <p className="font-mono text-3xl font-semibold tracking-tight text-indigo-800 sm:text-4xl">3–5 days</p>
       <p className="mt-3 text-sm font-semibold text-slate-900">From brief to campaign-ready</p>
       <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">
-        Typical cascade timeline from signed brief to first campaign-ready pack — compared with 6–8 weeks of manual
-        drafting and reconciliation.
+        vs 6–8 weeks of senior team time per event manually
       </p>
     </motion.div>
   );
@@ -33,30 +32,33 @@ export function ROISection(): React.ReactElement {
     <section className="bg-slate-50 py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            The platform pays for itself on the first correct pricing decision
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">The return</p>
+          <h2 className="mt-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            The platform pays for itself on the first correct pricing decision.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-slate-600 sm:text-base">
-            Looped compresses intelligence production from weeks to days — so pricing, packaging, and programme decisions
-            land before the market moves on without you.
-          </p>
         </Reveal>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           <CountUpStat
             value={850000}
             prefix="£"
-            label="Conservative value impact"
-            sub="Illustrative portfolio impact across 100 events when cascade-led decisions improve sponsor yield and programme mix."
+            label="Conservative value impact across 100 events"
+            sub="Pricing corrections, additional sponsor revenue, table sales uplift, telesales savings, recovered strategic time"
           />
           <CountUpStat
             value={4.8}
             suffix="×"
             decimals={1}
             label="Return on investment"
-            sub="Based on internal modelling: time saved, rework avoided, and revenue uplift from faster, consistent intelligence."
+            sub="Against total investment including your own API costs at moderate usage"
           />
           <DaysStatCard />
         </div>
+        <Reveal>
+          <p className="mx-auto mt-10 max-w-3xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+            Every event team — regardless of experience — works from the same quality of strategic intelligence that
+            currently only your most experienced people produce, and only when they have time for it.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

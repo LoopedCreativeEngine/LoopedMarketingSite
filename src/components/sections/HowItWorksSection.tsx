@@ -9,17 +9,17 @@ const STEPS = [
   {
     n: "01",
     title: "Seed your brief",
-    body: "Event details, brand rules, targets, and team notes become the single source the cascade reads — not scattered prompts.",
+    body: "Event details, brand rules, team notes, previous year learnings. The brief is the foundation every module builds from. Team notes are injected into every prompt automatically — if your brand never uses a particular word, no module ever will.",
   },
   {
     n: "02",
     title: "Run the cascade",
-    body: "Intelligence builds module by module. Each output waits for human approval before the next layer auto-fires.",
+    body: "106 modules organised into 12 cascade phases. Each module output is reviewed and approved by a human before the next module fires. Intelligence compounds — the Persona Builder informs the Messaging Architecture which informs the Campaign Plan which informs the Email Sequences.",
   },
   {
     n: "03",
     title: "Your team executes",
-    body: "Every downstream deliverable inherits upstream decisions — so sales, content, and ops stay aligned without constant meetings.",
+    body: "Looped doesn't replace your team. It gives them 3–5 days of strategic foundation instead of 6–8 weeks of research. They spend their time on relationships, judgement calls, and execution — not on figuring out what the campaign should say.",
   },
 ];
 
@@ -31,12 +31,10 @@ export function HowItWorksSection(): React.ReactElement {
     <section className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            How it works
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">How it works</p>
+          <h2 className="mt-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            Brief in. Intelligence out. Team executes.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-slate-600 sm:text-base">
-            Three disciplined steps replace ad-hoc prompting — without removing humans from the decisions that matter.
-          </p>
         </Reveal>
 
         <div ref={ref} className="relative mt-16 grid gap-10 md:grid-cols-3">

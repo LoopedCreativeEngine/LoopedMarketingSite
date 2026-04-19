@@ -9,22 +9,19 @@ export function SolutionSection(): React.ReactElement {
     <section id="product" className="scroll-mt-24 bg-slate-50 py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            Looped is the intelligence layer underneath your team
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">The solution</p>
+          <h2 className="mt-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            Intelligence that compounds across your entire portfolio
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
-            Every module output is structured, versioned, and approved before the cascade unlocks the next step — so
-            downstream work always inherits upstream decisions.
+            Looped doesn&apos;t make your marketing team write emails faster — ChatGPT has already done that. What it
+            changes is what those emails are informed by. Every email, every sponsorship pitch, every awards category
+            decision is grounded in the same approved intelligence cascade.
           </p>
         </Reveal>
         <div className="mt-14">
           <CascadeDiagram />
         </div>
-        <Reveal>
-          <p className="mt-10 text-center font-mono text-sm text-indigo-800 sm:text-base">
-            106 modules · 6 team pillars · One cascade · Every output informs the next.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

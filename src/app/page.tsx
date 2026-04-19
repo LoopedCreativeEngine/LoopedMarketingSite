@@ -7,7 +7,6 @@ import { ProblemSection } from "@/components/sections/ProblemSection";
 import { ROISection } from "@/components/sections/ROISection";
 import { SocialProofBar } from "@/components/sections/SocialProofBar";
 import { SolutionSection } from "@/components/sections/SolutionSection";
-import { TestimonialSection } from "@/components/sections/TestimonialSection";
 
 export default function HomePage(): React.ReactElement {
   return (
@@ -19,7 +18,6 @@ export default function HomePage(): React.ReactElement {
       <PillarsSection />
       <ROISection />
       <HowItWorksSection />
-      <TestimonialSection />
       <PricingSection />
       <FinalCTASection />
     </>

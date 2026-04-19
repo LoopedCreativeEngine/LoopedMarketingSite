@@ -1,120 +1,83 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
 
 import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
 
 const PILLARS = [
   {
     name: "Marketing",
-    blurb: "Market intelligence, campaign strategy, and channel-ready content.",
-    modules: ["marketing_market_mapping", "marketing_messaging_architecture", "marketing_campaign_plan"],
-    more: ["marketing_organic_calendar", "marketing_seo_geo_strategy", "marketing_email_sequences"],
+    description:
+      "Market mapping, competitor intelligence, persona building, campaign strategy, email sequences, paid ad intelligence, organic calendar",
+    tag: "26 modules",
   },
   {
     name: "Content",
-    blurb: "Programme design, speaker management, and editorial coherence.",
-    modules: ["content_industry_intelligence", "content_key_topics", "content_programme_framework"],
-    more: ["content_speaker_identification", "content_speaker_runsheet", "content_chair_briefing"],
+    description:
+      "Programme narrative, speaker identification, session development, agenda architecture, photography and videography briefs, press releases",
+    tag: "18 modules",
   },
   {
     name: "Commercial Sales",
-    blurb: "Sponsor prospecting, package building, and pipeline discipline.",
-    modules: ["sponsorship_lookalike_prospecting", "commercial_sponsor_brief", "commercial_media_pack"],
-    more: ["sponsorship_outreach_copy", "commercial_package_builder", "sponsorship_pipeline_health"],
+    description:
+      "Sponsor prospect finder, package builder, pitch generator, tailored sponsor proposals, pipeline health, renewal intelligence",
+    tag: "14 modules",
   },
   {
     name: "Telesales",
-    blurb: "Entry conversion, table sales, and voice-assisted outreach.",
-    modules: ["telesales_offer_matrix", "telesales_call_framework", "telesales_conversion_tracker"],
-    more: ["telesales_objection_playbook", "telesales_list_prioritisation", "telesales_voice_qa"],
+    description:
+      "Entry conversion, table sales, nominations drive, list segmentation, Retell AI voice agent campaigns, call log intelligence",
+    tag: "12 modules",
   },
   {
     name: "Event Management",
-    blurb: "Awards programme design, judge pipeline, and operational readiness.",
-    modules: ["ops_awards_market_intelligence", "ops_awards_programme_analysis", "content_judge_assets"],
-    more: ["ops_category_review", "ops_website_quality_monitor", "event_management_run_of_show"],
+    description:
+      "Awards programme analysis, category review, judge discovery, judge pipeline, run of show, risk detection, post-event intelligence",
+    tag: "16 modules",
   },
   {
     name: "Portfolio Directors",
-    blurb: "Cross-event intelligence and performance benchmarking.",
-    modules: ["portfolio_cross_event_dashboard", "portfolio_sponsor_mix", "portfolio_forecast_pack"],
-    more: ["portfolio_risk_register", "portfolio_narrative_brief", "portfolio_bench_compare"],
+    description:
+      "Cross-event performance benchmarking, audience overlap analysis, community strategy, spinoff recommendations, opportunity detection",
+    tag: "10 modules",
   },
 ];
 
-function PillarCard({
-  pillar,
-  active,
-  onHover,
-  onLeave,
-}: {
-  pillar: (typeof PILLARS)[0];
-  active: boolean;
-  onHover: () => void;
-  onLeave: () => void;
-}): React.ReactElement {
+function PillarCard({ pillar }: { pillar: (typeof PILLARS)[0] }): React.ReactElement {
   return (
     <motion.article
       layout
-      className={`rounded-2xl border bg-white p-6 transition-colors duration-200 ${
-        active ? "border-indigo-600 shadow-[var(--looped-violet-glow)]" : "border-slate-200 hover:border-indigo-300"
-      }`}
-      onMouseEnter={onHover}
-      onMouseLeave={onLeave}
+      className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:border-indigo-300 hover:shadow-md"
       whileHover={{ y: -3 }}
       transition={{ type: "spring", stiffness: 420, damping: 28 }}
     >
       <h3 className="text-lg font-semibold text-slate-900">{pillar.name}</h3>
-      <p className="mt-2 text-sm text-slate-600">{pillar.blurb}</p>
-      <ul className="mt-4 space-y-1.5 font-mono text-[11px] text-indigo-800/90">
-        {pillar.modules.map((m) => (
-          <li key={m}>{m}</li>
-        ))}
-      </ul>
-      <AnimatePresence initial={false}>
-        {active && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="overflow-hidden"
-          >
-            <p className="mt-3 text-xs font-medium uppercase tracking-wide text-slate-500">Also includes</p>
-            <ul className="mt-2 space-y-1 font-mono text-[11px] text-slate-600">
-              {pillar.more.map((m) => (
-                <li key={m}>{m}</li>
-              ))}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <p className="mt-3 text-sm leading-relaxed text-slate-600">{pillar.description}</p>
+      <p className="mt-4 inline-flex rounded-full bg-indigo-50 px-3 py-1 font-mono text-xs font-semibold text-indigo-800">
+        {pillar.tag}
+      </p>
     </motion.article>
   );
 }
 
 export function PillarsSection(): React.ReactElement {
-  const [open, setOpen] = useState<string | null>(null);
-
   return (
     <section className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            Built for every team that runs your events
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">Six team workspaces</p>
+          <h2 className="mt-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            One platform. Every team that runs your events.
           </h2>
+          <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+            Each pillar has its own intelligence thread. The intelligence each team produces is available to every other
+            team working on the same event. No briefing each other. No duplication. The system is the shared context.
+          </p>
         </Reveal>
         <RevealStagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PILLARS.map((pillar) => (
             <RevealItem key={pillar.name}>
-              <PillarCard
-                pillar={pillar}
-                active={open === pillar.name}
-                onHover={() => setOpen(pillar.name)}
-                onLeave={() => setOpen((v) => (v === pillar.name ? null : v))}
-              />
+              <PillarCard pillar={pillar} />
             </RevealItem>
           ))}
         </RevealStagger>

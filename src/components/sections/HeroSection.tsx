@@ -61,7 +61,7 @@ export function HeroSection(): React.ReactElement {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          The intelligence layer your event team has been missing
+          Your events team is already using AI. Just not like this.
         </motion.h1>
         <motion.p
           className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-slate-300 sm:text-lg"
@@ -69,8 +69,8 @@ export function HeroSection(): React.ReactElement {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
-          Looped gives every event — across every brand — the same quality of strategic intelligence that currently only
-          your most experienced people produce, and only when they have time.
+          Looped is the intelligence operating system for B2B conference and awards teams. 106 modules. 6 team pillars.
+          One cascade — where every approved output informs the next decision.
         </motion.p>
         <motion.div
           className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"

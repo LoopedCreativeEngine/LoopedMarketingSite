@@ -4,16 +4,29 @@ import Link from "next/link";
 
 import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
 
-const PLANS = [
+type Plan = {
+  name: string;
+  lines: { k: string; v: string }[];
+  foot?: string;
+};
+
+const PLANS: Plan[] = [
   {
     name: "Standard",
-    items: ["£25,000 deployment", "£1,500 / month", "£500 / event setup"],
-    note: "Ideal for single-brand portfolios ramping the cascade across a defined event calendar.",
+    lines: [
+      { k: "Deployment", v: "£25,000 one-off" },
+      { k: "Retainer", v: "£1,500 / month" },
+      { k: "Setup", v: "£500 per event onboarded" },
+    ],
   },
   {
     name: "Enterprise",
-    items: ["£20,000 deployment", "£1,500 / month", "£300 / event setup (volume pricing)"],
-    note: "For multi-brand operators — discounted per-event setup reflects consolidated governance and shared templates.",
+    lines: [
+      { k: "Deployment", v: "From £20,000" },
+      { k: "Retainer", v: "From £1,250 / month" },
+      { k: "Setup", v: "From £300 per event" },
+    ],
+    foot: "Volume pricing for portfolios of 50+ events",
   },
 ];
 
@@ -22,12 +35,14 @@ export function PricingSection(): React.ReactElement {
     <section id="pricing" className="scroll-mt-24 bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
-            Simple, transparent deployment pricing
+          <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">Pricing</p>
+          <h2 className="mt-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+            Deployment pricing. No per-seat surprises.
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-center text-sm text-slate-600 sm:text-base">
-            All API costs stay on your own accounts — no surprise bills from us. Book a conversation to align deployment
-            scope with your portfolio.
+          <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+            One deployment fee to get you live. A monthly retainer for ongoing management and platform improvements. A
+            small per-event setup fee as you onboard events. Your AI costs sit on your own API accounts — you see
+            exactly what you spend, with no markup from us.
           </p>
         </Reveal>
 
@@ -38,15 +53,26 @@ export function PricingSection(): React.ReactElement {
               className="flex flex-col rounded-2xl border border-slate-200 bg-slate-50/60 p-8 shadow-sm transition-shadow duration-200 hover:shadow-md"
             >
               <h3 className="text-xl font-semibold text-slate-900">{p.name}</h3>
-              <ul className="mt-6 space-y-3 font-mono text-sm text-indigo-900">
-                {p.items.map((line) => (
-                  <li key={line}>{line}</li>
+              <dl className="mt-6 space-y-4">
+                {p.lines.map((row) => (
+                  <div key={row.k}>
+                    <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">{row.k}</dt>
+                    <dd className="mt-1 font-mono text-sm font-semibold text-indigo-900">{row.v}</dd>
+                  </div>
                 ))}
-              </ul>
-              <p className="mt-6 text-sm leading-relaxed text-slate-600">{p.note}</p>
+              </dl>
+              {p.foot ? <p className="mt-6 text-sm leading-relaxed text-slate-600">{p.foot}</p> : null}
             </RevealItem>
           ))}
         </RevealStagger>
+
+        <Reveal>
+          <p className="mx-auto mt-10 max-w-3xl text-center text-xs leading-relaxed text-slate-500 sm:text-sm">
+            API costs (Anthropic, Gemini, Perplexity, Apollo, Retell) sit on your own accounts. At moderate usage across
+            100 events: approximately £895 per event in API costs — less than one day of a senior strategist&apos;s
+            time.
+          </p>
+        </Reveal>
 
         <Reveal className="mt-12 text-center">
           <Link

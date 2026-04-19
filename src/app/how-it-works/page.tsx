@@ -3,76 +3,88 @@ import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 import { CascadeDiagram } from "@/components/sections/CascadeDiagram";
 
-const EXAMPLES = [
-  "content_industry_intelligence → content_key_topics → content_speaker_identification",
-  "marketing_market_mapping → marketing_persona_builder → marketing_messaging_architecture",
-  "marketing_messaging_architecture → marketing_campaign_plan → marketing_campaign_calendar",
-  "commercial_sponsor_brief → commercial_media_pack → sponsorship_outreach_copy",
-];
-
 export default function HowItWorksPage(): React.ReactElement {
   return (
     <div className="bg-white pb-20 pt-28">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-900">How the cascade runs</h1>
+          <h1 className="text-4xl font-semibold tracking-tight text-slate-900">How Looped works</h1>
           <p className="mt-6 text-base leading-relaxed text-slate-600">
-            Looped is not a chat window. It is a governed pipeline: structured modules, explicit dependencies, and
-            human approval gates so downstream work always inherits upstream decisions.
+            A cascade of 106 modules across 6 team pillars. Every approved output informs the next decision. Human
+            approval gates between every phase.
           </p>
         </Reveal>
       </div>
 
-      <div className="mx-auto mt-14 max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto mt-16 max-w-3xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-center text-2xl font-semibold text-slate-900">From brief to campaign-ready</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-sm text-slate-600">
-            As each module is approved, the next layer unlocks automatically — your team reviews outputs, not prompt
-            threads.
+          <h2 className="text-2xl font-semibold text-slate-900">The briefing hub</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+            Every event starts with a brief. Event name, date, venue, sector, audience, team notes, brand rules,
+            supporting documents. The brief is the foundation. Team notes are injected into every module&apos;s system
+            prompt automatically — compliance instructions, terminology restrictions, brand voice rules. If you tell the
+            platform never to use a particular phrase, no module ever will.
           </p>
         </Reveal>
-        <div className="mt-10">
-          <CascadeDiagram expanded />
-        </div>
       </div>
 
-      <div className="mx-auto mt-20 max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto mt-14 max-w-3xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-2xl font-semibold text-slate-900">Real module chains</h2>
-          <p className="mt-4 text-sm leading-relaxed text-slate-600">
-            These are representative dependency chains — the same pattern repeats across marketing, content, commercial,
-            telesales, event management, and portfolio views.
+          <h2 className="text-2xl font-semibold text-slate-900">The 12-phase cascade</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+            Modules are organised into 12 cascade phases — from market intelligence through to post-event learning.
+            Each phase unlocks when the previous phase&apos;s outputs are approved. You cannot run a Campaign Plan until
+            the Persona Builder and Messaging Architecture are approved. You cannot run finalist social copy until the
+            Category Review is locked. The sequence is enforced by design.
           </p>
-          <ul className="mt-6 space-y-3 font-mono text-xs leading-relaxed text-indigo-900 sm:text-sm">
-            {EXAMPLES.map((ex) => (
-              <li key={ex} className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3">
-                {ex}
-              </li>
-            ))}
-          </ul>
         </Reveal>
+      </div>
 
-        <Reveal className="mt-16">
-          <h2 className="text-2xl font-semibold text-slate-900">Human in the loop by design</h2>
-          <p className="mt-4 text-sm leading-relaxed text-slate-600">
-            Every module output lands in review before the cascade fires the next step. Approvals are the trigger — not
-            cron jobs or silent auto-publishes. That keeps sponsors, delegates, and brand teams protected while still
-            removing weeks of manual stitching.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-slate-600">
-            Skipping approval is possible only where you explicitly allow it — for example low-risk monitoring modules —
-            so operational modules never run ahead of governance you have not signed off.
-          </p>
-        </Reveal>
+      <div className="mx-auto mt-12 max-w-6xl px-4 sm:px-6 lg:px-8">
+        <CascadeDiagram expanded />
+      </div>
 
-        <Reveal className="mt-12 text-center">
-          <Link
-            href="/demo"
-            className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
-          >
-            Book a demo
-          </Link>
+      <div className="mx-auto mt-16 max-w-3xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <h2 className="text-2xl font-semibold text-slate-900">Human approval gates</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+            Every module output is reviewed by a human before the next module fires. This is not a limitation — it is the
+            product. Looped is human-in-the-loop by design. The platform produces intelligence. Your team makes the
+            decisions. The approval gates are where your expertise is applied.
+          </p>
         </Reveal>
+      </div>
+
+      <div className="mx-auto mt-14 max-w-3xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <h2 className="text-2xl font-semibold text-slate-900">Six team pillars</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+            Each pillar has its own workspace and its own intelligence thread. Marketing&apos;s approved Persona Builder output
+            is available to Content when they&apos;re building the speaker programme. Commercial&apos;s approved Sponsor Brief is
+            available to Marketing when they&apos;re writing partner promotion copy. The system is the shared context — no
+            briefing each other, no duplication.
+          </p>
+        </Reveal>
+      </div>
+
+      <div className="mx-auto mt-14 max-w-3xl px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <h2 className="text-2xl font-semibold text-slate-900">The cascade compounds</h2>
+          <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
+            Every approved output is stored against the event. At the end of the event, the platform extracts key
+            learnings and carries them forward to the next edition. The brief for year 2 starts with everything that
+            worked in year 1. Over time, Looped becomes the institutional memory your team cannot afford to lose.
+          </p>
+        </Reveal>
+      </div>
+
+      <div className="mx-auto mt-12 max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <Link
+          href="/demo"
+          className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
+        >
+          Book a demo
+        </Link>
       </div>
     </div>
   );

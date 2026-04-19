@@ -11,9 +11,10 @@ export function FinalCTASection(): React.ReactElement {
     <section className="py-20 sm:py-24" style={{ backgroundColor: colors.violet[700] }}>
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Ready to see Looped running on your events?</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">Ready to see it running on your events?</h2>
           <p className="mt-4 text-sm leading-relaxed text-indigo-100 sm:text-base">
-            We&apos;ll show you the full cascade running on a real event in your sector.
+            We&apos;ll configure a demo using an event in your sector and walk you through the full intelligence cascade
+            — from brief to campaign-ready — in 45 minutes.
           </p>
           <Link
             href="/demo"
