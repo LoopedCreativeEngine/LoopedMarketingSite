@@ -1,0 +1,57 @@
+"use client";
+
+import { animate, motion, useInView, useMotionValue, useMotionValueEvent } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
+export function CountUpStat({
+  value,
+  prefix = "",
+  suffix = "",
+  decimals = 0,
+  label,
+  sub,
+}: {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  decimals?: number;
+  label: string;
+  sub: string;
+}): React.ReactElement {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-15% 0px" });
+  const mv = useMotionValue(0);
+  const [text, setText] = useState(decimals > 0 ? (0).toFixed(decimals) : "0");
+
+  useMotionValueEvent(mv, "change", (v) => {
+    if (decimals > 0) {
+      setText(v.toFixed(decimals));
+    } else {
+      setText(Math.round(v).toLocaleString("en-GB"));
+    }
+  });
+
+  useEffect(() => {
+    if (!inView) return;
+    const c = animate(mv, value, { duration: 1.8, ease: [0.22, 1, 0.36, 1] });
+    return () => c.stop();
+  }, [inView, mv, value]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm"
+      initial={{ opacity: 0, y: 16 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5 }}
+    >
+      <p className="font-mono text-3xl font-semibold tracking-tight text-indigo-800 sm:text-4xl">
+        {prefix}
+        {text}
+        {suffix}
+      </p>
+      <p className="mt-3 text-sm font-semibold text-slate-900">{label}</p>
+      <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">{sub}</p>
+    </motion.div>
+  );
+}
