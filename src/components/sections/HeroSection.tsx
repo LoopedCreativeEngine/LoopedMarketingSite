@@ -3,14 +3,9 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-import { colors } from "@/styles/design-system";
+import { CascadeCanvas } from "@/components/hero/CascadeCanvas";
 
-const FLOATING_MODULES = [
-  { label: "content_industry_intelligence", x: "8%", y: "18%", delay: 0 },
-  { label: "marketing_market_mapping", x: "72%", y: "22%", delay: 0.4 },
-  { label: "marketing_messaging_architecture", x: "14%", y: "62%", delay: 0.8 },
-  { label: "marketing_campaign_calendar", x: "68%", y: "58%", delay: 1.2 },
-];
+import { colors } from "@/styles/design-system";
 
 export function HeroSection(): React.ReactElement {
   return (
@@ -18,41 +13,13 @@ export function HeroSection(): React.ReactElement {
       className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden pt-16"
       style={{ backgroundColor: colors.heroBg }}
     >
-      <motion.div
-        className="pointer-events-none absolute inset-0 opacity-90"
-        animate={{
-          background: [
-            "radial-gradient(ellipse 80% 60% at 20% 20%, rgba(79, 70, 229, 0.35), transparent 55%)",
-            "radial-gradient(ellipse 70% 55% at 75% 30%, rgba(99, 102, 241, 0.28), transparent 50%)",
-            "radial-gradient(ellipse 85% 65% at 45% 70%, rgba(67, 56, 202, 0.25), transparent 55%)",
-            "radial-gradient(ellipse 80% 60% at 20% 20%, rgba(79, 70, 229, 0.35), transparent 55%)",
-          ],
-        }}
-        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-        aria-hidden
-      />
-
-      {FLOATING_MODULES.map((m) => (
-        <motion.div
-          key={m.label}
-          className="pointer-events-none absolute hidden rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 font-mono text-[10px] text-indigo-200/90 shadow-lg backdrop-blur-sm sm:block"
-          style={{ left: m.x, top: m.y }}
-          initial={{ opacity: 0, y: 8 }}
-          animate={{
-            opacity: 1,
-            y: [0, -10, 0],
-            rotate: [0, 0.6, 0],
-          }}
-          transition={{
-            opacity: { delay: m.delay, duration: 0.8 },
-            y: { duration: 14 + m.delay * 2, repeat: Infinity, ease: "easeInOut", delay: m.delay },
-            rotate: { duration: 18, repeat: Infinity, ease: "easeInOut", delay: m.delay },
-          }}
+      <div className="absolute inset-0">
+        <CascadeCanvas />
+        <div
+          className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/35 to-[#0a0a0f]/95"
           aria-hidden
-        >
-          {m.label}
-        </motion.div>
-      ))}
+        />
+      </div>
 
       <div className="relative z-10 mx-auto max-w-4xl px-4 pb-20 pt-12 text-center sm:px-6 lg:px-8">
         <motion.h1

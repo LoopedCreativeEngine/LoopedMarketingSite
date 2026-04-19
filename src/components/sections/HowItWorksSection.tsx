@@ -37,7 +37,11 @@ export function HowItWorksSection(): React.ReactElement {
           </h2>
         </Reveal>
 
-        <div ref={ref} className="relative mt-16 grid gap-10 md:grid-cols-3">
+        <div
+          ref={ref}
+          className="relative mt-16 grid gap-10 [perspective:1200px] md:grid-cols-3"
+          style={{ transformStyle: "preserve-3d" }}
+        >
           <motion.div
             className="pointer-events-none absolute left-[16%] right-[16%] top-10 hidden h-0.5 bg-gradient-to-r from-indigo-200 via-indigo-500 to-indigo-200 md:block"
             initial={{ scaleX: 0 }}
@@ -50,9 +54,10 @@ export function HowItWorksSection(): React.ReactElement {
             <motion.div
               key={s.n}
               className="relative rounded-2xl border border-slate-200 bg-slate-50/80 p-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.12 + i * 0.15, duration: 0.45 }}
+              style={{ transformStyle: "preserve-3d", transformOrigin: "center top" }}
+              initial={{ opacity: 0, y: 24, rotateX: 12 }}
+              animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
+              transition={{ delay: 0.12 + i * 0.15, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
               <span className="font-mono text-xs font-semibold text-indigo-700">{s.n}</span>
               <h3 className="mt-2 text-lg font-semibold text-slate-900">{s.title}</h3>

@@ -41,9 +41,13 @@ export function CountUpStat({
     <motion.div
       ref={ref}
       className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm"
-      initial={{ opacity: 0, y: 16 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5 }}
+      initial={{ opacity: 0, y: 20, scale: 0.82, filter: "blur(8px)" }}
+      animate={
+        inView
+          ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
+          : { opacity: 0, y: 20, scale: 0.82, filter: "blur(8px)" }
+      }
+      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
     >
       <p className="font-mono text-3xl font-semibold tracking-tight text-indigo-800 sm:text-4xl">
         {prefix}

@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
 
@@ -44,10 +45,33 @@ const PILLARS = [
 ];
 
 function PillarCard({ pillar }: { pillar: (typeof PILLARS)[0] }): React.ReactElement {
+  const ref = useRef<HTMLDivElement>(null);
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [10, -10]), { stiffness: 280, damping: 26 });
+  const rotateY = useSpring(useTransform(mx, [-0.5, 0.5], [-12, 12]), { stiffness: 280, damping: 26 });
+
+  const handleMove = (e: React.MouseEvent<HTMLDivElement>): void => {
+    const el = ref.current;
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    mx.set((e.clientX - r.left) / r.width - 0.5);
+    my.set((e.clientY - r.top) / r.height - 0.5);
+  };
+
+  const handleLeave = (): void => {
+    mx.set(0);
+    my.set(0);
+  };
+
   return (
     <motion.article
+      ref={ref}
       layout
       className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:border-indigo-300 hover:shadow-md"
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      onMouseMove={handleMove}
+      onMouseLeave={handleLeave}
       whileHover={{ y: -3 }}
       transition={{ type: "spring", stiffness: 420, damping: 28 }}
     >
@@ -62,7 +86,7 @@ function PillarCard({ pillar }: { pillar: (typeof PILLARS)[0] }): React.ReactEle
 
 export function PillarsSection(): React.ReactElement {
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-white py-20 sm:py-24 [perspective:1400px]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">Six team workspaces</p>
