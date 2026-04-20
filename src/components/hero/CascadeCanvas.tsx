@@ -256,7 +256,6 @@ export function CascadeCanvas(): React.ReactElement {
       t += dt;
 
       const activeHub = Math.floor((t / 2.2) % HUB_COUNT);
-      const pulse = 0.5 + 0.5 * Math.sin(t * ((Math.PI * 2) / 3) + hubBasePhase[activeHub]!);
 
       const hubPulse = 0.3 + 0.7 * (0.5 + 0.5 * Math.sin((t * Math.PI * 2) / 3));
       hubMaterials.forEach((mat, i) => {
