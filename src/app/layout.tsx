@@ -34,7 +34,7 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "Looped Event OS — Intelligence layer for B2B events",
   description:
-    "Strategic intelligence for conferences and awards — 106 modules, six pillars, one cascade. Book a demo.",
+    "Strategic intelligence for conferences and awards organisers. Human-approved AI cascade from research to revenue.",
 };
 
 export default function RootLayout({

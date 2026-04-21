@@ -6,27 +6,17 @@ import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
 
 type Plan = {
   name: string;
-  lines: { k: string; v: string }[];
-  foot?: string;
+  body: string;
 };
 
 const PLANS: Plan[] = [
   {
     name: "Standard",
-    lines: [
-      { k: "Deployment", v: "£25,000 one-off" },
-      { k: "Retainer", v: "£1,500 / month" },
-      { k: "Setup", v: "£500 per event onboarded" },
-    ],
+    body: "Pricing available on request. Structured per event, with portfolio and annual commitment options.",
   },
   {
     name: "Enterprise",
-    lines: [
-      { k: "Deployment", v: "From £20,000" },
-      { k: "Retainer", v: "From £1,250 / month" },
-      { k: "Setup", v: "From £300 per event" },
-    ],
-    foot: "Volume pricing for portfolios of 50+ events",
+    body: "Pricing available on request. Structured per event, with portfolio and annual commitment options.",
   },
 ];
 
@@ -37,12 +27,10 @@ export function PricingSection(): React.ReactElement {
         <Reveal>
           <p className="module-id text-center text-xs font-semibold uppercase tracking-wider text-violet-300">Pricing</p>
           <h2 className="mt-3 text-balance text-center text-3xl tracking-tight text-white sm:text-4xl">
-            Deployment pricing. No per-seat surprises.
+            Pricing available on request.
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-400 sm:text-base">
-            One deployment fee to get you live. A monthly retainer for ongoing management and platform improvements. A
-            small per-event setup fee as you onboard events. Your AI costs sit on your own API accounts — you see
-            exactly what you spend, with no markup from us.
+            Structured per event, with portfolio and annual commitment options.
           </p>
         </Reveal>
 
@@ -53,25 +41,46 @@ export function PricingSection(): React.ReactElement {
               className="flex flex-col rounded-2xl border border-white/10 bg-looped-card p-8 shadow-sm transition-shadow duration-200 hover:shadow-[var(--looped-violet-glow)]"
             >
               <h3 className="text-2xl text-white">{p.name}</h3>
-              <dl className="mt-6 space-y-4">
-                {p.lines.map((row) => (
-                  <div key={row.k}>
-                    <dt className="module-id text-xs font-semibold uppercase tracking-wide text-slate-400">{row.k}</dt>
-                    <dd className="mt-1 font-serif text-2xl text-violet-200">{row.v}</dd>
-                  </div>
-                ))}
-              </dl>
-              {p.foot ? <p className="mt-6 text-sm leading-relaxed text-slate-400">{p.foot}</p> : null}
+              <p className="mt-4 text-sm leading-relaxed text-slate-300">{p.body}</p>
             </RevealItem>
           ))}
         </RevealStagger>
 
         <Reveal>
-          <p className="mx-auto mt-10 max-w-3xl text-center text-xs leading-relaxed text-slate-500 sm:text-sm">
-            API costs (Anthropic, Gemini, Perplexity, Apollo, Retell) sit on your own accounts. At moderate usage across
-            100 events: approximately £895 per event in API costs — less than one day of a senior strategist&apos;s
-            time.
-          </p>
+          <h3 className="mt-12 text-center text-2xl italic text-[#f8f9ff]">What every event includes</h3>
+          <ul className="mx-auto mt-6 max-w-4xl space-y-2 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
+            <li>Full sector and competitor intelligence, updated continuously</li>
+            <li>Audience mapping and persona development</li>
+            <li>Messaging strategy and campaign planning</li>
+            <li>Content for every channel — email, social, paid, organic</li>
+            <li>Sponsorship intelligence and proposal support</li>
+            <li>Telesales campaign briefing and scripting</li>
+            <li>Event management and risk intelligence</li>
+            <li>Weekly intelligence digest for your whole team</li>
+            <li>Portfolio-level reporting for directors</li>
+            <li>Proactive monitoring — competitors, campaigns, website quality</li>
+          </ul>
+        </Reveal>
+
+        <Reveal>
+          <div className="mx-auto mt-10 grid max-w-5xl gap-3 md:grid-cols-2">
+            <p className="rounded-xl border border-white/10 bg-looped-card p-4 text-sm text-[#c4c8d8]">
+              <span className="block text-base text-[#f8f9ff]">Higher revenues</span>
+              Better targeting, better campaigns, better conversion from intelligence-grounded outreach.
+            </p>
+            <p className="rounded-xl border border-white/10 bg-looped-card p-4 text-sm text-[#c4c8d8]">
+              <span className="block text-base text-[#f8f9ff]">Reduced costs</span>
+              Time recovered. Tools that work harder. Headcount focused on what actually needs people.
+            </p>
+            <p className="rounded-xl border border-white/10 bg-looped-card p-4 text-sm text-[#c4c8d8]">
+              <span className="block text-base text-[#f8f9ff]">Better outputs, consistently</span>
+              Not dependent on who&apos;s on the team this month. The intelligence layer raises the floor for everyone.
+            </p>
+            <p className="rounded-xl border border-white/10 bg-looped-card p-4 text-sm text-[#c4c8d8]">
+              <span className="block text-base text-[#f8f9ff]">More events, same team</span>
+              When research, briefing, and drafting are handled by the platform, your team runs more events without running harder.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal className="mt-12 text-center">

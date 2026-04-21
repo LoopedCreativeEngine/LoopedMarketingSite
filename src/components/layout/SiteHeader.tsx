@@ -15,6 +15,15 @@ const navLinks = [
   { href: "/#pricing", label: "Pricing" },
 ];
 
+const pillarLinks = [
+  { href: "/pillars/marketing", label: "Marketing" },
+  { href: "/pillars/content", label: "Content" },
+  { href: "/pillars/sponsorship", label: "Sponsorship" },
+  { href: "/pillars/telesales", label: "Telesales" },
+  { href: "/pillars/event-management", label: "Event Management" },
+  { href: "/pillars/portfolio", label: "Portfolio Directors" },
+];
+
 export function SiteHeader(): React.ReactElement {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,7 +41,7 @@ export function SiteHeader(): React.ReactElement {
     <motion.header
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300",
-        transparent ? "border-transparent bg-transparent" : "border-white/10 bg-[#0b0b11]/92 backdrop-blur-md",
+        transparent ? "border-transparent bg-transparent" : "border-white/10 bg-[#0f1117]/92 backdrop-blur-md",
       )}
       layout
     >
@@ -49,6 +58,20 @@ export function SiteHeader(): React.ReactElement {
 
         <NavigationMenu.Root className="hidden md:block">
           <NavigationMenu.List className="flex items-center gap-8">
+            <NavigationMenu.Item className="relative">
+              <NavigationMenu.Trigger className={cn("text-sm font-medium transition-colors hover:text-violet-300", transparent ? "text-white/90" : "text-slate-300")}>
+                Pillars
+              </NavigationMenu.Trigger>
+              <NavigationMenu.Content className="absolute left-0 top-8 w-64 rounded-xl border border-white/10 bg-[#151826] p-3 shadow-xl">
+                <div className="grid gap-1">
+                  {pillarLinks.map((l) => (
+                    <Link key={l.href} href={l.href} className="rounded-md px-3 py-2 text-sm text-slate-200 transition-colors hover:bg-white/10 hover:text-white">
+                      {l.label}
+                    </Link>
+                  ))}
+                </div>
+              </NavigationMenu.Content>
+            </NavigationMenu.Item>
             {navLinks.map((l) => (
               <NavigationMenu.Item key={l.href}>
                 <NavigationMenu.Link asChild>
@@ -115,6 +138,16 @@ export function SiteHeader(): React.ReactElement {
                       Home
                     </Link>
                     {navLinks.map((l) => (
+                      <Link
+                        key={l.href}
+                        href={l.href}
+                        className="text-sm font-medium text-slate-300 hover:text-violet-300"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {l.label}
+                      </Link>
+                    ))}
+                    {pillarLinks.map((l) => (
                       <Link
                         key={l.href}
                         href={l.href}

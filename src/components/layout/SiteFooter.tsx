@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function SiteFooter(): React.ReactElement {
   return (
-    <footer className="border-t border-white/10 bg-[#0b0b11]">
+    <footer className="border-t border-white/10 bg-[#0f1117]">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
@@ -14,6 +14,9 @@ export function SiteFooter(): React.ReactElement {
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-slate-400">
             <Link href="/how-it-works" className="hover:text-violet-300">
               How it works
+            </Link>
+            <Link href="/pillars/marketing" className="hover:text-violet-300">
+              Pillars
             </Link>
             <Link href="/#pricing" className="hover:text-violet-300">
               Pricing

@@ -77,8 +77,8 @@ export function CascadeCanvas(): React.ReactElement {
   return (
     <div className="absolute inset-0 h-full min-h-[100dvh] w-full" aria-hidden>
       <Canvas camera={{ position: [0, 4, 42], fov: 42 }} dpr={[1, 1.8]}>
-        <color attach="background" args={["#0a0a0f"]} />
-        <fog attach="fog" args={["#0a0a0f", 40, 88]} />
+        <color attach="background" args={["#0f1117"]} />
+        <fog attach="fog" args={["#0f1117", 40, 88]} />
         <SceneGraph />
       </Canvas>
     </div>

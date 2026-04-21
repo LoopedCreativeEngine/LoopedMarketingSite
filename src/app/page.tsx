@@ -1,25 +1,27 @@
-import { FinalCTASection } from "@/components/sections/FinalCTASection";
+import { AiProblemSplitSection } from "@/components/sections/AiProblemSplitSection";
+import { CascadeVsPromptingSection } from "@/components/sections/CascadeVsPromptingSection";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { OptionalAutomationSection } from "@/components/sections/OptionalAutomationSection";
 import { PillarsSection } from "@/components/sections/PillarsSection";
 import { PricingSection } from "@/components/sections/PricingSection";
-import { ProblemSection } from "@/components/sections/ProblemSection";
-import { ROISection } from "@/components/sections/ROISection";
-import { SocialProofBar } from "@/components/sections/SocialProofBar";
-import { SolutionSection } from "@/components/sections/SolutionSection";
+import { ProactiveIntelligenceSection } from "@/components/sections/ProactiveIntelligenceSection";
+import { RaiseBarSection } from "@/components/sections/RaiseBarSection";
+import { ROICalculatorSection } from "@/components/sections/ROICalculatorSection";
+import { WhatLoopedChangesSection } from "@/components/sections/WhatLoopedChangesSection";
 
 export default function HomePage(): React.ReactElement {
   return (
     <>
       <HeroSection />
-      <SocialProofBar />
-      <ProblemSection />
-      <SolutionSection />
+      <AiProblemSplitSection />
+      <WhatLoopedChangesSection />
+      <ProactiveIntelligenceSection />
+      <CascadeVsPromptingSection />
+      <RaiseBarSection />
+      <OptionalAutomationSection />
       <PillarsSection />
-      <ROISection />
-      <HowItWorksSection />
+      <ROICalculatorSection />
       <PricingSection />
-      <FinalCTASection />
     </>
   );
 }

@@ -2,44 +2,45 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 const PILLARS = [
   {
     name: "Marketing",
     description:
-      "Market mapping, competitor intelligence, persona building, campaign strategy, email sequences, paid ad intelligence, organic calendar",
-    tag: "26 modules",
+      "From industry research to full campaign plan — your marketing team works from a shared approved foundation that feeds every channel. Audience intelligence, competitor positioning, personas, messaging strategy, email sequences, paid ad copy, organic calendar. Built in sequence. Each layer informing the next.",
+    href: "/pillars/marketing",
   },
   {
     name: "Content",
     description:
-      "Programme narrative, speaker identification, session development, agenda architecture, photography and videography briefs, press releases",
-    tag: "18 modules",
+      "Programme themes, speaker identification, session development — grounded in what's happening in your sector right now, not last year's instinct. The content team works from approved industry intelligence, not a blank page.",
+    href: "/pillars/content",
   },
   {
-    name: "Commercial Sales",
+    name: "Sponsorship",
     description:
-      "Sponsor prospect finder, package builder, pitch generator, tailored sponsor proposals, pipeline health, renewal intelligence",
-    tag: "14 modules",
+      "Proposals built on real audience data. Every pitch personalised to what each sponsor actually cares about, grounded in your event's approved intelligence. Prospect discovery, package building, tailored proposals — in sequence.",
+    href: "/pillars/sponsorship",
   },
   {
     name: "Telesales",
     description:
-      "Entry conversion, table sales, nominations drive, list segmentation, Retell AI voice agent campaigns, call log intelligence",
-    tag: "12 modules",
+      "Calling campaigns intelligently briefed from platform intelligence. Scripts, objection handling, and prospect lists all built from what the platform knows about your event and audience. Optional voice automation when you're ready for it.",
+    href: "/pillars/telesales",
   },
   {
     name: "Event Management",
     description:
-      "Awards programme analysis, category review, judge discovery, judge pipeline, run of show, risk detection, post-event intelligence",
-    tag: "16 modules",
+      "Risk detection before problems become crises. Judge pipelines managed. Category reviews grounded in market data. Operational planning informed by intelligence rather than spreadsheets and instinct.",
+    href: "/pillars/event-management",
   },
   {
     name: "Portfolio Directors",
     description:
-      "Cross-event performance benchmarking, audience overlap analysis, community strategy, spinoff recommendations, opportunity detection",
-    tag: "10 modules",
+      "Cross-event intelligence that compounds. Audience overlap analysis. Format effectiveness across your portfolio. What worked at one event informing the next. Strategic intelligence that only exists when you can see across the whole picture.",
+    href: "/pillars/portfolio",
   },
 ];
 
@@ -67,28 +68,19 @@ export function PillarsSection(): React.ReactElement {
   return (
     <section ref={ref} className="bg-looped-bg py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <p className="module-id text-center text-xs font-semibold uppercase tracking-wider text-violet-300">Six team workspaces</p>
-        <h2 className="mt-3 text-balance text-center text-3xl italic tracking-tight text-white sm:text-4xl">
-            One platform. Every team that runs your events.
+        <h2 className="mt-3 text-balance text-center text-3xl italic tracking-tight text-[#f8f9ff] sm:text-4xl">
+          How it works across your team
         </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-400 sm:text-base">
-          Each pillar has its own intelligence thread. The intelligence each team produces is available to every other
-          team working on the same event. No briefing each other. No duplication. The system is the shared context.
-        </p>
         <div className="mt-14 space-y-3">
           {PILLARS.map((pillar) => (
-            <article
+            <Link
               key={pillar.name}
-              className="pillar-band group flex items-center justify-between overflow-hidden rounded-xl border border-white/10 bg-gradient-to-r from-[#12121d] to-[#191933] px-5 py-5 transition-all duration-300 hover:from-[#1a1a2d] hover:to-[#23234a] hover:py-7"
+              href={pillar.href}
+              className="pillar-band group flex flex-col gap-3 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-r from-[#181b25] to-[#232837] px-6 py-6 transition-all duration-300 hover:border-looped-violet-700/70 hover:shadow-[var(--looped-violet-glow)] md:flex-row md:items-center md:justify-between md:gap-6"
             >
-              <div>
-                <h3 className="text-2xl italic text-white sm:text-3xl">{pillar.name}</h3>
-                <p className="mt-2 max-w-4xl text-sm text-slate-300">{pillar.description}</p>
-              </div>
-              <span className="module-id shrink-0 rounded-full border border-looped-violet-700/60 bg-looped-violet-700/20 px-3 py-1 text-xs text-violet-200 transition-opacity duration-300 group-hover:opacity-100 md:opacity-70">
-                {pillar.tag}
-              </span>
-            </article>
+              <h3 className="text-2xl italic text-[#f8f9ff] sm:text-3xl">{pillar.name}</h3>
+              <p className="max-w-4xl text-sm leading-relaxed text-[#c4c8d8]">{pillar.description}</p>
+            </Link>
           ))}
         </div>
       </div>

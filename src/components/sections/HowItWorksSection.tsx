@@ -14,7 +14,7 @@ const STEPS = [
   {
     n: "02",
     title: "Run the cascade",
-    body: "106 modules organised into 12 cascade phases. Each module output is reviewed and approved by a human before the next module fires. Intelligence compounds — the Persona Builder informs the Messaging Architecture which informs the Campaign Plan which informs the Email Sequences.",
+    body: "A connected set of phases organised from research through campaign execution. Each output is reviewed and approved by a human before the next stage begins. Intelligence compounds only when quality is approved.",
   },
   {
     n: "03",

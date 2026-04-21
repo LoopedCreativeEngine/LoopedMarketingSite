@@ -4,13 +4,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 
-const NODES: { id: string; label: string; mono: string }[] = [
-  { id: "n1", label: "Event brief", mono: "event_brief" },
-  { id: "n2", label: "Industry intelligence", mono: "content_industry_intelligence" },
-  { id: "n3", label: "Market mapping", mono: "marketing_market_mapping" },
-  { id: "n4", label: "Persona builder", mono: "marketing_persona_builder" },
-  { id: "n5", label: "Messaging architecture", mono: "marketing_messaging_architecture" },
-  { id: "n6", label: "Campaign plan", mono: "marketing_campaign_plan" },
+const NODES: { id: string; label: string }[] = [
+  { id: "n1", label: "Event brief" },
+  { id: "n2", label: "Industry intelligence" },
+  { id: "n3", label: "Market mapping" },
+  { id: "n4", label: "Audience personas" },
+  { id: "n5", label: "Messaging strategy" },
+  { id: "n6", label: "Campaign plan" },
 ];
 
 export function CascadeDiagram({ expanded = false }: { expanded?: boolean }): React.ReactElement {
@@ -68,8 +68,7 @@ export function CascadeDiagram({ expanded = false }: { expanded?: boolean }): Re
               key={node.id}
               className="cascade-node rounded-xl border border-slate-700 bg-looped-card p-4 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
             >
-              <p className="module-id border-l-2 border-looped-violet-700 pl-2 text-[10px] text-violet-300/85">{node.mono}</p>
-              <p className="mt-3 text-sm font-medium text-slate-100">{node.label}</p>
+              <p className="text-sm font-medium text-slate-100">{node.label}</p>
             </div>
           ))}
         </div>

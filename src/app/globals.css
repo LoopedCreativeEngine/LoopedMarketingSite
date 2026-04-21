@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --looped-bg: #0a0a0f;
-  --looped-card: #11111a;
-  --looped-card-soft: #161622;
+  --looped-bg: #0f1117;
+  --looped-card: #1a1d27;
+  --looped-card-soft: #232735;
   --looped-violet-700: #4338ca;
   --looped-violet-glow: 0 0 0 1px rgba(67, 56, 202, 0.35), 0 16px 44px -12px rgba(67, 56, 202, 0.7);
+  --looped-text: #f8f9ff;
+  --looped-text-muted: #c4c8d8;
 }
 
 @theme inline {
@@ -25,7 +27,7 @@ html {
 
 body {
   background: var(--looped-bg);
-  color: #f8fafc;
+  color: var(--looped-text);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
 }
 
@@ -39,6 +41,10 @@ h4 {
 .module-id {
   font-family: var(--font-dm-mono), monospace;
   letter-spacing: 0.05em;
+}
+
+.text-muted {
+  color: var(--looped-text-muted);
 }
 
 .grain-overlay {
