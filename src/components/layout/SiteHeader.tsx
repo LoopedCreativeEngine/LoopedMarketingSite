@@ -32,7 +32,7 @@ export function SiteHeader(): React.ReactElement {
     <motion.header
       className={cn(
         "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300",
-        transparent ? "border-transparent bg-transparent" : "border-slate-200/80 bg-white/95 backdrop-blur-md",
+        transparent ? "border-transparent bg-transparent" : "border-white/10 bg-[#0b0b11]/92 backdrop-blur-md",
       )}
       layout
     >
@@ -41,7 +41,7 @@ export function SiteHeader(): React.ReactElement {
           href="/"
           className={cn(
             "text-sm font-semibold tracking-tight transition-colors",
-            transparent ? "text-white" : "text-slate-900",
+            transparent ? "text-white" : "text-white",
           )}
         >
           Looped
@@ -55,8 +55,8 @@ export function SiteHeader(): React.ReactElement {
                   <Link
                     href={l.href}
                     className={cn(
-                      "text-sm font-medium transition-colors hover:text-indigo-600",
-                      transparent ? "text-white/90" : "text-slate-600",
+                      "text-sm font-medium transition-colors hover:text-violet-300",
+                      transparent ? "text-white/90" : "text-slate-300",
                     )}
                   >
                     {l.label}
@@ -70,7 +70,7 @@ export function SiteHeader(): React.ReactElement {
         <div className="flex items-center gap-2">
           <Link
             href="/demo"
-            className="hidden cursor-pointer items-center rounded-lg bg-indigo-700 px-4 py-2 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02] md:inline-flex"
+            className="hidden cursor-pointer items-center rounded-lg bg-looped-violet-700 px-4 py-2 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02] md:inline-flex"
           >
             Book a demo
           </Link>
@@ -84,7 +84,7 @@ export function SiteHeader(): React.ReactElement {
                     "inline-flex cursor-pointer items-center justify-center rounded-lg border p-2 transition-colors",
                     transparent
                       ? "border-white/25 text-white hover:bg-white/10"
-                      : "border-slate-200 text-slate-800 hover:bg-slate-50",
+                      : "border-white/20 text-slate-100 hover:bg-white/10",
                   )}
                   aria-label="Open menu"
                 >
@@ -92,14 +92,14 @@ export function SiteHeader(): React.ReactElement {
                 </button>
               </Dialog.Trigger>
               <Dialog.Portal>
-                <Dialog.Overlay className="fixed inset-0 z-50 bg-slate-950/40" />
-                <Dialog.Content className="fixed right-0 top-0 z-50 flex h-full w-[min(100%,320px)] flex-col border-l border-slate-200 bg-white p-6 shadow-xl outline-none">
+                <Dialog.Overlay className="fixed inset-0 z-50 bg-slate-950/70" />
+                <Dialog.Content className="fixed right-0 top-0 z-50 flex h-full w-[min(100%,320px)] flex-col border-l border-white/10 bg-[#10101a] p-6 shadow-xl outline-none">
                   <div className="mb-8 flex items-center justify-between">
-                    <Dialog.Title className="text-lg font-semibold text-slate-900">Menu</Dialog.Title>
+                    <Dialog.Title className="text-lg font-semibold text-white">Menu</Dialog.Title>
                     <Dialog.Close asChild>
                       <button
                         type="button"
-                        className="cursor-pointer rounded-lg p-2 text-slate-500 hover:bg-slate-100 hover:text-slate-800"
+                        className="cursor-pointer rounded-lg p-2 text-slate-400 hover:bg-white/10 hover:text-white"
                         aria-label="Close menu"
                       >
                         <X className="h-5 w-5" />
@@ -109,7 +109,7 @@ export function SiteHeader(): React.ReactElement {
                   <div className="flex flex-col gap-4">
                     <Link
                       href="/"
-                      className="text-sm font-medium text-slate-700 hover:text-indigo-700"
+                      className="text-sm font-medium text-slate-300 hover:text-violet-300"
                       onClick={() => setMobileOpen(false)}
                     >
                       Home
@@ -118,7 +118,7 @@ export function SiteHeader(): React.ReactElement {
                       <Link
                         key={l.href}
                         href={l.href}
-                        className="text-sm font-medium text-slate-700 hover:text-indigo-700"
+                        className="text-sm font-medium text-slate-300 hover:text-violet-300"
                         onClick={() => setMobileOpen(false)}
                       >
                         {l.label}
@@ -126,7 +126,7 @@ export function SiteHeader(): React.ReactElement {
                     ))}
                     <Link
                       href="/demo"
-                      className="mt-2 inline-flex w-fit rounded-lg bg-indigo-700 px-4 py-2 text-sm font-semibold text-white"
+                      className="mt-2 inline-flex w-fit rounded-lg bg-looped-violet-700 px-4 py-2 text-sm font-semibold text-white"
                       onClick={() => setMobileOpen(false)}
                     >
                       Book a demo

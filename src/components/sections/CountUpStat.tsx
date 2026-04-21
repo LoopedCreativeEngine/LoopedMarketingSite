@@ -40,7 +40,7 @@ export function CountUpStat({
   return (
     <motion.div
       ref={ref}
-      className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm"
+      className="rounded-2xl border border-white/10 bg-looped-card p-6 text-center shadow-sm"
       initial={{ opacity: 0, y: 20, scale: 0.82, filter: "blur(8px)" }}
       animate={
         inView
@@ -49,13 +49,13 @@ export function CountUpStat({
       }
       transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
     >
-      <p className="font-mono text-3xl font-semibold tracking-tight text-indigo-800 sm:text-4xl">
+      <p className="font-serif text-3xl font-semibold tracking-tight text-violet-200 sm:text-4xl">
         {prefix}
         {text}
         {suffix}
       </p>
-      <p className="mt-3 text-sm font-semibold text-slate-900">{label}</p>
-      <p className="mt-2 text-xs leading-relaxed text-slate-600 sm:text-sm">{sub}</p>
+      <p className="mt-3 text-sm font-semibold text-slate-100">{label}</p>
+      <p className="mt-2 text-xs leading-relaxed text-slate-400 sm:text-sm">{sub}</p>
     </motion.div>
   );
 }

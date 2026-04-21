@@ -24,14 +24,14 @@ const items = [
 
 export function ProblemSection(): React.ReactElement {
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-looped-bg py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">The problem</p>
-          <h2 className="mt-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+          <p className="module-id text-center text-xs font-semibold uppercase tracking-wider text-violet-300">The problem</p>
+          <h2 className="mt-3 text-balance text-center text-3xl tracking-tight text-white sm:text-4xl">
             ChatGPT writes fast. Looped thinks first.
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+          <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-400 sm:text-base">
             Your team is already prompting their way through campaigns, briefs, and outreach. The problem isn&apos;t speed
             — it&apos;s that every prompt starts from scratch, with no shared context, no connection to what the rest of
             the team produced, and no memory of what worked last year.
@@ -41,11 +41,11 @@ export function ProblemSection(): React.ReactElement {
           {items.map((item) => (
             <RevealItem
               key={item.title}
-              className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 transition-shadow duration-200 hover:shadow-md"
+              className="rounded-2xl border border-white/10 bg-looped-card p-6 transition-shadow duration-200 hover:shadow-[var(--looped-violet-glow)]"
             >
-              <item.icon className="h-8 w-8 text-indigo-700" aria-hidden />
-              <h3 className="mt-4 text-lg font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.body}</p>
+              <item.icon className="h-8 w-8 text-violet-300" aria-hidden />
+              <h3 className="mt-4 text-lg text-slate-100">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">{item.body}</p>
             </RevealItem>
           ))}
         </RevealStagger>

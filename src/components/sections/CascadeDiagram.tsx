@@ -1,48 +1,78 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { Fragment, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
 const NODES: { id: string; label: string; mono: string }[] = [
-  { id: "n1", label: "Brief & targets", mono: "event_brief" },
-  { id: "n2", label: "Core intelligence", mono: "content_industry_intelligence" },
+  { id: "n1", label: "Event brief", mono: "event_brief" },
+  { id: "n2", label: "Industry intelligence", mono: "content_industry_intelligence" },
   { id: "n3", label: "Market mapping", mono: "marketing_market_mapping" },
-  { id: "n4", label: "Messaging architecture", mono: "marketing_messaging_architecture" },
-  { id: "n5", label: "Campaign plan", mono: "marketing_campaign_plan" },
-  { id: "n6", label: "Campaign-ready outputs", mono: "marketing_campaign_calendar" },
+  { id: "n4", label: "Persona builder", mono: "marketing_persona_builder" },
+  { id: "n5", label: "Messaging architecture", mono: "marketing_messaging_architecture" },
+  { id: "n6", label: "Campaign plan", mono: "marketing_campaign_plan" },
 ];
 
 export function CascadeDiagram({ expanded = false }: { expanded?: boolean }): React.ReactElement {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-10% 0px" });
-  const nodes = expanded ? NODES : NODES.slice(0, 5);
+  const ref = useRef<HTMLDivElement>(null);
+  const pathRef = useRef<SVGPathElement>(null);
+  const nodes = expanded ? NODES : NODES;
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".cascade-node",
+        { opacity: 0, y: 36 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.09,
+          scrollTrigger: { trigger: ref.current, start: "top 75%" },
+        },
+      );
+
+      if (pathRef.current) {
+        const length = pathRef.current.getTotalLength();
+        gsap.set(pathRef.current, { strokeDasharray: length, strokeDashoffset: length });
+        gsap.to(pathRef.current, {
+          strokeDashoffset: 0,
+          duration: 1.3,
+          ease: "none",
+          scrollTrigger: { trigger: ref.current, start: "top 72%" },
+        });
+      }
+    }, ref);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
     <div ref={ref} className="w-full overflow-x-auto pb-2">
-      <div className="flex min-w-[720px] flex-row flex-nowrap items-center justify-center gap-0 md:min-w-0">
-        {nodes.map((node, i) => (
-          <Fragment key={node.id}>
-            <motion.div
-              className="relative z-10 w-[150px] flex-shrink-0 rounded-xl border border-slate-200 bg-white p-3 text-center shadow-sm transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-md sm:w-[160px] sm:p-4"
-              initial={{ opacity: 0, y: 14 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.06 + i * 0.1, duration: 0.45 }}
+      <div className="relative min-w-[900px] md:min-w-0">
+        <svg viewBox="0 0 900 100" className="pointer-events-none absolute left-0 top-9 hidden h-12 w-full md:block" aria-hidden>
+          <path
+            ref={pathRef}
+            d="M 50 50 C 180 50, 210 50, 330 50 S 480 50, 610 50 S 760 50, 850 50"
+            fill="none"
+            stroke="#4338ca"
+            strokeWidth="1.5"
+            opacity="0.8"
+          />
+        </svg>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:gap-3">
+          {nodes.map((node) => (
+            <div
+              key={node.id}
+              className="cascade-node rounded-xl border border-slate-700 bg-looped-card p-4 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
             >
-              <p className="text-xs font-semibold text-slate-900 sm:text-sm">{node.label}</p>
-              <p className="mt-2 font-mono text-[10px] leading-snug text-indigo-700/90 sm:text-[11px]">{node.mono}</p>
-            </motion.div>
-            {i < nodes.length - 1 && (
-              <motion.div
-                className="mx-1 h-0.5 w-6 flex-shrink-0 rounded-full bg-gradient-to-r from-indigo-300 to-indigo-600 sm:mx-2 sm:w-10"
-                initial={{ scaleX: 0 }}
-                animate={inView ? { scaleX: 1 } : {}}
-                transition={{ duration: 0.45, delay: 0.18 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                style={{ transformOrigin: "left center" }}
-                aria-hidden
-              />
-            )}
-          </Fragment>
-        ))}
+              <p className="module-id border-l-2 border-looped-violet-700 pl-2 text-[10px] text-violet-300/85">{node.mono}</p>
+              <p className="mt-3 text-sm font-medium text-slate-100">{node.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

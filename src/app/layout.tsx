@@ -1,19 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Mono, DM_Sans, Fraunces } from "next/font/google";
 
+import { CustomCursor } from "@/components/effects/CustomCursor";
+import { GrainOverlay } from "@/components/effects/GrainOverlay";
+import { ScrollProgress } from "@/components/effects/ScrollProgress";
+import { SmoothScrollProvider } from "@/components/effects/SmoothScrollProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -28,11 +43,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): React.ReactElement {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}>
-      <body className="flex min-h-full flex-col bg-white font-sans text-slate-900">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+    <html lang="en" className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable} h-full scroll-smooth antialiased`}>
+      <body className="flex min-h-full flex-col bg-looped-bg font-sans text-slate-50">
+        <SmoothScrollProvider>
+          <ScrollProgress />
+          <CustomCursor />
+          <GrainOverlay />
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </SmoothScrollProvider>
       </body>
     </html>
   );

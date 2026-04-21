@@ -28,11 +28,11 @@ export function HowItWorksSection(): React.ReactElement {
   const inView = useInView(ref, { once: true, margin: "-12% 0px" });
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-looped-bg py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">How it works</p>
-          <h2 className="mt-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+          <p className="module-id text-center text-xs font-semibold uppercase tracking-wider text-violet-300">How it works</p>
+          <h2 className="mt-3 text-balance text-center text-3xl tracking-tight text-white sm:text-4xl">
             Brief in. Intelligence out. Team executes.
           </h2>
         </Reveal>
@@ -43,7 +43,7 @@ export function HowItWorksSection(): React.ReactElement {
           style={{ transformStyle: "preserve-3d" }}
         >
           <motion.div
-            className="pointer-events-none absolute left-[16%] right-[16%] top-10 hidden h-0.5 bg-gradient-to-r from-indigo-200 via-indigo-500 to-indigo-200 md:block"
+            className="pointer-events-none absolute left-[16%] right-[16%] top-10 hidden h-0.5 bg-gradient-to-r from-violet-900 via-violet-400 to-violet-900 md:block"
             initial={{ scaleX: 0 }}
             animate={inView ? { scaleX: 1 } : {}}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
@@ -53,15 +53,15 @@ export function HowItWorksSection(): React.ReactElement {
           {STEPS.map((s, i) => (
             <motion.div
               key={s.n}
-              className="relative rounded-2xl border border-slate-200 bg-slate-50/80 p-6"
+              className="relative rounded-2xl border border-white/10 bg-looped-card p-6"
               style={{ transformStyle: "preserve-3d", transformOrigin: "center top" }}
               initial={{ opacity: 0, y: 24, rotateX: 12 }}
               animate={inView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
               transition={{ delay: 0.12 + i * 0.15, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span className="font-mono text-xs font-semibold text-indigo-700">{s.n}</span>
-              <h3 className="mt-2 text-lg font-semibold text-slate-900">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-600">{s.body}</p>
+              <span className="module-id text-xs font-semibold text-violet-300">{s.n}</span>
+              <h3 className="mt-2 text-lg text-slate-100">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.body}</p>
             </motion.div>
           ))}
         </div>

@@ -32,14 +32,14 @@ const PLANS: Plan[] = [
 
 export function PricingSection(): React.ReactElement {
   return (
-    <section id="pricing" className="scroll-mt-24 bg-white py-20 sm:py-24">
+    <section id="pricing" className="scroll-mt-24 bg-[#0c0c12] py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">Pricing</p>
-          <h2 className="mt-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+          <p className="module-id text-center text-xs font-semibold uppercase tracking-wider text-violet-300">Pricing</p>
+          <h2 className="mt-3 text-balance text-center text-3xl tracking-tight text-white sm:text-4xl">
             Deployment pricing. No per-seat surprises.
           </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
+          <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-400 sm:text-base">
             One deployment fee to get you live. A monthly retainer for ongoing management and platform improvements. A
             small per-event setup fee as you onboard events. Your AI costs sit on your own API accounts — you see
             exactly what you spend, with no markup from us.
@@ -50,18 +50,18 @@ export function PricingSection(): React.ReactElement {
           {PLANS.map((p) => (
             <RevealItem
               key={p.name}
-              className="flex flex-col rounded-2xl border border-slate-200 bg-slate-50/60 p-8 shadow-sm transition-shadow duration-200 hover:shadow-md"
+              className="flex flex-col rounded-2xl border border-white/10 bg-looped-card p-8 shadow-sm transition-shadow duration-200 hover:shadow-[var(--looped-violet-glow)]"
             >
-              <h3 className="text-xl font-semibold text-slate-900">{p.name}</h3>
+              <h3 className="text-2xl text-white">{p.name}</h3>
               <dl className="mt-6 space-y-4">
                 {p.lines.map((row) => (
                   <div key={row.k}>
-                    <dt className="text-xs font-semibold uppercase tracking-wide text-slate-500">{row.k}</dt>
-                    <dd className="mt-1 font-mono text-sm font-semibold text-indigo-900">{row.v}</dd>
+                    <dt className="module-id text-xs font-semibold uppercase tracking-wide text-slate-400">{row.k}</dt>
+                    <dd className="mt-1 font-serif text-2xl text-violet-200">{row.v}</dd>
                   </div>
                 ))}
               </dl>
-              {p.foot ? <p className="mt-6 text-sm leading-relaxed text-slate-600">{p.foot}</p> : null}
+              {p.foot ? <p className="mt-6 text-sm leading-relaxed text-slate-400">{p.foot}</p> : null}
             </RevealItem>
           ))}
         </RevealStagger>
@@ -77,7 +77,7 @@ export function PricingSection(): React.ReactElement {
         <Reveal className="mt-12 text-center">
           <Link
             href="/demo"
-            className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
+            className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
           >
             Book a demo to discuss your portfolio
           </Link>

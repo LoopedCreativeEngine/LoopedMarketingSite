@@ -1,9 +1,8 @@
 "use client";
 
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { useRef } from "react";
-
-import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useRef } from "react";
 
 const PILLARS = [
   {
@@ -44,67 +43,54 @@ const PILLARS = [
   },
 ];
 
-function PillarCard({ pillar }: { pillar: (typeof PILLARS)[0] }): React.ReactElement {
-  const ref = useRef<HTMLDivElement>(null);
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const rotateX = useSpring(useTransform(my, [-0.5, 0.5], [10, -10]), { stiffness: 280, damping: 26 });
-  const rotateY = useSpring(useTransform(mx, [-0.5, 0.5], [-12, 12]), { stiffness: 280, damping: 26 });
-
-  const handleMove = (e: React.MouseEvent<HTMLDivElement>): void => {
-    const el = ref.current;
-    if (!el) return;
-    const r = el.getBoundingClientRect();
-    mx.set((e.clientX - r.left) / r.width - 0.5);
-    my.set((e.clientY - r.top) / r.height - 0.5);
-  };
-
-  const handleLeave = (): void => {
-    mx.set(0);
-    my.set(0);
-  };
-
-  return (
-    <motion.article
-      ref={ref}
-      layout
-      className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow duration-200 hover:border-indigo-300 hover:shadow-md"
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      onMouseMove={handleMove}
-      onMouseLeave={handleLeave}
-      whileHover={{ y: -3 }}
-      transition={{ type: "spring", stiffness: 420, damping: 28 }}
-    >
-      <h3 className="text-lg font-semibold text-slate-900">{pillar.name}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-slate-600">{pillar.description}</p>
-      <p className="mt-4 inline-flex rounded-full bg-indigo-50 px-3 py-1 font-mono text-xs font-semibold text-indigo-800">
-        {pillar.tag}
-      </p>
-    </motion.article>
-  );
-}
-
 export function PillarsSection(): React.ReactElement {
+  const ref = useRef<HTMLElement>(null);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      gsap.utils.toArray<HTMLElement>(".pillar-band").forEach((el, i) => {
+        gsap.fromTo(
+          el,
+          { opacity: 0, x: i % 2 === 0 ? -80 : 80 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            scrollTrigger: { trigger: el, start: "top 82%" },
+          },
+        );
+      });
+    }, ref);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="bg-white py-20 sm:py-24 [perspective:1400px]">
+    <section ref={ref} className="bg-looped-bg py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="text-center text-xs font-semibold uppercase tracking-wider text-indigo-700">Six team workspaces</p>
-          <h2 className="mt-3 text-balance text-center text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+        <p className="module-id text-center text-xs font-semibold uppercase tracking-wider text-violet-300">Six team workspaces</p>
+        <h2 className="mt-3 text-balance text-center text-3xl italic tracking-tight text-white sm:text-4xl">
             One platform. Every team that runs your events.
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
-            Each pillar has its own intelligence thread. The intelligence each team produces is available to every other
-            team working on the same event. No briefing each other. No duplication. The system is the shared context.
-          </p>
-        </Reveal>
-        <RevealStagger className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        </h2>
+        <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-400 sm:text-base">
+          Each pillar has its own intelligence thread. The intelligence each team produces is available to every other
+          team working on the same event. No briefing each other. No duplication. The system is the shared context.
+        </p>
+        <div className="mt-14 space-y-3">
           {PILLARS.map((pillar) => (
-            <RevealItem key={pillar.name}>
-              <PillarCard pillar={pillar} />
-            </RevealItem>
+            <article
+              key={pillar.name}
+              className="pillar-band group flex items-center justify-between overflow-hidden rounded-xl border border-white/10 bg-gradient-to-r from-[#12121d] to-[#191933] px-5 py-5 transition-all duration-300 hover:from-[#1a1a2d] hover:to-[#23234a] hover:py-7"
+            >
+              <div>
+                <h3 className="text-2xl italic text-white sm:text-3xl">{pillar.name}</h3>
+                <p className="mt-2 max-w-4xl text-sm text-slate-300">{pillar.description}</p>
+              </div>
+              <span className="module-id shrink-0 rounded-full border border-looped-violet-700/60 bg-looped-violet-700/20 px-3 py-1 text-xs text-violet-200 transition-opacity duration-300 group-hover:opacity-100 md:opacity-70">
+                {pillar.tag}
+              </span>
+            </article>
           ))}
-        </RevealStagger>
+        </div>
       </div>
     </section>
   );
