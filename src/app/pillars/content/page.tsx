@@ -4,6 +4,7 @@ export default function ContentPillarPage(): React.ReactElement {
   return (
     <PillarPage
       title="Content"
+      tensionStatement="The agenda your audience actually wants — not the one that felt safe last year."
       seatLine="For the content lead shaping programme quality while speaker markets, buyer priorities, and story angles keep moving."
       challenges={[
         "Content teams are asked to set the event narrative early, often before the market has settled. You are balancing sponsor expectations, attendee demand, and editorial standards with limited time to validate what matters now.",

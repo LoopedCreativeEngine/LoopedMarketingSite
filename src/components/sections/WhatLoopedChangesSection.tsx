@@ -1,42 +1,52 @@
 "use client";
 
+import { Briefcase, Clock3, Database, FileClock, ListChecks, Megaphone, Users } from "lucide-react";
+
 import { Reveal } from "@/components/motion/Reveal";
 
 const TIME_ITEMS = [
   {
-    title: "Manually researching your sector before every campaign",
-    body: "Hours in Google, in ChatGPT, across competitor websites — assembling context that should already exist. Looped builds sector intelligence, competitor analysis, and market mapping once, approved by your team, available to every module that follows.",
+    icon: Clock3,
+    title: "Research time disappears",
+    body: "Looped builds approved sector and competitor intelligence once, then every team works from it.",
   },
   {
-    title: "Briefing the same context repeatedly across departments",
-    body: "Your marketing manager knows things your content team doesn't. Your telesales team doesn't have what sponsorship knows. Approved intelligence flows to every pillar automatically — no briefing meetings to share what one team already knows.",
+    icon: Users,
+    title: "Briefings stop repeating",
+    body: "Shared approved context flows to each pillar automatically, so teams stop re-explaining the same event story.",
   },
   {
-    title: "Starting from scratch in ChatGPT for every piece of copy",
-    body: "Generic outputs because there's no event context. No memory of your audience, your messaging strategy, or last week's decisions. Looped's copy modules are briefed by approved intelligence before they write a word.",
+    icon: Briefcase,
+    title: "Copy starts from context",
+    body: "Campaign drafts inherit audience, messaging, and prior decisions instead of starting from blank prompts.",
   },
   {
-    title: "Compiling weekly reports across events",
-    body: "Manual aggregation of what happened this week. Looped's weekly digest does this automatically — per event, per brand, per portfolio — surfacing only what genuinely needs your attention.",
+    icon: FileClock,
+    title: "Weekly reporting is automated",
+    body: "Digest views roll up key changes by event and portfolio without manual status compiling.",
   },
   {
-    title: "Onboarding new team members to event context",
-    body: "Every time someone joins a project, they start without context. In Looped, every approved output is there — the research, the strategy, the decisions made. New team members work from the same intelligence as the director who's been on the event for six months.",
+    icon: ListChecks,
+    title: "Onboarding gets instant context",
+    body: "New joiners open one source of approved intelligence and operate like tenured team members faster.",
   },
 ];
 
 const TOOL_ITEMS = [
   {
-    title: "Your data lists work harder — not replaced",
-    body: "You still run your own Cognism or Apollo account. What changes is the brief behind every pull. Instead of a generic sector search, Looped tells your data tool exactly who to find — scoped to your event audience, built from approved persona profiles. Same subscription, dramatically better lists.",
+    icon: Database,
+    title: "Data tools pull better lists",
+    body: "Cognism and Apollo stay in place, but every pull is briefed by approved personas and targeting logic.",
   },
   {
-    title: "Outbound calling becomes a choice, not a constraint",
-    body: "Right now your team calls in-house or through an agency — because there's no better option. Looped connects to Retell voice agents that are briefed entirely from your platform intelligence. Personas, objections, pricing, agenda highlights — all injected automatically. Run it when it makes sense. Your existing callers still work alongside it.",
+    icon: Megaphone,
+    title: "Outbound becomes optional",
+    body: "In-house reps, agencies, and voice agents run from the same approved brief so quality stays consistent.",
   },
   {
-    title: "Social scheduling stays — the content it schedules gets better",
-    body: "Looped doesn't replace your scheduling tool. It produces the content your scheduling tool posts — organic calendars, social copy, campaign assets — all briefed from your approved messaging strategy rather than written from scratch each time.",
+    icon: Users,
+    title: "Scheduling tools get stronger content",
+    body: "Your existing scheduler posts content generated from approved messaging rather than ad-hoc drafting.",
   },
 ];
 
@@ -53,15 +63,16 @@ export function WhatLoopedChangesSection(): React.ReactElement {
           </p>
         </Reveal>
 
-        <div className="mt-12 space-y-12">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <div>
             <Reveal>
               <h3 className="font-serif text-2xl italic text-[#f8f9ff]">Time your team spends that Looped handles</h3>
             </Reveal>
             <div className="mt-6 space-y-4">
               {TIME_ITEMS.map((item) => (
-                <Reveal key={item.title} className="rounded-xl border border-white/10 bg-looped-card p-5">
-                  <h4 className="text-lg text-[#f8f9ff]">{item.title}</h4>
+                <Reveal key={item.title} className="rounded-xl border border-white/10 bg-[#161926] p-5">
+                  <item.icon className="h-5 w-5 text-violet-300" aria-hidden />
+                  <h4 className="mt-3 text-lg text-[#f8f9ff]">{item.title}</h4>
                   <p className="mt-2 text-sm leading-relaxed text-[#c4c8d8]">{item.body}</p>
                 </Reveal>
               ))}
@@ -72,11 +83,12 @@ export function WhatLoopedChangesSection(): React.ReactElement {
             <Reveal>
               <h3 className="font-serif text-2xl italic text-[#f8f9ff]">Tools that go or work harder</h3>
             </Reveal>
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="mt-6 space-y-4">
               {TOOL_ITEMS.map((item) => (
-                <Reveal key={item.title} className="rounded-xl border border-white/10 bg-looped-card p-5">
-                  <h4 className="text-lg text-[#f8f9ff]">{item.title}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-[#c4c8d8]">{item.body}</p>
+                <Reveal key={item.title} className="rounded-xl border border-violet-200/20 bg-[#23283a] p-5">
+                  <item.icon className="h-5 w-5 text-violet-200" aria-hidden />
+                  <h4 className="mt-3 text-lg text-[#f8f9ff]">{item.title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-[#d4d8e6]">{item.body}</p>
                 </Reveal>
               ))}
             </div>

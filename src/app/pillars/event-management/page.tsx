@@ -4,6 +4,7 @@ export default function EventManagementPillarPage(): React.ReactElement {
   return (
     <PillarPage
       title="Event Management"
+      tensionStatement="The problems that kill events don't announce themselves. Looped spots them early."
       seatLine="For event managers carrying delivery risk, stakeholder pressure, and constant operational change."
       challenges={[
         "Event management teams operate where strategic choices become operational reality. Small signal misses become expensive quickly: judge pipeline gaps, supplier timing slips, or registration shifts that alter staffing needs.",

@@ -2,8 +2,25 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { AnimatePresence, animate, motion } from "framer-motion";
+import { useEffect } from "react";
 
 import { Reveal } from "@/components/motion/Reveal";
+
+function AnimatedCurrency({ value }: { value: number }): React.ReactElement {
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    const controls = animate(0, value, {
+      duration: 1.6,
+      ease: [0.22, 1, 0.36, 1],
+      onUpdate: (latest) => setDisplay(Math.round(latest)),
+    });
+    return () => controls.stop();
+  }, [value]);
+
+  return <>{display.toLocaleString("en-GB")}</>;
+}
 
 export function ROICalculatorSection(): React.ReactElement {
   const [eventsPerYear, setEventsPerYear] = useState(10);
@@ -11,6 +28,7 @@ export function ROICalculatorSection(): React.ReactElement {
   const [dayRate, setDayRate] = useState(350);
   const [callingAgency, setCallingAgency] = useState(true);
   const [dataLists, setDataLists] = useState(true);
+  const hasInputs = eventsPerYear > 0 && peoplePerEvent > 0 && dayRate > 0;
 
   const result = useMemo(() => {
     const daysPerEvent = 4 + 3 + 2 + 6;
@@ -109,34 +127,48 @@ export function ROICalculatorSection(): React.ReactElement {
             </div>
           </div>
 
-          <div className="mt-8 rounded-xl border border-looped-violet-700/40 bg-[#151826] p-5">
-            <p className="text-sm text-[#f8f9ff]">
-              Based on your numbers, Looped could free up the equivalent of{" "}
-              <span className="font-semibold text-violet-300">{result.daysPerEvent} days</span> of team time per event.
-            </p>
-            <p className="mt-2 text-sm text-[#f8f9ff]">
-              Across <span className="font-semibold text-violet-300">{eventsPerYear} events</span>, that&apos;s{" "}
-              <span className="font-semibold text-violet-300">{result.totalDays} days</span> per year.
-            </p>
-            <p className="mt-2 text-sm text-[#f8f9ff]">
-              At <span className="font-semibold text-violet-300">£{dayRate.toLocaleString("en-GB")}</span> per day,
-              that&apos;s{" "}
-              <span className="font-semibold text-violet-300">£{result.annualValue.toLocaleString("en-GB")}</span> of
-              senior team time redirected to higher-value work.
-            </p>
-            {callingAgency ? (
-              <p className="mt-4 text-sm text-[#c4c8d8]">
-                Plus the option to run automated voice campaigns alongside or instead of agency calling when volume
-                justifies it.
-              </p>
+          <AnimatePresence mode="wait">
+            {hasInputs ? (
+              <motion.div
+                key="results"
+                initial={{ opacity: 0, y: 18, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-8 rounded-xl border border-looped-violet-700/50 bg-[#151826] p-5 shadow-[var(--looped-violet-glow)]"
+              >
+                <p className="text-xs uppercase tracking-[0.18em] text-violet-200/80">Projected annual value redirected</p>
+                <p className="mt-2 font-serif text-4xl text-violet-200 sm:text-5xl">
+                  £<AnimatedCurrency key={result.annualValue} value={result.annualValue} />
+                </p>
+                <p className="mt-4 text-sm text-[#f8f9ff]">
+                  Based on your numbers, Looped could free up the equivalent of{" "}
+                  <span className="font-semibold text-violet-300">{result.daysPerEvent} days</span> of team time per
+                  event.
+                </p>
+                <p className="mt-2 text-sm text-[#f8f9ff]">
+                  Across <span className="font-semibold text-violet-300">{eventsPerYear} events</span>, that&apos;s{" "}
+                  <span className="font-semibold text-violet-300">{result.totalDays} days</span> per year.
+                </p>
+                <p className="mt-2 text-sm text-[#f8f9ff]">
+                  At <span className="font-semibold text-violet-300">£{dayRate.toLocaleString("en-GB")}</span> per
+                  day, that&apos;s senior team time redirected to higher-value work.
+                </p>
+                {callingAgency ? (
+                  <p className="mt-4 text-sm text-[#c4c8d8]">
+                    Plus the option to run automated voice campaigns alongside or instead of agency calling when volume
+                    justifies it.
+                  </p>
+                ) : null}
+                {dataLists ? (
+                  <p className="mt-2 text-sm text-[#c4c8d8]">
+                    Plus every data pull becoming precision-targeted rather than manually filtered — same subscription,
+                    better results.
+                  </p>
+                ) : null}
+              </motion.div>
             ) : null}
-            {dataLists ? (
-              <p className="mt-2 text-sm text-[#c4c8d8]">
-                Plus every data pull becoming precision-targeted rather than manually filtered — same subscription,
-                better results.
-              </p>
-            ) : null}
-          </div>
+          </AnimatePresence>
 
           <p className="mt-5 text-xs leading-relaxed text-[#c4c8d8]">
             These are estimates based on conservative assumptions about time displaced. Your actual results will depend

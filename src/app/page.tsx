@@ -1,5 +1,7 @@
 import { AiProblemSplitSection } from "@/components/sections/AiProblemSplitSection";
+import { CascadeBreakoutSection } from "@/components/sections/CascadeBreakoutSection";
 import { CascadeVsPromptingSection } from "@/components/sections/CascadeVsPromptingSection";
+import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { OptionalAutomationSection } from "@/components/sections/OptionalAutomationSection";
 import { PillarsSection } from "@/components/sections/PillarsSection";
@@ -17,11 +19,13 @@ export default function HomePage(): React.ReactElement {
       <WhatLoopedChangesSection />
       <ProactiveIntelligenceSection />
       <CascadeVsPromptingSection />
+      <CascadeBreakoutSection />
       <RaiseBarSection />
       <OptionalAutomationSection />
       <PillarsSection />
       <ROICalculatorSection />
       <PricingSection />
+      <FinalCTASection />
     </>
   );
 }

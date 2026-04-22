@@ -4,6 +4,7 @@ export default function PortfolioPillarPage(): React.ReactElement {
   return (
     <PillarPage
       title="Portfolio Directors"
+      tensionStatement="You can't see across your portfolio if every event is an island."
       seatLine="For portfolio leaders responsible for performance across multiple events, teams, and commercial models."
       challenges={[
         "Portfolio directors rarely suffer from lack of data; they suffer from delayed, fragmented, and non-comparable data. Each event team reports differently, and by the time patterns appear, planning cycles are already committed.",

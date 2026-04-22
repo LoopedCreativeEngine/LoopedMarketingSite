@@ -4,6 +4,7 @@ export default function SponsorshipPillarPage(): React.ReactElement {
   return (
     <PillarPage
       title="Sponsorship"
+      tensionStatement="Generic proposals lose deals. Looped builds proposals around what each sponsor actually cares about."
       seatLine="For sponsorship teams that need proposals tied to real buyer demand, not recycled decks and hopeful positioning."
       challenges={[
         "Sponsorship teams are usually selling under pressure: outreach targets are live, inventory is fixed, and prospects expect immediate relevance. Generic decks rarely survive first contact with a serious buyer.",

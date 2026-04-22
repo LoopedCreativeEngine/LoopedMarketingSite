@@ -36,13 +36,15 @@ export function CascadeVsPromptingSection(): React.ReactElement {
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {cards.map((card) => (
+          {cards.map((card, index) => (
             <Reveal
               key={card.title}
               className={`rounded-2xl border p-6 ${
                 card.highlighted
-                  ? "border-looped-violet-700 bg-looped-card shadow-[var(--looped-violet-glow)]"
-                  : "border-white/10 bg-looped-card"
+                  ? "border-violet-400/80 bg-[#1c1f31] shadow-[0_0_0_1px_rgba(167,139,250,0.5),0_14px_28px_-20px_rgba(167,139,250,0.8)] md:-mt-2 md:scale-[1.03]"
+                  : index === 0
+                    ? "border-white/10 bg-[#171a24]"
+                    : "border-white/10 bg-[#1c2030]"
               }`}
             >
               <card.icon className={`h-7 w-7 ${card.highlighted ? "text-violet-300" : "text-[#c4c8d8]"}`} aria-hidden />

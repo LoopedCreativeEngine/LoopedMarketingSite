@@ -4,6 +4,7 @@ export default function TelesalesPillarPage(): React.ReactElement {
   return (
     <PillarPage
       title="Telesales"
+      tensionStatement="Your callers are only as good as their brief. Looped makes the brief."
       seatLine="For telesales leaders who need better call quality, clearer targeting, and less wasted dial time."
       challenges={[
         "Telesales teams often inherit campaigns with weak context. Lists are broad, scripts are generic, and objections are discovered in real time on calls instead of being prepared in advance.",

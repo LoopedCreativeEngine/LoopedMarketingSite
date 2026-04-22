@@ -4,6 +4,7 @@ export default function MarketingPillarPage(): React.ReactElement {
   return (
     <PillarPage
       title="Marketing"
+      tensionStatement="Your team is briefing ChatGPT from scratch every morning. Looped ends that."
       seatLine="For the marketer trying to hit registration and revenue targets without rebuilding strategy from zero every campaign."
       challenges={[
         "Most event marketing teams spend the first weeks of every launch rebuilding context: what's changed in the market, what competitors are pushing, where audience appetite is moving, and which messages still convert. By the time that work is done, campaign windows are tighter than they should be.",

@@ -25,7 +25,6 @@ export function PricingSection(): React.ReactElement {
     <section id="pricing" className="scroll-mt-24 bg-[#0c0c12] py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="module-id text-center text-xs font-semibold uppercase tracking-wider text-violet-300">Pricing</p>
           <h2 className="mt-3 text-balance text-center text-3xl tracking-tight text-white sm:text-4xl">
             Pricing available on request.
           </h2>
@@ -84,11 +83,14 @@ export function PricingSection(): React.ReactElement {
         </Reveal>
 
         <Reveal className="mt-12 text-center">
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-[#c4c8d8]">
+            We work with a small number of event organisations. If Looped is right for you, we&apos;ll know quickly.
+          </p>
           <Link
             href="/demo"
-            className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
+            className="mt-5 inline-flex cursor-pointer items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
           >
-            Book a demo to discuss your portfolio
+            Talk to us about your portfolio
           </Link>
         </Reveal>
       </div>

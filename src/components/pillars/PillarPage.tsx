@@ -4,6 +4,7 @@ import { Reveal } from "@/components/motion/Reveal";
 
 type PillarPageProps = {
   title: string;
+  tensionStatement: string;
   seatLine: string;
   challenges: string[];
   howItWorks: string[];
@@ -13,6 +14,7 @@ type PillarPageProps = {
 
 export function PillarPage({
   title,
+  tensionStatement,
   seatLine,
   challenges,
   howItWorks,
@@ -24,6 +26,7 @@ export function PillarPage({
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <h1 className="text-5xl tracking-tight text-[#f8f9ff]">{title}</h1>
+          <p className="mt-5 max-w-4xl font-serif text-3xl tracking-tight text-violet-200 sm:text-4xl">{tensionStatement}</p>
           <p className="mt-4 text-lg text-[#c4c8d8]">{seatLine}</p>
         </Reveal>
 
