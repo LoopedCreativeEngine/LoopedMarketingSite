@@ -75,12 +75,17 @@ export function HeroSection(): React.ReactElement {
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 pb-28 pt-12 text-center sm:px-6 lg:px-8">
         <h1 className="text-balance tracking-tight">
-          <span className="block text-4xl font-light text-white sm:text-5xl md:text-6xl">Your events team is already using AI.</span>
-          <span className="mt-2 block text-4xl font-bold text-looped-violet-700 sm:text-5xl md:text-6xl">Just not like this.</span>
+          <span className="block text-4xl font-light text-white sm:text-5xl md:text-6xl">
+            Your team is already using AI.
+          </span>
+          <span className="mt-2 block text-4xl font-bold text-looped-violet-700 sm:text-5xl md:text-6xl">
+            Now give it something worth working with.
+          </span>
         </h1>
         <p ref={subheadRef} className="mx-auto mt-6 max-w-3xl text-pretty text-lg leading-[1.75] text-[#c4c8d8] sm:text-xl">
-          Looped is the intelligence platform built for conference and awards organisers. A cascade of AI agents —
-          each approved by your team — that compounds intelligence from research to revenue.
+          Looped is an AI intelligence operating system built exclusively for conference and awards organiser teams.
+          Not a writing tool. Not another agent builder. The strategic foundation that makes every output and every
+          team member better informed.
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <Link

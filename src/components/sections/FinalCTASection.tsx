@@ -10,7 +10,7 @@ export function FinalCTASection(): React.ReactElement {
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
         <Reveal>
           <h2 className="font-serif text-balance text-4xl tracking-tight text-white sm:text-5xl">
-            Built for the teams running the UK&apos;s best B2B conferences and awards.
+            Designed with and for event organiser teams at the UK&apos;s leading B2B event publishers.
           </h2>
           <Link
             href="/demo"
