@@ -10,8 +10,9 @@ export default function HowItWorksPage(): React.ReactElement {
         <Reveal>
           <h1 className="text-4xl font-semibold tracking-tight text-[#f8f9ff]">How Looped works</h1>
           <p className="mt-6 text-base leading-relaxed text-[#c4c8d8]">
-            A connected cascade across six team pillars. Every approved output informs the next decision. Human approval
-            gates between every phase.
+            A connected cascade builds and validates your event context across six team pillars, then feeds it live to
+            the agents that surface decisions, draft outreach and score leads. Your team approves what matters, and the
+            intelligence gets sharper every edition.
           </p>
         </Reveal>
       </div>
@@ -30,11 +31,14 @@ export default function HowItWorksPage(): React.ReactElement {
 
       <div className="mx-auto mt-14 max-w-3xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-2xl font-semibold text-[#f8f9ff]">The 12-phase cascade</h2>
+          <h2 className="text-2xl font-semibold text-[#f8f9ff]">The cascade builds and validates your context</h2>
           <p className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            Modules are organised into 12 cascade phases, from market intelligence through to post-event learning.
-            Each phase unlocks when the previous phase&apos;s outputs are approved. You cannot run campaign execution until
-            audience and messaging decisions are approved first. The sequence is enforced by design.
+            The cascade is how Looped builds and validates the context that makes the agents intelligent. Each stage
+            enriches and pressure-tests what came before, the speakers, the segments, the signals, the commercial
+            picture, so the picture sharpens rather than drifts. That validated context then flows live to the agents
+            that surface the decisions to make, draft the outreach and score the leads, updating as the event moves. The
+            result feels less like a process you grind through, or a blank prompt you feed from scratch, and more like an
+            always-on intelligence layer that gets sharper every edition.
           </p>
         </Reveal>
       </div>

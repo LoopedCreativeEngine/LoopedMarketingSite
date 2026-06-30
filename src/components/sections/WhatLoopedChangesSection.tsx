@@ -11,7 +11,7 @@ const STEPS = [
   },
   {
     title: "Surface",
-    body: `It works the whole lifecycle continuously, surfacing synthesised intelligence and clear options while the moment is still live, not weeks later when it's already passed.`,
+    body: `It builds and validates your event context as the lifecycle moves, then surfaces the intelligence and the options live, while the moment can still change the outcome, not weeks later when it has already passed.`,
   },
   {
     title: "Act",

@@ -20,7 +20,7 @@ const cards = [
   {
     icon: GitBranch,
     title: "Looped",
-    body: `Domain-tuned intelligence cascading across every pillar and every event, building an event brain that gets sharper each cycle, so you never start from zero again.`,
+    body: `Domain-tuned intelligence that builds and validates your context across every pillar and event, then feeds it live to the agents that surface decisions and draft the work. An event brain that sharpens each cycle, so you never start from zero.`,
     highlighted: true,
   },
 ];
