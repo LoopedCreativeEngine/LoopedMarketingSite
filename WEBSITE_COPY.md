@@ -1,6 +1,12 @@
-# Looped Website Copy Deck (v7, launch)
+# Looped Website Copy Deck (v8, launch)
 
-**Supersedes v6. This pass removes every em-dash and rewrites the phrasings that read as machine-written, keeping all meaning and the approved lines.** Built around Natalie's section-by-section feedback and the site audit (the site already exists, copy-complete, 12 homepage sections plus 6 pillar pages). This deck is the target messaging: the build worker reads each existing section, then replaces its copy with the below. It also specifies the lead capture that's currently missing.
+**Supersedes v7** (adds the END-GAME framing rule, the Event Tech Live benchmark section + woven stats, and the compliance guardrail). This deck is the target messaging: the build worker reads each existing section, then replaces its copy with the below, and builds the new pages.
+
+**END-GAME FRAMING (read first):** Build the site describing the full platform as complete and present-tense. Cover everything marked LIVE *and* PARTIAL in `docs/CAPABILITY_INVENTORY.md` (the PARTIAL items are being wired now and will all land). That inventory, copied into this repo, is the **source of truth** for the Platform page and the six pillar pages: pull capability detail from it, do not invent features. Exclude items marked ROADMAP unless explicitly confirmed as committed.
+
+**COMPLIANCE GUARDRAIL (non-negotiable):** Do not assert specific legal/regulatory compliance for any feature whose compliance gate is not built. In particular, for voice agents: describe the capability (AI voice support for telesales) but do NOT claim "compliant by default", "DNC/consent handled", "inbound", or "discloses it's an AI" until those gates are live. Capability yes; unearned legal claim no.
+
+**CITATION + COMPETITOR CAUTION:** Where stats from the Event Tech Live benchmark are used, show a visible source line crediting *Event Tech Live, The State of AI in Event Technology (Parry, 2026)* linked to eventtechlive.com, and cite aggregate findings only. NEVER reproduce the report's winners list or any named supplier from it on the site (it names a direct competitor as a winner). Aggregate findings only.
 
 **Three audiences every section must serve:**
 1. **Enterprise buyers** (portfolio directors, commercial leads at large event publishers): scale, ROI, compliance, portfolio-wide intelligence.
@@ -49,6 +55,29 @@ That's fair enough. Event professionals shouldn't have to become tech experts ov
 
 **The answer (right side of the split):**
 One platform that carries all of that for them. Purpose-built, easy to use, and legally compliant, holding the intelligence so your team doesn't have to keep it in their heads or rebuild it every cycle. It works whatever the level of skill, brand or sector experience on the team, and it gets sharper with every edition. The intelligence lives in the platform and compounds. It doesn't walk out the door when someone leaves.
+
+---
+
+## 2B. WHY NOW  *(NEW. Industry-benchmark credibility anchor. Place after the Problem, before the Shift. Stats need a visible source line; aggregate findings only, no supplier names)*
+
+**Heading:**
+## The industry's own benchmark already describes Looped.
+
+**Body:**
+The first independent benchmark of AI in events, Event Tech Live's State of AI in Event Technology, reached three conclusions. AI has stopped being a feature bolted on and become the infrastructure event products run on. Most of that AI runs on rented intelligence, so the real advantage is no longer "we use AI", it's proprietary event data and deep workflow integration. And governance, the thing everyone worried about, has quietly become the floor.
+
+Read those back and they describe Looped: built on your data, embedded in your workflow, grounded and governed by design.
+
+Then comes the finding that matters most. The industry can build, but it can't yet prove the build pays. Across 85 adjudicated products, almost all quoted a number, but only a handful could attach real money to it, and "results" scored lowest of everything judged. The benchmark calls it the proof gap. Tellingly, the most proven AI was operational and commercial, content, marketing, registration, sponsorship, lead capture, and the least proven was the attendee-facing magic the marketing usually leads with.
+
+That is the ground Looped is built on. Not the attendee gimmicks that score worst, but the operational and commercial work that already pays, designed from the start to tie intelligence to a commercial outcome and to evidence it honestly: observed, not projected; and when it doesn't know, it says so.
+
+**Stat callouts (each with the source line below):**
+- 64 of 85 event-AI products run on third-party models. The advantage is data and workflow, not the model.
+- Only 11 of 85 could attach a real financial figure to their impact. That's the proof gap.
+- The most proven AI in events is operational and commercial, exactly where Looped works.
+
+**Source line (visible, linked):** Source: Event Tech Live, The State of AI in Event Technology, First Edition (Parry, 2026). eventtechlive.com
 
 ---
 
@@ -139,7 +168,7 @@ It's no longer a question of return on investment. It's return on intention and 
 
 - **Built for events, not adapted to them.** Tuned to how conference and awards businesses actually run: the campaign timings, the commercial motions, the language of the trade.
 - **Grounded in context, so it doesn't hallucinate.** Looped works from your real event data, not a blank prompt. When the data isn't there, it tells you plainly instead of inventing a statistic, a name or a number to look complete. No hallucinations. No AI slop.
-- **Guardrails and compliance built in.** Enterprise-grade guardrails and a legally compliant approach to AI use, so the intelligence is something your business can stand behind rather than a governance risk waiting to happen.
+- **Guardrails and compliance built in.** The industry benchmark found governance is now the floor, so the real question isn't whether a platform has guardrails, it's how it knows they work. Looped grounds every output in your approved data, keeps a human at every decision that carries a consequence, and logs the lot. Enterprise-grade by design, not a governance risk waiting to happen.
 - **A smaller stack, not a bigger one.** One platform replacing a sprawl of point tools: fewer logins, fewer bills, and intelligence that finally compounds.
 
 ---

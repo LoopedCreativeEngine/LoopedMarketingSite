@@ -13,7 +13,7 @@ const points = [
   },
   {
     title: `Guardrails and compliance built in.`,
-    body: `Enterprise-grade guardrails and a legally compliant approach to AI use, so the intelligence is something your business can stand behind rather than a governance risk waiting to happen.`,
+    body: `The industry benchmark found governance is now the floor, so the real question isn't whether a platform has guardrails, it's how it knows they work. Looped grounds every output in your approved data, keeps a human at every decision that carries a consequence, and logs the lot. Enterprise-grade by design, not a governance risk waiting to happen.`,
   },
   {
     title: `A smaller stack, not a bigger one.`,

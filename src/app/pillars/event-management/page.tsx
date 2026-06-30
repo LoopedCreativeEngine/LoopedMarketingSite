@@ -16,11 +16,14 @@ export default function EventManagementPillarPage(): React.ReactElement {
         "Approvals stay with your team. The platform helps you catch issues earlier, coordinate response faster, and keep decisions traceable across the full event cycle.",
       ]}
       deliverables={[
-        "Operational risk watchlist with priority signals",
-        "Response recommendations for schedule, comms, and staffing shifts",
-        "Judge and stakeholder pipeline visibility summaries",
-        "Cross-team impact notes for major event changes",
-        "Weekly management digest focused on actions, not noise",
+        "An event delivery timeline from brief to post-event close, with milestones, owners and critical-path analysis",
+        "A minute-by-minute run of show with AV cues, speaker movements, crew and contingencies",
+        "A live risk watchlist that detects operational risks and plans mitigation, with budget-impact alerts",
+        "Delegate pricing analysis against competitors and history, and a full pricing strategy with tiers and early-bird windows",
+        "A master event FAQ structured by audience, plus an entry-guide FAQ for awards entrants",
+        "Meeting intelligence that turns transcripts into decisions and action items, with pre-meeting briefings and structured debriefs",
+        "A board-ready sector briefing, and a comprehensive post-event performance report",
+        "A clear, traceable decisions log across the full event cycle",
       ]}
       connects="Event management is fed by content, marketing, and telesales signals, then feeds all teams with operational constraints and timing reality. Everyone sees the same current picture before decisions are made."
     />

@@ -11,12 +11,12 @@ type Plan = {
 
 const PLANS: Plan[] = [
   {
-    name: "Per event",
-    body: "Pricing available on request, shared with pilot partners during onboarding. Structured around the event you run.",
+    name: "Priced per event",
+    body: "Looped is priced per event, so the cost scales with what you actually run. No platform-wide licence to justify before you have seen the value, and no rate card to publish at this stage.",
   },
   {
-    name: "Portfolio",
-    body: "Pricing available on request, with portfolio and annual commitment options for teams running events across a calendar.",
+    name: "Volume discounts",
+    body: "The more events you run, the lower the per-event rate. Portfolio and annual options bring it down further for teams running across a full calendar. Figures are shared with pilot partners during onboarding.",
   },
 ];
 

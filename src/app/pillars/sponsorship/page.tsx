@@ -16,11 +16,15 @@ export default function CommercialPillarPage(): React.ReactElement {
         "Your team still owns relationships and negotiation. The platform improves the intelligence and consistency behind every proposal, and grounds every prospect in real, sourced data, never an invented company or a made-up figure you would have to walk back mid-pitch.",
       ]}
       deliverables={[
-        "Partner proposition angles matched to audience segments",
-        "Personalised proposal drafts with relevant event proof points",
-        "Prospecting and lookalike targeting grounded in real, sourced data",
-        "Renewal intelligence and package strategy, with table-sales timing for awards",
-        "Objection-handling guidance linked to current market signals",
+        "A tiered, scored universe of potential partners and exhibitors, with lookalike modelling against your existing book",
+        "Targeted prospect lists with company profiles and an activation rationale, grounded in real, sourced data",
+        "Bespoke partner briefs and pitch narratives, with pitch decks and talking points per named prospect",
+        "Sponsorship package architecture: tier naming, benefit inventory, and a session-to-partner map by audience fit",
+        "A commercial media pack with audience profile, reach and package tiers",
+        "Pipeline health metrics, renewal scoring across the contracted book, and identified upsell opportunities",
+        "Personalised outreach copy, a partner FAQ, and co-marketing and on-site activation briefs",
+        "For awards: table-sales intelligence and prospect prioritisation, timed to the finalist announcement",
+        "Post-event ROI reports for each partner against the contracted package",
       ]}
       connects="Commercial is fed by marketing narrative and audience insight, then feeds telesales and marketing with live commercial signals. When partner feedback changes positioning, the rest of the team works from the same updated context."
     />

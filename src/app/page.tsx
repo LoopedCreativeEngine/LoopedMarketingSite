@@ -12,12 +12,14 @@ import { RaiseBarSection } from "@/components/sections/RaiseBarSection";
 import { ROICalculatorSection } from "@/components/sections/ROICalculatorSection";
 import { TheShiftSection } from "@/components/sections/TheShiftSection";
 import { WhatLoopedChangesSection } from "@/components/sections/WhatLoopedChangesSection";
+import { WhyNowSection } from "@/components/sections/WhyNowSection";
 
 export default function HomePage(): React.ReactElement {
   return (
     <>
       <HeroSection />
       <AiProblemSplitSection />
+      <WhyNowSection />
       <WhatLoopedChangesSection />
       <ProactiveIntelligenceSection />
       <BuiltForHowEventsMoveSection />

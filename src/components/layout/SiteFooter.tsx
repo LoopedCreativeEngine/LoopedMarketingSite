@@ -12,6 +12,9 @@ export function SiteFooter(): React.ReactElement {
             </p>
           </div>
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-slate-400">
+            <Link href="/platform" className="hover:text-violet-300">
+              Platform
+            </Link>
             <Link href="/how-it-works" className="hover:text-violet-300">
               How it works
             </Link>

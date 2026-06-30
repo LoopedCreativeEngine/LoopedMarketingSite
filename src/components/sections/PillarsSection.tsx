@@ -27,7 +27,7 @@ const PILLARS = [
   {
     name: "Telesales",
     description:
-      "Ranked call lists, enriched pre-call briefings and signal-led timing, for delegate acquisition, awards entry conversion and table sales alike, with conversion intelligence that updates live as the campaign moves, and UK-compliant calling built in.",
+      "Ranked call lists, enriched pre-call briefings and signal-led timing, for delegate acquisition, awards entry conversion and table sales alike, with conversion intelligence that updates live as the campaign moves. AI voice agents can be briefed from the same intelligence and switched on when you choose to dial at scale.",
     href: "/pillars/telesales",
   },
   {

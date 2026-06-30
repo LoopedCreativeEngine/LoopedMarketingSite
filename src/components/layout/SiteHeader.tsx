@@ -11,6 +11,7 @@ import { useState } from "react";
 import { cn } from "@/lib/cn";
 
 const navLinks = [
+  { href: "/platform", label: "Platform" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/#pricing", label: "Pricing" },
 ];

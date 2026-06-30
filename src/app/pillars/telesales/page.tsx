@@ -16,11 +16,13 @@ export default function TelesalesPillarPage(): React.ReactElement {
         "Your team decides where automation fits. The platform keeps humans in control while making sure every call flow reflects current event context and campaign priorities.",
       ]}
       deliverables={[
-        "Call brief with audience priorities and messaging hierarchy",
-        "Script and objection-response drafts aligned to campaign direction",
-        "Target profile guidance for list pulling and segmentation",
-        "Weekly performance summaries with practical adjustment recommendations",
-        "Optional voice automation scripts aligned with team guardrails",
+        "List segmentation by priority, persona fit and propensity, with call-volume recommendations",
+        "Call scripts by segment and objective: openers, objection handlers and close variations",
+        "A versioned, approvable discovery-call playbook, with a whole-campaign pathway quality layer",
+        "For awards: entry-conversion scripts, a peer-to-peer nominations drive, and gala table-sales prioritisation",
+        "Call-log analysis that surfaces objection patterns, conversion bottlenecks and script gaps",
+        "Optional AI voice agents, briefed from the same approved scripts, personas and segments",
+        "Automatic call recording, transcription and AI outcome classification, with a per-event spend cap",
       ]}
       connects="Telesales is fed by marketing and commercial context, and feeds back live objection and conversion signals that improve both. The result is faster campaign correction without re-brief cycles."
     />
