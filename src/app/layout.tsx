@@ -32,9 +32,9 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Looped Event OS — Intelligence layer for B2B events",
+  title: "Looped: the intelligence layer for event teams",
   description:
-    "Strategic intelligence for conferences and awards organisers. Human-approved AI cascade from research to revenue.",
+    "Looped turns the work your event teams already do into one connected intelligence engine across marketing, content, operations and sales. Purpose-built by event professionals for conference and awards events.",
 };
 
 export default function RootLayout({

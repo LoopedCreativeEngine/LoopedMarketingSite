@@ -11,13 +11,26 @@ type Plan = {
 
 const PLANS: Plan[] = [
   {
-    name: "Standard",
-    body: "Pricing available on request. Structured per event, with portfolio and annual commitment options.",
+    name: "Per event",
+    body: "Pricing available on request, shared with pilot partners during onboarding. Structured around the event you run.",
   },
   {
-    name: "Enterprise",
-    body: "Pricing available on request. Structured per event, with portfolio and annual commitment options.",
+    name: "Portfolio",
+    body: "Pricing available on request, with portfolio and annual commitment options for teams running events across a calendar.",
   },
+];
+
+const INCLUDES = [
+  "Full sector and competitor intelligence, updated continuously",
+  "Audience mapping and persona development",
+  "Messaging strategy and campaign planning",
+  "Content for every channel: email, social, paid, organic",
+  "Partner intelligence and proposal support",
+  "Telesales campaign briefing and scripting",
+  "Event management and risk intelligence",
+  "Live intelligence feed and dashboards for your whole team",
+  "Portfolio-level reporting for directors",
+  "Proactive monitoring: competitors, campaigns, website quality",
 ];
 
 export function PricingSection(): React.ReactElement {
@@ -29,7 +42,8 @@ export function PricingSection(): React.ReactElement {
             Pricing available on request.
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-slate-400 sm:text-base">
-            Structured per event, with portfolio and annual commitment options.
+            We are taking on a limited number of pilot partners. This is an early-adopter intake, not a checkout, so
+            pricing is shared during onboarding rather than published as a rate card.
           </p>
         </Reveal>
 
@@ -48,16 +62,9 @@ export function PricingSection(): React.ReactElement {
         <Reveal>
           <h3 className="mt-12 text-center text-2xl italic text-[#f8f9ff]">What every event includes</h3>
           <ul className="mx-auto mt-6 max-w-4xl space-y-2 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            <li>Full sector and competitor intelligence, updated continuously</li>
-            <li>Audience mapping and persona development</li>
-            <li>Messaging strategy and campaign planning</li>
-            <li>Content for every channel — email, social, paid, organic</li>
-            <li>Sponsorship intelligence and proposal support</li>
-            <li>Telesales campaign briefing and scripting</li>
-            <li>Event management and risk intelligence</li>
-            <li>Weekly intelligence digest for your whole team</li>
-            <li>Portfolio-level reporting for directors</li>
-            <li>Proactive monitoring — competitors, campaigns, website quality</li>
+            {INCLUDES.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </Reveal>
 
@@ -77,21 +84,30 @@ export function PricingSection(): React.ReactElement {
             </p>
             <p className="rounded-xl border border-white/10 bg-looped-card p-4 text-sm text-[#c4c8d8]">
               <span className="block text-base text-[#f8f9ff]">More events, same team</span>
-              When research, briefing, and drafting are handled by the platform, your team runs more events without running harder.
+              When research, briefing and drafting are handled by the platform, your team runs more events without running harder.
             </p>
           </div>
         </Reveal>
 
         <Reveal className="mt-12 text-center">
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-[#c4c8d8]">
-            We work with a small number of event organisations. If Looped is right for you, we&apos;ll know quickly.
+            We are onboarding a small number of pilot partners. If Looped is right for your events, we&apos;ll know
+            quickly.
           </p>
-          <Link
-            href="/demo"
-            className="mt-5 inline-flex cursor-pointer items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
-          >
-            Talk to us about your portfolio
-          </Link>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <Link
+              href="/demo"
+              className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
+            >
+              Apply to pilot
+            </Link>
+            <Link
+              href="/demo"
+              className="inline-flex cursor-pointer items-center justify-center rounded-lg border border-white/30 bg-transparent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+            >
+              Join the waitlist
+            </Link>
+          </div>
         </Reveal>
       </div>
     </section>

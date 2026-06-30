@@ -18,10 +18,10 @@ const navLinks = [
 const pillarLinks = [
   { href: "/pillars/marketing", label: "Marketing" },
   { href: "/pillars/content", label: "Content" },
-  { href: "/pillars/sponsorship", label: "Sponsorship" },
+  { href: "/pillars/sponsorship", label: "Commercial" },
   { href: "/pillars/telesales", label: "Telesales" },
   { href: "/pillars/event-management", label: "Event Management" },
-  { href: "/pillars/portfolio", label: "Portfolio Directors" },
+  { href: "/pillars/portfolio", label: "Portfolio" },
 ];
 
 export function SiteHeader(): React.ReactElement {
@@ -93,9 +93,15 @@ export function SiteHeader(): React.ReactElement {
         <div className="flex items-center gap-2">
           <Link
             href="/demo"
+            className="hidden cursor-pointer items-center rounded-lg border border-white/25 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/10 md:inline-flex"
+          >
+            Join the waitlist
+          </Link>
+          <Link
+            href="/demo"
             className="hidden cursor-pointer items-center rounded-lg bg-looped-violet-700 px-4 py-2 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02] md:inline-flex"
           >
-            Book a demo
+            Apply to pilot
           </Link>
 
           <div className="md:hidden">
@@ -162,7 +168,14 @@ export function SiteHeader(): React.ReactElement {
                       className="mt-2 inline-flex w-fit rounded-lg bg-looped-violet-700 px-4 py-2 text-sm font-semibold text-white"
                       onClick={() => setMobileOpen(false)}
                     >
-                      Book a demo
+                      Apply to pilot
+                    </Link>
+                    <Link
+                      href="/demo"
+                      className="inline-flex w-fit rounded-lg border border-white/25 px-4 py-2 text-sm font-semibold text-white"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      Join the waitlist
                     </Link>
                   </div>
                 </Dialog.Content>

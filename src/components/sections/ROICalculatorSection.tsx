@@ -45,7 +45,7 @@ export function ROICalculatorSection(): React.ReactElement {
             What could Looped be worth to your team?
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            Use your own numbers. Every calculation is based on what you tell us — not what we assume.
+            Use your own numbers. Every calculation is based on what you tell us, not what we assume.
           </p>
         </Reveal>
 
@@ -162,7 +162,7 @@ export function ROICalculatorSection(): React.ReactElement {
                 ) : null}
                 {dataLists ? (
                   <p className="mt-2 text-sm text-[#c4c8d8]">
-                    Plus every data pull becoming precision-targeted rather than manually filtered — same subscription,
+                    Plus every data pull becoming precision-targeted rather than manually filtered. Same subscription,
                     better results.
                   </p>
                 ) : null}
@@ -180,7 +180,7 @@ export function ROICalculatorSection(): React.ReactElement {
               href="/demo"
               className="inline-flex items-center justify-center rounded-lg bg-looped-violet-700 px-5 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
             >
-              Talk to us about your events
+              Apply to pilot
             </Link>
           </div>
         </Reveal>

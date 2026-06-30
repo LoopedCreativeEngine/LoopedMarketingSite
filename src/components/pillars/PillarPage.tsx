@@ -67,7 +67,7 @@ export function PillarPage({
             href="/demo"
             className="inline-flex items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
           >
-            See it in action
+            Apply to pilot
           </Link>
         </Reveal>
       </div>

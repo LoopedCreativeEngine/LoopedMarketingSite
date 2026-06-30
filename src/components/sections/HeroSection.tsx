@@ -76,30 +76,37 @@ export function HeroSection(): React.ReactElement {
       <div className="relative z-10 mx-auto max-w-5xl px-4 pb-28 pt-12 text-center sm:px-6 lg:px-8">
         <h1 className="text-balance tracking-tight">
           <span className="block text-4xl font-light text-white sm:text-5xl md:text-6xl">
-            Your team is already using AI.
+            The intelligence layer
           </span>
           <span className="mt-2 block text-4xl font-bold text-looped-violet-700 sm:text-5xl md:text-6xl">
-            Now give it something worth working with.
+            for event teams.
           </span>
         </h1>
         <p ref={subheadRef} className="mx-auto mt-6 max-w-3xl text-pretty text-lg leading-[1.75] text-[#c4c8d8] sm:text-xl">
-          Looped is an AI intelligence operating system built exclusively for conference and awards organiser teams.
-          Not a writing tool. Not another agent builder. The strategic foundation that makes every output and every
-          team member better informed.
+          Looped turns the work your event teams already do into one connected intelligence engine across marketing,
+          content, operations, sales and more. Purpose-built by event professionals for conference and awards events.
+          Not generic AI delivering AI slop.
         </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+        <p className="mx-auto mt-8 flex items-center justify-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-violet-200/85">
+          <span
+            className="inline-block h-1.5 w-1.5 rounded-full bg-violet-400 shadow-[0_0_8px_2px_rgba(167,139,250,0.7)]"
+            aria-hidden
+          />
+          Currently open to a limited intake of pilot clients
+        </p>
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
           <Link
             href="/demo"
             className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform duration-200 hover:scale-[1.02] sm:w-auto"
           >
-            Book a demo
+            Apply to pilot now
           </Link>
-          <a
-            href="#product"
+          <Link
+            href="/demo"
             className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-white/30 bg-transparent px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/10 sm:w-auto"
           >
-            See how it works
-          </a>
+            Join the waitlist
+          </Link>
         </div>
       </div>
     </section>

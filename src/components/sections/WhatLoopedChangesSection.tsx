@@ -6,16 +6,16 @@ import { Reveal } from "@/components/motion/Reveal";
 
 const STEPS = [
   {
-    title: "Brief the event",
-    body: "Scrape the website, answer four questions, and upload last year's data.",
+    title: "Connect",
+    body: `Looped plugs into your existing stack and your real event data: bookings, CRM, programme, commercial history.`,
   },
   {
-    title: "Approve the intelligence cascade",
-    body: "Root modules run automatically and feed every downstream output.",
+    title: "Surface",
+    body: `It works the whole lifecycle continuously, surfacing synthesised intelligence and clear options while the moment is still live, not weeks later when it's already passed.`,
   },
   {
-    title: "Your team executes",
-    body: "Everything they produce runs on approved intelligence.",
+    title: "Act",
+    body: `Your team decides and Looped automates the output. The judgement stays human. The grunt work doesn't.`,
   },
 ];
 
@@ -28,7 +28,7 @@ export function WhatLoopedChangesSection(): React.ReactElement {
             How it works
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            Keep it simple. Build the foundation first, then let your teams execute from it.
+            Your whole event operation, finally thinking together.
           </p>
         </Reveal>
 

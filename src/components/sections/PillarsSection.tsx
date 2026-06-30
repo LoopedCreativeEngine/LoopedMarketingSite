@@ -9,37 +9,37 @@ const PILLARS = [
   {
     name: "Marketing",
     description:
-      "From industry research to full campaign plan — your marketing team works from a shared approved foundation that feeds every channel. Audience intelligence, competitor positioning, personas, messaging strategy, email sequences, paid ad copy, organic calendar. Built in sequence. Each layer informing the next.",
+      "A full marketing strategy, not just copy: segmented personas, each with their own campaign where they need one, plus budget allocation, comms plans and campaign calendars, grounded in your real event data. Built for both event types: the delegate, speaker and partner campaigns of a conference, and the two distinct motions of an awards programme, driving entries and then filling tables once the finalists are announced.",
     href: "/pillars/marketing",
   },
   {
     name: "Content",
     description:
-      "Programme themes, speaker identification, session development — grounded in what's happening in your sector right now, not last year's instinct. The content team works from approved industry intelligence, not a blank page.",
+      "Programme intelligence across the whole event. For conferences: the right speakers, the right session formats balanced across the agenda, and facilitated networking designed into the programme rather than bolted on. For awards: category strategy, themes and judging frameworks that make the programme credible and keep the entries flowing.",
     href: "/pillars/content",
   },
   {
-    name: "Sponsorship",
+    name: "Commercial",
     description:
-      "Proposals built on real audience data. Every pitch personalised to what each sponsor actually cares about, grounded in your event's approved intelligence. Prospect discovery, package building, tailored proposals — in sequence.",
+      "Partner prospecting and lookalike targeting, prospect enrichment, renewal intelligence and package strategy, plus table-sales intelligence for awards, timed to the finalist announcement. Every prospect is grounded in real, sourced data, never an invented company or a made-up figure you would have to walk back mid-pitch. The right commercial conversations, at the right moment.",
     href: "/pillars/sponsorship",
   },
   {
     name: "Telesales",
     description:
-      "Calling campaigns intelligently briefed from platform intelligence. Scripts, objection handling, and prospect lists all built from what the platform knows about your event and audience. Optional voice automation when you're ready for it.",
+      "Ranked call lists, enriched pre-call briefings and signal-led timing, for delegate acquisition, awards entry conversion and table sales alike, with conversion intelligence that updates live as the campaign moves, and UK-compliant calling built in.",
     href: "/pillars/telesales",
   },
   {
     name: "Event Management",
     description:
-      "Risk detection before problems become crises. Judge pipelines managed. Category reviews grounded in market data. Operational planning informed by intelligence rather than spreadsheets and instinct.",
+      "Intelligence across the whole event timeline, not just the day itself. A live view of the critical path, readiness and risks, with budget-impact alerts and a clear decisions log, so slippage and overspend surface early enough to act on and nothing important falls between teams as the event nears.",
     href: "/pillars/event-management",
   },
   {
-    name: "Portfolio Directors",
+    name: "Portfolio",
     description:
-      "Cross-event intelligence that compounds. Audience overlap analysis. Format effectiveness across your portfolio. What worked at one event informing the next. Strategic intelligence that only exists when you can see across the whole picture.",
+      "One view across every event you run: where the opportunity, the risk and the revenue actually sit, plus cross-event learnings and benchmarks that make each new edition start sharper than the last.",
     href: "/pillars/portfolio",
   },
 ];
@@ -68,9 +68,12 @@ export function PillarsSection(): React.ReactElement {
   return (
     <section ref={ref} className="bg-looped-bg py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="mt-3 text-balance text-center text-3xl italic tracking-tight text-[#f8f9ff] sm:text-4xl">
-          How it works across your team
+        <h2 className="text-balance text-center text-3xl italic tracking-tight text-[#f8f9ff] sm:text-4xl">
+          AI built for the people who build events.
         </h2>
+        <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
+          Six connected pillars, each tuned to its discipline, all feeding one event brain.
+        </p>
         <div className="mt-14 space-y-3">
           {PILLARS.map((pillar) => (
             <Link
@@ -83,6 +86,9 @@ export function PillarsSection(): React.ReactElement {
             </Link>
           ))}
         </div>
+        <p className="mx-auto mt-12 max-w-3xl text-center font-serif text-2xl italic text-[#f8f9ff] sm:text-3xl">
+          Sharp on their own. Stronger together, across every event you run.
+        </p>
       </div>
     </section>
   );

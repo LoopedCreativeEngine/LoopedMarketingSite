@@ -7,20 +7,20 @@ import { Reveal } from "@/components/motion/Reveal";
 const cards = [
   {
     icon: Circle,
-    title: "ChatGPT, used the way most teams use it",
-    body: "One question. One answer. No memory. Generic output because there's no event context. Every session starts from zero. Output quality depends on how well someone happened to phrase the prompt that day. Useful. Not compounding.",
+    title: "Isolated prompting",
+    body: `One person, one chat, one answer, gone when the tab closes. No memory of your event, no connection to your data.`,
     highlighted: false,
   },
   {
     icon: Network,
-    title: "Linked AI agents",
-    body: "Agents that pass data between them — but no quality gate. If the research agent produces something weak, it feeds directly into the copy agent. Bad intelligence compounds into bad outputs automatically. Faster than prompting. Less controllable.",
+    title: "Linked agents",
+    body: `Better, but still a stack you have to build, govern and maintain yourself.`,
     highlighted: false,
   },
   {
     icon: GitBranch,
-    title: "Looped cascade",
-    body: "Every output approved by a human before it feeds the next module. Intelligence compounds correctly. Errors get caught before they propagate. Your team stays in control at every stage. Not faster than linked agents — smarter.",
+    title: "Looped",
+    body: `Domain-tuned intelligence cascading across every pillar and every event, building an event brain that gets sharper each cycle, so you never start from zero again.`,
     highlighted: true,
   },
 ];
@@ -32,7 +32,7 @@ export function CascadeVsPromptingSection(): React.ReactElement {
         <Reveal>
           <p className="text-center text-sm text-[#c4c8d8]">Why the cascade beats prompting</p>
           <h2 className="text-balance text-center text-3xl tracking-tight text-[#f8f9ff] sm:text-4xl">
-            Not all AI is the same. Architecture matters.
+            A prompt gives you an answer. A cascade gives you an advantage.
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
@@ -53,14 +53,6 @@ export function CascadeVsPromptingSection(): React.ReactElement {
             </Reveal>
           ))}
         </div>
-        <Reveal>
-          <p className="mx-auto mt-8 max-w-5xl text-center text-sm leading-relaxed text-[#c4c8d8]">
-            Looped uses the right model for each task — Claude for strategy and reasoning, Gemini with live search
-            grounding for competitive intelligence, Perplexity for sector research with citations, Apollo and Cognism
-            for prospect data, Apify for web intelligence. Not one model doing everything adequately. Each task going to
-            the tool built for it.
-          </p>
-        </Reveal>
       </div>
     </section>
   );

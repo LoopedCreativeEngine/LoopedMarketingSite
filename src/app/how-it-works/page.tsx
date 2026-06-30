@@ -22,7 +22,7 @@ export default function HowItWorksPage(): React.ReactElement {
           <p className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
             Every event starts with a brief. Event name, date, venue, sector, audience, team notes, brand rules,
             supporting documents. The brief is the foundation. Team notes are injected into every module&apos;s system
-            prompt automatically — compliance instructions, terminology restrictions, brand voice rules. If you tell the
+            prompt automatically: compliance instructions, terminology restrictions, brand voice rules. If you tell the
             platform never to use a particular phrase, no module ever will.
           </p>
         </Reveal>
@@ -32,7 +32,7 @@ export default function HowItWorksPage(): React.ReactElement {
         <Reveal>
           <h2 className="text-2xl font-semibold text-[#f8f9ff]">The 12-phase cascade</h2>
           <p className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            Modules are organised into 12 cascade phases — from market intelligence through to post-event learning.
+            Modules are organised into 12 cascade phases, from market intelligence through to post-event learning.
             Each phase unlocks when the previous phase&apos;s outputs are approved. You cannot run campaign execution until
             audience and messaging decisions are approved first. The sequence is enforced by design.
           </p>
@@ -47,7 +47,7 @@ export default function HowItWorksPage(): React.ReactElement {
         <Reveal>
           <h2 className="text-2xl font-semibold text-[#f8f9ff]">Human approval gates</h2>
           <p className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            Every module output is reviewed by a human before the next module fires. This is not a limitation — it is the
+            Every module output is reviewed by a human before the next module fires. This is not a limitation. It is the
             product. Looped is human-in-the-loop by design. The platform produces intelligence. Your team makes the
             decisions. The approval gates are where your expertise is applied.
           </p>
@@ -59,8 +59,8 @@ export default function HowItWorksPage(): React.ReactElement {
           <h2 className="text-2xl font-semibold text-[#f8f9ff]">Six team pillars</h2>
           <p className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
             Each pillar has its own workspace and its own intelligence thread. Marketing&apos;s approved Persona Builder output
-            is available to Content when they&apos;re building the speaker programme. Commercial&apos;s approved Sponsor Brief is
-            available to Marketing when they&apos;re writing partner promotion copy. The system is the shared context — no
+            is available to Content when they&apos;re building the speaker programme. Commercial&apos;s approved Partner Brief is
+            available to Marketing when they&apos;re writing partner promotion copy. The system is the shared context, no
             briefing each other, no duplication.
           </p>
         </Reveal>
@@ -82,7 +82,7 @@ export default function HowItWorksPage(): React.ReactElement {
           href="/demo"
           className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
         >
-          Book a demo
+          Apply to pilot
         </Link>
       </div>
     </div>

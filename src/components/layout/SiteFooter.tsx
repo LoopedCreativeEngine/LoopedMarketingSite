@@ -22,7 +22,10 @@ export function SiteFooter(): React.ReactElement {
               Pricing
             </Link>
             <Link href="/demo" className="hover:text-violet-300">
-              Book a demo
+              Apply to pilot
+            </Link>
+            <Link href="/demo" className="hover:text-violet-300">
+              Join the waitlist
             </Link>
             <Link href="/privacy" className="hover:text-violet-300">
               Privacy policy

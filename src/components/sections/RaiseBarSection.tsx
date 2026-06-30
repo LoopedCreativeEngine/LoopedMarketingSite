@@ -4,20 +4,20 @@ import { Reveal } from "@/components/motion/Reveal";
 
 const points = [
   {
-    title: "Built for events, not adapted for events",
-    body: "Every module knows what a judging process is, what a nominations drive requires, and how entry deadlines chain into table sales. That knowledge is not in ChatGPT.",
+    title: `Built for events, not adapted to them.`,
+    body: `Tuned to how conference and awards businesses actually run: the campaign timings, the commercial motions, the language of the trade.`,
   },
   {
-    title: "Human in the loop by design",
-    body: "Nothing happens without your approval. The cascade pauses at every output, waiting for a human decision. This is AI doing the research while your team makes the calls.",
+    title: `Grounded in context, so it doesn't hallucinate.`,
+    body: `Looped works from your real event data, not a blank prompt. When the data isn't there, it tells you plainly instead of inventing a statistic, a name or a number to look complete. No hallucinations. No AI slop.`,
   },
   {
-    title: "Portfolio level intelligence, not event level noise",
-    body: "Cross event learning means every edition is informed by what worked in the last one. Benchmark data means every event knows where it sits in the market. The platform gets smarter with every event that runs through it.",
+    title: `Guardrails and compliance built in.`,
+    body: `Enterprise-grade guardrails and a legally compliant approach to AI use, so the intelligence is something your business can stand behind rather than a governance risk waiting to happen.`,
   },
   {
-    title: "Your team does not need to learn anything new",
-    body: "No prompt engineering. No agent configuration. No training programme. The platform asks four questions and builds the rest.",
+    title: `A smaller stack, not a bigger one.`,
+    body: `One platform replacing a sprawl of point tools: fewer logins, fewer bills, and intelligence that finally compounds.`,
   },
 ];
 
@@ -28,7 +28,7 @@ export function RaiseBarSection(): React.ReactElement {
         <Reveal>
           <p className="text-center text-sm text-[#c4c8d8]">Key differentiators</p>
           <h2 className="text-balance text-center text-3xl tracking-tight text-[#f8f9ff] sm:text-4xl">
-            Why Looped Event OS is different
+            What generic AI can&apos;t give you.
           </h2>
         </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-2">

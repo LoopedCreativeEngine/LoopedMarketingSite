@@ -13,22 +13,10 @@ export function ProactiveIntelligenceSection(): React.ReactElement {
           </h2>
         </Reveal>
         <Reveal className="mt-10 rounded-2xl border border-looped-violet-700 bg-looped-card p-8 shadow-[var(--looped-violet-glow)]">
-          <p className="text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            When a competitor event announces a date that clashes with yours, your team finds out when someone happens
-            to spot it. When a competing event drops its pricing, you find out when a prospect mentions it on a call.
-            When a new player enters your sector, you find out too late.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            Looped&apos;s intelligence agents actively monitor your competitive landscape — not when you think to ask, but
-            continuously. When a material signal is detected — a competitor pivots their format, moves their date,
-            reveals a headline speaker, changes pricing — it surfaces immediately in your weekly digest with a specific
-            assessment of what it means for your event and a recommended response.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">Not a notification. A recommendation. With context.</p>
-          <p className="mt-6 border-l-2 border-looped-violet-700 pl-4 text-sm leading-relaxed text-[#f8f9ff] sm:text-base">
-            The same applies across your campaigns. If registration velocity drops below forecast, the platform flags it
-            before it becomes a problem — with specific recommendations on where to reallocate budget or adjust
-            messaging.
+          <p className="text-base leading-relaxed text-[#c4c8d8] sm:text-lg">
+            Looped doesn&apos;t wait to be asked. It watches the signals across your events and pushes the moment that
+            matters, whether that&apos;s a renewal cooling, a segment under target or a prospect heating up, to a{" "}
+            <span className="font-semibold text-[#f8f9ff]">live feed and dashboards</span> your team actually works from.
           </p>
         </Reveal>
       </div>
