@@ -1,112 +1,111 @@
 "use client";
 
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
-import { CascadeCanvas } from "@/components/hero/CascadeCanvas";
+import { LoopMark } from "@/components/brand/LoopMark";
+import { MediaFrame } from "@/components/media/MediaFrame";
+import { CtaButton } from "@/components/ui/CtaButton";
 
-function MobileHeroBackdrop(): React.ReactElement {
-  return (
-    <div
-      className="absolute inset-0 min-h-[100dvh] w-full bg-[radial-gradient(ellipse_120%_90%_at_50%_10%,#4338ca66_0%,#232735_40%,#0f1117_100%)]"
-      aria-hidden
-    />
-  );
-}
+const CREDIBILITY = [
+  "Purpose-built for conferences & awards",
+  "Grounded in your event data",
+  "A human approves every decision",
+];
 
 export function HeroSection(): React.ReactElement {
-  const sectionRef = useRef<HTMLElement>(null);
-  const canvasRef = useRef<HTMLDivElement>(null);
-  const subheadRef = useRef<HTMLParagraphElement>(null);
-  const [isMobile, setIsMobile] = useState(() =>
-    typeof window !== "undefined" ? window.matchMedia("(max-width: 767px)").matches || window.innerWidth < 768 : false,
-  );
+  const rootRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 767px)");
-    const update = (): void => {
-      setIsMobile(mq.matches || window.innerWidth < 768);
-    };
-    update();
-    mq.addEventListener("change", update);
-    window.addEventListener("resize", update);
-    return () => {
-      mq.removeEventListener("change", update);
-      window.removeEventListener("resize", update);
-    };
+    const ctx = gsap.context(() => {
+      const els = gsap.utils.toArray<HTMLElement>("[data-hero-rise]");
+      // Elements render hidden (opacity-0) to avoid a flash; reveal on mount.
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        gsap.set(els, { opacity: 1, y: 0 });
+        return;
+      }
+      gsap.fromTo(
+        els,
+        { opacity: 0, y: 22 },
+        { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", stagger: 0.09 },
+      );
+    }, rootRef);
+    return () => ctx.revert();
   }, []);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      if (subheadRef.current) {
-        gsap.fromTo(subheadRef.current, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, delay: 0.4 });
-      }
-      if (!isMobile && sectionRef.current && canvasRef.current) {
-        gsap.to(canvasRef.current, {
-          yPercent: 18,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 1.1,
-          },
-        });
-      }
-    }, sectionRef);
-    return () => ctx.revert();
-  }, [isMobile]);
-
   return (
-    <section
-      ref={sectionRef}
-      className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden pt-16"
-    >
-      <div ref={canvasRef} className="absolute inset-0">
-        {isMobile ? <MobileHeroBackdrop /> : <CascadeCanvas />}
-        <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(0,0,0,0.15)_0%,rgba(15,17,23,0.58)_46%,rgba(15,17,23,0.92)_100%)]"
-          aria-hidden
-        />
-      </div>
+    <section ref={rootRef} className="relative overflow-hidden bg-bone pb-20 pt-28 sm:pb-28 sm:pt-32">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.04fr_0.96fr] lg:gap-14">
+          {/* value proposition */}
+          <div>
+            <p data-hero-rise className="flex items-center gap-2.5 kicker text-muted-ink opacity-0">
+              <LoopMark className="h-4 w-4 text-violet" />
+              For the teams who build B2B conferences &amp; awards
+            </p>
 
-      <div className="relative z-10 mx-auto max-w-5xl px-4 pb-28 pt-12 text-center sm:px-6 lg:px-8">
-        <h1 className="text-balance tracking-tight">
-          <span className="block text-4xl font-light text-white sm:text-5xl md:text-6xl">
-            The intelligence layer
-          </span>
-          <span className="mt-2 block text-4xl font-bold text-looped-violet-700 sm:text-5xl md:text-6xl">
-            for event teams.
-          </span>
-        </h1>
-        <p ref={subheadRef} className="mx-auto mt-6 max-w-3xl text-pretty text-lg leading-[1.75] text-[#c4c8d8] sm:text-xl">
-          Looped turns the work your event teams already do into one connected intelligence engine across marketing,
-          content, operations, sales and more. Purpose-built by event professionals for conference and awards events.
-          Not generic AI delivering AI slop.
-        </p>
-        <p className="mx-auto mt-8 flex items-center justify-center gap-2 font-mono text-xs font-medium uppercase tracking-[0.18em] text-violet-200/85">
-          <span
-            className="inline-block h-1.5 w-1.5 rounded-full bg-violet-400 shadow-[0_0_8px_2px_rgba(167,139,250,0.7)]"
-            aria-hidden
-          />
-          Currently open to a limited intake of pilot clients
-        </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-          <Link
-            href="/demo"
-            className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform duration-200 hover:scale-[1.02] sm:w-auto"
-          >
-            Apply to pilot now
-          </Link>
-          <Link
-            href="/demo"
-            className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-white/30 bg-transparent px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-white/10 sm:w-auto"
-          >
-            Join the waitlist
-          </Link>
+            <h1 data-hero-rise className="mt-6 display-hero font-medium text-ink-text opacity-0">
+              The intelligence layer <span className="italic text-violet">for event teams.</span>
+            </h1>
+
+            <p data-hero-rise className="mt-6 max-w-xl text-pretty text-lg leading-[1.65] text-graphite opacity-0">
+              Looped turns the work your event teams already do into one connected intelligence engine across marketing,
+              content, operations, sales and more. Purpose-built by event professionals for conference and awards
+              events. Not generic AI delivering AI slop.
+            </p>
+
+            <p data-hero-rise className="mt-7 flex items-center gap-2.5 kicker text-muted-ink opacity-0">
+              <span className="relative flex h-2 w-2" aria-hidden>
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet/50" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-violet" />
+              </span>
+              Currently open to a limited intake of pilot clients
+            </p>
+
+            <div data-hero-rise className="mt-7 flex flex-col gap-3 opacity-0 sm:flex-row sm:gap-4">
+              <CtaButton href="/demo" full>
+                Apply to pilot now
+              </CtaButton>
+              <CtaButton href="/demo" variant="secondary" full>
+                Join the waitlist
+              </CtaButton>
+            </div>
+
+            <ul
+              data-hero-rise
+              className="mt-10 flex flex-wrap gap-x-5 gap-y-2 border-t border-[rgba(23,19,31,0.10)] pt-6 opacity-0"
+            >
+              {CREDIBILITY.map((item) => (
+                <li key={item} className="flex items-center gap-2 kicker text-muted-ink">
+                  <span className="h-1 w-1 rounded-full bg-violet" aria-hidden />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* product-forward media slot (real walkthrough / screens swap in here) */}
+          <div data-hero-rise className="opacity-0 lg:pl-4">
+            <MediaFrame
+              variant="browser"
+              tone="light"
+              tag="Walkthrough"
+              aspect="16 / 11"
+              label="Live intelligence across every event"
+            />
+            <Link
+              href="/demo"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-graphite transition-colors hover:text-violet"
+            >
+              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet text-bone" aria-hidden>
+                <svg viewBox="0 0 24 24" className="ml-0.5 h-3 w-3" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </span>
+              Watch the walkthrough
+            </Link>
+          </div>
         </div>
       </div>
     </section>

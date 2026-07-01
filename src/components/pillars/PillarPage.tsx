@@ -1,6 +1,8 @@
-import Link from "next/link";
+import { Check } from "lucide-react";
 
+import { MediaFrame } from "@/components/media/MediaFrame";
 import { Reveal } from "@/components/motion/Reveal";
+import { CtaButton } from "@/components/ui/CtaButton";
 
 type PillarPageProps = {
   title: string;
@@ -12,6 +14,15 @@ type PillarPageProps = {
   connects: string;
 };
 
+function SectionLabel({ children }: { children: React.ReactNode }): React.ReactElement {
+  return (
+    <div className="mb-5 flex items-center gap-3">
+      <span className="h-px w-8 bg-violet/50" aria-hidden />
+      <span className="kicker text-muted-ink">{children}</span>
+    </div>
+  );
+}
+
 export function PillarPage({
   title,
   tensionStatement,
@@ -22,53 +33,71 @@ export function PillarPage({
   connects,
 }: PillarPageProps): React.ReactElement {
   return (
-    <div className="bg-looped-bg pb-20 pt-28">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div className="bg-bone pb-24 pt-28 sm:pt-32">
+      {/* hero */}
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          <Reveal className="lg:col-span-7">
+            <p className="kicker text-violet">Pillar</p>
+            <h1 className="mt-4 font-serif text-5xl tracking-tight text-ink-text sm:text-6xl">{title}</h1>
+            <p className="mt-6 max-w-2xl font-serif text-2xl italic leading-snug text-violet sm:text-3xl">
+              {tensionStatement}
+            </p>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-graphite">{seatLine}</p>
+          </Reveal>
+          <Reveal className="lg:col-span-5">
+            <MediaFrame variant="browser" tone="light" tag={title} aspect="4 / 3" label={`${title} workspace`} />
+          </Reveal>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-20 max-w-3xl px-5 sm:px-6 lg:px-8">
         <Reveal>
-          <h1 className="text-5xl tracking-tight text-[#f8f9ff]">{title}</h1>
-          <p className="mt-5 max-w-4xl font-serif text-3xl tracking-tight text-violet-200 sm:text-4xl">{tensionStatement}</p>
-          <p className="mt-4 text-lg text-[#c4c8d8]">{seatLine}</p>
+          <SectionLabel>What your team deals with</SectionLabel>
+          <div className="space-y-4">
+            {challenges.map((p) => (
+              <p key={p} className="text-base leading-relaxed text-graphite">
+                {p}
+              </p>
+            ))}
+          </div>
         </Reveal>
 
-        <Reveal className="mt-12">
-          <h2 className="text-2xl italic text-[#f8f9ff]">What your team deals with</h2>
-          {challenges.map((p) => (
-            <p key={p} className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-              {p}
-            </p>
-          ))}
+        <Reveal className="mt-16">
+          <SectionLabel>How Looped works for you</SectionLabel>
+          <div className="space-y-4">
+            {howItWorks.map((p) => (
+              <p key={p} className="text-base leading-relaxed text-graphite">
+                {p}
+              </p>
+            ))}
+          </div>
         </Reveal>
+      </div>
 
-        <Reveal className="mt-12">
-          <h2 className="text-2xl italic text-[#f8f9ff]">How Looped works for you</h2>
-          {howItWorks.map((p) => (
-            <p key={p} className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-              {p}
-            </p>
-          ))}
-        </Reveal>
-
-        <Reveal className="mt-12">
-          <h2 className="text-2xl italic text-[#f8f9ff]">What you get</h2>
-          <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
+      {/* deliverables — inset ink plate for rhythm */}
+      <div className="mx-auto mt-16 max-w-5xl px-5 sm:px-6 lg:px-8">
+        <Reveal className="on-ink rounded-3xl bg-ink p-8 shadow-[var(--lift-ink)] sm:p-12">
+          <SectionLabel>What you get</SectionLabel>
+          <ul className="grid gap-x-8 gap-y-4 sm:grid-cols-2">
             {deliverables.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item} className="flex gap-3 text-sm leading-relaxed text-bone-dim">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-iris" aria-hidden />
+                <span>{item}</span>
+              </li>
             ))}
           </ul>
         </Reveal>
+      </div>
 
-        <Reveal className="mt-12">
-          <h2 className="text-2xl italic text-[#f8f9ff]">How it connects</h2>
-          <p className="mt-4 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">{connects}</p>
+      <div className="mx-auto mt-16 max-w-3xl px-5 sm:px-6 lg:px-8">
+        <Reveal>
+          <SectionLabel>How it connects</SectionLabel>
+          <p className="text-base leading-relaxed text-graphite">{connects}</p>
         </Reveal>
 
         <Reveal className="mt-12">
-          <Link
-            href="/demo"
-            className="inline-flex items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
-          >
-            Apply to pilot
-          </Link>
+          <CtaButton href="/demo">Apply to pilot</CtaButton>
         </Reveal>
       </div>
     </div>

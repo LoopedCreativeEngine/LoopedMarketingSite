@@ -1,9 +1,9 @@
 "use client";
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+
+import { Panel } from "@/components/layout/Panel";
+import { Reveal } from "@/components/motion/Reveal";
 
 const PILLARS = [
   {
@@ -39,56 +39,47 @@ const PILLARS = [
 ];
 
 export function PillarsSection(): React.ReactElement {
-  const ref = useRef<HTMLElement>(null);
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        ".pillar-card",
-        { opacity: 0, y: 24 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          stagger: 0.08,
-          scrollTrigger: { trigger: ".pillar-grid", start: "top 82%" },
-        },
-      );
-    }, ref);
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <section ref={ref} id="pillars" className="scroll-mt-24 bg-looped-bg py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-balance text-center text-3xl italic tracking-tight text-[#f8f9ff] sm:text-4xl">
-          AI built for the people who build events.
-        </h2>
-        <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
+    <Panel tone="ink" id="pillars" index="09" kicker="The pillars">
+      <Reveal className="max-w-3xl">
+        <h2 className="text-balance display-section">AI built for the people who build events.</h2>
+        <p className="mt-5 text-lg leading-relaxed text-bone-dim">
           Six connected pillars, each tuned to its discipline, all feeding one event brain.
         </p>
-        <div className="pillar-grid mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {PILLARS.map((pillar) => (
+      </Reveal>
+
+      <div className="mt-12 grid gap-x-12 md:grid-cols-2">
+        {PILLARS.map((pillar, index) => (
+          <Reveal key={pillar.name} delay={(index % 2) * 0.06}>
             <Link
-              key={pillar.name}
               href={pillar.href}
-              className="pillar-card group flex flex-col rounded-xl border border-white/10 bg-gradient-to-br from-[#181b25] to-[#232837] p-6 transition-all duration-300 hover:border-looped-violet-700/70 hover:shadow-[var(--looped-violet-glow)]"
+              className="group flex items-start gap-5 border-t border-white/10 py-6 transition-colors hover:border-iris/40"
             >
-              <h3 className="text-xl italic text-[#f8f9ff] sm:text-2xl">{pillar.name}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-[#c4c8d8]">{pillar.outcome}</p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-300 transition-colors group-hover:text-violet-200">
-                Explore {pillar.name}
-                <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
-                  →
+              <span className="mt-1 font-mono text-sm text-iris">P{index + 1}</span>
+              <span className="flex-1">
+                <span className="flex items-center justify-between gap-3">
+                  <span className="font-serif text-2xl tracking-tight text-bone-text transition-colors group-hover:text-iris">
+                    {pillar.name}
+                  </span>
+                  <span
+                    className="text-iris transition-transform duration-300 group-hover:translate-x-1"
+                    aria-hidden
+                  >
+                    →
+                  </span>
                 </span>
+                <span className="mt-2 block text-sm leading-relaxed text-bone-dim">{pillar.outcome}</span>
               </span>
             </Link>
-          ))}
-        </div>
-        <p className="mx-auto mt-12 max-w-3xl text-center font-serif text-2xl italic text-[#f8f9ff] sm:text-3xl">
+          </Reveal>
+        ))}
+      </div>
+
+      <Reveal>
+        <p className="mt-14 max-w-3xl text-balance font-serif text-2xl italic leading-snug text-bone-text sm:text-3xl">
           Sharp on their own. Stronger together, across every event you run.
         </p>
-      </div>
-    </section>
+      </Reveal>
+    </Panel>
   );
 }

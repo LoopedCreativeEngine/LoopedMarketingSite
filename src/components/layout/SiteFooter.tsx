@@ -1,46 +1,50 @@
 import Link from "next/link";
 
+import { Wordmark } from "@/components/brand/LoopMark";
+
 export function SiteFooter(): React.ReactElement {
   return (
-    <footer className="border-t border-white/10 bg-[#0f1117]">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="on-ink border-t border-white/10 bg-ink text-bone-dim">
+      <div className="mx-auto max-w-6xl px-5 py-14 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div>
-            <p className="text-base font-semibold text-white">Looped Event OS</p>
-            <p className="mt-2 max-w-md text-sm text-slate-400">
-              The intelligence operating system for B2B conference and awards teams.
+            <Link href="/" className="text-bone-text transition-opacity hover:opacity-80" aria-label="Looped, home">
+              <Wordmark />
+            </Link>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-bone-dim">
+              The intelligence layer for the teams who build B2B conferences and awards.
             </p>
           </div>
-          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-slate-400">
-            <Link href="/platform" className="hover:text-violet-300">
+          <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-bone-dim">
+            <Link href="/platform" className="transition-colors hover:text-iris">
               Platform
             </Link>
-            <Link href="/how-it-works" className="hover:text-violet-300">
+            <Link href="/how-it-works" className="transition-colors hover:text-iris">
               How it works
             </Link>
-            <Link href="/#pillars" className="hover:text-violet-300">
+            <Link href="/#pillars" className="transition-colors hover:text-iris">
               Pillars
             </Link>
-            <Link href="/newsroom" className="hover:text-violet-300">
+            <Link href="/newsroom" className="transition-colors hover:text-iris">
               Newsroom
             </Link>
-            <Link href="/#pricing" className="hover:text-violet-300">
+            <Link href="/#pricing" className="transition-colors hover:text-iris">
               Pricing
             </Link>
-            <Link href="/demo" className="hover:text-violet-300">
+            <Link href="/demo" className="transition-colors hover:text-iris">
               Apply to pilot
             </Link>
-            <Link href="/demo" className="hover:text-violet-300">
+            <Link href="/demo" className="transition-colors hover:text-iris">
               Join the waitlist
             </Link>
-            <Link href="/privacy" className="hover:text-violet-300">
+            <Link href="/privacy" className="transition-colors hover:text-iris">
               Privacy policy
             </Link>
           </nav>
         </div>
-        <p className="mt-10 text-xs leading-relaxed text-slate-500">
-          © 2026 Entwistle Digital Group Ltd. Looped Event OS is a product of Entwistle Digital Group Ltd, registered in
-          England and Wales.
+        <p className="mt-12 border-t border-white/10 pt-8 text-xs leading-relaxed text-bone-dim/70">
+          © 2026 Entwistle Digital Group Ltd. Looped is a product of Entwistle Digital Group Ltd, registered in England
+          and Wales.
         </p>
       </div>
     </footer>

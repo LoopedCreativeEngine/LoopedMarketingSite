@@ -3,7 +3,7 @@ import { DM_Mono, DM_Sans, Fraunces } from "next/font/google";
 
 import { CustomCursor } from "@/components/effects/CustomCursor";
 import { GrainOverlay } from "@/components/effects/GrainOverlay";
-import { ScrollProgress } from "@/components/effects/ScrollProgress";
+import { LoopRail } from "@/components/effects/LoopRail";
 import { SmoothScrollProvider } from "@/components/effects/SmoothScrollProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   title: "Looped: the intelligence layer for event teams",
   description:
     "Looped turns the work your event teams already do into one connected intelligence engine across marketing, content, operations and sales. Purpose-built by event professionals for conference and awards events.",
+  icons: {
+    icon: [{ url: "/loop-mark.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({
@@ -44,9 +47,9 @@ export default function RootLayout({
 }>): React.ReactElement {
   return (
     <html lang="en" className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable} h-full scroll-smooth antialiased`}>
-      <body className="flex min-h-full flex-col bg-looped-bg font-sans text-slate-50">
+      <body className="flex min-h-full flex-col bg-bone font-sans text-graphite">
         <SmoothScrollProvider>
-          <ScrollProgress />
+          <LoopRail />
           <CustomCursor />
           <GrainOverlay />
           <SiteHeader />

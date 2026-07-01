@@ -1,9 +1,10 @@
 "use client";
 
 import { Fragment } from "react";
-import Link from "next/link";
 
+import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
+import { CtaButton } from "@/components/ui/CtaButton";
 
 const BODY_PARAS = [
   `Every other option asks something of you: a tax to pay, a build to maintain, a cost to carry, or knowledge that walks out the door. This is the honest landscape, and where Looped lands on the axes that matter.`,
@@ -98,111 +99,103 @@ const MOBILE_COLUMNS = [
 
 export function TheShiftSection(): React.ReactElement {
   return (
-    <section className="bg-looped-bg py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="mx-auto max-w-4xl text-center">
-          <h2 className="text-balance text-3xl tracking-tight text-[#f8f9ff] sm:text-4xl">
-            Every other AI vendor makes your supplier list longer.
-          </h2>
-          <p className="mt-4 text-balance font-serif text-3xl italic text-violet-300 sm:text-4xl md:text-5xl">
-            Looped is the first one that makes it shorter.
+    <Panel tone="bone" index="06" kicker="The shift">
+      <Reveal className="max-w-4xl">
+        <h2 className="text-balance display-section">Every other AI vendor makes your supplier list longer.</h2>
+        <p className="mt-4 text-balance font-serif text-3xl italic leading-tight text-violet sm:text-4xl md:text-5xl">
+          Looped is the first one that makes it shorter.
+        </p>
+      </Reveal>
+
+      <Reveal className="mt-8 max-w-3xl space-y-4">
+        {BODY_PARAS.map((para) => (
+          <p key={para.slice(0, 24)} className="text-base leading-relaxed text-graphite sm:text-lg">
+            {para}
           </p>
-        </Reveal>
+        ))}
+      </Reveal>
 
-        <Reveal className="mx-auto mt-8 max-w-4xl space-y-4 text-center">
-          {BODY_PARAS.map((para) => (
-            <p key={para.slice(0, 24)} className="text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-              {para}
-            </p>
-          ))}
-        </Reveal>
-
-        {/* Desktop comparison table */}
-        <div className="mt-12 hidden overflow-hidden rounded-2xl border border-white/10 bg-looped-card/40 lg:block">
-          <div className="grid grid-cols-[minmax(9rem,1.3fr)_repeat(5,minmax(0,1fr))]">
-            {/* header row */}
-            <div className="border-b border-white/10 px-4 py-4" />
-            {APPROACHES.map((approach) => (
-              <div
-                key={approach.name}
-                className="border-b border-l border-white/10 px-3 py-4 text-sm font-medium text-[#c4c8d8]"
-              >
-                {approach.name}
-              </div>
-            ))}
-            <div className="rounded-t-xl bg-looped-violet-700 px-3 py-4 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)]">
-              {LOOPED.name}
-            </div>
-
-            {/* data rows */}
-            {AXES.map((axis, rowIndex) => {
-              const isLast = rowIndex === AXES.length - 1;
-              return (
-                <Fragment key={axis.label}>
-                  <div className="border-b border-white/5 px-4 py-3.5">
-                    <span className="text-sm font-medium text-[#f8f9ff]">{axis.label}</span>
-                    {axis.hint ? <span className="block text-xs text-[#c4c8d8]/60">{axis.hint}</span> : null}
-                  </div>
-                  {APPROACHES.map((approach) => (
-                    <div
-                      key={approach.name}
-                      className="border-b border-l border-white/5 px-3 py-3.5 text-xs leading-relaxed text-[#c4c8d8]"
-                    >
-                      {approach.values[rowIndex]}
-                    </div>
-                  ))}
-                  <div
-                    className={`border-x border-looped-violet-700/50 bg-looped-violet-700/15 px-3 py-3.5 text-xs font-medium leading-relaxed text-[#f8f9ff] ${
-                      isLast ? "rounded-b-xl border-b" : ""
-                    }`}
-                  >
-                    {LOOPED.values[rowIndex]}
-                  </div>
-                </Fragment>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Mobile stacked cards */}
-        <div className="mt-10 space-y-4 lg:hidden">
-          {MOBILE_COLUMNS.map((column) => (
+      {/* Desktop comparison table */}
+      <Reveal className="mt-12 hidden overflow-hidden rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper shadow-[var(--lift-light)] lg:block">
+        <div className="grid grid-cols-[minmax(9rem,1.3fr)_repeat(5,minmax(0,1fr))]">
+          {/* header row */}
+          <div className="border-b border-[rgba(23,19,31,0.08)] px-4 py-4" />
+          {APPROACHES.map((approach) => (
             <div
-              key={column.name}
-              className={`rounded-2xl border p-6 ${
-                column.highlighted
-                  ? "border-looped-violet-700 bg-looped-card shadow-[var(--looped-violet-glow)]"
-                  : "border-white/10 bg-looped-card"
-              }`}
+              key={approach.name}
+              className="border-b border-l border-[rgba(23,19,31,0.08)] px-3 py-4 text-sm font-medium text-muted-ink"
             >
-              <h3 className={`text-xl ${column.highlighted ? "text-white" : "text-[#f8f9ff]"}`}>{column.name}</h3>
-              <dl className="mt-4 space-y-3">
-                {AXES.map((axis, index) => (
-                  <div key={axis.label} className="border-b border-white/5 pb-3 last:border-b-0 last:pb-0">
-                    <dt className="text-xs uppercase tracking-wide text-[#c4c8d8]/70">{axis.label}</dt>
-                    <dd className={`mt-0.5 text-sm ${column.highlighted ? "font-medium text-[#f8f9ff]" : "text-[#c4c8d8]"}`}>
-                      {column.values[index]}
-                    </dd>
+              {approach.name}
+            </div>
+          ))}
+          <div className="bg-violet px-3 py-4 text-sm font-semibold text-bone">{LOOPED.name}</div>
+
+          {/* data rows */}
+          {AXES.map((axis, rowIndex) => {
+            const isLast = rowIndex === AXES.length - 1;
+            return (
+              <Fragment key={axis.label}>
+                <div className="border-b border-[rgba(23,19,31,0.06)] px-4 py-3.5">
+                  <span className="text-sm font-medium text-ink-text">{axis.label}</span>
+                  {axis.hint ? <span className="block text-xs text-muted-ink">{axis.hint}</span> : null}
+                </div>
+                {APPROACHES.map((approach) => (
+                  <div
+                    key={approach.name}
+                    className="border-b border-l border-[rgba(23,19,31,0.06)] px-3 py-3.5 text-xs leading-relaxed text-graphite"
+                  >
+                    {approach.values[rowIndex]}
                   </div>
                 ))}
-              </dl>
-            </div>
-          ))}
+                <div
+                  className={`border-x border-violet/30 bg-[rgba(67,56,202,0.06)] px-3 py-3.5 text-xs font-medium leading-relaxed text-ink-text ${
+                    isLast ? "border-b" : ""
+                  }`}
+                >
+                  {LOOPED.values[rowIndex]}
+                </div>
+              </Fragment>
+            );
+          })}
         </div>
+      </Reveal>
 
-        <Reveal className="mx-auto mt-12 max-w-4xl">
-          <p className="text-sm leading-relaxed text-[#c4c8d8] sm:text-base">{CLOSING}</p>
-        </Reveal>
-
-        <Reveal className="mt-10 text-center">
-          <Link
-            href="/demo"
-            className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
+      {/* Mobile stacked cards */}
+      <div className="mt-10 space-y-4 lg:hidden">
+        {MOBILE_COLUMNS.map((column) => (
+          <div
+            key={column.name}
+            className={`rounded-2xl border p-6 ${
+              column.highlighted
+                ? "border-violet bg-[rgba(67,56,202,0.05)] shadow-[var(--violet-emph)]"
+                : "border-[rgba(23,19,31,0.12)] bg-paper"
+            }`}
           >
-            Apply to pilot
-          </Link>
-        </Reveal>
+            <h3 className={`flex items-center gap-2 text-xl ${column.highlighted ? "text-violet" : "text-ink-text"}`}>
+              {column.name}
+              {column.highlighted ? <span className="h-2 w-2 rounded-full bg-violet" aria-hidden /> : null}
+            </h3>
+            <dl className="mt-4 space-y-3">
+              {AXES.map((axis, index) => (
+                <div key={axis.label} className="border-b border-[rgba(23,19,31,0.08)] pb-3 last:border-b-0 last:pb-0">
+                  <dt className="kicker text-muted-ink">{axis.label}</dt>
+                  <dd className={`mt-1 text-sm ${column.highlighted ? "font-medium text-ink-text" : "text-graphite"}`}>
+                    {column.values[index]}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        ))}
       </div>
-    </section>
+
+      <Reveal className="mt-12 max-w-4xl">
+        <p className="text-base leading-relaxed text-graphite sm:text-lg">{CLOSING}</p>
+      </Reveal>
+
+      <Reveal className="mt-10">
+        <CtaButton href="/demo">Apply to pilot</CtaButton>
+      </Reveal>
+    </Panel>
   );
 }

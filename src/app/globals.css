@@ -1,20 +1,72 @@
 @import "tailwindcss";
 
+/*
+ * Looped — "programme paper + ink" design language.
+ *
+ * The page reads as a printed conference programme: warm paper panels
+ * (bone) interleaved with full-bleed ink plates, threaded by one violet
+ * line — the Loop. Type is Fraunces (display), DM Sans (body), DM Mono
+ * (labels/data). See src/styles/design-system.ts for the mirrored tokens.
+ */
+
 :root {
-  --looped-bg: #0f1117;
-  --looped-card: #1a1d27;
-  --looped-card-soft: #232735;
-  --looped-violet-700: #4338ca;
-  --looped-violet-glow: 0 0 0 1px rgba(67, 56, 202, 0.35), 0 16px 44px -12px rgba(67, 56, 202, 0.7);
-  --looped-text: #f8f9ff;
-  --looped-text-muted: #c4c8d8;
+  /* Surfaces — light (warm paper) */
+  --bone: #f4f0e7; /* page base */
+  --paper: #fcfaf5; /* raised surface: cards, media frames */
+  --sand: #e8e1d2; /* warm inset / hairline on light */
+
+  /* Surfaces — ink (near-black plates, faint violet undertone) */
+  --ink: #17131f;
+  --ink-raised: #221c30;
+
+  /* Accent — used with restraint */
+  --violet: #4338ca; /* primary: CTAs on light, the Loop, highlights */
+  --iris: #a99cff; /* light violet: accents + links on ink */
+  --focus: #6d5fe6; /* focus ring: legible on both bone and ink */
+
+  /* Ink on light */
+  --ink-text: #17131f; /* headings */
+  --graphite: #4f4a5c; /* body */
+  --muted-ink: #6e6879; /* captions, source lines */
+
+  /* Light on ink */
+  --bone-text: #f4f0e7;
+  --bone-dim: #b7b1c4;
+
+  /* Elevation + emphasis */
+  --lift-light: 0 1px 2px rgba(23, 19, 31, 0.05), 0 22px 48px -28px rgba(23, 19, 31, 0.28);
+  --lift-ink: 0 1px 2px rgba(0, 0, 0, 0.35), 0 28px 56px -30px rgba(0, 0, 0, 0.75);
+  --violet-emph: 0 0 0 1px var(--violet), 0 22px 50px -22px rgba(67, 56, 202, 0.55);
+  --iris-emph: 0 0 0 1px rgba(169, 156, 255, 0.55), 0 22px 50px -24px rgba(124, 108, 255, 0.5);
+
+  /* Legacy aliases — kept so any stray reference stays coherent */
+  --looped-bg: var(--bone);
+  --looped-card: var(--paper);
+  --looped-violet-700: var(--violet);
+  --looped-violet-glow: var(--violet-emph);
+  --looped-text: var(--ink-text);
+  --looped-text-muted: var(--graphite);
 }
 
 @theme inline {
+  --color-bone: var(--bone);
+  --color-paper: var(--paper);
+  --color-sand: var(--sand);
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-violet: var(--violet);
+  --color-iris: var(--iris);
+  --color-ink-text: var(--ink-text);
+  --color-graphite: var(--graphite);
+  --color-muted-ink: var(--muted-ink);
+  --color-bone-text: var(--bone-text);
+  --color-bone-dim: var(--bone-dim);
+
+  /* legacy utility names still resolve */
   --color-looped-bg: var(--looped-bg);
   --color-looped-card: var(--looped-card);
-  --color-looped-card-soft: var(--looped-card-soft);
   --color-looped-violet-700: var(--looped-violet-700);
+
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-dm-mono);
   --font-serif: var(--font-fraunces);
@@ -22,47 +74,84 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--looped-bg);
+  background: var(--bone);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--looped-bg);
-  color: var(--looped-text);
+  background: var(--bone);
+  color: var(--graphite);
   font-family: var(--font-dm-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
+/* Display face. Editorial: light-to-regular weight, tight tracking. */
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-fraunces), serif;
+  font-family: var(--font-fraunces), Georgia, serif;
+  color: var(--ink-text);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
 }
 
+/* Mono label / run-of-show index. */
+.kicker {
+  font-family: var(--font-dm-mono), ui-monospace, monospace;
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.font-mono,
 .module-id {
-  font-family: var(--font-dm-mono), monospace;
-  letter-spacing: 0.05em;
+  font-family: var(--font-dm-mono), ui-monospace, monospace;
 }
 
-.text-muted {
-  color: var(--looped-text-muted);
+/* Fluid display sizes — a real, memorable scale. */
+.display-hero {
+  font-size: clamp(2.75rem, 6.4vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.display-section {
+  font-size: clamp(2rem, 3.8vw, 3.15rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+}
+.display-stat {
+  font-size: clamp(2.75rem, 5.2vw, 4.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
 }
 
+/* One accessible focus ring for every interactive element, on any panel. */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* Subtle paper tooth. Multiply darkens bone a touch; negligible on ink. */
 .grain-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 60;
-  opacity: 0.12;
-  background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 35%),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.06), transparent 45%);
+  opacity: 0.5;
+  mix-blend-mode: multiply;
 }
 
 .grain-overlay::before {
   content: "";
   position: absolute;
   inset: -120%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
-  animation: grain-shift 14s steps(7) infinite;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.14'/%3E%3C/svg%3E");
+  animation: grain-shift 14s steps(6) infinite;
 }
 
 @keyframes grain-shift {
@@ -70,25 +159,57 @@ h4 {
     transform: translate3d(0, 0, 0);
   }
   25% {
-    transform: translate3d(12%, -8%, 0);
+    transform: translate3d(10%, -6%, 0);
   }
   50% {
-    transform: translate3d(-8%, 10%, 0);
+    transform: translate3d(-6%, 8%, 0);
   }
   75% {
-    transform: translate3d(10%, 6%, 0);
+    transform: translate3d(8%, 4%, 0);
   }
   100% {
     transform: translate3d(0, 0, 0);
   }
 }
 
+/* The Loop thread draws itself as it scrolls into view. */
+.thread-path {
+  stroke: var(--violet);
+  fill: none;
+}
+
+/* Ink plates: headings flip to bone; body colour is set on the panel. */
+.on-ink h1,
+.on-ink h2,
+.on-ink h3,
+.on-ink h4 {
+  color: var(--bone-text);
+}
+
+.text-muted {
+  color: var(--muted-ink);
+}
+
+::selection {
+  background: rgba(67, 56, 202, 0.22);
+  color: inherit;
+}
+.on-ink ::selection {
+  background: rgba(169, 156, 255, 0.28);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  .grain-overlay {
+    display: none;
   }
 }

@@ -29,7 +29,7 @@ const ARTICLES: Article[] = [
   {
     slug: "the-art-is-yours",
     kicker: "Founder note",
-    title: "The art is yours. Looped carries the science.",
+    title: "The art is yours. The intelligence is ours.",
     standfirst:
       "A note from our founder on the craft of building events, and why I built Looped.",
     byline: "Founder, Looped",

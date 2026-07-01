@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Reveal } from "@/components/motion/Reveal";
+import { CtaButton } from "@/components/ui/CtaButton";
 
 export const metadata: Metadata = {
   title: "Platform: everything Looped does",
@@ -99,14 +100,14 @@ const CAPABILITIES = [
 
 export default function PlatformPage(): React.ReactElement {
   return (
-    <div className="bg-looped-bg pb-20 pt-28">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+    <div className="bg-bone pb-24 pt-28 sm:pt-32">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-violet-200/80">The platform</p>
-          <h1 className="mt-4 text-balance text-4xl tracking-tight text-[#f8f9ff] sm:text-5xl">
+          <p className="kicker text-violet">The platform</p>
+          <h1 className="mt-4 text-balance font-serif text-4xl tracking-tight text-ink-text sm:text-5xl">
             Everything Looped does, in one place.
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#c4c8d8] sm:text-lg">{INTRO}</p>
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-graphite sm:text-lg">{INTRO}</p>
         </Reveal>
 
         <Reveal className="mt-8 flex flex-wrap gap-2">
@@ -114,7 +115,7 @@ export default function PlatformPage(): React.ReactElement {
             <Link
               key={pillar.href}
               href={pillar.href}
-              className="rounded-full border border-white/15 bg-looped-card px-4 py-1.5 text-sm text-[#c4c8d8] transition-colors hover:border-looped-violet-700/70 hover:text-white"
+              className="rounded-full border border-[rgba(23,19,31,0.18)] bg-paper px-4 py-1.5 text-sm text-graphite transition-colors hover:border-violet hover:text-violet"
             >
               {pillar.name}
             </Link>
@@ -122,29 +123,31 @@ export default function PlatformPage(): React.ReactElement {
         </Reveal>
       </div>
 
-      <div className="mx-auto mt-14 max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-3">
+      {/* three headline capabilities — inset ink plate */}
+      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
+        <div className="on-ink grid gap-6 rounded-3xl bg-ink p-8 shadow-[var(--lift-ink)] sm:p-10 md:grid-cols-3">
           {FEATURED.map((item) => (
-            <Reveal
-              key={item.title}
-              className="rounded-2xl border border-looped-violet-700/60 bg-looped-card p-6 shadow-[var(--looped-violet-glow)]"
-            >
-              <h2 className="text-xl text-[#f8f9ff]">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-[#c4c8d8]">{item.body}</p>
+            <Reveal key={item.title}>
+              <span className="h-2 w-2 rounded-full bg-iris" aria-hidden />
+              <h2 className="mt-4 text-xl text-bone-text">{item.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-bone-dim">{item.body}</p>
             </Reveal>
           ))}
         </div>
       </div>
 
-      <div className="mx-auto mt-6 max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto mt-6 max-w-6xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-2">
           {CAPABILITIES.map((group) => (
-            <Reveal key={group.title} className="rounded-2xl border border-white/10 bg-looped-card p-6">
-              <h2 className="text-xl text-[#f8f9ff]">{group.title}</h2>
-              <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-[#c4c8d8]">
+            <Reveal
+              key={group.title}
+              className="rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper p-6 shadow-[var(--lift-light)]"
+            >
+              <h2 className="text-xl text-ink-text">{group.title}</h2>
+              <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-graphite">
                 {group.points.map((point) => (
                   <li key={point} className="flex gap-2.5">
-                    <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400" aria-hidden />
+                    <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-violet" aria-hidden />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -154,24 +157,16 @@ export default function PlatformPage(): React.ReactElement {
         </div>
       </div>
 
-      <div className="mx-auto mt-16 max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <div className="mx-auto mt-16 max-w-3xl px-5 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <p className="font-serif text-2xl italic text-[#f8f9ff] sm:text-3xl">
+          <p className="font-serif text-2xl italic text-ink-text sm:text-3xl">
             The platform is built. Pilot partners are shaping what it becomes next.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <Link
-              href="/demo"
-              className="inline-flex cursor-pointer items-center justify-center rounded-lg bg-looped-violet-700 px-6 py-3 text-sm font-semibold text-white shadow-[var(--looped-violet-glow)] transition-transform hover:scale-[1.02]"
-            >
-              Apply to pilot
-            </Link>
-            <Link
-              href="/demo"
-              className="inline-flex cursor-pointer items-center justify-center rounded-lg border border-white/30 bg-transparent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
-            >
+            <CtaButton href="/demo">Apply to pilot</CtaButton>
+            <CtaButton href="/demo" variant="secondary">
               Join the waitlist
-            </Link>
+            </CtaButton>
           </div>
         </Reveal>
       </div>

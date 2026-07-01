@@ -1,5 +1,6 @@
 "use client";
 
+import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 
 const points = [
@@ -23,23 +24,21 @@ const points = [
 
 export function RaiseBarSection(): React.ReactElement {
   return (
-    <section className="bg-looped-bg py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="text-center text-sm text-[#c4c8d8]">Key differentiators</p>
-          <h2 className="text-balance text-center text-3xl tracking-tight text-[#f8f9ff] sm:text-4xl">
-            What generic AI can&apos;t give you.
-          </h2>
-        </Reveal>
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
-          {points.map((item) => (
-            <Reveal key={item.title} className="rounded-xl border border-white/10 bg-looped-card p-6">
-              <h3 className="text-lg text-[#f8f9ff]">{item.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#c4c8d8]">{item.body}</p>
-            </Reveal>
-          ))}
-        </div>
+    <Panel tone="ink" index="07" kicker="Why it's different">
+      <Reveal className="max-w-3xl">
+        <p className="text-sm text-bone-dim">Key differentiators</p>
+        <h2 className="mt-3 text-balance display-section">What generic AI can&apos;t give you.</h2>
+      </Reveal>
+
+      <div className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
+        {points.map((item, index) => (
+          <Reveal key={item.title} delay={(index % 2) * 0.08} className="border-t border-white/10 pt-6">
+            <span className="font-mono text-sm text-iris">0{index + 1}</span>
+            <h3 className="mt-3 text-xl leading-snug text-bone-text">{item.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-bone-dim">{item.body}</p>
+          </Reveal>
+        ))}
       </div>
-    </section>
+    </Panel>
   );
 }

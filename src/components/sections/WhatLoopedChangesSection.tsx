@@ -1,8 +1,8 @@
 "use client";
 
-import { CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
+import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 
 const STEPS = [
@@ -22,38 +22,38 @@ const STEPS = [
 
 export function WhatLoopedChangesSection(): React.ReactElement {
   return (
-    <section className="bg-[#12141c] py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <h2 className="text-balance text-center text-3xl tracking-tight text-[#f8f9ff] sm:text-4xl">
-            How it works
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-center text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            Your whole event operation, finally thinking together.
-          </p>
-        </Reveal>
+    <Panel tone="ink" index="03" kicker="How it works">
+      <Reveal className="max-w-3xl">
+        <h2 className="text-balance display-section">Your whole event operation, finally thinking together.</h2>
+      </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="relative mt-16">
+        {/* the thread the nodes sit on */}
+        <div className="absolute inset-x-8 top-[26px] hidden h-px bg-iris/25 md:block" aria-hidden />
+        <div className="grid gap-10 md:grid-cols-3 md:gap-8">
           {STEPS.map((step, index) => (
-            <Reveal key={step.title} className="rounded-xl border border-violet-200/20 bg-[#23283a] p-6">
-              <p className="text-xs font-semibold uppercase tracking-wide text-violet-300">Step {index + 1}</p>
-              <h3 className="mt-3 text-lg text-[#f8f9ff]">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[#d4d8e6]">{step.body}</p>
-              <CheckCircle2 className="mt-4 h-5 w-5 text-violet-200" aria-hidden />
+            <Reveal key={step.title} delay={index * 0.08}>
+              <div className="flex items-center justify-center md:justify-start">
+                <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full border border-iris/60 bg-ink font-mono text-sm text-iris shadow-[0_0_0_6px_var(--ink)]">
+                  0{index + 1}
+                </span>
+              </div>
+              <h3 className="mt-6 text-center text-2xl text-bone-text md:text-left">{step.title}</h3>
+              <p className="mt-3 text-center text-sm leading-relaxed text-bone-dim md:text-left">{step.body}</p>
             </Reveal>
           ))}
         </div>
-
-        <Reveal className="mt-10 text-center">
-          <Link
-            href="/how-it-works"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-violet-300 transition-colors hover:text-violet-200"
-          >
-            See how it works, step by step
-            <span aria-hidden>→</span>
-          </Link>
-        </Reveal>
       </div>
-    </section>
+
+      <Reveal className="mt-14">
+        <Link
+          href="/how-it-works"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-iris transition-colors hover:text-bone-text"
+        >
+          See how it works, step by step
+          <span aria-hidden>→</span>
+        </Link>
+      </Reveal>
+    </Panel>
   );
 }

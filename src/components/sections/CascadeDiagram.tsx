@@ -19,17 +19,20 @@ export function CascadeDiagram({ expanded = false }: { expanded?: boolean }): Re
   const nodes = expanded ? NODES : NODES;
 
   useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return;
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       gsap.fromTo(
         ".cascade-node",
-        { opacity: 0, y: 36 },
+        { opacity: 0, y: 28 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
+          duration: 0.55,
+          ease: "power2.out",
           stagger: 0.09,
-          scrollTrigger: { trigger: ref.current, start: "top 75%" },
+          scrollTrigger: { trigger: ref.current, start: "top 78%" },
         },
       );
 
@@ -40,7 +43,7 @@ export function CascadeDiagram({ expanded = false }: { expanded?: boolean }): Re
           strokeDashoffset: 0,
           duration: 1.3,
           ease: "none",
-          scrollTrigger: { trigger: ref.current, start: "top 72%" },
+          scrollTrigger: { trigger: ref.current, start: "top 74%" },
         });
       }
     }, ref);
@@ -51,14 +54,18 @@ export function CascadeDiagram({ expanded = false }: { expanded?: boolean }): Re
   return (
     <div ref={ref} className="w-full overflow-x-auto pb-2">
       <div className="relative min-w-[900px] md:min-w-0">
-        <svg viewBox="0 0 900 100" className="pointer-events-none absolute left-0 top-9 hidden h-12 w-full md:block" aria-hidden>
+        <svg
+          viewBox="0 0 900 100"
+          className="pointer-events-none absolute left-0 top-9 hidden h-12 w-full md:block"
+          aria-hidden
+        >
           <path
             ref={pathRef}
             d="M 50 50 C 180 50, 210 50, 330 50 S 480 50, 610 50 S 760 50, 850 50"
             fill="none"
-            stroke="#4338ca"
+            stroke="var(--violet)"
             strokeWidth="1.5"
-            opacity="0.8"
+            opacity="0.85"
           />
         </svg>
 
@@ -66,9 +73,9 @@ export function CascadeDiagram({ expanded = false }: { expanded?: boolean }): Re
           {nodes.map((node) => (
             <div
               key={node.id}
-              className="cascade-node rounded-xl border border-slate-700 bg-looped-card p-4 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+              className="cascade-node rounded-xl border border-[rgba(23,19,31,0.12)] bg-paper p-4 shadow-[var(--lift-light)]"
             >
-              <p className="text-sm font-medium text-slate-100">{node.label}</p>
+              <p className="text-sm font-medium text-ink-text">{node.label}</p>
             </div>
           ))}
         </div>

@@ -1,4 +1,4 @@
-# The art is yours. Looped carries the science.
+# The art is yours. The intelligence is ours.
 
 ### A note from our founder on the craft of building events, and why I built Looped
 

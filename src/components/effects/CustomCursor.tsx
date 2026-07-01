@@ -47,7 +47,7 @@ export function CustomCursor(): React.ReactElement | null {
   return (
     <div
       ref={dotRef}
-      className="pointer-events-none fixed left-0 top-0 z-[85] h-2 w-2 -translate-x-1 -translate-y-1 rounded-full bg-looped-violet-700 shadow-[0_0_16px_rgba(67,56,202,0.8)]"
+      className="pointer-events-none fixed left-0 top-0 z-[85] h-2 w-2 -translate-x-1 -translate-y-1 rounded-full bg-violet shadow-[0_0_12px_rgba(67,56,202,0.6)]"
       aria-hidden
     />
   );

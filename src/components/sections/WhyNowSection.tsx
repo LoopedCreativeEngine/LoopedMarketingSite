@@ -1,5 +1,6 @@
 "use client";
 
+import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 
 const BODY_PARAS = [
@@ -27,55 +28,56 @@ const STATS = [
 
 export function WhyNowSection(): React.ReactElement {
   return (
-    <section className="bg-looped-bg py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-white/10 bg-gradient-to-b from-[#15131f] to-[#101219] px-6 py-12 sm:px-12 sm:py-16">
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="font-mono text-xs font-medium uppercase tracking-[0.18em] text-violet-200/80">Why now</p>
-            <h2 className="mt-4 text-balance text-3xl tracking-tight text-[#f8f9ff] sm:text-4xl">
-              The industry&apos;s own benchmark already describes Looped.
-            </h2>
-          </Reveal>
+    <Panel tone="bone" index="02" kicker="Why now">
+      <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+        <Reveal className="lg:col-span-5">
+          <h2 className="text-balance display-section">The industry&apos;s own benchmark already describes Looped.</h2>
+        </Reveal>
+        <Reveal className="space-y-5 lg:col-span-7 lg:pt-2">
+          {BODY_PARAS.map((para) => (
+            <p key={para.slice(0, 24)} className="text-base leading-relaxed text-graphite sm:text-lg">
+              {para}
+            </p>
+          ))}
+        </Reveal>
+      </div>
 
-          <Reveal className="mx-auto mt-8 max-w-3xl space-y-5">
-            {BODY_PARAS.map((para) => (
-              <p key={para.slice(0, 24)} className="text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-                {para}
-              </p>
-            ))}
-          </Reveal>
-
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            {STATS.map((stat) => (
-              <Reveal
-                key={stat.figure}
-                className={`rounded-2xl border p-6 ${
-                  stat.highlighted
-                    ? "border-looped-violet-700 bg-looped-violet-700/12 shadow-[var(--looped-violet-glow)]"
-                    : "border-white/10 bg-looped-card"
+      <Reveal className="mt-14 overflow-hidden rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper shadow-[var(--lift-light)]">
+        <div className="grid divide-y divide-[rgba(23,19,31,0.10)] md:grid-cols-3 md:divide-x md:divide-y-0">
+          {STATS.map((stat) => (
+            <div
+              key={stat.figure}
+              className={`relative p-7 sm:p-8 ${stat.highlighted ? "bg-[rgba(67,56,202,0.05)]" : ""}`}
+            >
+              {stat.highlighted ? (
+                <span className="absolute right-6 top-7 h-2 w-2 rounded-full bg-violet" aria-hidden />
+              ) : null}
+              <p
+                className={`font-serif leading-[0.95] tracking-tight ${
+                  stat.highlighted ? "text-2xl text-violet sm:text-3xl" : "text-4xl text-ink-text sm:text-5xl"
                 }`}
               >
-                <p className="font-serif text-2xl leading-tight text-violet-300 sm:text-3xl">{stat.figure}</p>
-                <p className="mt-3 text-sm leading-relaxed text-[#c4c8d8]">{stat.body}</p>
-              </Reveal>
-            ))}
-          </div>
-
-          <Reveal className="mt-8">
-            <p className="text-xs leading-relaxed text-[#c4c8d8]/70">
-              Source: Event Tech Live, The State of AI in Event Technology, First Edition (Parry, 2026).{" "}
-              <a
-                href="https://eventtechlive.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-violet-300 underline decoration-violet-300/40 underline-offset-2 transition-colors hover:text-violet-200"
-              >
-                eventtechlive.com
-              </a>
-            </p>
-          </Reveal>
+                {stat.figure}
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-graphite">{stat.body}</p>
+            </div>
+          ))}
         </div>
-      </div>
-    </section>
+      </Reveal>
+
+      <Reveal>
+        <p className="mt-6 text-xs leading-relaxed text-muted-ink">
+          Source: Event Tech Live, The State of AI in Event Technology, First Edition (Parry, 2026).{" "}
+          <a
+            href="https://eventtechlive.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-violet underline decoration-violet/40 underline-offset-2 transition-colors hover:decoration-violet"
+          >
+            eventtechlive.com
+          </a>
+        </p>
+      </Reveal>
+    </Panel>
   );
 }

@@ -2,6 +2,7 @@
 
 import { Circle, GitBranch, Network } from "lucide-react";
 
+import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 
 const cards = [
@@ -27,33 +28,33 @@ const cards = [
 
 export function CascadeVsPromptingSection(): React.ReactElement {
   return (
-    <section className="bg-[#12141c] py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="text-center text-sm text-[#c4c8d8]">Why the cascade beats prompting</p>
-          <h2 className="text-balance text-center text-3xl tracking-tight text-[#f8f9ff] sm:text-4xl">
-            A prompt gives you an answer. A cascade gives you an advantage.
-          </h2>
-        </Reveal>
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {cards.map((card, index) => (
-            <Reveal
-              key={card.title}
-              className={`rounded-2xl border p-6 ${
-                card.highlighted
-                  ? "border-violet-400/80 bg-[#1c1f31] shadow-[0_0_0_1px_rgba(167,139,250,0.5),0_14px_28px_-20px_rgba(167,139,250,0.8)] md:-mt-2 md:scale-[1.03]"
-                  : index === 0
-                    ? "border-white/10 bg-[#171a24]"
-                    : "border-white/10 bg-[#1c2030]"
-              }`}
-            >
-              <card.icon className={`h-7 w-7 ${card.highlighted ? "text-violet-300" : "text-[#c4c8d8]"}`} aria-hidden />
-              <h3 className="mt-4 text-lg text-[#f8f9ff]">{card.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#c4c8d8]">{card.body}</p>
-            </Reveal>
-          ))}
-        </div>
+    <Panel tone="ink" index="05" kicker="The cascade">
+      <Reveal className="max-w-3xl">
+        <p className="text-sm text-bone-dim">Why the cascade beats prompting</p>
+        <h2 className="mt-3 text-balance display-section">
+          A prompt gives you an answer. A cascade gives you an advantage.
+        </h2>
+      </Reveal>
+
+      <div className="mt-12 grid gap-5 md:grid-cols-3">
+        {cards.map((card) => (
+          <Reveal
+            key={card.title}
+            className={`rounded-2xl border p-7 ${
+              card.highlighted
+                ? "border-iris/60 bg-[rgba(169,156,255,0.09)] shadow-[var(--iris-emph)]"
+                : "border-white/10 bg-ink-raised"
+            }`}
+          >
+            <card.icon className={`h-7 w-7 ${card.highlighted ? "text-iris" : "text-bone-dim"}`} aria-hidden />
+            <h3 className="mt-5 flex items-center gap-2 text-xl text-bone-text">
+              {card.title}
+              {card.highlighted ? <span className="h-2 w-2 rounded-full bg-iris" aria-hidden /> : null}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-bone-dim">{card.body}</p>
+          </Reveal>
+        ))}
       </div>
-    </section>
+    </Panel>
   );
 }
