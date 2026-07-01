@@ -20,19 +20,6 @@ const PLANS: Plan[] = [
   },
 ];
 
-const INCLUDES = [
-  "Full sector and competitor intelligence, updated continuously",
-  "Audience mapping and persona development",
-  "Messaging strategy and campaign planning",
-  "Content for every channel: email, social, paid, organic",
-  "Partner intelligence and proposal support",
-  "Telesales campaign briefing and scripting",
-  "Event management and risk intelligence",
-  "Live intelligence feed and dashboards for your whole team",
-  "Portfolio-level reporting for directors",
-  "Proactive monitoring: competitors, campaigns, website quality",
-];
-
 export function PricingSection(): React.ReactElement {
   return (
     <section id="pricing" className="scroll-mt-24 bg-[#0c0c12] py-20 sm:py-24">
@@ -59,13 +46,18 @@ export function PricingSection(): React.ReactElement {
           ))}
         </RevealStagger>
 
-        <Reveal>
-          <h3 className="mt-12 text-center text-2xl italic text-[#f8f9ff]">What every event includes</h3>
-          <ul className="mx-auto mt-6 max-w-4xl space-y-2 text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
-            {INCLUDES.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+        <Reveal className="mt-12 text-center">
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-[#c4c8d8] sm:text-base">
+            Every event includes the full platform: over 120 AI modules across all six pillars, the intelligence
+            cascade, live dashboards and the integrations you already run.
+          </p>
+          <Link
+            href="/platform"
+            className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-violet-300 transition-colors hover:text-violet-200"
+          >
+            See everything the platform does
+            <span aria-hidden>→</span>
+          </Link>
         </Reveal>
 
         <Reveal>

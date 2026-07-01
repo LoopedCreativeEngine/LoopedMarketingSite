@@ -3,12 +3,10 @@
 import { Reveal } from "@/components/motion/Reveal";
 
 const PROBLEM_PARAS = [
-  `Right now your marketers, content leads and sales teams are in ChatGPT and Claude every day, in separate accounts, working in isolation. At best, your most advanced people have wired up connected tools, MCPs and Skills. Most haven't, and don't know what those even are, let alone how to set them up safely.`,
-  `Even where it works, there's a tax. Every half-decent output starts with feeding in the context: the event, the audience, the history, the brief. Then you iterate three, four, five times on what comes back, and often it takes as long as just doing the work by hand. Almost nobody has put guardrails or a legally compliant, top-down approach in place that's tailored to how the business actually needs to use AI. So teams are left guessing where to start, what "good" looks like, and whether they're exposing the business while they do it.`,
-  `That's fair enough. Event professionals shouldn't have to become tech experts overnight in a world moving this fast. It's exciting work, but their job is making the right calls and doubling down on the event experience your audience deserves, not orchestrating connected agents in a terminal or maintaining workflows.`,
+  `Your marketers, content leads and sales teams are already in ChatGPT and Claude every day, in separate accounts, reinventing the context and iterating five times on every output. Almost nobody has put guardrails or a compliant, top-down approach in place. Becoming AI experts was never their job.`,
 ];
 
-const ANSWER_PARA = `One platform that carries all of that for them. Purpose-built, easy to use, and legally compliant, holding the intelligence so your team doesn't have to keep it in their heads or rebuild it every cycle. It works whatever the level of skill, brand or sector experience on the team, and it gets sharper with every edition.`;
+const ANSWER_PARA = `One platform that carries all of it. Purpose-built, easy to use and compliant, holding the intelligence so your team never rebuilds it from zero, and getting sharper with every edition.`;
 
 export function AiProblemSplitSection(): React.ReactElement {
   return (

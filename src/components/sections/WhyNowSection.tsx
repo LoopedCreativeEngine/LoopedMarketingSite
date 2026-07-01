@@ -3,10 +3,8 @@
 import { Reveal } from "@/components/motion/Reveal";
 
 const BODY_PARAS = [
-  `The first independent benchmark of AI in events, Event Tech Live's State of AI in Event Technology, reached three conclusions. AI has stopped being a feature bolted on and become the infrastructure event products run on. Most of that AI runs on rented intelligence, so the real advantage is no longer "we use AI", it's proprietary event data and deep workflow integration. And governance, the thing everyone worried about, has quietly become the floor.`,
-  `Read those back and they describe Looped: built on your data, embedded in your workflow, grounded and governed by design.`,
-  `Then comes the finding that matters most. The industry can build, but it can't yet prove the build pays. Across 85 adjudicated products, almost all quoted a number, but only a handful could attach real money to it, and "results" scored lowest of everything judged. The benchmark calls it the proof gap. Tellingly, the most proven AI was operational and commercial, content, marketing, registration, sponsorship, lead capture, and the least proven was the attendee-facing magic the marketing usually leads with.`,
-  `That is the ground Looped is built on. Not the attendee gimmicks that score worst, but the operational and commercial work that already pays, designed from the start to tie intelligence to a commercial outcome and to evidence it honestly: observed, not projected; and when it doesn't know, it says so.`,
+  `The first independent benchmark of AI in events reached three conclusions, and all three describe Looped: it is built on your data, embedded in your workflow, and governed by design.`,
+  `Then the finding that matters most. The industry can build, but it cannot yet prove the build pays. Looped is built on the operational and commercial work that already pays, and evidences it honestly: observed, not projected, and when it does not know, it says so.`,
 ];
 
 const STATS = [

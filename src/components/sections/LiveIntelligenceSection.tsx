@@ -2,7 +2,7 @@
 
 import { Reveal } from "@/components/motion/Reveal";
 
-const BODY = `Looped gives your team live dashboards and a continuous feed of synthesised intelligence: the decisions to make, the signals to act on, the options to weigh, all in one place and all current. No more digging through scattered AI chats. No more acting on insight after the moment has gone. The intelligence sits in front of the people who need it, while it can still change the outcome.`;
+const BODY = `Looped doesn't wait to be asked. It watches the signals across your events and pushes the moment that matters, a renewal cooling, a segment under target, a prospect heating up, to live dashboards and a continuous feed your team actually works from. No more digging through scattered AI chats. No more acting on insight after the moment has gone.`;
 
 export function LiveIntelligenceSection(): React.ReactElement {
   return (

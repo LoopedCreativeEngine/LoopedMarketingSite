@@ -6,11 +6,10 @@ import Link from "next/link";
 import { Reveal } from "@/components/motion/Reveal";
 
 const BODY_PARAS = [
-  `Every other option on the table today asks something of you. Prompt it all yourself and you pay the context-and-iteration tax forever. Wire up your own connected agents and you've taken on a build to govern and maintain. Commission a custom in-house platform and you're into serious cost, a rare blend of deep events experience and real AI execution, and a product that's dating from the month it ships. Hand it to an agency and the knowledge walks out the door when the invoicing stops.`,
-  `This is the honest landscape, and where Looped lands on the axes that matter.`,
+  `Every other option asks something of you: a tax to pay, a build to maintain, a cost to carry, or knowledge that walks out the door. This is the honest landscape, and where Looped lands on the axes that matter.`,
 ];
 
-const CLOSING = `This is the part nothing else on that table can answer. AI isn't standing still, and neither is Looped. Anything you build or stitch together yourself needs constant, costly iteration just to keep up, and every advance is another upgrade you have to fund, build and ship before you see the benefit. Looped is never a static product. It runs always-on analysis of how teams really use it and how the technology and the industry are moving, then turns that into new capabilities and sharper existing ones, built for the real work of B2B event delivery and automating deeper into your workflows over time. The Looped stack grows and adapts as fast as AI itself, so event organisers don't have to.`;
+const CLOSING = `And unlike anything you build or stitch together yourself, Looped never stands still. It evolves as fast as AI does, so event organisers don't have to.`;
 
 const AXES: { label: string; hint?: string }[] = [
   { label: "Time to value" },

@@ -18,8 +18,11 @@ export function SiteFooter(): React.ReactElement {
             <Link href="/how-it-works" className="hover:text-violet-300">
               How it works
             </Link>
-            <Link href="/pillars/marketing" className="hover:text-violet-300">
+            <Link href="/#pillars" className="hover:text-violet-300">
               Pillars
+            </Link>
+            <Link href="/newsroom" className="hover:text-violet-300">
+              Newsroom
             </Link>
             <Link href="/#pricing" className="hover:text-violet-300">
               Pricing

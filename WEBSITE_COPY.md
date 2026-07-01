@@ -1,4 +1,4 @@
-# Looped Website Copy Deck (v8, launch)
+# Looped Website Copy Deck (v9, launch)
 
 **Supersedes v7** (adds the END-GAME framing rule, the Event Tech Live benchmark section + woven stats, and the compliance guardrail). This deck is the target messaging: the build worker reads each existing section, then replaces its copy with the below, and builds the new pages.
 
@@ -144,8 +144,10 @@ The framework stays alive across the whole cycle. It produces the deliverables a
 
 This is hard to do well without the right technology, which is exactly why it's built into Looped. What matters isn't using AI for its own sake. It's adopting event technology that serves your event objectives. And for every event, that means bringing the right people together in person, to connect with like-minded peers and unlock real business and personal opportunity.
 
+That quality, the right people genuinely engaged, is what your partners are really investing in, and increasingly what you have to prove to them. Not impressions or a crude ROI figure, but evidence of the connections made and the intent in the room. Looped is built to help you demonstrate it.
+
 **Pull-quote / emphasis line:**
-It's no longer a question of return on investment. It's return on intention and effort.
+For the partners you answer to, it's no longer just return on investment. It's return on intention and effort, and Looped helps you prove it.
 
 ---
 

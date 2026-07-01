@@ -1,6 +1,7 @@
 "use client";
 
 import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 
 import { Reveal } from "@/components/motion/Reveal";
 
@@ -42,6 +43,16 @@ export function WhatLoopedChangesSection(): React.ReactElement {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="mt-10 text-center">
+          <Link
+            href="/how-it-works"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-violet-300 transition-colors hover:text-violet-200"
+          >
+            See how it works, step by step
+            <span aria-hidden>→</span>
+          </Link>
+        </Reveal>
       </div>
     </section>
   );

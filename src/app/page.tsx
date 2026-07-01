@@ -7,7 +7,6 @@ import { LiveIntelligenceSection } from "@/components/sections/LiveIntelligenceS
 import { OptionalAutomationSection } from "@/components/sections/OptionalAutomationSection";
 import { PillarsSection } from "@/components/sections/PillarsSection";
 import { PricingSection } from "@/components/sections/PricingSection";
-import { ProactiveIntelligenceSection } from "@/components/sections/ProactiveIntelligenceSection";
 import { RaiseBarSection } from "@/components/sections/RaiseBarSection";
 import { ROICalculatorSection } from "@/components/sections/ROICalculatorSection";
 import { TheShiftSection } from "@/components/sections/TheShiftSection";
@@ -21,7 +20,6 @@ export default function HomePage(): React.ReactElement {
       <AiProblemSplitSection />
       <WhyNowSection />
       <WhatLoopedChangesSection />
-      <ProactiveIntelligenceSection />
       <BuiltForHowEventsMoveSection />
       <CascadeVsPromptingSection />
       <TheShiftSection />
