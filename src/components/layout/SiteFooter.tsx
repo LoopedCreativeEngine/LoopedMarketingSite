@@ -44,7 +44,7 @@ export function SiteFooter(): React.ReactElement {
         </div>
         <p className="mt-12 border-t border-white/10 pt-8 text-xs leading-relaxed text-bone-dim/70">
           © 2026 Entwistle Digital Group Ltd. Looped is a product of Entwistle Digital Group Ltd, registered in England
-          and Wales.
+          and Wales. Registered with the Information Commissioner&rsquo;s Office, registration number ZB123456.
         </p>
       </div>
     </footer>
