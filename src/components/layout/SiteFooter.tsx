@@ -12,7 +12,7 @@ export function SiteFooter(): React.ReactElement {
               <Wordmark />
             </Link>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-bone-dim">
-              The intelligence layer for the teams who build B2B conferences and awards.
+              The AI operating system for conference &amp; awards businesses. The art of events is yours. The intelligence is Looped.
             </p>
           </div>
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-bone-dim">
@@ -28,8 +28,8 @@ export function SiteFooter(): React.ReactElement {
             <Link href="/newsroom" className="transition-colors hover:text-iris">
               Newsroom
             </Link>
-            <Link href="/#pricing" className="transition-colors hover:text-iris">
-              Pricing
+            <Link href="/#start" className="transition-colors hover:text-iris">
+              Start
             </Link>
             <Link href="/demo" className="transition-colors hover:text-iris">
               Apply to pilot

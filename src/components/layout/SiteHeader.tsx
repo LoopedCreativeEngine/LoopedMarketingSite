@@ -14,7 +14,7 @@ const navLinks = [
   { href: "/platform", label: "Platform" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/newsroom", label: "Newsroom" },
-  { href: "/#pricing", label: "Pricing" },
+  { href: "/#start", label: "Start" },
 ];
 
 const pillarLinks = [

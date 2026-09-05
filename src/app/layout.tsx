@@ -32,9 +32,9 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Looped: the intelligence layer for event teams",
+  title: "Looped — the AI operating system for conference & awards businesses",
   description:
-    "Looped turns the work your event teams already do into one connected intelligence engine across marketing, content, operations and sales. Purpose-built by event professionals for conference and awards events.",
+    "The art of events is yours. The intelligence is Looped. One operating system that holds the picture of every event you run, recommends with the evidence attached, carries the routine work and remembers what each edition learned.",
   icons: {
     icon: [{ url: "/loop-mark.svg", type: "image/svg+xml" }],
   },
