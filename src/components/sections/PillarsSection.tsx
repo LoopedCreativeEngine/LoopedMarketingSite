@@ -40,10 +40,10 @@ const PILLARS = [
 
 export function PillarsSection(): React.ReactElement {
   return (
-    <Panel tone="ink" id="pillars" index="09" kicker="The pillars">
+    <Panel tone="night" id="pillars" index="09" kicker="The pillars">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">AI built for the people who build events.</h2>
-        <p className="mt-5 text-lg leading-relaxed text-bone-dim">
+        <p className="mt-5 text-lg leading-relaxed text-mist">
           Six connected pillars, each tuned to its discipline, all feeding one event brain.
         </p>
       </Reveal>
@@ -53,22 +53,22 @@ export function PillarsSection(): React.ReactElement {
           <Reveal key={pillar.name} delay={(index % 2) * 0.06}>
             <Link
               href={pillar.href}
-              className="group flex items-start gap-5 border-t border-white/10 py-6 transition-colors hover:border-iris/40"
+              className="group flex items-start gap-5 border-t border-white/10 py-6 transition-colors hover:border-pink/40"
             >
-              <span className="mt-1 font-mono text-sm text-iris">P{index + 1}</span>
+              <span className="mt-1 font-mono text-sm text-lavender">P{index + 1}</span>
               <span className="flex-1">
                 <span className="flex items-center justify-between gap-3">
-                  <span className="font-serif text-2xl tracking-tight text-bone-text transition-colors group-hover:text-iris">
+                  <span className="font-serif text-2xl tracking-tight text-snow transition-colors group-hover:text-lavender">
                     {pillar.name}
                   </span>
                   <span
-                    className="text-iris transition-transform duration-300 group-hover:translate-x-1"
+                    className="text-lavender transition-transform duration-300 group-hover:translate-x-1"
                     aria-hidden
                   >
                     →
                   </span>
                 </span>
-                <span className="mt-2 block text-sm leading-relaxed text-bone-dim">{pillar.outcome}</span>
+                <span className="mt-2 block text-sm leading-relaxed text-mist">{pillar.outcome}</span>
               </span>
             </Link>
           </Reveal>
@@ -76,7 +76,7 @@ export function PillarsSection(): React.ReactElement {
       </div>
 
       <Reveal>
-        <p className="mt-14 max-w-3xl text-balance font-serif text-2xl italic leading-snug text-bone-text sm:text-3xl">
+        <p className="mt-14 max-w-3xl text-balance font-serif text-2xl italic leading-snug text-snow sm:text-3xl">
           Sharp on their own. Stronger together, across every event you run.
         </p>
       </Reveal>

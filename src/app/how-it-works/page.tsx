@@ -26,12 +26,12 @@ const LATER_SECTIONS = [
 
 export default function HowItWorksPage(): React.ReactElement {
   return (
-    <div className="bg-bone pb-24 pt-28 sm:pt-32">
+    <div className="bg-paper pb-24 pt-28 sm:pt-32">
       <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="kicker text-violet">How it works</p>
-          <h1 className="mt-4 font-serif text-4xl tracking-tight text-ink-text sm:text-5xl">How Looped works</h1>
-          <p className="mt-6 text-lg leading-relaxed text-graphite">
+          <p className="kicker text-purple">How it works</p>
+          <h1 className="mt-4 font-serif text-4xl tracking-tight text-ink sm:text-5xl">How Looped works</h1>
+          <p className="mt-6 text-lg leading-relaxed text-slate">
             A connected cascade builds and validates your event context across six team pillars, then feeds it live to
             the agents that surface decisions, draft outreach and score leads. Your team approves what matters, and the
             intelligence gets sharper every edition.
@@ -39,15 +39,15 @@ export default function HowItWorksPage(): React.ReactElement {
         </Reveal>
 
         {SECTIONS.map((section) => (
-          <Reveal key={section.heading} className="mt-16 border-t border-[rgba(23,19,31,0.12)] pt-8">
-            <h2 className="text-2xl text-ink-text">{section.heading}</h2>
-            <p className="mt-4 text-base leading-relaxed text-graphite">{section.body}</p>
+          <Reveal key={section.heading} className="mt-16 border-t border-[rgba(15,23,42,0.12)] pt-8">
+            <h2 className="text-2xl text-ink">{section.heading}</h2>
+            <p className="mt-4 text-base leading-relaxed text-slate">{section.body}</p>
           </Reveal>
         ))}
 
-        <Reveal className="mt-16 border-t border-[rgba(23,19,31,0.12)] pt-8">
-          <h2 className="text-2xl text-ink-text">The cascade builds and validates your context</h2>
-          <p className="mt-4 text-base leading-relaxed text-graphite">
+        <Reveal className="mt-16 border-t border-[rgba(15,23,42,0.12)] pt-8">
+          <h2 className="text-2xl text-ink">The cascade builds and validates your context</h2>
+          <p className="mt-4 text-base leading-relaxed text-slate">
             The cascade is how Looped builds and validates the context that makes the agents intelligent. Each stage
             enriches and pressure-tests what came before, the speakers, the segments, the signals, the commercial
             picture, so the picture sharpens rather than drifts. That validated context then flows live to the agents
@@ -59,16 +59,16 @@ export default function HowItWorksPage(): React.ReactElement {
       </div>
 
       <div className="mx-auto mt-12 max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-[rgba(23,19,31,0.12)] bg-paper p-6 shadow-[var(--lift-light)] sm:p-10">
+        <div className="rounded-3xl border border-[rgba(15,23,42,0.12)] bg-stone p-6 shadow-[var(--lift-light)] sm:p-10">
           <CascadeDiagram expanded />
         </div>
       </div>
 
       <div className="mx-auto mt-4 max-w-3xl px-5 sm:px-6 lg:px-8">
         {LATER_SECTIONS.map((section) => (
-          <Reveal key={section.heading} className="mt-16 border-t border-[rgba(23,19,31,0.12)] pt-8">
-            <h2 className="text-2xl text-ink-text">{section.heading}</h2>
-            <p className="mt-4 text-base leading-relaxed text-graphite">{section.body}</p>
+          <Reveal key={section.heading} className="mt-16 border-t border-[rgba(15,23,42,0.12)] pt-8">
+            <h2 className="text-2xl text-ink">{section.heading}</h2>
+            <p className="mt-4 text-base leading-relaxed text-slate">{section.body}</p>
           </Reveal>
         ))}
 

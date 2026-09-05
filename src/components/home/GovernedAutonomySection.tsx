@@ -13,20 +13,20 @@ const PRINCIPLES = [
 
 export function GovernedAutonomySection(): React.ReactElement {
   return (
-    <Panel tone="ink" index="09" kicker="Governed autonomy">
+    <Panel tone="stone" index="09" kicker="Governed autonomy">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Autonomy is only useful when it is governed.</h2>
-        <p className="mt-5 text-base leading-relaxed text-bone-dim sm:text-lg">
+        <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
           What Looped does, and what it may not do, is decided by you and visible afterwards. That is what lets it carry
           real work rather than draft suggestions.
         </p>
       </Reveal>
       <div className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
         {PRINCIPLES.map((item, index) => (
-          <Reveal key={item.title} delay={(index % 2) * 0.08} className="border-t border-white/10 pt-6">
-            <span className="font-mono text-sm text-iris">0{index + 1}</span>
-            <h3 className="mt-3 text-xl leading-snug text-bone-text">{item.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-bone-dim">{item.body}</p>
+          <Reveal key={item.title} delay={(index % 2) * 0.08} className="border-t border-hairline pt-6">
+            <span className="font-mono text-sm text-purple">0{index + 1}</span>
+            <h3 className="mt-3 text-xl leading-snug text-ink">{item.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate">{item.body}</p>
           </Reveal>
         ))}
       </div>

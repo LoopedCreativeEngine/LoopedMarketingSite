@@ -1,17 +1,16 @@
 import { cn } from "@/lib/cn";
 
 /**
- * A page panel. The homepage alternates `bone`/`paper` (light paper) with
- * `ink` (near-black plates) so it reads as a sequence of programme spreads,
- * never one long column. An optional run-of-show index + kicker labels each
- * movement, mono and tracked, like an agenda.
+ * A page panel. The homepage is light — paper and stone — with night plates
+ * reserved for the moments the brand marks as important. Each panel opens
+ * with the kicker: a small gradient dot and a tracked mono label (RECOVERED).
  */
 type PanelProps = {
-  tone?: "bone" | "paper" | "ink";
+  tone?: "paper" | "stone" | "night";
   id?: string;
   /** Run-of-show number, e.g. "02". */
   index?: string;
-  /** Short mono label, e.g. "Why now". */
+  /** Short mono label, e.g. "The problem". */
   kicker?: string;
   width?: "narrow" | "default" | "wide";
   className?: string;
@@ -26,7 +25,7 @@ const WIDTHS: Record<NonNullable<PanelProps["width"]>, string> = {
 };
 
 export function Panel({
-  tone = "bone",
+  tone = "paper",
   id,
   index,
   kicker,
@@ -35,26 +34,17 @@ export function Panel({
   containerClassName,
   children,
 }: PanelProps): React.ReactElement {
-  const ink = tone === "ink";
-  const toneClass = ink
-    ? "on-ink bg-ink text-bone-dim"
-    : tone === "paper"
-      ? "bg-paper text-graphite"
-      : "bg-bone text-graphite";
+  const night = tone === "night";
+  const toneClass = night ? "on-night bg-night text-mist" : tone === "stone" ? "bg-stone text-slate" : "bg-paper text-slate";
 
   return (
-    <section
-      id={id}
-      className={cn("relative py-20 sm:py-28", id ? "scroll-mt-24" : undefined, toneClass, className)}
-    >
+    <section id={id} className={cn("relative py-20 sm:py-28", id ? "scroll-mt-24" : undefined, toneClass, className)}>
       <div className={cn("mx-auto px-5 sm:px-6 lg:px-8", WIDTHS[width], containerClassName)}>
         {index || kicker ? (
-          <div className="mb-10 flex items-center gap-3">
-            <span className={cn("h-px w-8", ink ? "bg-iris/60" : "bg-violet/50")} aria-hidden />
-            {index ? <span className={cn("kicker", ink ? "text-iris" : "text-violet")}>{index}</span> : null}
-            {kicker ? (
-              <span className={cn("kicker", ink ? "text-bone-dim" : "text-muted-ink")}>{kicker}</span>
-            ) : null}
+          <div className="mb-10 flex items-center gap-3.5">
+            <span className="h-2.5 w-2.5 rounded-full bg-grad-dot" aria-hidden />
+            {index ? <span className={cn("kicker", night ? "text-lavender" : "text-purple")}>{index}</span> : null}
+            {kicker ? <span className={cn("kicker", night ? "text-lavender" : "text-muted")}>{kicker}</span> : null}
           </div>
         ) : null}
         {children}

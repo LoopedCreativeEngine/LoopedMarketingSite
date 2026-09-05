@@ -74,7 +74,7 @@ export function ThreadDiagram({
             ref={pathRef}
             d={d}
             fill="none"
-            stroke={ink ? "var(--iris)" : "var(--violet)"}
+            stroke={ink ? "var(--lavender)" : "var(--purple)"}
             strokeWidth="1.5"
             opacity="0.85"
           />
@@ -86,13 +86,13 @@ export function ThreadDiagram({
                 key={node.id}
                 className={cn(
                   "thread-node relative rounded-xl border p-4",
-                  ink ? "border-white/10 bg-ink-raised shadow-[var(--lift-ink)]" : "border-[rgba(23,19,31,0.12)] bg-paper shadow-[var(--lift-light)]",
+                  ink ? "border-white/10 bg-night-raised shadow-[var(--lift-ink)]" : "border-[rgba(15,23,42,0.12)] bg-stone shadow-[var(--lift-light)]",
                 )}
               >
-                <span className={cn("font-mono text-xs", ink ? "text-iris" : "text-violet")}>0{i + 1}</span>
-                <p className={cn("mt-2 text-sm font-medium", ink ? "text-bone-text" : "text-ink-text")}>{node.label}</p>
+                <span className={cn("font-mono text-xs", ink ? "text-lavender" : "text-purple")}>0{i + 1}</span>
+                <p className={cn("mt-2 text-sm font-medium", ink ? "text-snow" : "text-ink")}>{node.label}</p>
                 {node.body ? (
-                  <p className={cn("mt-2 text-xs leading-relaxed", ink ? "text-bone-dim" : "text-graphite")}>{node.body}</p>
+                  <p className={cn("mt-2 text-xs leading-relaxed", ink ? "text-mist" : "text-slate")}>{node.body}</p>
                 ) : null}
               </div>
             ))}

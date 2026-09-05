@@ -1,31 +1,28 @@
 import type { Metadata } from "next";
-import { DM_Mono, DM_Sans, Fraunces } from "next/font/google";
+import { Hanken_Grotesk, JetBrains_Mono, Newsreader } from "next/font/google";
 
-import { CustomCursor } from "@/components/effects/CustomCursor";
-import { GrainOverlay } from "@/components/effects/GrainOverlay";
-import { LoopRail } from "@/components/effects/LoopRail";
-import { SmoothScrollProvider } from "@/components/effects/SmoothScrollProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const hanken = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const dmMono = DM_Mono({
-  variable: "--font-dm-mono",
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
   subsets: ["latin"],
   weight: ["400", "500"],
   display: "swap",
@@ -46,16 +43,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): React.ReactElement {
   return (
-    <html lang="en" className={`${fraunces.variable} ${dmSans.variable} ${dmMono.variable} h-full scroll-smooth antialiased`}>
-      <body className="flex min-h-full flex-col bg-bone font-sans text-graphite">
-        <SmoothScrollProvider>
-          <LoopRail />
-          <CustomCursor />
-          <GrainOverlay />
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </SmoothScrollProvider>
+    <html lang="en" className={`${newsreader.variable} ${hanken.variable} ${jetbrains.variable} h-full scroll-smooth antialiased`}>
+      <body className="flex min-h-full flex-col bg-paper font-sans text-slate">
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   );

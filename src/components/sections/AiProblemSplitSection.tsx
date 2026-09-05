@@ -12,7 +12,7 @@ const ANSWER_PARA = `One platform that carries all of it. Purpose-built, easy to
 
 export function AiProblemSplitSection(): React.ReactElement {
   return (
-    <Panel tone="ink" index="01" kicker="The problem">
+    <Panel tone="night" index="01" kicker="The problem">
       <Reveal>
         <h2 className="max-w-3xl text-balance display-section">
           Your teams are already using AI. Becoming AI experts shouldn&apos;t be their job.
@@ -21,20 +21,20 @@ export function AiProblemSplitSection(): React.ReactElement {
 
       <div className="mt-12 grid gap-6 lg:grid-cols-12 lg:gap-8">
         <div className="flex flex-col gap-6 lg:col-span-7">
-          <Reveal className="rounded-2xl border border-white/10 bg-ink-raised p-7">
-            <h3 className="text-xl text-bone-text">What&apos;s happening today</h3>
+          <Reveal className="rounded-2xl border border-white/10 bg-night-raised p-7">
+            <h3 className="text-xl text-snow">What&apos;s happening today</h3>
             {PROBLEM_PARAS.map((para) => (
-              <p key={para.slice(0, 24)} className="mt-4 text-base leading-relaxed text-bone-dim">
+              <p key={para.slice(0, 24)} className="mt-4 text-base leading-relaxed text-mist">
                 {para}
               </p>
             ))}
           </Reveal>
-          <Reveal className="rounded-2xl border border-iris/50 bg-[rgba(169,156,255,0.08)] p-7 shadow-[var(--iris-emph)]">
-            <h3 className="flex items-center gap-2.5 text-xl text-bone-text">
-              <span className="h-2 w-2 rounded-full bg-iris" aria-hidden />
+          <Reveal className="rounded-2xl border border-pink/50 bg-[rgba(167,139,219,0.08)] p-7 shadow-[var(--lavender-emph)]">
+            <h3 className="flex items-center gap-2.5 text-xl text-snow">
+              <span className="h-2 w-2 rounded-full bg-pink" aria-hidden />
               What Looped changes
             </h3>
-            <p className="mt-4 text-base leading-relaxed text-bone-dim">{ANSWER_PARA}</p>
+            <p className="mt-4 text-base leading-relaxed text-mist">{ANSWER_PARA}</p>
           </Reveal>
         </div>
 
@@ -51,7 +51,7 @@ export function AiProblemSplitSection(): React.ReactElement {
       </div>
 
       <Reveal>
-        <p className="mx-auto mt-12 max-w-4xl text-balance text-center font-serif text-2xl italic leading-snug text-bone-text sm:text-3xl">
+        <p className="mx-auto mt-12 max-w-4xl text-balance text-center font-serif text-2xl italic leading-snug text-snow sm:text-3xl">
           The intelligence lives in the platform and compounds. It doesn&apos;t walk out the door when someone leaves.
         </p>
       </Reveal>

@@ -43,10 +43,10 @@ const BENEFITS = [
 
 export function PricingSection(): React.ReactElement {
   return (
-    <Panel tone="bone" id="pricing" index="12" kicker="Pricing">
+    <Panel tone="paper" id="pricing" index="12" kicker="Pricing">
       <Reveal>
         <h2 className="text-balance text-center display-section">Pricing available on request.</h2>
-        <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-graphite sm:text-lg">
+        <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-slate sm:text-lg">
           We are taking on a limited number of pilot partners. This is an early-adopter intake, not a checkout, so
           pricing is shared during onboarding rather than published as a rate card.
         </p>
@@ -56,22 +56,22 @@ export function PricingSection(): React.ReactElement {
         {PLANS.map((p) => (
           <RevealItem
             key={p.name}
-            className="flex flex-col rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper p-8 shadow-[var(--lift-light)]"
+            className="flex flex-col rounded-2xl border border-[rgba(15,23,42,0.12)] bg-stone p-8 shadow-[var(--lift-light)]"
           >
-            <h3 className="text-2xl text-ink-text">{p.name}</h3>
-            <p className="mt-4 text-sm leading-relaxed text-graphite">{p.body}</p>
+            <h3 className="text-2xl text-ink">{p.name}</h3>
+            <p className="mt-4 text-sm leading-relaxed text-slate">{p.body}</p>
           </RevealItem>
         ))}
       </RevealStagger>
 
       <Reveal className="mt-10 text-center">
-        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-graphite sm:text-base">
+        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate sm:text-base">
           Every event includes the full platform: over 120 AI modules across all six pillars, the intelligence cascade,
           live dashboards and the integrations you already run.
         </p>
         <Link
           href="/platform"
-          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-violet transition-colors hover:text-ink-text"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-purple transition-colors hover:text-ink"
         >
           See everything the platform does
           <span aria-hidden>→</span>
@@ -81,16 +81,16 @@ export function PricingSection(): React.ReactElement {
       <Reveal>
         <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2">
           {BENEFITS.map((b) => (
-            <div key={b.title} className="rounded-xl border border-[rgba(23,19,31,0.10)] bg-paper p-5">
-              <p className="text-base text-ink-text">{b.title}</p>
-              <p className="mt-1.5 text-sm leading-relaxed text-graphite">{b.body}</p>
+            <div key={b.title} className="rounded-xl border border-[rgba(15,23,42,0.10)] bg-stone p-5">
+              <p className="text-base text-ink">{b.title}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-slate">{b.body}</p>
             </div>
           ))}
         </div>
       </Reveal>
 
       <Reveal className="mt-12 text-center">
-        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-graphite">
+        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate">
           We are onboarding a small number of pilot partners. If Looped is right for your events, we&apos;ll know
           quickly.
         </p>

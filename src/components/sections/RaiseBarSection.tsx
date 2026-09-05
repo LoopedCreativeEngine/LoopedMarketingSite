@@ -24,18 +24,18 @@ const points = [
 
 export function RaiseBarSection(): React.ReactElement {
   return (
-    <Panel tone="ink" index="07" kicker="Why it's different">
+    <Panel tone="night" index="07" kicker="Why it's different">
       <Reveal className="max-w-3xl">
-        <p className="text-sm text-bone-dim">Key differentiators</p>
+        <p className="text-sm text-mist">Key differentiators</p>
         <h2 className="mt-3 text-balance display-section">What generic AI can&apos;t give you.</h2>
       </Reveal>
 
       <div className="mt-12 grid gap-x-12 gap-y-10 md:grid-cols-2">
         {points.map((item, index) => (
           <Reveal key={item.title} delay={(index % 2) * 0.08} className="border-t border-white/10 pt-6">
-            <span className="font-mono text-sm text-iris">0{index + 1}</span>
-            <h3 className="mt-3 text-xl leading-snug text-bone-text">{item.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-bone-dim">{item.body}</p>
+            <span className="font-mono text-sm text-lavender">0{index + 1}</span>
+            <h3 className="mt-3 text-xl leading-snug text-snow">{item.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist">{item.body}</p>
           </Reveal>
         ))}
       </div>

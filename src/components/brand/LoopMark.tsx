@@ -1,20 +1,22 @@
 import { cn } from "@/lib/cn";
 
 /**
- * The Looped mark: one continuous loop with a single node surfacing on it —
- * the event cycle, and the moment intelligence appears. Echoes the node that
- * travels the LoopRail down the page. Inherits `currentColor`.
+ * The Looped mark: one ring. RECOVERED from the deck's title slide (a 30px
+ * circle with a 3px stroke beside the bold wordmark). Inherits `currentColor`;
+ * pass `gradient` for the gradient-stroked version used on light.
  */
 export function LoopMark({
   className,
   title,
+  gradient = false,
 }: {
   className?: string;
   title?: string;
+  gradient?: boolean;
 }): React.ReactElement {
   return (
     <svg
-      viewBox="0 0 28 28"
+      viewBox="0 0 30 30"
       className={cn("h-6 w-6", className)}
       role={title ? "img" : undefined}
       aria-hidden={title ? undefined : true}
@@ -22,15 +24,21 @@ export function LoopMark({
       fill="none"
     >
       {title ? <title>{title}</title> : null}
-      {/* the loop */}
-      <circle cx="14" cy="14" r="8.5" stroke="currentColor" strokeWidth="2" />
-      {/* the node surfacing on the loop */}
-      <circle cx="20.01" cy="8" r="3.1" fill="currentColor" />
+      {gradient ? (
+        <defs>
+          <linearGradient id="loop-mark-grad" x1="0" y1="0" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="#7c3aed" />
+            <stop offset="0.55" stopColor="#ec4899" />
+            <stop offset="1" stopColor="#fb923c" />
+          </linearGradient>
+        </defs>
+      ) : null}
+      <circle cx="15" cy="15" r="13.5" stroke={gradient ? "url(#loop-mark-grad)" : "currentColor"} strokeWidth="3" />
     </svg>
   );
 }
 
-/** Wordmark: the loop mark set against the "Looped" name. */
+/** Wordmark: the ring beside "Looped", bold, tight. */
 export function Wordmark({
   className,
   markClassName,
@@ -39,9 +47,9 @@ export function Wordmark({
   markClassName?: string;
 }): React.ReactElement {
   return (
-    <span className={cn("inline-flex items-center gap-2", className)}>
-      <LoopMark className={cn("h-[1.15em] w-[1.15em] text-violet", markClassName)} />
-      <span className="font-serif text-[1.28em] leading-none tracking-[-0.01em]">Looped</span>
+    <span className={cn("inline-flex items-center gap-2.5", className)}>
+      <LoopMark gradient className={cn("h-[1.25em] w-[1.25em]", markClassName)} />
+      <span className="font-sans text-[1.3em] font-bold leading-none tracking-[-0.02em]">Looped</span>
     </span>
   );
 }

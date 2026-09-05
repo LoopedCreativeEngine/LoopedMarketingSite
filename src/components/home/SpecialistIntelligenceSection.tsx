@@ -18,10 +18,10 @@ const DOMAINS = [
 
 export function SpecialistIntelligenceSection(): React.ReactElement {
   return (
-    <Panel tone="paper" id="pillars" index="05" kicker="Specialist event intelligence">
+    <Panel tone="stone" id="pillars" index="05" kicker="Specialist event intelligence">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Specialist intelligence for every discipline. One operating system underneath.</h2>
-        <p className="mt-5 text-lg leading-relaxed text-graphite">
+        <p className="mt-5 text-lg leading-relaxed text-slate">
           Each part of an event business gets intelligence built for its work, on the same context, the same memory
           and the same loop. What sponsorship learns, marketing knows. What the programme decides, operations sees.
         </p>
@@ -31,26 +31,26 @@ export function SpecialistIntelligenceSection(): React.ReactElement {
           <Reveal key={d.name} delay={(index % 2) * 0.06}>
             <Link
               href={d.href}
-              className="group flex items-start gap-5 border-t border-[rgba(23,19,31,0.12)] py-6 transition-colors hover:border-violet/50"
+              className="group flex items-start gap-5 border-t border-[rgba(15,23,42,0.12)] py-6 transition-colors hover:border-purple/50"
             >
-              <span className="mt-1 font-mono text-sm text-violet">0{index + 1}</span>
+              <span className="mt-1 font-mono text-sm text-purple">0{index + 1}</span>
               <span className="flex-1">
                 <span className="flex items-center justify-between gap-3">
-                  <span className="font-serif text-2xl tracking-tight text-ink-text transition-colors group-hover:text-violet">
+                  <span className="font-serif text-2xl tracking-tight text-ink transition-colors group-hover:text-purple">
                     {d.name}
                   </span>
-                  <span className="text-violet transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
+                  <span className="text-purple transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                     →
                   </span>
                 </span>
-                <span className="mt-2 block text-sm leading-relaxed text-graphite">{d.body}</span>
+                <span className="mt-2 block text-sm leading-relaxed text-slate">{d.body}</span>
               </span>
             </Link>
           </Reveal>
         ))}
       </div>
       <Reveal>
-        <p className="mt-14 max-w-3xl text-balance font-serif text-2xl italic leading-snug text-ink-text sm:text-3xl">
+        <p className="mt-14 max-w-3xl text-balance font-serif text-2xl italic leading-snug text-ink sm:text-3xl">
           Sharp on their own. Stronger together, across every event you run.
         </p>
       </Reveal>

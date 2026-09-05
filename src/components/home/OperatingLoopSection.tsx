@@ -14,10 +14,10 @@ const STAGES: ThreadNode[] = [
 
 export function OperatingLoopSection(): React.ReactElement {
   return (
-    <Panel tone="paper" index="03" kicker="How it runs">
+    <Panel tone="stone" index="03" kicker="How it runs">
       <Reveal className="max-w-4xl">
         <h2 className="text-balance display-section">Understand → Decide → Act → Measure → Learn</h2>
-        <p className="mt-5 max-w-3xl text-base leading-relaxed text-graphite sm:text-lg">
+        <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
           Not five features. One cycle that runs across every event you have, all the time, and comes back round
           knowing more than when it left.
         </p>
@@ -26,7 +26,7 @@ export function OperatingLoopSection(): React.ReactElement {
         <ThreadDiagram nodes={STAGES} />
       </Reveal>
       <Reveal>
-        <p className="mt-8 border-l-2 border-violet pl-5 font-serif text-2xl italic leading-snug text-ink-text sm:text-3xl">
+        <p className="mt-8 border-l-2 border-purple pl-5 font-serif text-2xl italic leading-snug text-ink sm:text-3xl">
           Most software remembers what was done. Looped remembers why, what it changed, and what the market did next.
         </p>
       </Reveal>

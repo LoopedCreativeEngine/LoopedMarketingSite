@@ -24,10 +24,10 @@ const JOURNEYS = [
 
 export function StartSection(): React.ReactElement {
   return (
-    <Panel tone="bone" id="start" index="10" kicker="Start small">
+    <Panel tone="paper" id="start" index="10" kicker="Start small">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Prove it on one event.</h2>
-        <p className="mt-5 text-base leading-relaxed text-graphite sm:text-lg">
+        <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
           Looped is meant to earn its place. Start with one or two events, let the outcomes speak, then decide how far it
           goes.
         </p>
@@ -39,13 +39,13 @@ export function StartSection(): React.ReactElement {
             delay={index * 0.06}
             className={
               j.primary
-                ? "rounded-2xl border border-violet bg-[rgba(67,56,202,0.05)] p-7 shadow-[var(--violet-emph)]"
-                : "rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper p-7 shadow-[var(--lift-light)]"
+                ? "rounded-2xl border border-purple bg-[rgba(124,58,237,0.05)] p-7 shadow-[var(--grad-emph)]"
+                : "rounded-2xl border border-[rgba(15,23,42,0.12)] bg-stone p-7 shadow-[var(--lift-light)]"
             }
           >
-            <span className={`kicker ${j.primary ? "text-violet" : "text-muted-ink"}`}>{j.layer}</span>
-            <h3 className="mt-4 text-2xl text-ink-text">{j.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-graphite">{j.body}</p>
+            <span className={`kicker ${j.primary ? "text-purple" : "text-muted"}`}>{j.layer}</span>
+            <h3 className="mt-4 text-2xl text-ink">{j.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate">{j.body}</p>
             <div className="mt-6">
               <CtaButton href="/demo" variant={j.primary ? "primary" : "secondary"}>
                 {j.cta}

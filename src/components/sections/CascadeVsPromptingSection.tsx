@@ -28,9 +28,9 @@ const cards = [
 
 export function CascadeVsPromptingSection(): React.ReactElement {
   return (
-    <Panel tone="ink" index="05" kicker="The cascade">
+    <Panel tone="night" index="05" kicker="The cascade">
       <Reveal className="max-w-3xl">
-        <p className="text-sm text-bone-dim">Why the cascade beats prompting</p>
+        <p className="text-sm text-mist">Why the cascade beats prompting</p>
         <h2 className="mt-3 text-balance display-section">
           A prompt gives you an answer. A cascade gives you an advantage.
         </h2>
@@ -42,16 +42,16 @@ export function CascadeVsPromptingSection(): React.ReactElement {
             key={card.title}
             className={`rounded-2xl border p-7 ${
               card.highlighted
-                ? "border-iris/60 bg-[rgba(169,156,255,0.09)] shadow-[var(--iris-emph)]"
-                : "border-white/10 bg-ink-raised"
+                ? "border-pink/60 bg-[rgba(167,139,219,0.09)] shadow-[var(--lavender-emph)]"
+                : "border-white/10 bg-night-raised"
             }`}
           >
-            <card.icon className={`h-7 w-7 ${card.highlighted ? "text-iris" : "text-bone-dim"}`} aria-hidden />
-            <h3 className="mt-5 flex items-center gap-2 text-xl text-bone-text">
+            <card.icon className={`h-7 w-7 ${card.highlighted ? "text-lavender" : "text-mist"}`} aria-hidden />
+            <h3 className="mt-5 flex items-center gap-2 text-xl text-snow">
               {card.title}
-              {card.highlighted ? <span className="h-2 w-2 rounded-full bg-iris" aria-hidden /> : null}
+              {card.highlighted ? <span className="h-2 w-2 rounded-full bg-pink" aria-hidden /> : null}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-bone-dim">{card.body}</p>
+            <p className="mt-3 text-sm leading-relaxed text-mist">{card.body}</p>
           </Reveal>
         ))}
       </div>

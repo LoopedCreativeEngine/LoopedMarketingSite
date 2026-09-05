@@ -63,7 +63,7 @@ export function CascadeDiagram({ expanded = false }: { expanded?: boolean }): Re
             ref={pathRef}
             d="M 50 50 C 180 50, 210 50, 330 50 S 480 50, 610 50 S 760 50, 850 50"
             fill="none"
-            stroke="var(--violet)"
+            stroke="var(--purple)"
             strokeWidth="1.5"
             opacity="0.85"
           />
@@ -73,9 +73,9 @@ export function CascadeDiagram({ expanded = false }: { expanded?: boolean }): Re
           {nodes.map((node) => (
             <div
               key={node.id}
-              className="cascade-node rounded-xl border border-[rgba(23,19,31,0.12)] bg-paper p-4 shadow-[var(--lift-light)]"
+              className="cascade-node rounded-xl border border-[rgba(15,23,42,0.12)] bg-stone p-4 shadow-[var(--lift-light)]"
             >
-              <p className="text-sm font-medium text-ink-text">{node.label}</p>
+              <p className="text-sm font-medium text-ink">{node.label}</p>
             </div>
           ))}
         </div>

@@ -28,51 +28,51 @@ const STATS = [
 
 export function WhyNowSection(): React.ReactElement {
   return (
-    <Panel tone="bone" index="02" kicker="Why now">
+    <Panel tone="paper" index="02" kicker="Why now">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
         <Reveal className="lg:col-span-5">
           <h2 className="text-balance display-section">The industry&apos;s own benchmark already describes Looped.</h2>
         </Reveal>
         <Reveal className="space-y-5 lg:col-span-7 lg:pt-2">
           {BODY_PARAS.map((para) => (
-            <p key={para.slice(0, 24)} className="text-base leading-relaxed text-graphite sm:text-lg">
+            <p key={para.slice(0, 24)} className="text-base leading-relaxed text-slate sm:text-lg">
               {para}
             </p>
           ))}
         </Reveal>
       </div>
 
-      <Reveal className="mt-14 overflow-hidden rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper shadow-[var(--lift-light)]">
-        <div className="grid divide-y divide-[rgba(23,19,31,0.10)] md:grid-cols-3 md:divide-x md:divide-y-0">
+      <Reveal className="mt-14 overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.12)] bg-stone shadow-[var(--lift-light)]">
+        <div className="grid divide-y divide-[rgba(15,23,42,0.10)] md:grid-cols-3 md:divide-x md:divide-y-0">
           {STATS.map((stat) => (
             <div
               key={stat.figure}
-              className={`relative p-7 sm:p-8 ${stat.highlighted ? "bg-[rgba(67,56,202,0.05)]" : ""}`}
+              className={`relative p-7 sm:p-8 ${stat.highlighted ? "bg-[rgba(124,58,237,0.05)]" : ""}`}
             >
               {stat.highlighted ? (
-                <span className="absolute right-6 top-7 h-2 w-2 rounded-full bg-violet" aria-hidden />
+                <span className="absolute right-6 top-7 h-2 w-2 rounded-full bg-purple" aria-hidden />
               ) : null}
               <p
                 className={`font-serif leading-[0.95] tracking-tight ${
-                  stat.highlighted ? "text-2xl text-violet sm:text-3xl" : "text-4xl text-ink-text sm:text-5xl"
+                  stat.highlighted ? "text-2xl text-purple sm:text-3xl" : "text-4xl text-ink sm:text-5xl"
                 }`}
               >
                 {stat.figure}
               </p>
-              <p className="mt-4 text-sm leading-relaxed text-graphite">{stat.body}</p>
+              <p className="mt-4 text-sm leading-relaxed text-slate">{stat.body}</p>
             </div>
           ))}
         </div>
       </Reveal>
 
       <Reveal>
-        <p className="mt-6 text-xs leading-relaxed text-muted-ink">
+        <p className="mt-6 text-xs leading-relaxed text-muted">
           Source: Event Tech Live, The State of AI in Event Technology, First Edition (Parry, 2026).{" "}
           <a
             href="https://eventtechlive.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium text-violet underline decoration-violet/40 underline-offset-2 transition-colors hover:decoration-violet"
+            className="font-medium text-purple underline decoration-violet/40 underline-offset-2 transition-colors hover:decoration-violet"
           >
             eventtechlive.com
           </a>

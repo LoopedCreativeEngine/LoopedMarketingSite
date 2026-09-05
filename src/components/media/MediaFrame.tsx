@@ -32,15 +32,15 @@ export function MediaFrame({
   const ink = tone === "ink";
 
   const shell = ink
-    ? "border-white/10 bg-ink-raised shadow-[var(--lift-ink)]"
-    : "border-[rgba(23,19,31,0.10)] bg-paper shadow-[var(--lift-light)]";
-  const chrome = ink ? "border-white/10 bg-black/25" : "border-[rgba(23,19,31,0.08)] bg-sand/60";
-  const dot = ink ? "bg-white/20" : "bg-[rgba(23,19,31,0.18)]";
-  const pill = ink ? "bg-white/10 text-bone-dim" : "bg-[rgba(23,19,31,0.05)] text-muted-ink";
-  const body = ink ? "bg-ink" : "bg-bone";
-  const shape = ink ? "bg-white/[0.06]" : "bg-[rgba(23,19,31,0.05)]";
-  const shapeStrong = ink ? "bg-iris/25" : "bg-violet/15";
-  const captionTone = ink ? "text-bone-dim" : "text-muted-ink";
+    ? "border-white/10 bg-night-raised shadow-[var(--lift-ink)]"
+    : "border-[rgba(15,23,42,0.10)] bg-stone shadow-[var(--lift-light)]";
+  const chrome = ink ? "border-white/10 bg-black/25" : "border-[rgba(15,23,42,0.08)] bg-stone-deep/60";
+  const dot = ink ? "bg-white/20" : "bg-[rgba(15,23,42,0.18)]";
+  const pill = ink ? "bg-white/10 text-mist" : "bg-[rgba(15,23,42,0.05)] text-muted";
+  const body = ink ? "bg-night" : "bg-paper";
+  const shape = ink ? "bg-white/[0.06]" : "bg-[rgba(15,23,42,0.05)]";
+  const shapeStrong = ink ? "bg-pink/25" : "bg-purple/15";
+  const captionTone = ink ? "text-mist" : "text-muted";
 
   return (
     <figure
@@ -71,7 +71,7 @@ export function MediaFrame({
             </span>
           </>
         )}
-        <span className={cn("ml-auto kicker text-[0.6rem]", ink ? "text-iris/80" : "text-violet/70")}>{tag}</span>
+        <span className={cn("ml-auto kicker text-[0.6rem]", ink ? "text-lavender/80" : "text-purple/70")}>{tag}</span>
       </div>
 
       {/* body */}
@@ -81,7 +81,7 @@ export function MediaFrame({
             {variant === "video" ? (
               <div className="flex h-full items-center justify-center">
                 <span
-                  className="flex h-16 w-16 items-center justify-center rounded-full bg-violet text-bone shadow-[0_10px_30px_-8px_rgba(67,56,202,0.6)]"
+                  className="flex h-16 w-16 items-center justify-center rounded-full bg-purple text-snow shadow-[0_10px_30px_-8px_rgba(124,58,237,0.6)]"
                   aria-hidden
                 >
                   <svg viewBox="0 0 24 24" className="ml-1 h-6 w-6" fill="currentColor">
@@ -128,7 +128,7 @@ export function MediaFrame({
             captionTone,
           )}
         >
-          <span className={cn("inline-block h-1.5 w-1.5 shrink-0 rounded-full", ink ? "bg-iris" : "bg-violet")} aria-hidden />
+          <span className={cn("inline-block h-1.5 w-1.5 shrink-0 rounded-full", ink ? "bg-pink" : "bg-purple")} aria-hidden />
           <span className="truncate">{label}</span>
         </figcaption>
       </div>

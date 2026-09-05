@@ -20,10 +20,10 @@ const cards = [
 
 export function OptionalAutomationSection(): React.ReactElement {
   return (
-    <Panel tone="bone" index="08" kicker="Automation layers">
+    <Panel tone="paper" index="08" kicker="Automation layers">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Start with intelligence. Go further when you&apos;re ready.</h2>
-        <p className="mt-5 text-base leading-relaxed text-graphite sm:text-lg">
+        <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
           These layers add automation when it makes sense, never before. Looped surfaces and recommends, your team
           approves, and only then does the platform execute. Nothing fires without a human decision.
         </p>
@@ -34,11 +34,11 @@ export function OptionalAutomationSection(): React.ReactElement {
           <Reveal
             key={card.title}
             delay={index * 0.06}
-            className="rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper p-7 shadow-[var(--lift-light)]"
+            className="rounded-2xl border border-[rgba(15,23,42,0.12)] bg-stone p-7 shadow-[var(--lift-light)]"
           >
-            <span className="kicker text-violet">Layer 0{index + 1}</span>
-            <h3 className="mt-4 text-xl text-ink-text">{card.title}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-graphite">{card.body}</p>
+            <span className="kicker text-purple">Layer 0{index + 1}</span>
+            <h3 className="mt-4 text-xl text-ink">{card.title}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate">{card.body}</p>
           </Reveal>
         ))}
       </div>

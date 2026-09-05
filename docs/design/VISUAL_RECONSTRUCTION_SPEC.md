@@ -1,143 +1,100 @@
-# Looped marketing site — visual reconstruction spec
+# Looped marketing site — visual reconstruction spec (Claude Design system)
 
-**Status:** reconstruction target for `review/homepage-recording-fidelity-2026-09-05`.
-**Authority:** the founder's screen recording `Recording 2026-08-27 230704.mp4` is the locked visual
-specification of the Looped brand.
+**Status:** reconstruction target for `review/homepage-claude-design-2026-09-05`.
+**Authority:** the founder's approved Claude Design artefact (the homepage shown in the founder
+screenshot, 2026-09-05). The earlier baseline `feature/website-endgame-content@5ca71de` is **not** the
+approved design and is no longer used.
 
 ## Evidence statement — read this first
 
-The recording itself is **not reachable from the build host**: it is not on the machine, not in the
-founder's Google Drive (searched by name and by video MIME type on 2026-09-05), and not in any branch,
-stash or worktree of the two Looped repositories. **No frame of the recording has been inspected.**
+Two sources were reachable from the build host:
 
-What *is* recoverable is the code that rendered the site two days before the recording was made:
-`origin/feature/website-endgame-content` at `5ca71de` (25 Aug 2026, "add ICO registration number to
-the site footer"), the last commit on the branch the founder describes as the approved website. Every
-value below is **measured from that source**, not from the recording. Where the recording would be the
-only evidence (Loop animation timing, scroll feel, the exact hero art) the entry says so.
+1. **The founder's "Looped ribbon hero animation" artefact** (claude.ai/code artifact
+   `88fbfa1c…`, published 4 Aug 2026) — the Emap August deck built in the approved design language.
+   Its bundle was unpacked and yields, verbatim: the ribbon Loop's canvas code, the three typefaces,
+   the full palette, the gradient stops and direction, the kicker treatment, the card geometry, the
+   light and dark plate colours. Everything marked **RECOVERED** below is taken from it.
+2. **The founder's written description of the approved homepage** (2026-09-05): near-white page,
+   large dark serif hero, second line in the pink → purple → orange gradient, the animated gradient
+   Loop oversized and partially cropped on the right, clean light navigation, small purple-dot kicker
+   "FOR CONFERENCE AND AWARDS TEAMS", gradient rounded CTA, generous whitespace. Everything marked
+   **RECONSTRUCTED** is built from that description using the recovered tokens.
 
-Evidence labels used throughout:
+**The founder screenshot itself and the Claude Design file were not reachable from this host**, so
+proportions — hero column width, Loop size and crop, nav height, section spacing — are
+**NOT EVIDENCED** and must be checked side-by-side against the screenshot before this spec is
+marked verified. `docs/design/screenshots/` holds the rebuild's desktop and mobile captures for that
+comparison.
 
-- **RECOVERED** — taken verbatim from `5ca71de` source and carried into the rebuild unchanged.
-- **RECONSTRUCTED** — built from recovered brand devices where the source had no equivalent; the
-  recording may show something different and must be checked frame by frame when it is available.
-- **NOT EVIDENCED** — the recording is the only source; nothing on this host can confirm it.
-
-When the recording is supplied (upload to Drive, or `scp` to the host), extract frames with the
-Playwright ffmpeg already on the host
-(`~/.cache/ms-playwright/ffmpeg-*/ffmpeg-linux -i <mp4> -vf fps=2 frames/%04d.png`) and compare against
-`docs/design/screenshots/` section by section before this spec is marked verified.
-
-## 1. Surfaces and colour — RECOVERED (`src/app/globals.css`, `src/styles/design-system.ts`)
-
-"Programme paper + ink": warm paper panels interleaved with full-bleed near-black plates, threaded by
-one violet line.
+## 1. Surfaces and colour — RECOVERED
 
 | Token | Value | Use |
 |---|---|---|
-| `--bone` | `#f4f0e7` | page base (light) |
-| `--paper` | `#fcfaf5` | raised light surface: cards, media frames, alternate panel |
-| `--sand` | `#e8e1d2` | warm inset, hairlines on light |
-| `--ink` | `#17131f` | plate base (dark) |
-| `--ink-raised` | `#221c30` | raised surface on ink |
-| `--violet` | `#4338ca` | primary accent: CTA fill on light, the Loop, highlights |
-| `--iris` | `#a99cff` | accent and links on ink |
-| `--focus` | `#6d5fe6` | focus ring; the LoopRail fill and node |
-| `--ink-text` / `--graphite` / `--muted-ink` | `#17131f` / `#4f4a5c` / `#6e6879` | headings / body / captions on light |
-| `--bone-text` / `--bone-dim` | `#f4f0e7` / `#b7b1c4` | headings / body on ink |
+| `--paper` | `#FFFFFF` | page base |
+| `--stone` | `#FBFAF9` | alternate panel, cards |
+| `--stone-deep` | `#F1EEEA` | insets, hover fills |
+| `--hairline` | `#ECE9E4` | borders on light |
+| `--night` | `#0B1020` | dark plate (sparingly) |
+| `--night-raised` | `#151B31` | cards on night (reconstructed from the deck's dark cards) |
+| `--purple` / `--pink` / `--orange` | `#7C3AED` / `#EC4899` / `#FB923C` | the gradient stops; the three dots |
+| `--lavender` | `#A78BDB` | kicker and links on night |
+| `--ink` / `--slate` / `--muted` | `#0F172A` / `#475569` / `#64748B` | headings / body / captions on light |
+| `--snow` / `--mist` / `--mist-dim` | `#F8FAFC` / `#CBD5E1` / `#94A3B8` | text on night |
 
-Hairlines: `rgba(23,19,31,0.06–0.12)` on light, `white/10` on ink. There are **no gradients** in the
-recovered system; violet and iris are flat. (The rejected 5 Sep build's violet→pink→orange gradient was
-an invention and is removed.)
+Gradient: `linear-gradient(100deg, #7C3AED, #EC4899, #FB923C)` (12 uses in the deck); the kicker dot
+is `linear-gradient(#7C3AED, #EC4899)` at 9px. Card tints: `rgba(124,58,237,0.07)` / `rgba(236,72,153,0.07)`
+at 160°.
 
-Selection: `rgba(67,56,202,0.22)` on light, `rgba(169,156,255,0.28)` on ink.
+## 2. Typography — RECOVERED faces, RECONSTRUCTED web scale
 
-## 2. Typography — RECOVERED (`src/app/layout.tsx`, `globals.css`)
+- Display: **Newsreader** 400 (italic for pull-quotes and the deck's sub-lines), tracking −0.02em,
+  line-height 0.94–1.0. Deck scale 150px title / 92px section heads on a 1920 canvas → web
+  `clamp(2.9rem, 6.6vw, 5.6rem)` hero, `clamp(2rem, 3.9vw, 3.4rem)` sections.
+- Body: **Hanken Grotesk** 400/500/600/700, line-height 1.5.
+- Labels: **JetBrains Mono**, uppercase, tracking 0.22em, beside the gradient dot; credibility line in
+  mono at 0.78rem with tracking 0.06em and a purple / pink / orange dot each (deck title slide).
 
-- Display: **Fraunces** 300–700, used at weight 400 (hero at 500), tracking `-0.02em`, line-height 1.04.
-- Body: **DM Sans** 400/500/700.
-- Labels and data: **DM Mono** 400/500 — `.kicker`: 0.72rem, uppercase, tracking 0.22em, line-height 1.
-- Scale: `.display-hero` clamp(2.75rem, 6.4vw, 5rem) / 0.98 / -0.03em; `.display-section`
-  clamp(2rem, 3.8vw, 3.15rem) / 1.02 / -0.025em; `.display-stat` clamp(2.75rem, 5.2vw, 4.25rem).
-- Body copy: `text-base leading-relaxed` (1rem/1.625) rising to `sm:text-lg`; hero lede `text-lg
-  leading-[1.65]` max-width 36rem.
-- Serif italic pull-quotes in violet (light) or bone-text (ink): `font-serif text-2xl…3xl italic
-  leading-snug`, often with `border-l-2 border-violet pl-5`.
-- Headings on ink flip to `--bone-text` via `.on-ink`.
+## 3. Layout — RECONSTRUCTED
 
-## 3. Layout — RECOVERED
+Container 72rem; hero copy column 42rem; panels `py-20 sm:py-28`; header 4.5rem, transparent until
+scrolled then `paper/85` blurred with a hairline. Nav: wordmark left, four quiet links centred, one
+gradient pill right.
 
-- Container `max-w-6xl` (72rem) with `px-5 sm:px-6 lg:px-8`; narrow `max-w-3xl`, wide `max-w-7xl`.
-- Panel rhythm: `py-20 sm:py-28`; hero `pt-28 sm:pt-32 pb-20 sm:pb-28`; final plate `py-24 sm:py-32`.
-- Run-of-show index: hairline `h-px w-8` + mono index (`01`) in violet/iris + mono kicker, `mb-10`.
-- Two-column sections `grid gap-12 lg:grid-cols-2 lg:gap-14` or 12-column `lg:grid-cols-12 lg:gap-8`.
-- Fixed header 4rem, transparent until 16px of scroll, then `bg-bone/85 backdrop-blur-md` with a
-  hairline; nav 0.875rem/500 in graphite, hover violet; two pill CTAs (outline, violet fill).
-- Footer: ink plate, wordmark + strapline, inline nav, hairline, legal line.
+## 4. Components
 
-## 4. Components — RECOVERED
+- **Buttons** — RECONSTRUCTED from "gradient rounded CTA": gradient pill `rounded-full px-6 py-3
+  text-sm font-semibold`, white text, pink/purple glow; secondary outline `rgba(15,23,42,0.18)`.
+- **Cards** — RECOVERED: white, `border: 1px solid #ECE9E4`, radius 20px, padding 22–26px, a 12px
+  accent dot above the title.
+- **Kicker** — RECOVERED: 9px gradient dot + mono label.
+- **Mark** — RECOVERED: a ring (30px, 3px stroke) beside a bold "Looped" (Hanken 700, −0.02em);
+  gradient-stroked on light.
+- **Media frames** carried from the previous build with the new tokens (schematic only).
 
-- **Buttons** `CtaButton`: `rounded-full px-6 py-3 text-sm font-semibold tracking-tight`; primary
-  violet fill with `--violet-emph` ring-and-glow, hover `-translate-y-0.5`; secondary outline
-  `rgba(23,19,31,0.22)` (light) / `white/25` (ink).
-- **Cards**: `rounded-2xl` (1rem), hairline border, `bg-paper` + `--lift-light` on light,
-  `bg-ink-raised` + `--lift-ink` on ink; highlighted card `border-violet bg-[rgba(67,56,202,0.05)]`
-  + `--violet-emph`. Inner padding `p-7` (`sm:p-8` for stat cells). Small nodes `rounded-xl p-4`.
-- **Media frames** `MediaFrame`: browser/app/video chrome, `rounded-2xl`, mono tag top-right, mono
-  caption bottom-left with a violet/iris dot; schematic shapes only, never invented figures.
-- **Lists of items**: hairline-topped rows with a mono index (`01`, `P1`) in violet/iris and a serif
-  title; arrow `→` translates on hover.
-- **Tables**: `rounded-2xl` bordered paper, the Looped column filled violet in the header and
-  `rgba(67,56,202,0.06)` in the body.
-- **Grain**: fixed SVG turbulence overlay at 0.5 opacity, multiply blend, 14s stepped drift.
-- **Cursor**: custom cursor component (desktop).
+## 5. The Loop — RECOVERED code, RECONSTRUCTED placement
 
-## 5. The Loop — RECOVERED devices, RECONSTRUCTED figure
+`src/components/brand/Ribbon.tsx` is a line-for-line port of the deck's `Component` script:
 
-Recovered devices, carried unchanged:
+- a closed loop of 220 segments, `x = cx + rx·cos u + ax·sin(2u + t) + bx·cos(3u − 0.6t)`,
+  `y = cy + ry·sin u + ay·sin(3u − t) + by·cos(2u + 0.7t)` with `rx = 0.185w`, `ry = 0.30h`;
+- stroke colour cycles purple → pink → orange → pink along the loop and rotates once per cycle;
+  stroke width `max(9, 0.0135w)·(0.78 + 0.30·sin(u + t))`;
+- drawn to an offscreen canvas, composited twice: blurred 26px at 42% (the glow) and sharp at 90%;
+- a warm light pulse (`rgba(255,244,232)`, blur 7px, additive) travels the loop every 13 s;
+- one wobble cycle = 22 s; frames capped at ~30/s; static single frame under reduced motion.
 
-- **LoopMark** (`src/components/brand/LoopMark.tsx`): `viewBox 0 0 28 28`; circle `cx 14 cy 14 r 8.5
-  stroke-width 2`; the node `circle cx 20.01 cy 8 r 3.1` filled — a node surfacing on the loop at
-  the upper-right (45°). Used at 1.15em beside the "Looped" wordmark (Fraunces 1.28em), as the
-  favicon, and as a 26rem watermark at 6% opacity on the closing plate.
-- **LoopRail** (`src/components/effects/LoopRail.tsx`): a 1px vertical thread fixed in the left
-  margin (`top-24` to `bottom-16`, `left = max(1.5rem, (100vw − 72rem)/2 − 1.75rem)`), desktop only,
-  base `rgba(124,108,255,0.2)`; a fill in `--focus` scales from the top with scroll progress
-  (`scaleY(progress)`) and a 10px node with a 4px halo and 14px glow travels down it. Updated on
-  `requestAnimationFrame` from scroll; removed under reduced motion.
-- **Thread draw**: an SVG path with `stroke-dasharray = length` animated to `stroke-dashoffset 0`
-  over 1.3s (`ease: none`) when the section reaches 74% of the viewport (GSAP ScrollTrigger),
-  with nodes rising `y: 28 → 0` over 0.55s at 0.09s stagger (`CascadeDiagram`).
+Placement (RECONSTRUCTED from "oversized, partially cropped, right side"): a 64rem × 52rem canvas
+anchored at the right edge with 12vw cropped off; on small screens beneath the copy, cropped right.
 
-Reconstructed for the "connected intelligence" section (**must be checked against the recording**):
+## 6. Motion — RECONSTRUCTED
 
-- **LoopFigure**: the LoopMark geometry enlarged (same 28-unit viewBox, same proportional stroke),
-  the loop drawing itself on scroll with the recovered thread-draw timing, and the node then
-  travelling the loop continuously (SMIL `animateMotion`, 12s linear, starting at the mark's 45°
-  position) with the recovered live-dot halo (`animate-ping`). Four mono signal labels sit outside
-  the loop at the compass points. Timing, direction, size and label placement are
-  **NOT EVIDENCED**.
+Hero elements rise 22px over 0.6s at 0.09s stagger; sections rise 16px over 0.55s once at 88% of
+the viewport (GSAP); the ribbon runs continuously. No smooth-scroll library, no grain, no cursor.
 
-## 6. Motion — RECOVERED
+## 7. What only the founder screenshot can settle — NOT EVIDENCED
 
-- Hero: elements render at opacity 0 and rise `y: 22 → 0` over 0.6s `power2.out`, stagger 0.09s.
-- Sections: `Reveal` rises `y: 16 → 0` over 0.55s at `top 88%`, once; `RevealStagger` 0.5s at 0.08s.
-- Scroll: Lenis smooth scroll, `lerp 0.08`, `duration 1.1`, wheel only; disabled under reduced motion.
-- Header: colour transition 300ms; hover transforms 200–300ms.
-- Live status dot: `animate-ping` ring at 50% violet around a 2×2 violet dot.
-- Everything stops under `prefers-reduced-motion`; grain is removed.
-
-## 7. Mobile — RECOVERED
-
-- Single column; hero CTAs stack full-width (`w-full sm:w-auto`); the LoopRail and custom cursor
-  are desktop-only; tables collapse to stacked cards with the Looped card highlighted; nav becomes a
-  right-hand sheet (`min(100%, 320px)`) on a blurred ink overlay.
-
-## 8. What the recording alone can settle — NOT EVIDENCED
-
-1. Whether the hero's right-hand slot carried real product footage or the schematic `MediaFrame`.
-2. The Loop animation the founder refers to: its size, position, direction, speed and whether it
-   was the rail, the mark, a drawn thread, or a device not in `5ca71de`.
-3. Scroll feel (Lenis parameters were in source, but the recording is the only proof of what shipped).
-4. Section entrance timing as perceived, and any hover or cursor effects.
-5. Any section present in the recording that `5ca71de` does not contain.
+1. The hero's exact proportions: headline size against the Loop, the Loop's size and crop.
+2. Whether the nav carries one CTA or two, and the link set.
+3. Section backgrounds beyond the hero (how many night plates the approved page has).
+4. The credibility line's presence and treatment beneath the CTA.
+5. Any product screenshot or illustration in the approved page.

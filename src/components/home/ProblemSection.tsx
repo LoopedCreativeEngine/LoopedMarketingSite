@@ -11,7 +11,7 @@ const CHANGES = `One operating system that holds the whole picture — the event
 
 export function ProblemSection(): React.ReactElement {
   return (
-    <Panel tone="ink" index="01" kicker="The problem">
+    <Panel tone="paper" index="01" kicker="The problem">
       <Reveal>
         <h2 className="max-w-3xl text-balance display-section">
           An event business runs on intelligence that has nowhere to live.
@@ -20,22 +20,22 @@ export function ProblemSection(): React.ReactElement {
 
       <div className="mt-12 grid gap-6 lg:grid-cols-12 lg:gap-8">
         <div className="flex flex-col gap-6 lg:col-span-7">
-          <Reveal className="rounded-2xl border border-white/10 bg-ink-raised p-7">
-            <h3 className="text-xl text-bone-text">Where it lives today</h3>
-            <p className="mt-4 text-base leading-relaxed text-bone-dim">{TODAY}</p>
+          <Reveal className="rounded-[20px] border border-hairline bg-paper p-7 shadow-[var(--lift-light)]">
+            <h3 className="text-xl text-ink">Where it lives today</h3>
+            <p className="mt-4 text-base leading-relaxed text-slate">{TODAY}</p>
           </Reveal>
-          <Reveal className="rounded-2xl border border-iris/50 bg-[rgba(169,156,255,0.08)] p-7 shadow-[var(--iris-emph)]">
-            <h3 className="flex items-center gap-2.5 text-xl text-bone-text">
-              <span className="h-2 w-2 rounded-full bg-iris" aria-hidden />
+          <Reveal className="rounded-[20px] border border-transparent bg-[linear-gradient(160deg,rgba(124,58,237,0.07),rgba(236,72,153,0.07))] p-7">
+            <h3 className="flex items-center gap-2.5 text-xl text-ink">
+              <span className="h-2.5 w-2.5 rounded-full bg-grad-dot" aria-hidden />
               Where Looped puts it
             </h3>
-            <p className="mt-4 text-base leading-relaxed text-bone-dim">{CHANGES}</p>
+            <p className="mt-4 text-base leading-relaxed text-slate">{CHANGES}</p>
           </Reveal>
         </div>
         <Reveal className="lg:col-span-5">
           <MediaFrame
             variant="app"
-            tone="ink"
+            tone="light"
             tag="Workspace"
             aspect="4 / 5"
             label="Every team, one understanding of the event"
@@ -45,7 +45,7 @@ export function ProblemSection(): React.ReactElement {
       </div>
 
       <Reveal>
-        <p className="mx-auto mt-12 max-w-4xl text-balance text-center font-serif text-2xl italic leading-snug text-bone-text sm:text-3xl">
+        <p className="mx-auto mt-12 max-w-4xl text-balance text-center font-serif text-2xl italic leading-snug text-ink sm:text-3xl">
           Point solutions automate a task. None of them connect the intelligence.
         </p>
       </Reveal>

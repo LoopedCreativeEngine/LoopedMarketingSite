@@ -1,37 +1,45 @@
 /**
- * Looped marketing site — design tokens.
+ * Looped design tokens — the approved Claude Design system.
  *
  * Single source of truth is `src/app/globals.css`; this file mirrors it for
- * use in TS (metadata, canvases, inline SVG). "Programme paper + ink":
- * warm paper panels interleaved with ink plates, threaded by one violet Loop.
- * Type: Fraunces (display), DM Sans (body), DM Mono (labels/data).
+ * TS (metadata, canvases, inline SVG) and is the transfer surface for the
+ * Product OS interior (docs/design/DESIGN_SYSTEM_HANDOFF.md).
+ * Type: Newsreader (display), Hanken Grotesk (body), JetBrains Mono (labels).
  */
 
 export const colors = {
-  /** Warm paper — page base. */
-  bone: "#f4f0e7",
-  /** Raised light surface: cards, media frames. */
-  paper: "#fcfaf5",
-  /** Warm inset / hairline on light. */
-  sand: "#e8e1d2",
-  /** Near-black plate. */
-  ink: "#17131f",
-  /** Raised surface on ink. */
-  inkRaised: "#221c30",
+  paper: "#ffffff",
+  stone: "#fbfaf9",
+  stoneDeep: "#f1eeea",
+  hairline: "#ece9e4",
+  night: "#0b1020",
+  nightRaised: "#151b31",
 
-  /** Primary accent: CTAs on light, the Loop, highlights. */
-  violet: "#4338ca",
-  /** Light violet: accents + links on ink. */
-  iris: "#a99cff",
-  /** Focus ring — legible on both bone and ink. */
-  focus: "#6d5fe6",
+  purple: "#7c3aed",
+  pink: "#ec4899",
+  orange: "#fb923c",
+  lavender: "#a78bdb",
+  focus: "#7c3aed",
 
-  /** Text. */
-  inkText: "#17131f",
-  graphite: "#4f4a5c",
-  mutedInk: "#6e6879",
-  boneText: "#f4f0e7",
-  boneDim: "#b7b1c4",
+  ink: "#0f172a",
+  slate: "#475569",
+  muted: "#64748b",
+  snow: "#f8fafc",
+  mist: "#cbd5e1",
+  mistDim: "#94a3b8",
+} as const;
+
+/** The gradient, as CSS and as the RGB stops the ribbon canvas cycles through. */
+export const gradient = {
+  css: "linear-gradient(100deg, #7c3aed, #ec4899, #fb923c)",
+  dot: "linear-gradient(#7c3aed, #ec4899)",
+  /** purple → pink → orange → pink, cycled by the ribbon (RECOVERED from the deck). */
+  ribbonStops: [
+    [124, 58, 237],
+    [236, 72, 153],
+    [251, 146, 60],
+    [236, 72, 153],
+  ] as const,
 } as const;
 
 export const spacing = {
@@ -40,16 +48,30 @@ export const spacing = {
   px: (n: number) => `${n * spacing.unit}px`,
 } as const;
 
+export const radii = {
+  card: "20px",
+  node: "12px",
+  pill: "999px",
+} as const;
+
 export const shadows = {
-  liftLight: "0 1px 2px rgba(23, 19, 31, 0.05), 0 22px 48px -28px rgba(23, 19, 31, 0.28)",
-  liftInk: "0 1px 2px rgba(0, 0, 0, 0.35), 0 28px 56px -30px rgba(0, 0, 0, 0.75)",
-  violetEmph: "0 0 0 1px #4338ca, 0 22px 50px -22px rgba(67, 56, 202, 0.55)",
+  liftLight: "0 1px 2px rgba(15, 23, 42, 0.04), 0 24px 48px -28px rgba(15, 23, 42, 0.18)",
+  liftInk: "0 1px 2px rgba(0, 0, 0, 0.35), 0 28px 56px -30px rgba(0, 0, 0, 0.7)",
+  gradEmph: "0 10px 30px -10px rgba(236, 72, 153, 0.45), 0 4px 14px -6px rgba(124, 58, 237, 0.5)",
+} as const;
+
+export const motion = {
+  /** Ribbon: one full wobble cycle, and the travelling light pulse (seconds). */
+  ribbonPeriodS: 22,
+  ribbonPulsePeriodS: 13,
+  revealMs: 550,
+  revealStaggerMs: 80,
 } as const;
 
 export const typography = {
-  displayClass: "font-serif tracking-tight text-ink-text",
-  bodyClass: "font-sans text-graphite",
-  monoClass: "kicker text-muted-ink",
+  displayClass: "font-serif tracking-tight text-ink",
+  bodyClass: "font-sans text-slate",
+  monoClass: "kicker text-muted",
 } as const;
 
 export const site = {

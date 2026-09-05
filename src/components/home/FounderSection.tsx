@@ -12,19 +12,19 @@ import { Reveal } from "@/components/motion/Reveal";
  */
 export function FounderSection(): React.ReactElement {
   return (
-    <section id="why-looped-exists" className="on-ink relative scroll-mt-24 overflow-hidden bg-ink py-24 text-bone-dim sm:py-32">
+    <section id="why-looped-exists" className="on-night relative scroll-mt-24 overflow-hidden bg-night py-24 text-mist sm:py-32">
       <LoopMark
         aria-hidden
-        className="pointer-events-none absolute -left-24 top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 text-iris opacity-[0.06]"
+        className="pointer-events-none absolute -left-24 top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 text-lavender opacity-[0.06]"
       />
       <div className="relative mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
         <Reveal>
           <div className="flex items-center gap-3">
-            <span className="kicker text-iris">11</span>
-            <span className="kicker text-bone-dim">Why Looped exists</span>
+            <span className="kicker text-lavender">11</span>
+            <span className="kicker text-mist">Why Looped exists</span>
           </div>
           <h2 className="mt-6 max-w-2xl text-balance display-section">Built by someone who has stood at the back of the room.</h2>
-          <div className="mt-8 space-y-5 text-base leading-relaxed text-bone-dim sm:text-lg">
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-mist sm:text-lg">
             <p>
               I have run the campaigns, sold the sponsorship and sat in the planning meetings where the best people in
               the business spend their week reconstructing context and coordinating repetitive work. Their real value
@@ -40,19 +40,19 @@ export function FounderSection(): React.ReactElement {
           <div className="mt-9 flex items-center gap-4">
             <span
               data-media-slot="Founder portrait"
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/15 bg-ink-raised"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/15 bg-night-raised"
               aria-hidden
             >
-              <LoopMark className="h-6 w-6 text-iris" />
+              <LoopMark className="h-6 w-6 text-lavender" />
             </span>
             <div>
-              <p className="font-serif text-xl text-bone-text">Natalie Entwistle</p>
-              <p className="kicker mt-1 text-bone-dim">Founder, Looped</p>
+              <p className="font-serif text-xl text-snow">Natalie Entwistle</p>
+              <p className="kicker mt-1 text-mist">Founder, Looped</p>
             </div>
           </div>
           <Link
             href="/newsroom/the-art-is-yours"
-            className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-iris transition-colors hover:text-bone-text"
+            className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-lavender transition-colors hover:text-snow"
           >
             Read the founder&apos;s note
             <span aria-hidden>→</span>

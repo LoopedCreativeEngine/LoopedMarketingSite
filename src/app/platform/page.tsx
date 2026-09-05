@@ -100,14 +100,14 @@ const CAPABILITIES = [
 
 export default function PlatformPage(): React.ReactElement {
   return (
-    <div className="bg-bone pb-24 pt-28 sm:pt-32">
+    <div className="bg-paper pb-24 pt-28 sm:pt-32">
       <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="kicker text-violet">The platform</p>
-          <h1 className="mt-4 text-balance font-serif text-4xl tracking-tight text-ink-text sm:text-5xl">
+          <p className="kicker text-purple">The platform</p>
+          <h1 className="mt-4 text-balance font-serif text-4xl tracking-tight text-ink sm:text-5xl">
             Everything Looped does, in one place.
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-graphite sm:text-lg">{INTRO}</p>
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">{INTRO}</p>
         </Reveal>
 
         <Reveal className="mt-8 flex flex-wrap gap-2">
@@ -115,7 +115,7 @@ export default function PlatformPage(): React.ReactElement {
             <Link
               key={pillar.href}
               href={pillar.href}
-              className="rounded-full border border-[rgba(23,19,31,0.18)] bg-paper px-4 py-1.5 text-sm text-graphite transition-colors hover:border-violet hover:text-violet"
+              className="rounded-full border border-[rgba(15,23,42,0.18)] bg-stone px-4 py-1.5 text-sm text-slate transition-colors hover:border-purple hover:text-purple"
             >
               {pillar.name}
             </Link>
@@ -125,12 +125,12 @@ export default function PlatformPage(): React.ReactElement {
 
       {/* three headline capabilities — inset ink plate */}
       <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="on-ink grid gap-6 rounded-3xl bg-ink p-8 shadow-[var(--lift-ink)] sm:p-10 md:grid-cols-3">
+        <div className="on-night grid gap-6 rounded-3xl bg-night p-8 shadow-[var(--lift-ink)] sm:p-10 md:grid-cols-3">
           {FEATURED.map((item) => (
             <Reveal key={item.title}>
-              <span className="h-2 w-2 rounded-full bg-iris" aria-hidden />
-              <h2 className="mt-4 text-xl text-bone-text">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-bone-dim">{item.body}</p>
+              <span className="h-2 w-2 rounded-full bg-pink" aria-hidden />
+              <h2 className="mt-4 text-xl text-snow">{item.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-mist">{item.body}</p>
             </Reveal>
           ))}
         </div>
@@ -141,13 +141,13 @@ export default function PlatformPage(): React.ReactElement {
           {CAPABILITIES.map((group) => (
             <Reveal
               key={group.title}
-              className="rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper p-6 shadow-[var(--lift-light)]"
+              className="rounded-2xl border border-[rgba(15,23,42,0.12)] bg-stone p-6 shadow-[var(--lift-light)]"
             >
-              <h2 className="text-xl text-ink-text">{group.title}</h2>
-              <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-graphite">
+              <h2 className="text-xl text-ink">{group.title}</h2>
+              <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-slate">
                 {group.points.map((point) => (
                   <li key={point} className="flex gap-2.5">
-                    <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-violet" aria-hidden />
+                    <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-purple" aria-hidden />
                     <span>{point}</span>
                   </li>
                 ))}
@@ -159,7 +159,7 @@ export default function PlatformPage(): React.ReactElement {
 
       <div className="mx-auto mt-16 max-w-3xl px-5 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <p className="font-serif text-2xl italic text-ink-text sm:text-3xl">
+          <p className="font-serif text-2xl italic text-ink sm:text-3xl">
             The platform is built. Pilot partners are shaping what it becomes next.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">

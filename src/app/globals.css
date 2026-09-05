@@ -1,106 +1,105 @@
 @import "tailwindcss";
 
 /*
- * Looped — "programme paper + ink" design language.
+ * Looped — the approved Claude Design system.
  *
- * The page reads as a printed conference programme: warm paper panels
- * (bone) interleaved with full-bleed ink plates, threaded by one violet
- * line — the Loop. Type is Fraunces (display), DM Sans (body), DM Mono
- * (labels/data). See src/styles/design-system.ts for the mirrored tokens.
+ * RECOVERED from the founder's "Looped ribbon hero animation" artefact (the
+ * Emap deck, 4 Aug 2026) and the founder's description of the approved site:
+ * near-white paper, a large Newsreader serif, one gradient line
+ * (purple → pink → orange), the animated gradient ribbon Loop, a purple-dot
+ * mono kicker, gradient rounded CTAs, generous whitespace. Dark plates are
+ * night (#0B1020), used sparingly. Mirrored in src/styles/design-system.ts.
  */
 
 :root {
-  /* Surfaces — light (warm paper) */
-  --bone: #f4f0e7; /* page base */
-  --paper: #fcfaf5; /* raised surface: cards, media frames */
-  --sand: #e8e1d2; /* warm inset / hairline on light */
+  /* Surfaces — light */
+  --paper: #ffffff; /* page base */
+  --stone: #fbfaf9; /* alternate panel, cards on paper */
+  --stone-deep: #f1eeea; /* insets, hover fills */
+  --hairline: #ece9e4; /* borders on light */
 
-  /* Surfaces — ink (near-black plates, faint violet undertone) */
-  --ink: #17131f;
-  --ink-raised: #221c30;
+  /* Surfaces — dark (used sparingly) */
+  --night: #0b1020;
+  --night-raised: #151b31;
 
-  /* Accent — used with restraint */
-  --violet: #4338ca; /* primary: CTAs on light, the Loop, highlights */
-  --iris: #a99cff; /* light violet: accents + links on ink */
-  --focus: #6d5fe6; /* focus ring: legible on both bone and ink */
+  /* The gradient — the brand's one accent */
+  --purple: #7c3aed;
+  --pink: #ec4899;
+  --orange: #fb923c;
+  --lavender: #a78bdb; /* kicker + links on night */
+  --grad: linear-gradient(100deg, var(--purple), var(--pink), var(--orange));
+  --grad-dot: linear-gradient(var(--purple), var(--pink));
+  --focus: #7c3aed;
 
-  /* Ink on light */
-  --ink-text: #17131f; /* headings */
-  --graphite: #4f4a5c; /* body */
-  --muted-ink: #6e6879; /* captions, source lines */
+  /* Text on light */
+  --ink: #0f172a; /* headings */
+  --slate: #475569; /* body */
+  --muted: #64748b; /* captions, kickers */
 
-  /* Light on ink */
-  --bone-text: #f4f0e7;
-  --bone-dim: #b7b1c4;
+  /* Text on night */
+  --snow: #f8fafc;
+  --mist: #cbd5e1;
+  --mist-dim: #94a3b8;
 
   /* Elevation + emphasis */
-  --lift-light: 0 1px 2px rgba(23, 19, 31, 0.05), 0 22px 48px -28px rgba(23, 19, 31, 0.28);
-  --lift-ink: 0 1px 2px rgba(0, 0, 0, 0.35), 0 28px 56px -30px rgba(0, 0, 0, 0.75);
-  --violet-emph: 0 0 0 1px var(--violet), 0 22px 50px -22px rgba(67, 56, 202, 0.55);
-  --iris-emph: 0 0 0 1px rgba(169, 156, 255, 0.55), 0 22px 50px -24px rgba(124, 108, 255, 0.5);
-
-  /* Legacy aliases — kept so any stray reference stays coherent */
-  --looped-bg: var(--bone);
-  --looped-card: var(--paper);
-  --looped-violet-700: var(--violet);
-  --looped-violet-glow: var(--violet-emph);
-  --looped-text: var(--ink-text);
-  --looped-text-muted: var(--graphite);
+  --lift-light: 0 1px 2px rgba(15, 23, 42, 0.04), 0 24px 48px -28px rgba(15, 23, 42, 0.18);
+  --lift-ink: 0 1px 2px rgba(0, 0, 0, 0.35), 0 28px 56px -30px rgba(0, 0, 0, 0.7);
+  --grad-emph: 0 10px 30px -10px rgba(236, 72, 153, 0.45), 0 4px 14px -6px rgba(124, 58, 237, 0.5);
+  --lavender-emph: 0 0 0 1px rgba(167, 139, 219, 0.45), 0 22px 50px -24px rgba(124, 58, 237, 0.5);
 }
 
 @theme inline {
-  --color-bone: var(--bone);
   --color-paper: var(--paper);
-  --color-sand: var(--sand);
+  --color-stone: var(--stone);
+  --color-stone-deep: var(--stone-deep);
+  --color-hairline: var(--hairline);
+  --color-night: var(--night);
+  --color-night-raised: var(--night-raised);
+  --color-purple: var(--purple);
+  --color-pink: var(--pink);
+  --color-orange: var(--orange);
+  --color-lavender: var(--lavender);
   --color-ink: var(--ink);
-  --color-ink-raised: var(--ink-raised);
-  --color-violet: var(--violet);
-  --color-iris: var(--iris);
-  --color-ink-text: var(--ink-text);
-  --color-graphite: var(--graphite);
-  --color-muted-ink: var(--muted-ink);
-  --color-bone-text: var(--bone-text);
-  --color-bone-dim: var(--bone-dim);
+  --color-slate: var(--slate);
+  --color-muted: var(--muted);
+  --color-snow: var(--snow);
+  --color-mist: var(--mist);
+  --color-mist-dim: var(--mist-dim);
 
-  /* legacy utility names still resolve */
-  --color-looped-bg: var(--looped-bg);
-  --color-looped-card: var(--looped-card);
-  --color-looped-violet-700: var(--looped-violet-700);
-
-  --font-sans: var(--font-dm-sans);
-  --font-mono: var(--font-dm-mono);
-  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-hanken);
+  --font-mono: var(--font-jetbrains);
+  --font-serif: var(--font-newsreader);
 }
 
 html {
   scroll-behavior: smooth;
-  background: var(--bone);
+  background: var(--paper);
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--bone);
-  color: var(--graphite);
-  font-family: var(--font-dm-sans), system-ui, sans-serif;
+  background: var(--paper);
+  color: var(--slate);
+  font-family: var(--font-hanken), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-/* Display face. Editorial: light-to-regular weight, tight tracking. */
+/* Display face: Newsreader, regular weight, tight tracking. */
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-fraunces), Georgia, serif;
-  color: var(--ink-text);
+  font-family: var(--font-newsreader), Georgia, serif;
+  color: var(--ink);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 1.04;
+  line-height: 1.0;
 }
 
-/* Mono label / run-of-show index. */
+/* Mono kicker: uppercase, tracked, with the gradient dot beside it. */
 .kicker {
-  font-family: var(--font-dm-mono), ui-monospace, monospace;
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
   font-size: 0.72rem;
   line-height: 1;
   letter-spacing: 0.22em;
@@ -109,24 +108,38 @@ h4 {
 
 .font-mono,
 .module-id {
-  font-family: var(--font-dm-mono), ui-monospace, monospace;
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-/* Fluid display sizes — a real, memorable scale. */
+/* Fluid display sizes. */
 .display-hero {
-  font-size: clamp(2.75rem, 6.4vw, 5rem);
-  line-height: 0.98;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.9rem, 6.6vw, 5.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
 }
 .display-section {
-  font-size: clamp(2rem, 3.8vw, 3.15rem);
-  line-height: 1.02;
-  letter-spacing: -0.025em;
+  font-size: clamp(2rem, 3.9vw, 3.4rem);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
 }
 .display-stat {
   font-size: clamp(2.75rem, 5.2vw, 4.25rem);
   line-height: 0.95;
   letter-spacing: -0.02em;
+}
+
+/* The gradient — as text, as a fill, as a hairline ring. */
+.text-grad {
+  background-image: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.bg-grad {
+  background-image: var(--grad);
+}
+.bg-grad-dot {
+  background-image: var(--grad-dot);
 }
 
 /* One accessible focus ring for every interactive element, on any panel. */
@@ -136,66 +149,24 @@ h4 {
   border-radius: 3px;
 }
 
-/* Subtle paper tooth. Multiply darkens bone a touch; negligible on ink. */
-.grain-overlay {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 60;
-  opacity: 0.5;
-  mix-blend-mode: multiply;
-}
-
-.grain-overlay::before {
-  content: "";
-  position: absolute;
-  inset: -120%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.14'/%3E%3C/svg%3E");
-  animation: grain-shift 14s steps(6) infinite;
-}
-
-@keyframes grain-shift {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  25% {
-    transform: translate3d(10%, -6%, 0);
-  }
-  50% {
-    transform: translate3d(-6%, 8%, 0);
-  }
-  75% {
-    transform: translate3d(8%, 4%, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-/* The Loop thread draws itself as it scrolls into view. */
-.thread-path {
-  stroke: var(--violet);
-  fill: none;
-}
-
-/* Ink plates: headings flip to bone; body colour is set on the panel. */
-.on-ink h1,
-.on-ink h2,
-.on-ink h3,
-.on-ink h4 {
-  color: var(--bone-text);
+/* Night plates: headings flip to snow; body colour is set on the panel. */
+.on-night h1,
+.on-night h2,
+.on-night h3,
+.on-night h4 {
+  color: var(--snow);
 }
 
 .text-muted {
-  color: var(--muted-ink);
+  color: var(--muted);
 }
 
 ::selection {
-  background: rgba(67, 56, 202, 0.22);
+  background: rgba(124, 58, 237, 0.18);
   color: inherit;
 }
-.on-ink ::selection {
-  background: rgba(169, 156, 255, 0.28);
+.on-night ::selection {
+  background: rgba(236, 72, 153, 0.3);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -208,8 +179,5 @@ h4 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-  .grain-overlay {
-    display: none;
   }
 }

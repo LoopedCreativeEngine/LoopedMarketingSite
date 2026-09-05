@@ -8,11 +8,11 @@ const BODY = `Looped doesn't wait to be asked. It watches the signals across you
 
 export function LiveIntelligenceSection(): React.ReactElement {
   return (
-    <Panel tone="bone" index="10" kicker="Live intelligence">
+    <Panel tone="paper" index="10" kicker="Live intelligence">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-14">
         <Reveal>
           <h2 className="text-balance display-section">Your intelligence, live, not buried in a chat history.</h2>
-          <p className="mt-6 text-base leading-relaxed text-graphite sm:text-lg">{BODY}</p>
+          <p className="mt-6 text-base leading-relaxed text-slate sm:text-lg">{BODY}</p>
         </Reveal>
 
         <Reveal className="lg:order-first">

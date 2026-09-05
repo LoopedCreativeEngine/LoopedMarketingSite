@@ -15,16 +15,16 @@ const TRUST = [
 
 export function TrustSection(): React.ReactElement {
   return (
-    <Panel tone="paper" index="12" kicker="Trust">
+    <Panel tone="stone" index="12" kicker="Trust">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Built to be trusted with an event business.</h2>
       </Reveal>
       <div className="mt-12 grid gap-x-12 gap-y-8 md:grid-cols-3">
         {TRUST.map((t, index) => (
-          <Reveal key={t.title} delay={(index % 3) * 0.06} className="border-t border-[rgba(23,19,31,0.12)] pt-5">
-            <span className="font-mono text-sm text-violet">0{index + 1}</span>
-            <h3 className="mt-3 text-lg text-ink-text">{t.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-graphite">{t.body}</p>
+          <Reveal key={t.title} delay={(index % 3) * 0.06} className="border-t border-[rgba(15,23,42,0.12)] pt-5">
+            <span className="font-mono text-sm text-purple">0{index + 1}</span>
+            <h3 className="mt-3 text-lg text-ink">{t.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate">{t.body}</p>
           </Reveal>
         ))}
       </div>

@@ -99,56 +99,56 @@ const MOBILE_COLUMNS = [
 
 export function TheShiftSection(): React.ReactElement {
   return (
-    <Panel tone="bone" index="06" kicker="The shift">
+    <Panel tone="paper" index="06" kicker="The shift">
       <Reveal className="max-w-4xl">
         <h2 className="text-balance display-section">Every other AI vendor makes your supplier list longer.</h2>
-        <p className="mt-4 text-balance font-serif text-3xl italic leading-tight text-violet sm:text-4xl md:text-5xl">
+        <p className="mt-4 text-balance font-serif text-3xl italic leading-tight text-purple sm:text-4xl md:text-5xl">
           Looped is the first one that makes it shorter.
         </p>
       </Reveal>
 
       <Reveal className="mt-8 max-w-3xl space-y-4">
         {BODY_PARAS.map((para) => (
-          <p key={para.slice(0, 24)} className="text-base leading-relaxed text-graphite sm:text-lg">
+          <p key={para.slice(0, 24)} className="text-base leading-relaxed text-slate sm:text-lg">
             {para}
           </p>
         ))}
       </Reveal>
 
       {/* Desktop comparison table */}
-      <Reveal className="mt-12 hidden overflow-hidden rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper shadow-[var(--lift-light)] lg:block">
+      <Reveal className="mt-12 hidden overflow-hidden rounded-2xl border border-[rgba(15,23,42,0.12)] bg-stone shadow-[var(--lift-light)] lg:block">
         <div className="grid grid-cols-[minmax(9rem,1.3fr)_repeat(5,minmax(0,1fr))]">
           {/* header row */}
-          <div className="border-b border-[rgba(23,19,31,0.08)] px-4 py-4" />
+          <div className="border-b border-[rgba(15,23,42,0.08)] px-4 py-4" />
           {APPROACHES.map((approach) => (
             <div
               key={approach.name}
-              className="border-b border-l border-[rgba(23,19,31,0.08)] px-3 py-4 text-sm font-medium text-muted-ink"
+              className="border-b border-l border-[rgba(15,23,42,0.08)] px-3 py-4 text-sm font-medium text-muted"
             >
               {approach.name}
             </div>
           ))}
-          <div className="bg-violet px-3 py-4 text-sm font-semibold text-bone">{LOOPED.name}</div>
+          <div className="bg-purple px-3 py-4 text-sm font-semibold text-snow">{LOOPED.name}</div>
 
           {/* data rows */}
           {AXES.map((axis, rowIndex) => {
             const isLast = rowIndex === AXES.length - 1;
             return (
               <Fragment key={axis.label}>
-                <div className="border-b border-[rgba(23,19,31,0.06)] px-4 py-3.5">
-                  <span className="text-sm font-medium text-ink-text">{axis.label}</span>
-                  {axis.hint ? <span className="block text-xs text-muted-ink">{axis.hint}</span> : null}
+                <div className="border-b border-[rgba(15,23,42,0.06)] px-4 py-3.5">
+                  <span className="text-sm font-medium text-ink">{axis.label}</span>
+                  {axis.hint ? <span className="block text-xs text-muted">{axis.hint}</span> : null}
                 </div>
                 {APPROACHES.map((approach) => (
                   <div
                     key={approach.name}
-                    className="border-b border-l border-[rgba(23,19,31,0.06)] px-3 py-3.5 text-xs leading-relaxed text-graphite"
+                    className="border-b border-l border-[rgba(15,23,42,0.06)] px-3 py-3.5 text-xs leading-relaxed text-slate"
                   >
                     {approach.values[rowIndex]}
                   </div>
                 ))}
                 <div
-                  className={`border-x border-violet/30 bg-[rgba(67,56,202,0.06)] px-3 py-3.5 text-xs font-medium leading-relaxed text-ink-text ${
+                  className={`border-x border-purple/30 bg-[rgba(124,58,237,0.06)] px-3 py-3.5 text-xs font-medium leading-relaxed text-ink ${
                     isLast ? "border-b" : ""
                   }`}
                 >
@@ -167,19 +167,19 @@ export function TheShiftSection(): React.ReactElement {
             key={column.name}
             className={`rounded-2xl border p-6 ${
               column.highlighted
-                ? "border-violet bg-[rgba(67,56,202,0.05)] shadow-[var(--violet-emph)]"
-                : "border-[rgba(23,19,31,0.12)] bg-paper"
+                ? "border-purple bg-[rgba(124,58,237,0.05)] shadow-[var(--grad-emph)]"
+                : "border-[rgba(15,23,42,0.12)] bg-stone"
             }`}
           >
-            <h3 className={`flex items-center gap-2 text-xl ${column.highlighted ? "text-violet" : "text-ink-text"}`}>
+            <h3 className={`flex items-center gap-2 text-xl ${column.highlighted ? "text-purple" : "text-ink"}`}>
               {column.name}
-              {column.highlighted ? <span className="h-2 w-2 rounded-full bg-violet" aria-hidden /> : null}
+              {column.highlighted ? <span className="h-2 w-2 rounded-full bg-purple" aria-hidden /> : null}
             </h3>
             <dl className="mt-4 space-y-3">
               {AXES.map((axis, index) => (
-                <div key={axis.label} className="border-b border-[rgba(23,19,31,0.08)] pb-3 last:border-b-0 last:pb-0">
-                  <dt className="kicker text-muted-ink">{axis.label}</dt>
-                  <dd className={`mt-1 text-sm ${column.highlighted ? "font-medium text-ink-text" : "text-graphite"}`}>
+                <div key={axis.label} className="border-b border-[rgba(15,23,42,0.08)] pb-3 last:border-b-0 last:pb-0">
+                  <dt className="kicker text-muted">{axis.label}</dt>
+                  <dd className={`mt-1 text-sm ${column.highlighted ? "font-medium text-ink" : "text-slate"}`}>
                     {column.values[index]}
                   </dd>
                 </div>
@@ -190,7 +190,7 @@ export function TheShiftSection(): React.ReactElement {
       </div>
 
       <Reveal className="mt-12 max-w-4xl">
-        <p className="text-base leading-relaxed text-graphite sm:text-lg">{CLOSING}</p>
+        <p className="text-base leading-relaxed text-slate sm:text-lg">{CLOSING}</p>
       </Reveal>
 
       <Reveal className="mt-10">

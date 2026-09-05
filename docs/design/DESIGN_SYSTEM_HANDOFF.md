@@ -1,83 +1,66 @@
 # Looped design-system handoff — for the Product OS interior
 
-The marketing site's recovered visual system (`docs/design/VISUAL_RECONSTRUCTION_SPEC.md`) is the
-brand the inside of Looped must inherit. This is the transfer note for future Product OS UI work.
-It changes nothing in the product today. Values are RECOVERED from `5ca71de` unless marked.
+The approved Claude Design aesthetic (see `VISUAL_RECONSTRUCTION_SPEC.md`) is the design authority for
+the inside of Looped. This note captures the reusable tokens and components as the marketing site
+implements them, so Product OS UI work inherits one brand rather than growing a second one. It changes
+nothing in the product today. Source of truth: `src/app/globals.css` + `src/styles/design-system.ts`.
 
 ## Typography
-
 | Role | Face | Weight | Size / leading / tracking |
 |---|---|---|---|
-| Page and panel titles | Fraunces | 400 (hero 500) | display scale, leading 1.02–1.04, tracking −0.02…−0.03em |
-| Card / row titles | Fraunces | 400 | 1.25–1.5rem, leading-snug |
-| Body | DM Sans | 400 | 0.875–1rem, leading 1.5–1.65 |
-| Emphasis | DM Sans | 500/700 | as body |
-| Labels, indices, data, IDs | DM Mono | 400/500 | 0.62–0.72rem, uppercase, tracking 0.16–0.22em |
-| Pull-quotes | Fraunces italic | 400 | 1.5–1.875rem, leading-snug, violet on light / bone on ink |
+| Page and panel titles | Newsreader | 400 | display scale, leading 0.96–1.0, tracking −0.02…−0.025em |
+| Card / row titles | Newsreader | 400 | 1.25–1.5rem, leading-snug |
+| Pull-quotes | Newsreader italic | 400 | 1.5–1.875rem |
+| Body | Hanken Grotesk | 400 | 0.875–1rem, leading 1.5–1.6 |
+| Emphasis, buttons | Hanken Grotesk | 600/700 | as body; wordmark 700 at −0.02em |
+| Labels, indices, data, IDs | JetBrains Mono | 400/500 | 0.72–0.78rem, uppercase 0.22em for kickers, 0.06em for data |
 
-Product mapping: module names and section headers → Fraunces; table cells and forms → DM Sans;
-IDs, timestamps, statuses, metric labels → DM Mono kicker style.
+Product mapping: module names and panel headers → Newsreader; forms, tables, prose → Hanken;
+IDs, timestamps, statuses, metric labels → JetBrains Mono.
 
 ## Colour tokens
-
-Light surfaces `bone #f4f0e7` (app canvas), `paper #fcfaf5` (panels, cards, sheets), `sand #e8e1d2`
-(insets, hairlines). Dark surfaces `ink #17131f` (plates, sidebars, the Chief-of-Staff panel),
-`ink-raised #221c30` (cards on ink). Accent `violet #4338ca` (primary actions, selected state, the
-Loop) with `iris #a99cff` on ink; `focus #6d5fe6` for focus rings and the moving node. Text
-`ink-text / graphite / muted-ink` on light, `bone-text / bone-dim` on ink.
-
-Status colours are **not** in the recovered system; when the product needs danger/warn/ok they must be
-added as tokens in this family (desaturated, on paper) rather than borrowed from Tailwind defaults.
-No gradients.
-
-## Spacing
-
-4px base grid. Panel padding 5rem/7rem vertical; card padding 1.75rem (`p-7`), compact nodes 1rem;
-row spacing 1.5rem with hairline dividers; container max-widths 48/72/80rem; gutters 1.25/1.5/2rem.
-
-## Cards and panels
-
-Radius 1rem (`rounded-2xl`) for cards, frames and sheets; 0.75rem for small nodes; pills fully round.
-Light: hairline `rgba(23,19,31,0.10–0.12)` + `--lift-light`. Ink: `white/10` + `--lift-ink`.
-Selected / highlighted: violet hairline + `rgba(67,56,202,0.05)` fill + `--violet-emph` glow.
-Chrome bars (media frames): `sand/60` on light, `black/25` on ink, mono tag right-aligned.
-
-## Navigation
-
-Top bar 4rem, transparent → `bone/85` blurred with a hairline after scroll. Wordmark = LoopMark
-(1.15em, violet) + "Looped" in Fraunces 1.28em. Items 0.875rem/500 graphite, hover violet. Two pill
-actions: outline and violet fill. Mobile: right sheet on a blurred ink overlay. Product mapping: the
-same bar for the app shell; sidebars are ink plates with `bone-dim` items and `iris` active state.
-
-## Buttons
-
-Primary: violet fill, bone text, `rounded-full px-6 py-3 text-sm font-semibold tracking-tight`,
-`--violet-emph`, hover lifts 2px and darkens to `#3b31b4`. Secondary: outline (`rgba(23,19,31,0.22)`
-light / `white/25` ink), hover `sand/70` / `white/10`. Tertiary: text link in violet with an arrow
-that translates on hover. Small: `px-4 py-2`.
+Light surfaces `paper #FFFFFF` (canvas), `stone #FBFAF9` (panels, cards, sheets), `stone-deep
+#F1EEEA` (insets, hovers), `hairline #ECE9E4`. Dark `night #0B1020` (Chief-of-Staff panel, sidebars,
+the few emphasised plates), `night-raised #151B31`. Text `ink / slate / muted` on light, `snow / mist /
+mist-dim` on night. Accent is the gradient only: `purple #7C3AED`, `pink #EC4899`, `orange #FB923C`,
+with `lavender #A78BDB` on night. Status colours are not in the recovered system; add them in this
+family (desaturated, on stone) rather than borrowing framework defaults.
 
 ## Gradients
+`--grad: linear-gradient(100deg, purple, pink, orange)` for primary actions, the hero line, the
+selected state and the ribbon. `--grad-dot: linear-gradient(purple, pink)` for the 9px kicker dot.
+Tints at 7% (`rgba(124,58,237,0.07)`, `rgba(236,72,153,0.07)`) for highlighted cards. Never a full
+gradient background.
 
-None. Emphasis is achieved with the violet ring-and-glow (`--violet-emph`, `--iris-emph`), flat
-fills at 5–8% opacity, and the serif italic.
+## The Loop / ribbon
+`Ribbon.tsx` (canvas, recovered code). Product mapping: the hero-scale ribbon on the sign-in and
+empty states; a `weight 0.6–0.8` ribbon as the Chief-of-Staff "thinking" indicator; the ring mark as
+the avatar. Keep it one loop; never particles, orbits or generic AI animation.
+
+## Buttons
+Primary: gradient pill, white text, `rounded-full px-6 py-3 text-sm font-semibold`, glow
+`--grad-emph`, hover lifts 2px. Secondary: outline `rgba(15,23,42,0.18)` on light, `white/25` on
+night. Tertiary: text link in purple with an arrow that translates on hover. Small: `px-5 py-2.5`.
+
+## Spacing
+4px grid. Panels 5rem/7rem vertical; cards 1.75rem; compact nodes 1rem; container 48/72/80rem;
+gutters 1.25/1.5/2rem. Generous whitespace is part of the brand: prefer one more rem than fewer.
+
+## Cards and panels
+Radius 20px (cards, frames, sheets), 12px (nodes), pills fully round. Light: white, hairline border,
+`--lift-light`, a 12px accent dot above the title. Highlighted: 7% gradient tint, no border. Night:
+`night-raised` with `white/10` border and `--lift-ink`.
+
+## Light and dark surfaces
+Light-first. Night plates are reserved for emphasis (the human-judgement statement, evidence, the
+founder's voice, the Chief-of-Staff conversation) and for sidebars. Headings flip to snow, body to
+mist, kicker to lavender. One two-surface system, not a separate dark theme.
+
+## Navigation
+4.5rem bar, transparent → `paper/85` blurred with a hairline once scrolled; wordmark (ring + bold
+"Looped"); quiet 0.95rem/500 links; one gradient pill. Mobile: right sheet on a blurred night overlay.
+Product mapping: same bar for the app shell; night sidebar with mist items and lavender active state.
 
 ## Motion
-
-Entrances rise 16–22px over 0.5–0.6s `power2.out`, stagger 0.08–0.09s, once, triggered at ~85% of
-the viewport. Threads draw over 1.3s linear. Hover 200–300ms. Live indicators use a ping ring.
-Smooth scroll (Lenis, lerp 0.08) on marketing only; **not** recommended inside the product. All motion
-honours `prefers-reduced-motion`.
-
-## Loop motif
-
-One continuous loop with one node surfacing on it (LoopMark), the node travelling a thread (LoopRail),
-threads that draw themselves (CascadeDiagram / LoopFigure). Product mapping: the node as the "live"
-indicator, the thread as progress and pipeline chrome, the mark as the Chief-of-Staff avatar. Keep
-it to one loop and one node; never orbits, particles or generic AI animation.
-
-## Light and dark surface treatment
-
-The product is light-first on `bone`/`paper`. Ink plates are reserved for the moments the brand marks
-as important on the site — the Chief-of-Staff conversation, governance, the founder's voice — and for
-sidebars. Headings flip to `bone-text` on ink; body to `bone-dim`; accent to `iris`. Do not build a
-separate dark theme; build the same two-surface system.
+Entrances rise 16–22px over 0.55–0.6s `power2.out`, staggered 80–90ms, once. Hover 200–300ms.
+The ribbon runs at ≤30fps and pauses off-screen. Everything honours `prefers-reduced-motion`.

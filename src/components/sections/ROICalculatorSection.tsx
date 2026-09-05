@@ -26,7 +26,7 @@ function AnimatedCurrency({ value }: { value: number }): React.ReactElement {
 }
 
 const inputClass =
-  "w-full rounded-lg border border-white/15 bg-black/25 px-4 py-3 text-bone-text outline-none transition-colors focus:border-iris";
+  "w-full rounded-lg border border-white/15 bg-black/25 px-4 py-3 text-snow outline-none transition-colors focus:border-pink";
 
 export function ROICalculatorSection(): React.ReactElement {
   const [eventsPerYear, setEventsPerYear] = useState(10);
@@ -44,18 +44,18 @@ export function ROICalculatorSection(): React.ReactElement {
   }, [eventsPerYear, dayRate]);
 
   return (
-    <Panel tone="ink" index="11" kicker="What it's worth" width="narrow">
+    <Panel tone="night" index="11" kicker="What it's worth" width="narrow">
       <Reveal>
         <h2 className="text-balance text-center display-section">What could Looped be worth to your team?</h2>
-        <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-bone-dim">
+        <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-mist">
           Use your own numbers. Every calculation is based on what you tell us, not what we assume.
         </p>
       </Reveal>
 
-      <Reveal className="mt-10 rounded-2xl border border-white/10 bg-ink-raised p-6 shadow-[var(--lift-ink)] sm:p-8">
+      <Reveal className="mt-10 rounded-2xl border border-white/10 bg-night-raised p-6 shadow-[var(--lift-ink)] sm:p-8">
         <div className="grid gap-5">
           <label className="space-y-2">
-            <span className="text-sm font-medium text-bone-text">How many events does your team run per year?</span>
+            <span className="text-sm font-medium text-snow">How many events does your team run per year?</span>
             <input
               type="number"
               value={eventsPerYear}
@@ -65,7 +65,7 @@ export function ROICalculatorSection(): React.ReactElement {
           </label>
 
           <label className="space-y-2">
-            <span className="text-sm font-medium text-bone-text">How many people work on each event on average?</span>
+            <span className="text-sm font-medium text-snow">How many people work on each event on average?</span>
             <input
               type="number"
               value={peoplePerEvent}
@@ -75,7 +75,7 @@ export function ROICalculatorSection(): React.ReactElement {
           </label>
 
           <label className="space-y-2">
-            <span className="text-sm font-medium text-bone-text">
+            <span className="text-sm font-medium text-snow">
               What&apos;s the average day rate or daily cost for your team?
             </span>
             <input
@@ -84,25 +84,25 @@ export function ROICalculatorSection(): React.ReactElement {
               onChange={(e) => setDayRate(Number(e.target.value) || 0)}
               className={inputClass}
             />
-            <p className="text-xs text-bone-dim">This can be salary ÷ 220 working days, or your agency day rate.</p>
+            <p className="text-xs text-mist">This can be salary ÷ 220 working days, or your agency day rate.</p>
           </label>
 
           <div className="space-y-2">
-            <p className="text-sm font-medium text-bone-text">
+            <p className="text-sm font-medium text-snow">
               Do you currently use an outbound calling agency for any events?
             </p>
             <div className="flex gap-2">
               <button
                 type="button"
                 onClick={() => setCallingAgency(true)}
-                className={`rounded-lg px-4 py-2 text-sm transition-colors ${callingAgency ? "bg-violet text-bone" : "border border-white/10 bg-black/25 text-bone-dim"}`}
+                className={`rounded-lg px-4 py-2 text-sm transition-colors ${callingAgency ? "bg-purple text-snow" : "border border-white/10 bg-black/25 text-mist"}`}
               >
                 Yes
               </button>
               <button
                 type="button"
                 onClick={() => setCallingAgency(false)}
-                className={`rounded-lg px-4 py-2 text-sm transition-colors ${!callingAgency ? "bg-violet text-bone" : "border border-white/10 bg-black/25 text-bone-dim"}`}
+                className={`rounded-lg px-4 py-2 text-sm transition-colors ${!callingAgency ? "bg-purple text-snow" : "border border-white/10 bg-black/25 text-mist"}`}
               >
                 No
               </button>
@@ -110,21 +110,21 @@ export function ROICalculatorSection(): React.ReactElement {
           </div>
 
           <div className="space-y-2">
-            <p className="text-sm font-medium text-bone-text">
+            <p className="text-sm font-medium text-snow">
               Do you pay for a data list provider (Cognism, Apollo, or similar)?
             </p>
             <div className="flex gap-2">
               <button
                 type="button"
                 onClick={() => setDataLists(true)}
-                className={`rounded-lg px-4 py-2 text-sm transition-colors ${dataLists ? "bg-violet text-bone" : "border border-white/10 bg-black/25 text-bone-dim"}`}
+                className={`rounded-lg px-4 py-2 text-sm transition-colors ${dataLists ? "bg-purple text-snow" : "border border-white/10 bg-black/25 text-mist"}`}
               >
                 Yes
               </button>
               <button
                 type="button"
                 onClick={() => setDataLists(false)}
-                className={`rounded-lg px-4 py-2 text-sm transition-colors ${!dataLists ? "bg-violet text-bone" : "border border-white/10 bg-black/25 text-bone-dim"}`}
+                className={`rounded-lg px-4 py-2 text-sm transition-colors ${!dataLists ? "bg-purple text-snow" : "border border-white/10 bg-black/25 text-mist"}`}
               >
                 No
               </button>
@@ -140,32 +140,32 @@ export function ROICalculatorSection(): React.ReactElement {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 rounded-xl border border-iris/40 bg-[rgba(169,156,255,0.08)] p-5 shadow-[var(--iris-emph)]"
+              className="mt-8 rounded-xl border border-pink/40 bg-[rgba(167,139,219,0.08)] p-5 shadow-[var(--lavender-emph)]"
             >
-              <p className="kicker text-iris">Projected annual value redirected</p>
-              <p className="mt-2 font-serif text-4xl text-bone-text sm:text-5xl">
+              <p className="kicker text-lavender">Projected annual value redirected</p>
+              <p className="mt-2 font-serif text-4xl text-snow sm:text-5xl">
                 £<AnimatedCurrency key={result.annualValue} value={result.annualValue} />
               </p>
-              <p className="mt-4 text-sm text-bone-text">
+              <p className="mt-4 text-sm text-snow">
                 Based on your numbers, Looped could free up the equivalent of{" "}
-                <span className="font-semibold text-iris">{result.daysPerEvent} days</span> of team time per event.
+                <span className="font-semibold text-lavender">{result.daysPerEvent} days</span> of team time per event.
               </p>
-              <p className="mt-2 text-sm text-bone-text">
-                Across <span className="font-semibold text-iris">{eventsPerYear} events</span>, that&apos;s{" "}
-                <span className="font-semibold text-iris">{result.totalDays} days</span> per year.
+              <p className="mt-2 text-sm text-snow">
+                Across <span className="font-semibold text-lavender">{eventsPerYear} events</span>, that&apos;s{" "}
+                <span className="font-semibold text-lavender">{result.totalDays} days</span> per year.
               </p>
-              <p className="mt-2 text-sm text-bone-text">
-                At <span className="font-semibold text-iris">£{dayRate.toLocaleString("en-GB")}</span> per day, that&apos;s
+              <p className="mt-2 text-sm text-snow">
+                At <span className="font-semibold text-lavender">£{dayRate.toLocaleString("en-GB")}</span> per day, that&apos;s
                 senior team time redirected to higher-value work.
               </p>
               {callingAgency ? (
-                <p className="mt-4 text-sm text-bone-dim">
+                <p className="mt-4 text-sm text-mist">
                   Plus the option to run automated voice campaigns alongside or instead of agency calling when volume
                   justifies it.
                 </p>
               ) : null}
               {dataLists ? (
-                <p className="mt-2 text-sm text-bone-dim">
+                <p className="mt-2 text-sm text-mist">
                   Plus every data pull becoming precision-targeted rather than manually filtered. Same subscription,
                   better results.
                 </p>
@@ -174,7 +174,7 @@ export function ROICalculatorSection(): React.ReactElement {
           ) : null}
         </AnimatePresence>
 
-        <p className="mt-5 text-xs leading-relaxed text-bone-dim">
+        <p className="mt-5 text-xs leading-relaxed text-mist">
           These are estimates based on conservative assumptions about time displaced. Your actual results will depend on
           how your team currently works and how deeply you integrate the platform.
         </p>
