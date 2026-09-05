@@ -11,7 +11,7 @@ import { cn } from "@/lib/cn";
 
 /** Clean light navigation: wordmark, a few quiet links, one gradient CTA. */
 const navLinks = [
-  { href: "/#pillars", label: "Platform" },
+  { href: "/#what-it-does", label: "What it does" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/#why-looped-exists", label: "Why Looped" },
   { href: "/newsroom", label: "Newsroom" },

@@ -1,35 +1,31 @@
 import { ClosingSection } from "@/components/home/ClosingSection";
 import { CompoundingSection } from "@/components/home/CompoundingSection";
-import { ConnectedIntelligenceSection } from "@/components/home/ConnectedIntelligenceSection";
 import { EvidenceSection } from "@/components/home/EvidenceSection";
 import { FounderSection } from "@/components/home/FounderSection";
-import { GovernedAutonomySection } from "@/components/home/GovernedAutonomySection";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HumanJudgementSection } from "@/components/home/HumanJudgementSection";
-import { OperatingLoopSection } from "@/components/home/OperatingLoopSection";
-import { ProblemSection } from "@/components/home/ProblemSection";
+import { OutcomesSection } from "@/components/home/OutcomesSection";
 import { ProductExperienceSection } from "@/components/home/ProductExperienceSection";
-import { SpecialistIntelligenceSection } from "@/components/home/SpecialistIntelligenceSection";
+import { StartAnywhereSection } from "@/components/home/StartAnywhereSection";
 import { StartSection } from "@/components/home/StartSection";
 import { TrustSection } from "@/components/home/TrustSection";
+import { ValueSection } from "@/components/home/ValueSection";
 
-/** The homepage run of show — the founder's message architecture, in the recovered design. */
+/** A benefit-led buyer journey: what you get → what it does → start anywhere → it compounds → proof → how you work with it → trust → start. */
 export default function HomePage(): React.ReactElement {
   return (
     <>
       <HomeHero />
-      <ProblemSection />
-      <ConnectedIntelligenceSection />
-      <OperatingLoopSection />
-      <HumanJudgementSection />
-      <SpecialistIntelligenceSection />
-      <EvidenceSection />
+      <ValueSection />
+      <OutcomesSection />
+      <StartAnywhereSection />
       <CompoundingSection />
+      <HumanJudgementSection />
+      <EvidenceSection />
       <ProductExperienceSection />
-      <GovernedAutonomySection />
+      <TrustSection />
       <StartSection />
       <FounderSection />
-      <TrustSection />
       <ClosingSection />
     </>
   );

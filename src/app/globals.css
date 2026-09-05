@@ -181,3 +181,68 @@ h4 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Intelligence working: a dash travels along a signal path. Used by the
+   signal-loop and compounding figures. Stops under reduced motion. */
+.signal-flow {
+  stroke-dasharray: 14 220;
+  stroke-dashoffset: 234;
+  animation: signal-flow 2.6s linear infinite;
+}
+.signal-flow-slow {
+  stroke-dasharray: 18 420;
+  stroke-dashoffset: 438;
+  animation-duration: 3.8s;
+}
+@keyframes signal-flow {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signal-flow,
+  .signal-flow-slow {
+    animation: none !important;
+    stroke-dasharray: none;
+    opacity: 0.55;
+  }
+}
+
+/* A signal → insight → action step arriving in sequence. */
+.signal-step {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: signal-step 0.5s ease-out forwards;
+}
+@keyframes signal-step {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .signal-step {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+/* Start anywhere: a runner travels the cycle line. */
+.cycle-runner {
+  animation: cycle-runner 6s linear infinite;
+}
+@keyframes cycle-runner {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(300%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cycle-runner {
+    animation: none;
+    transform: none;
+  }
+}

@@ -9,7 +9,7 @@ const LOOPED = ["Intelligence", "Coordination", "Routine work", "The memory betw
 
 export function HumanJudgementSection(): React.ReactElement {
   return (
-    <Panel tone="night" index="04" kicker="Human judgement">
+    <Panel tone="night" index="05" kicker="Human judgement">
       <Reveal className="max-w-4xl">
         <h2 className="text-balance display-section">
           AI shouldn&apos;t replace the judgement in your business. It should give that judgement a better view.

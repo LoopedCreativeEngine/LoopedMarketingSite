@@ -20,7 +20,7 @@ const SURFACED = [
 
 export function ProductExperienceSection(): React.ReactElement {
   return (
-    <Panel tone="stone" index="08" kicker="Working with Looped">
+    <Panel tone="stone" index="07" kicker="Working with Looped">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-14">
         <Reveal>
           <h2 className="text-balance display-section">Ask · Explore · Instruct</h2>

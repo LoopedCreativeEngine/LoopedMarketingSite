@@ -17,7 +17,7 @@ export function SiteFooter(): React.ReactElement {
             </p>
           </div>
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm font-medium text-slate">
-            <Link href="/#pillars" className="transition-colors hover:text-ink">Platform</Link>
+            <Link href="/#what-it-does" className="transition-colors hover:text-ink">What it does</Link>
             <Link href="/how-it-works" className="transition-colors hover:text-ink">How it works</Link>
             <Link href="/#why-looped-exists" className="transition-colors hover:text-ink">Why Looped</Link>
             <Link href="/newsroom" className="transition-colors hover:text-ink">Newsroom</Link>

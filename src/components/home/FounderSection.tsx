@@ -20,7 +20,7 @@ export function FounderSection(): React.ReactElement {
       <div className="relative mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
         <Reveal>
           <div className="flex items-center gap-3">
-            <span className="kicker text-lavender">11</span>
+            <span className="kicker text-lavender">10</span>
             <span className="kicker text-mist">Why Looped exists</span>
           </div>
           <h2 className="mt-6 max-w-2xl text-balance display-section">Built by someone who has stood at the back of the room.</h2>

@@ -15,14 +15,15 @@ export function ClosingSection(): React.ReactElement {
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
         <Reveal>
           <div className="flex items-center justify-center gap-3">
-            <span className="kicker text-lavender">13</span>
+            <span className="kicker text-lavender">11</span>
             <span className="kicker text-mist">Start</span>
           </div>
           <h2 className="mx-auto mt-6 max-w-2xl text-balance display-section">
             The art of events is yours. The intelligence is Looped.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-mist sm:text-lg">
-            Start with one event. Let it prove its value on the record. Then decide how far the loop goes.
+            Your next event shouldn&apos;t start from zero. Start with one, let it prove its value on the record, and
+            let every edition after it start smarter.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <CtaButton href="/demo" tone="ink">

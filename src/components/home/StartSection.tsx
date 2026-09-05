@@ -24,12 +24,12 @@ const JOURNEYS = [
 
 export function StartSection(): React.ReactElement {
   return (
-    <Panel tone="paper" id="start" index="10" kicker="Start small">
+    <Panel tone="paper" id="start" index="09" kicker="Start small">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Prove it on one event.</h2>
         <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
-          Looped is meant to earn its place. Start with one or two events, let the outcomes speak, then decide how far it
-          goes.
+          Looped is meant to earn its place. Start with one or two events, at whatever point in the cycle they are, with
+          whatever data you have. Let the outcomes speak, then decide how far it goes.
         </p>
       </Reveal>
       <div className="mt-12 grid gap-5 md:grid-cols-2">
