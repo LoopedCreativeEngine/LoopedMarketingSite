@@ -43,18 +43,22 @@ export function HomeHero(): React.ReactElement {
 
           <p data-hero-rise className="mt-8 max-w-xl text-pretty text-lg leading-[1.6] text-slate opacity-0 sm:text-xl">
             <span className="font-semibold text-ink">The AI operating system for conference &amp; awards businesses.</span>{" "}
-            Looped keeps a continuously improving understanding of your event, your audience and your market, so your
-            team makes better decisions, acts sooner, and carries what worked into the next edition.
+            Looped sees what your teams would otherwise miss, explains why it matters and proposes the strongest move.
+            You decide. Looped executes the chosen strategy and tracks what happened.
           </p>
 
           <div data-hero-rise className="mt-9 flex flex-col gap-3 opacity-0 sm:flex-row sm:items-center sm:gap-4">
             <CtaButton href="/demo" full>
-              Start with an event
+              Join the waitlist
             </CtaButton>
-            <CtaButton href="/demo" variant="secondary" full>
+            <CtaButton href="#what-it-does" variant="secondary" full>
               See Looped in action
             </CtaButton>
           </div>
+
+          <p data-hero-rise className="mt-5 max-w-xl text-sm leading-relaxed text-muted opacity-0">
+            We are opening early access to a small number of event organisations following the founding pilot.
+          </p>
 
           <ul data-hero-rise className="mt-12 flex flex-wrap gap-x-7 gap-y-3 opacity-0">
             {CREDIBILITY.map((item, i) => (

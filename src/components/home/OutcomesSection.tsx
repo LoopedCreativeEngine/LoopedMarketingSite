@@ -8,12 +8,12 @@ import { cn } from "@/lib/cn";
 
 /** Concrete things the intelligence does, by the person who feels them. Illustrative, not claims. */
 const EXAMPLES = [
-  { who: "Marketing", signal: "Bookings from one segment slow three weeks earlier than last year.", insight: "The message that worked in March is not landing with this year's job titles.", action: "Reworked messaging for that segment, with the evidence attached; the next fortnight's response measured against it." },
-  { who: "Content", signal: "A competitor announces two speakers your programme shortlisted.", insight: "Your theme is being contested. Three adjacent angles are still open.", action: "A shortlist of fifteen speakers your editors had not considered, ranked by fit and availability." },
-  { who: "Sponsorship", signal: "A partner's sector is consolidating and their renewal is due.", insight: "Their reason to renew has changed. The audience data supports a different proposition.", action: "A renewed proposition built from what the audience actually did, before the renewal call." },
-  { who: "Awards", signal: "Entries from one category are down while the sector is growing.", insight: "The category name no longer matches how the market describes the work.", action: "A renamed category and a targeted call for entries to the people doing that work." },
-  { who: "Event Director", signal: "Two decisions taken this week pull the room in different directions.", insight: "The audience mix you are selling to partners is drifting from the one you are marketing to.", action: "One recommended correction, with what it means for revenue and for the room." },
-  { who: "Portfolio Director", signal: "Three events in the portfolio hit the same objection in telesales.", insight: "It is a portfolio problem, not an event problem.", action: "A change applied across all three, with each event's outcome measured." },
+  { who: "Marketing", signal: "Registrations up 18%. Senior buyers down 11%.", insight: "A normal dashboard calls that growth. Looped calls it a problem: the audience gap is opening under a healthy-looking number.", action: "Looped can recommend a pivot that keeps registrations growing while rebalancing towards senior buyers. On approval, it updates targeting, messaging, channel priorities and personalised outreach." },
+  { who: "Sponsorship", signal: "£26k of sponsorship, hiding in plain sight.", insight: "Audience demand, content themes and commercial whitespace point to the strongest sponsor categories and the best-fit accounts.", action: "On approval, Looped can build the target list, account plan, personalised outreach and the proposition most likely to land." },
+  { who: "Audience", signal: "This event does not need more registrations. It needs 63 different people.", insight: "Registration volume is healthy, but the buyer mix is wrong. Looped names the organisations that matter and the people inside them.", action: "On approval, Looped can build the targeting, campaign content, personalised outreach and follow-up around exactly those people." },
+  { who: "Telesales", signal: "400 names on a call list. 74 worth calling first.", insight: "Looped ranks who is most likely to convert now, why they matter and what is relevant to them.", action: "On approval, Looped can reorder the call list, rewrite the scripts and give each prospect its own talking points. Ask why anyone ranks where they do." },
+  { who: "Commercial", signal: "This event is heading for a £74k sponsorship shortfall.", insight: "The pace of renewals and new business does not close the gap on the current plan. One partner could be worth £18k more.", action: "On approval, Looped can reshape account strategy, rebuild propositions from what the audience actually did, and reprioritise the pipeline." },
+  { who: "Portfolio", signal: "Three events. Same problem. One answer worth reusing.", insight: "An objection that looks like an event problem is a portfolio problem, and the same answer applies across all three.", action: "On approval, Looped can carry the change across every event and measure each one's outcome." },
 ];
 
 export function OutcomesSection(): React.ReactElement {
@@ -28,7 +28,7 @@ export function OutcomesSection(): React.ReactElement {
   return (
     <Panel tone="stone" id="what-it-does" index="02" kicker="What the intelligence does">
       <Reveal className="max-w-3xl">
-        <h2 className="text-balance display-section">Sees it early. Explains it. Tells you what to change. Shows what it changed.</h2>
+        <h2 className="text-balance display-section">Sees it early. Explains why. Proposes the move. Executes once you decide.</h2>
         <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
           Not a dashboard to read and not a chatbot to prompt: intelligence that arrives with the evidence and the
           recommendation, for the person who has to decide.
@@ -57,9 +57,9 @@ export function OutcomesSection(): React.ReactElement {
         <Reveal className="lg:col-span-8">
           <div key={active} className="grid gap-4 rounded-[20px] border border-hairline bg-paper p-6 shadow-[var(--lift-light)] sm:grid-cols-3 sm:p-8">
             {[
-              ["What Looped saw", e.signal, "#7c3aed"],
-              ["What it meant", e.insight, "#ec4899"],
-              ["What changed", e.action, "#fb923c"],
+              ["What Looped sees", e.signal, "#7c3aed"],
+              ["Why it matters", e.insight, "#ec4899"],
+              ["What Looped can do", e.action, "#fb923c"],
             ].map(([label, text, color], i) => (
               <div key={label} className="signal-step" style={{ animationDelay: `${i * 0.35}s` }}>
                 <p className="flex items-center gap-2 kicker text-muted">

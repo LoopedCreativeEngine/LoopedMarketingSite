@@ -1,44 +1,32 @@
 import { Reveal } from "@/components/motion/Reveal";
+import { WaitlistForm } from "@/components/forms/WaitlistForm";
 
-export default function DemoPage(): React.ReactElement {
+export default function WaitlistPage(): React.ReactElement {
   return (
     <div className="bg-paper pb-24 pt-28 sm:pt-32">
       <div className="mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <p className="kicker text-purple">Get started</p>
-          <h1 className="mt-4 font-serif text-4xl tracking-tight text-ink sm:text-5xl">Book a demo</h1>
+          <p className="kicker text-purple">Early access</p>
+          <h1 className="mt-4 font-serif text-4xl tracking-tight text-ink sm:text-5xl">Join the early access list.</h1>
           <p className="mt-6 text-lg leading-relaxed text-slate">
-            45 minutes. We&apos;ll configure a live demo using an event in your sector and walk you through the full
-            cascade from brief to campaign-ready.
+            The founding pilot is underway. We are opening early access to a small number of event organisations next.
+            Join the waitlist for early access, product updates and Looped intelligence.
           </p>
         </Reveal>
       </div>
 
-      <div className="mx-auto mt-12 max-w-3xl px-5 sm:px-6 lg:px-8">
+      <div className="mx-auto mt-12 max-w-2xl px-5 sm:px-6 lg:px-8">
         <Reveal>
-          <div
-            className="flex min-h-[520px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[rgba(15,23,42,0.20)] bg-stone p-8 text-center"
-            data-calendly-placeholder
-          >
-            <p className="font-mono text-xs font-semibold leading-relaxed text-purple sm:text-sm">
-              [CALENDLY_EMBED — replace src/app/demo/page.tsx placeholder with real Calendly URL]
-            </p>
-          </div>
+          <WaitlistForm />
         </Reveal>
 
         <Reveal className="mt-12">
-          <h2 className="text-lg font-semibold text-ink">What to expect</h2>
+          <h2 className="text-lg font-semibold text-ink">What happens next</h2>
           <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-relaxed text-slate">
-            <li>We&apos;ll use a real event type from your portfolio — not a generic demo.</li>
-            <li>
-              You&apos;ll see the full intelligence cascade running: market mapping, competitor analysis, persona
-              building, messaging architecture, campaign planning.
-            </li>
-            <li>
-              We&apos;ll show you what the platform produces for your team&apos;s specific disciplines — marketing,
-              content, commercial, telesales, event management.
-            </li>
-            <li>We&apos;ll discuss deployment pricing based on your portfolio size and event mix.</li>
+            <li>We confirm your place on the early access list.</li>
+            <li>You get product updates and Looped intelligence while the pilot runs.</li>
+            <li>As places open, we get in touch to start with one or two of your events.</li>
+            <li>You see what Looped can spot, why it matters and the move it would propose, on your own data.</li>
           </ul>
         </Reveal>
       </div>

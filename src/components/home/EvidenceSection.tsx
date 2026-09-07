@@ -16,7 +16,7 @@ export function EvidenceSection(): React.ReactElement {
           <p className="text-base leading-relaxed text-mist sm:text-lg">
             Most AI is judged on activity: words generated, hours saved. Looped is judged on what changed. Every
             recommendation stays connected to the decision it informed, the action that followed and the outcome it
-            produced — so you can see which actions actually moved bookings, entries, partners and the room.
+            produced, so you can see which actions actually moved bookings, entries, partners and the room.
           </p>
           <p className="text-base leading-relaxed text-mist sm:text-lg">
             The calls that paid off are kept and carried into the next edition. The ones that didn&apos;t are kept

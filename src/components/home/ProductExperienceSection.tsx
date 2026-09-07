@@ -23,10 +23,13 @@ export function ProductExperienceSection(): React.ReactElement {
     <Panel tone="stone" index="07" kicker="Working with Looped">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-14">
         <Reveal>
-          <h2 className="text-balance display-section">Ask · Explore · Instruct</h2>
+          <h2 className="text-balance display-section">Ask Looped anything about your event business.</h2>
+          <p className="mt-4 font-serif text-xl italic leading-snug text-grad sm:text-2xl">
+            Ask the event. Ask the brand. Ask the portfolio. Ask the business.
+          </p>
           <p className="mt-6 text-base leading-relaxed text-slate sm:text-lg">
-            An operating system, not a chatbot. You work with Looped the way you would with a chief of staff who has read
-            everything: ask, look at the evidence, decide, and hand over the work.
+            No dashboard hunting and no pulling reports together. Ask a question and get an evidence-backed answer from
+            across the event business. Then decide what happens next: approve it, adjust it, or explore another route.
           </p>
           <div className="mt-8 space-y-5">
             {MODES.map((m, i) => (
@@ -44,7 +47,7 @@ export function ProductExperienceSection(): React.ReactElement {
           <MediaFrame variant="app" tone="ink" tag="Illustrative" aspect="4 / 4.4" label="Chief of Staff · one point of control across the event">
             <div className="absolute inset-0 flex flex-col gap-4 p-5 text-sm sm:p-6">
               <p className="self-end rounded-2xl rounded-br-md border border-white/10 bg-night-raised px-4 py-3 text-snow">
-                What has moved on this event since Monday that I should know about?
+                What should I be worried about on this event right now?
               </p>
               <div className="rounded-2xl rounded-bl-md border border-pink/40 bg-[rgba(167,139,219,0.08)] p-4">
                 <p className="flex items-center gap-2 kicker text-lavender">
@@ -60,7 +63,7 @@ export function ProductExperienceSection(): React.ReactElement {
                   ))}
                 </ul>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {["Explore evidence", "Draft a response", "Instruct"].map((a) => (
+                  {["Show me why", "Explore another route", "Adjust", "Build the plan", "Approve"].map((a) => (
                     <span key={a} className="rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-snow">
                       {a}
                     </span>

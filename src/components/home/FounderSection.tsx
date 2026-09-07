@@ -28,7 +28,7 @@ export function FounderSection(): React.ReactElement {
             <p>
               I have run the campaigns, sold the sponsorship and sat in the planning meetings where the best people in
               the business spend their week reconstructing context and coordinating repetitive work. Their real value
-              is judgement, creativity, relationships and a feel for the market — and those are the things the week
+              is judgement, creativity, relationships and a feel for the market, and those are the things the week
               leaves least room for.
             </p>
             <p>

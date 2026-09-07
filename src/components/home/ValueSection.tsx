@@ -5,7 +5,7 @@ import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 
 const VIEWS = [
-  { name: "Your event", body: "Programme, speakers, entries, sponsors, bookings — where the edition really stands today." },
+  { name: "Your event", body: "Programme, speakers, entries, sponsors, bookings, where the edition really stands today." },
   { name: "Your audience and performance", body: "Who is responding, who is not, and what is changing week by week." },
   { name: "Your market", body: "Competitor agendas, speaker moves, launches and sector shifts that should change the plan." },
   { name: "Your own actions", body: "What your team changed, and what each change actually did." },
@@ -22,7 +22,7 @@ export function ValueSection(): React.ReactElement {
           <p className="text-base leading-relaxed text-slate sm:text-lg">
             Your team already has the expertise, the judgement and the relationships. What it rarely has is the whole
             picture, in one place, current on the day the decision has to be made. Looped keeps that picture for you
-            and turns it into recommendations you can act on.
+            and turns it into recommendations you approve, and puts to work.
           </p>
           <p className="text-base leading-relaxed text-slate sm:text-lg">
             Signals come in. Looped works out what they mean for this event, recommends what to do, helps carry it

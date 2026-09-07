@@ -24,7 +24,7 @@ export function CompoundingSection(): React.ReactElement {
           <p className="text-base leading-relaxed text-slate sm:text-lg">
             One event creates value. Several events create something more: intelligence that learns from each of them
             and carries the lesson to all of them. The more of your business Looped sees, the richer the picture every
-            team works from — and the learning survives the edition, the reorganisation and the person who moves on.
+            team works from, and the learning survives the edition, the reorganisation and the person who moves on.
           </p>
         </Reveal>
       </div>

@@ -4,6 +4,7 @@ import { EvidenceSection } from "@/components/home/EvidenceSection";
 import { FounderSection } from "@/components/home/FounderSection";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HumanJudgementSection } from "@/components/home/HumanJudgementSection";
+import { NewsroomSection } from "@/components/home/NewsroomSection";
 import { OutcomesSection } from "@/components/home/OutcomesSection";
 import { ProductExperienceSection } from "@/components/home/ProductExperienceSection";
 import { StartAnywhereSection } from "@/components/home/StartAnywhereSection";
@@ -23,6 +24,7 @@ export default function HomePage(): React.ReactElement {
       <HumanJudgementSection />
       <EvidenceSection />
       <ProductExperienceSection />
+      <NewsroomSection />
       <TrustSection />
       <StartSection />
       <FounderSection />

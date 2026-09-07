@@ -22,14 +22,14 @@ export function ClosingSection(): React.ReactElement {
             The art of events is yours. The intelligence is Looped.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-mist sm:text-lg">
-            Your next event shouldn&apos;t start from zero. Start with one, let it prove its value on the record, and
-            let every edition after it start smarter.
+            Know your next move before your competitors do. Early access is opening to a small number of event
+            organisations following the founding pilot.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <CtaButton href="/demo" tone="ink">
-              Start with an event
+              Join the waitlist
             </CtaButton>
-            <CtaButton href="/demo" variant="secondary" tone="ink">
+            <CtaButton href="#what-it-does" variant="secondary" tone="ink">
               See Looped in action
             </CtaButton>
           </div>
