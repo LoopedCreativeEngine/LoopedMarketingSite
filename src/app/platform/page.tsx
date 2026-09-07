@@ -6,6 +6,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 
 export const metadata: Metadata = {
+  robots: { index: false, follow: false },
   title: "Platform: what you can do with Looped",
   description:
     "Everything your event teams need to know, decide and move forward. Looped connects the picture across the event business, helps each team see what matters, and carries approved decisions into action.",

@@ -20,13 +20,27 @@ export default function WaitlistPage(): React.ReactElement {
           <WaitlistForm />
         </Reveal>
 
-        <Reveal className="mt-12">
-          <h2 className="text-lg font-semibold text-ink">What happens next</h2>
-          <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-relaxed text-slate">
-            <li>We confirm your place on the early access list.</li>
-            <li>You get product updates and Looped intelligence while the pilot runs.</li>
-            <li>As places open, we get in touch to begin where it makes sense for your business.</li>
-            <li>You see what Looped surfaces, why it matters and the move it would propose, on your own data.</li>
+        <Reveal className="mt-6 text-center">
+          <p className="text-xs leading-relaxed text-muted">No sales spam. Just Looped updates, event intelligence and early-access news.</p>
+        </Reveal>
+
+        <Reveal className="mt-12 rounded-2xl border border-hairline bg-stone p-7 shadow-[var(--lift-light)] sm:p-8">
+          <p className="kicker text-purple">What you&rsquo;ll get</p>
+          <p className="mt-4 text-base leading-relaxed text-slate sm:text-lg">
+            Join the waitlist and we&rsquo;ll keep you close to what is happening with Looped.
+          </p>
+          <ul className="mt-5 space-y-3">
+            {[
+              "Early access as places open following the founding pilot.",
+              "Product updates and new Looped intelligence.",
+              "Practical thinking on where event businesses can find more value.",
+              "A first look at what Looped could surface across your own event business, when the time is right.",
+            ].map((item, i) => (
+              <li key={item} className="flex items-start gap-3 border-t border-hairline pt-3 text-sm leading-relaxed text-ink sm:text-base">
+                <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full" style={{ background: ["#7c3aed", "#ec4899", "#fb923c", "#a78bdb"][i] }} aria-hidden />
+                {item}
+              </li>
+            ))}
           </ul>
         </Reveal>
       </div>

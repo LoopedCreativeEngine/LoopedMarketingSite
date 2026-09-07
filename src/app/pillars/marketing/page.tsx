@@ -1,5 +1,7 @@
 import { PillarPage } from "@/components/pillars/PillarPage";
 
+export const metadata = { robots: { index: false, follow: false } };
+
 export default function MarketingPillarPage(): React.ReactElement {
   return (
     <PillarPage
