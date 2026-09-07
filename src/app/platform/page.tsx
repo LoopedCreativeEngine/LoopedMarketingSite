@@ -5,12 +5,12 @@ import { Reveal } from "@/components/motion/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 
 export const metadata: Metadata = {
-  title: "Platform: everything Looped does",
+  title: "Platform: what Looped does",
   description:
-    "The full Looped platform: over 120 AI modules across six pillars, an intelligence cascade, the Loop assistant, live dashboards, AI voice for telesales, embeddable capture, and live integrations with the tools you already run.",
+    "One connected platform across marketing, content, commercial, telesales, event management and portfolio. Looped reads your event data, recommends the strongest move and carries approved decisions into action, with a person in control of every consequential call.",
 };
 
-const INTRO = `Looped is one connected platform across marketing, content, commercial, telesales, event management and portfolio. More than 120 AI modules research, draft and analyse the work, an intelligence cascade chains them together, and a human signs off every decision that carries a consequence. This is what it does today.`;
+const INTRO = `Looped is one connected platform across marketing, content, commercial, telesales, event management and portfolio. It reads your real event data, works out what matters, recommends the strongest move and, once your team approves, carries the decision into action. A person signs off everything that carries a consequence. This is what it does today.`;
 
 const PILLAR_LINKS = [
   { name: "Marketing", href: "/pillars/marketing" },
@@ -23,77 +23,77 @@ const PILLAR_LINKS = [
 
 const FEATURED = [
   {
-    title: "120+ AI modules, six pillars",
-    body: "More than 120 AI modules span marketing, content, commercial, telesales, event management and portfolio. Each one runs a workflow grounded in your real event data, produces a structured deliverable, then pauses for your team to approve or reject.",
+    title: "One connected view of the event business",
+    body: "Looped works across marketing, content, commercial, telesales, event management and portfolio, grounded in your real event data. It turns that into clear recommendations, each one ready for your team to approve or adjust.",
   },
   {
-    title: "The intelligence cascade",
-    body: "Approve one output and Looped generates every downstream module whose inputs are now ready, in parallel, each grounded in what you have already approved. Around ninety background jobs run the chain. It starts when you approve the event brief and pauses for a human at every step: assisted automation, not autonomous generation.",
+    title: "Approve once, the related work follows",
+    body: "Approve a decision and Looped prepares the related work that is now ready, each part grounded in what you have already approved. A person stays in control: anything consequential waits for sign-off before it goes ahead.",
   },
   {
-    title: "The Loop assistant",
-    body: "An AI assistant sits on every page, and on the Ctrl+L shortcut. It answers with live context from across your events, can pull brief details from a URL, and on your explicit confirmation kicks off a single module or a full cascade. It cannot approve, export, change billing or delete, and nothing fires on its own.",
+    title: "Ask Looped, on every page",
+    body: "An assistant sits on every page and answers with live context from across your events. On your confirmation it can set work in motion, and it can pull the details of a brief from a link. It cannot approve, export, change billing or delete, and nothing happens on its own.",
   },
 ];
 
 const CAPABILITIES = [
   {
-    title: "Live dashboards, signals and decisions",
+    title: "Live view, signals and decisions",
     points: [
-      "A workspace hub for each pillar: a cockpit of module cards with approve and reject, an items inbox, the briefing, a 30-day plan and a library.",
-      "A cross-event command centre with an org home, a portfolio-director view and a needs-you, live-now strip.",
-      "An intelligence feed that surfaces what to act on, whether a renewal is cooling, a segment is under target or a coherence issue has appeared, with the action built in.",
-      "A decision hub: one cross-event approve and reject queue with batch approve, filters and preview, plus full-page, modal and rich output viewers.",
+      "A workspace for each area of the business, with clear recommendations your team can approve or reject.",
+      "A cross-event view for leaders, from a single event to the whole portfolio.",
+      "An intelligence feed that shows what to act on, whether a renewal is cooling, a segment is under target or something needs attention, with the suggested move built in.",
+      "One approve and reject queue across every event, with batch actions, filters and a preview before anything goes ahead.",
     ],
   },
   {
     title: "AI voice for telesales",
     points: [
-      "AI voice agents for telesales and partner outreach, briefed from your approved scripts, personas and segments, running on your own voice account.",
-      "Every call is recorded and transcribed, and Looped classifies the outcome automatically.",
-      "A per-event spend cap keeps it bounded, and you switch outbound dialling on when you choose.",
+      "Voice agents for telesales and partner outreach, briefed from your approved scripts, personas and segments, using your own calling account.",
+      "Every call is recorded, transcribed and its outcome classified for you.",
+      "A cost cap per event keeps it predictable, and you turn outbound calling on when you choose.",
     ],
   },
   {
-    title: "Embeddable on your own sites",
+    title: "Tools for your own website",
     points: [
-      "A drop-in website chatbot for your event site that answers only from a knowledge base you compile, refuses to fabricate, and captures consented leads into the platform.",
-      "A public, email-gated awards quiz that matches an entrant's company to the best-fit categories with scores and reasons, captures the lead and syncs it to your CRM.",
-      "A secure asset-collection portal where speakers, judges and partners submit their headshot, bio, logo and social links.",
+      "A chatbot for your event site that answers only from information you approve, never invents an answer, and captures consented leads into Looped.",
+      "An email-gated awards quiz that matches an entrant's company to the best-fit categories with scores and reasons, captures the lead and sends it to your CRM.",
+      "A secure portal where speakers, judges and partners submit their headshot, bio, logo and links.",
     ],
   },
   {
     title: "Demand and lead capture",
     points: [
-      "Consent-gated lead capture that routes automatically to the partner pipeline, the telesales warm list or nurture.",
-      "A behavioural capture SDK for your own site that stays dormant until consent is granted.",
-      "An intent inbox where captured signals land in real time, ready to route.",
+      "Consent-based lead capture that routes automatically to the partner pipeline, the telesales warm list or nurture.",
+      "A lightweight capture tool for your own site that stays off until a visitor consents.",
+      "Captured interest lands in real time, ready to route.",
     ],
   },
   {
-    title: "Research, data and enrichment",
+    title: "Live market research and data",
     points: [
-      "Web-grounded research built in, for live sector, competitor and market intelligence.",
-      "Company and contact enrichment through connected data providers, briefed by your approved audience intelligence.",
-      "An on-demand social intelligence scan that populates the event knowledge base.",
+      "Live sector, competitor and market research built in.",
+      "Company and contact details filled in from trusted data sources, guided by your approved audience intelligence.",
+      "A social scan that adds to what Looped knows about your event.",
     ],
   },
   {
-    title: "Connects to your stack",
+    title: "Works with the tools you already run",
     points: [
-      "A focused set of live, end-to-end integrations rather than a directory of logos.",
-      "CRM with Salesforce and HubSpot, email with Resend, payments with Stripe, and web extraction with Firecrawl.",
-      "A managed connector hub brokers them securely with your own keys, and a job-orchestration backbone runs the automation.",
-      "Each connection switches on with your own account or key.",
+      "A focused set of live connections to the tools you already use, not a directory of logos.",
+      "Connects to your CRM, email and payment systems.",
+      "Each connection switches on with your own account, at the level of connection that suits you.",
+      "The more connected the picture, the more Looped can understand, recommend and act on.",
     ],
   },
   {
     title: "Governed by design",
     points: [
-      "Grounded in your approved data, so it does not fabricate, and when it lacks the data it tells you.",
-      "A human approves every decision that carries a consequence, and the platform logs it.",
-      "A PII firewall redacts personal data before anything reaches a model.",
-      "Per-event spend caps bound both compute and voice.",
+      "Grounded in your approved data, so it does not invent, and when it lacks the data it tells you.",
+      "A person approves every decision that carries a consequence, and it is all logged.",
+      "Personal data is protected and kept out of the AI, and access is scoped by role.",
+      "Cost caps per event keep spending predictable.",
     ],
   },
 ];
@@ -123,7 +123,7 @@ export default function PlatformPage(): React.ReactElement {
         </Reveal>
       </div>
 
-      {/* three headline capabilities — inset ink plate */}
+      {/* three headline capabilities on an inset ink plate */}
       <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
         <div className="on-night grid gap-6 rounded-3xl bg-night p-8 shadow-[var(--lift-ink)] sm:p-10 md:grid-cols-3">
           {FEATURED.map((item) => (
@@ -160,12 +160,13 @@ export default function PlatformPage(): React.ReactElement {
       <div className="mx-auto mt-16 max-w-3xl px-5 text-center sm:px-6 lg:px-8">
         <Reveal>
           <p className="font-serif text-2xl italic text-ink sm:text-3xl">
-            The platform is built. Pilot partners are shaping what it becomes next.
+            Looped is built today. Early access will open to a small number of selected event organisations following
+            our founding pilot.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <CtaButton href="/demo">Apply to pilot</CtaButton>
-            <CtaButton href="/demo" variant="secondary">
-              Join the waitlist
+            <CtaButton href="/demo">Join the waitlist</CtaButton>
+            <CtaButton href="/#what-it-does" variant="secondary">
+              See Looped in action
             </CtaButton>
           </div>
         </Reveal>
