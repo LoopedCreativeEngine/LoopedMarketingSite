@@ -29,7 +29,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Looped — the AI operating system for conference & awards businesses",
+  title: "Looped. The AI operating system for conference & awards businesses",
   description:
     "The art of events is yours. The intelligence is Looped. One operating system that holds the picture of every event you run, recommends with the evidence attached, carries the routine work and remembers what each edition learned.",
   icons: {
