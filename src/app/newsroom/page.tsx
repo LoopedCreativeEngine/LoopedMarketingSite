@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { Reveal } from "@/components/motion/Reveal";
 import { getArticles } from "@/lib/newsroom";
 
@@ -8,6 +8,13 @@ export const metadata: Metadata = {
   title: "Newsroom: notes and announcements from Looped",
   description:
     "Notes, announcements and thinking from the team building Looped, the intelligence layer for event teams.",
+  alternates: { canonical: "/newsroom" },
+  openGraph: {
+    url: "/newsroom",
+    title: "Newsroom: notes and announcements from Looped",
+    description:
+      "Notes, announcements and thinking from the team building Looped, the intelligence layer for event teams.",
+  },
 };
 
 export default function NewsroomPage(): React.ReactElement {
@@ -33,8 +40,10 @@ export default function NewsroomPage(): React.ReactElement {
           {articles.map((article) => (
             <li key={article.slug}>
               <Reveal>
-                <Link
+                <TrackedLink
                   href={`/newsroom/${article.slug}`}
+                  event="newsroom_article_click"
+                  properties={{ slug: article.slug, title: article.title }}
                   className="group block rounded-2xl border border-[rgba(15,23,42,0.12)] bg-stone p-6 shadow-[var(--lift-light)] transition-colors duration-300 hover:border-purple sm:p-8"
                 >
                   <div className="flex flex-wrap items-center gap-3 kicker text-muted">
@@ -52,7 +61,7 @@ export default function NewsroomPage(): React.ReactElement {
                       →
                     </span>
                   </span>
-                </Link>
+                </TrackedLink>
               </Reveal>
             </li>
           ))}

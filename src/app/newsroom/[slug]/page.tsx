@@ -22,8 +22,18 @@ export async function generateMetadata({ params }: ArticleParams): Promise<Metad
     return { title: "Newsroom" };
   }
   return {
-    title: `${article.title} · Looped Newsroom`,
+    // Absolute: this title already names the brand, so the "%s | Looped"
+    // template would say it twice.
+    title: { absolute: `${article.title} · Looped Newsroom` },
     description: article.standfirst,
+    alternates: { canonical: `/newsroom/${slug}` },
+    openGraph: {
+      type: "article",
+      url: `/newsroom/${slug}`,
+      title: article.title,
+      description: article.standfirst,
+      publishedTime: article.date,
+    },
   };
 }
 
@@ -74,7 +84,7 @@ export default async function ArticlePage({ params }: ArticleParams): Promise<Re
             Looped is built today. Early access will open to a small number of selected event organisations following our founding pilot.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <CtaButton href="/demo">Join the waitlist</CtaButton>
+            <CtaButton href="/demo" event="newsroom_signup_click">Join the waitlist</CtaButton>
             <CtaButton href="/newsroom" variant="secondary">
               Back to the newsroom
             </CtaButton>

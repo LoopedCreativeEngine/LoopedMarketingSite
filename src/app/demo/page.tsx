@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
+
 import { Reveal } from "@/components/motion/Reveal";
 import { WaitlistForm } from "@/components/forms/WaitlistForm";
+
+export const metadata: Metadata = {
+  title: "Join the Looped early access list",
+  description:
+    "Early access opens to a small number of selected event organisations following our founding pilot. Join the waitlist for early access, product updates and Looped intelligence.",
+  alternates: { canonical: "/demo" },
+  openGraph: {
+    url: "/demo",
+    title: "Join the Looped early access list",
+    description:
+      "Early access opens to a small number of selected event organisations following our founding pilot. Join the waitlist for early access, product updates and Looped intelligence.",
+  },
+};
 
 export default function WaitlistPage(): React.ReactElement {
   return (

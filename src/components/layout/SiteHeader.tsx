@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import { Wordmark } from "@/components/brand/LoopMark";
+import { track } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 
 /** Clean light navigation: wordmark, a few quiet links, one gradient CTA. */
@@ -50,6 +51,7 @@ export function SiteHeader(): React.ReactElement {
         <div className="flex items-center gap-2">
           <Link
             href="/demo"
+            onClick={() => track("waitlist_cta_click", { href: "/demo", placement: "header" })}
             className="hidden cursor-pointer items-center rounded-full bg-grad px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--grad-emph)] transition-transform hover:-translate-y-0.5 md:inline-flex"
           >
             Join the waitlist
@@ -88,7 +90,10 @@ export function SiteHeader(): React.ReactElement {
                     <Link
                       href="/demo"
                       className="mt-2 inline-flex w-fit rounded-full bg-grad px-5 py-2.5 text-sm font-semibold text-white"
-                      onClick={() => setMobileOpen(false)}
+                      onClick={() => {
+                        track("waitlist_cta_click", { href: "/demo", placement: "header-mobile" });
+                        setMobileOpen(false);
+                      }}
                     >
                       Join the waitlist
                     </Link>

@@ -1,6 +1,20 @@
+import type { Metadata } from "next";
+
 import { Reveal } from "@/components/motion/Reveal";
 
 import { site } from "@/styles/design-system";
+
+export const metadata: Metadata = {
+  title: "Privacy policy",
+  description:
+    "How Looped handles the information you give us through this site, and who operates it.",
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    url: "/privacy",
+    title: "Privacy policy",
+    description: "How Looped handles the information you give us through this site, and who operates it.",
+  },
+};
 
 export default function PrivacyPage(): React.ReactElement {
   return (
