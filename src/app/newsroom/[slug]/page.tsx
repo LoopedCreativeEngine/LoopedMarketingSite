@@ -71,10 +71,10 @@ export default async function ArticlePage({ params }: ArticleParams): Promise<Re
 
         <Reveal className="mt-14 border-t border-[rgba(15,23,42,0.12)] pt-10 text-center">
           <p className="font-serif text-2xl italic text-ink sm:text-3xl">
-            The platform is built. Come and shape what it becomes.
+            Looped is built today. Early access will open to a small number of selected event organisations following our founding pilot.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <CtaButton href="/demo">Apply to pilot</CtaButton>
+            <CtaButton href="/demo">Join the waitlist</CtaButton>
             <CtaButton href="/newsroom" variant="secondary">
               Back to the newsroom
             </CtaButton>

@@ -5,12 +5,60 @@ import { Reveal } from "@/components/motion/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 
 export const metadata: Metadata = {
-  title: "Platform: what Looped does",
+  title: "Platform: what you can do with Looped",
   description:
-    "One connected platform across marketing, content, commercial, telesales, event management and portfolio. Looped reads your event data, recommends the strongest move and carries approved decisions into action, with a person in control of every consequential call.",
+    "The breadth of Looped for someone who already likes the idea: know what matters, decide what to do, put the decision to work, and keep the business learning, with a person in control of every consequential call.",
 };
 
-const INTRO = `Looped is one connected platform across marketing, content, commercial, telesales, event management and portfolio. It reads your real event data, works out what matters, recommends the strongest move and, once your team approves, carries the decision into action. A person signs off everything that carries a consequence. This is what it does today.`;
+const GROUPS = [
+  {
+    key: "A",
+    title: "Know what matters",
+    points: [
+      "A live picture of each event: where it stands, what is changing and what needs attention now.",
+      "Live sector, competitor and market intelligence, built in.",
+      "Ask Looped about an event, a brand, the portfolio or the whole business, and get an evidence-backed answer.",
+      "A cross-event view for leaders, from a single event to the whole portfolio.",
+    ],
+  },
+  {
+    key: "B",
+    title: "Decide what to do",
+    points: [
+      "Clear recommendations, with the strongest move made obvious.",
+      "The evidence behind every recommendation, open to inspect.",
+      "Alternatives to compare when you want another route.",
+      "Your approval on everything that carries a consequence. People stay in control.",
+    ],
+  },
+  {
+    key: "C",
+    title: "Put the decision to work",
+    points: [
+      "Campaigns and messaging, ready to run.",
+      "Personalised outreach for the accounts and people that matter.",
+      "Call lists and scripts, ordered by who is worth calling first.",
+      "Account plans and commercial propositions.",
+      "Programme and event actions across the edition.",
+    ],
+  },
+  {
+    key: "D",
+    title: "Keep the business learning",
+    points: [
+      "Outcome tracking, so you see what actually changed.",
+      "Edition over edition, so the next event starts with what worked and what did not.",
+      "Learning that carries across a brand, the portfolio and the organisation.",
+    ],
+  },
+];
+
+const ALSO = [
+  { title: "AI voice for telesales", body: "Voice agents briefed from your approved scripts, using your own calling account, recorded and summarised for you." },
+  { title: "Tools for your website", body: "A chatbot that answers only from what you approve, an awards-category quiz, and a secure portal for speakers and partners." },
+  { title: "Lead capture", body: "Consent-based capture that routes to the right pipeline, with captured interest landing in real time." },
+  { title: "Works with your stack", body: "Connects to your CRM, email and payment systems, at the level of connection that suits you." },
+];
 
 const PILLAR_LINKS = [
   { name: "Marketing", href: "/pillars/marketing" },
@@ -21,83 +69,6 @@ const PILLAR_LINKS = [
   { name: "Portfolio", href: "/pillars/portfolio" },
 ];
 
-const FEATURED = [
-  {
-    title: "One connected view of the event business",
-    body: "Looped works across marketing, content, commercial, telesales, event management and portfolio, grounded in your real event data. It turns that into clear recommendations, each one ready for your team to approve or adjust.",
-  },
-  {
-    title: "Approve once, the related work follows",
-    body: "Approve a decision and Looped prepares the related work that is now ready, each part grounded in what you have already approved. A person stays in control: anything consequential waits for sign-off before it goes ahead.",
-  },
-  {
-    title: "Ask Looped, on every page",
-    body: "An assistant sits on every page and answers with live context from across your events. On your confirmation it can set work in motion, and it can pull the details of a brief from a link. It cannot approve, export, change billing or delete, and nothing happens on its own.",
-  },
-];
-
-const CAPABILITIES = [
-  {
-    title: "Live view, signals and decisions",
-    points: [
-      "A workspace for each area of the business, with clear recommendations your team can approve or reject.",
-      "A cross-event view for leaders, from a single event to the whole portfolio.",
-      "An intelligence feed that shows what to act on, whether a renewal is cooling, a segment is under target or something needs attention, with the suggested move built in.",
-      "One approve and reject queue across every event, with batch actions, filters and a preview before anything goes ahead.",
-    ],
-  },
-  {
-    title: "AI voice for telesales",
-    points: [
-      "Voice agents for telesales and partner outreach, briefed from your approved scripts, personas and segments, using your own calling account.",
-      "Every call is recorded, transcribed and its outcome classified for you.",
-      "A cost cap per event keeps it predictable, and you turn outbound calling on when you choose.",
-    ],
-  },
-  {
-    title: "Tools for your own website",
-    points: [
-      "A chatbot for your event site that answers only from information you approve, never invents an answer, and captures consented leads into Looped.",
-      "An email-gated awards quiz that matches an entrant's company to the best-fit categories with scores and reasons, captures the lead and sends it to your CRM.",
-      "A secure portal where speakers, judges and partners submit their headshot, bio, logo and links.",
-    ],
-  },
-  {
-    title: "Demand and lead capture",
-    points: [
-      "Consent-based lead capture that routes automatically to the partner pipeline, the telesales warm list or nurture.",
-      "A lightweight capture tool for your own site that stays off until a visitor consents.",
-      "Captured interest lands in real time, ready to route.",
-    ],
-  },
-  {
-    title: "Live market research and data",
-    points: [
-      "Live sector, competitor and market research built in.",
-      "Company and contact details filled in from trusted data sources, guided by your approved audience intelligence.",
-      "A social scan that adds to what Looped knows about your event.",
-    ],
-  },
-  {
-    title: "Works with the tools you already run",
-    points: [
-      "A focused set of live connections to the tools you already use, not a directory of logos.",
-      "Connects to your CRM, email and payment systems.",
-      "Each connection switches on with your own account, at the level of connection that suits you.",
-      "The more connected the picture, the more Looped can understand, recommend and act on.",
-    ],
-  },
-  {
-    title: "Governed by design",
-    points: [
-      "Grounded in your approved data, so it does not invent, and when it lacks the data it tells you.",
-      "A person approves every decision that carries a consequence, and it is all logged.",
-      "Personal data is protected and kept out of the AI, and access is scoped by role.",
-      "Cost caps per event keep spending predictable.",
-    ],
-  },
-];
-
 export default function PlatformPage(): React.ReactElement {
   return (
     <div className="bg-paper pb-24 pt-28 sm:pt-32">
@@ -105,56 +76,79 @@ export default function PlatformPage(): React.ReactElement {
         <Reveal>
           <p className="kicker text-purple">The platform</p>
           <h1 className="mt-4 text-balance font-serif text-4xl tracking-tight text-ink sm:text-5xl">
-            Everything Looped does, in one place.
+            What you can actually do with Looped.
           </h1>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">{INTRO}</p>
-        </Reveal>
-
-        <Reveal className="mt-8 flex flex-wrap gap-2">
-          {PILLAR_LINKS.map((pillar) => (
-            <Link
-              key={pillar.href}
-              href={pillar.href}
-              className="rounded-full border border-[rgba(15,23,42,0.18)] bg-stone px-4 py-1.5 text-sm text-slate transition-colors hover:border-purple hover:text-purple"
-            >
-              {pillar.name}
-            </Link>
-          ))}
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
+            If you already like the idea, here is the breadth. Looped helps your teams know what matters, decide what to
+            do, put the decision to work, and keep the business learning, with a person in control of every consequential
+            call.
+          </p>
         </Reveal>
       </div>
 
-      {/* three headline capabilities on an inset ink plate */}
+      {/* four buyer outcomes */}
       <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="on-night grid gap-6 rounded-3xl bg-night p-8 shadow-[var(--lift-ink)] sm:p-10 md:grid-cols-3">
-          {FEATURED.map((item) => (
-            <Reveal key={item.title}>
-              <span className="h-2 w-2 rounded-full bg-pink" aria-hidden />
-              <h2 className="mt-4 text-xl text-snow">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-mist">{item.body}</p>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-
-      <div className="mx-auto mt-6 max-w-6xl px-5 sm:px-6 lg:px-8">
         <div className="grid gap-4 md:grid-cols-2">
-          {CAPABILITIES.map((group) => (
-            <Reveal
-              key={group.title}
-              className="rounded-2xl border border-[rgba(15,23,42,0.12)] bg-stone p-6 shadow-[var(--lift-light)]"
-            >
-              <h2 className="text-xl text-ink">{group.title}</h2>
-              <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-slate">
-                {group.points.map((point) => (
-                  <li key={point} className="flex gap-2.5">
+          {GROUPS.map((g) => (
+            <Reveal key={g.key} className="rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)] sm:p-8">
+              <div className="flex items-baseline gap-3">
+                <span className="font-mono text-sm text-purple">{g.key}</span>
+                <h2 className="text-2xl text-ink">{g.title}</h2>
+              </div>
+              <ul className="mt-5 space-y-2.5 text-sm leading-relaxed text-slate">
+                {g.points.map((p) => (
+                  <li key={p} className="flex gap-2.5">
                     <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-purple" aria-hidden />
-                    <span>{point}</span>
+                    <span>{p}</span>
                   </li>
                 ))}
               </ul>
             </Reveal>
           ))}
         </div>
+      </div>
+
+      {/* human control line */}
+      <div className="mx-auto mt-6 max-w-6xl px-5 sm:px-6 lg:px-8">
+        <Reveal className="rounded-2xl border border-hairline bg-paper p-6 text-center shadow-[var(--lift-light)] sm:p-7">
+          <p className="text-base leading-relaxed text-slate sm:text-lg">
+            A person approves every decision that carries a consequence. Personal data is kept out of the AI, access is
+            scoped by role, and Looped works with the data and systems you already have.
+          </p>
+        </Reveal>
+      </div>
+
+      {/* also built in */}
+      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
+        <Reveal>
+          <p className="kicker text-muted">Also built in</p>
+        </Reveal>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {ALSO.map((a) => (
+            <Reveal key={a.title} className="rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)]">
+              <h3 className="text-lg text-ink">{a.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-slate">{a.body}</p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      {/* explore by team */}
+      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
+        <Reveal>
+          <p className="kicker text-muted">Or explore by team</p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {PILLAR_LINKS.map((pillar) => (
+              <Link
+                key={pillar.href}
+                href={pillar.href}
+                className="rounded-full border border-[rgba(15,23,42,0.18)] bg-stone px-4 py-1.5 text-sm text-slate transition-colors hover:border-purple hover:text-purple"
+              >
+                {pillar.name}
+              </Link>
+            ))}
+          </div>
+        </Reveal>
       </div>
 
       <div className="mx-auto mt-16 max-w-3xl px-5 text-center sm:px-6 lg:px-8">

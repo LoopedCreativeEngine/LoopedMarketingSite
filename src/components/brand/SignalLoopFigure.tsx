@@ -61,14 +61,15 @@ export function SignalLoopFigure(): React.ReactElement {
         </g>
       ))}
 
-      {/* Understand: the one picture */}
-      <circle cx={loopX} cy={loopY} r={loopR} fill="none" stroke="url(#slf-grad)" strokeWidth="6" />
-      <text x={loopX} y={loopY - 4} textAnchor="middle" fontFamily="var(--font-newsreader)" fontSize="19" className="fill-[#0f172a]">
+      {/* Understand: the one picture. Label sits clear above the loop, never over the stroke. */}
+      <text x={loopX} y={loopY - loopR - 16} textAnchor="middle" fontFamily="var(--font-newsreader)" fontSize="19" className="fill-[#0f172a]">
         Understand
       </text>
-      <text x={loopX} y={loopY + 16} textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="9.5" letterSpacing="1.6" className="fill-[#64748b]">
+      <text x={loopX} y={loopY - loopR - 2} textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="9" letterSpacing="1.6" className="fill-[#64748b]">
         ONE PICTURE
       </text>
+      <circle cx={loopX} cy={loopY} r={loopR} fill="none" stroke="url(#slf-grad)" strokeWidth="6" />
+      <circle cx={loopX} cy={loopY} r="6" fill="#a78bdb" />
 
       {/* the move: recommend, decide (human), execute, measure */}
       {STEPS.map((step, i) => {

@@ -96,8 +96,9 @@ export function PillarPage({
           <p className="text-base leading-relaxed text-slate">{connects}</p>
         </Reveal>
 
-        <Reveal className="mt-12">
-          <CtaButton href="/demo">Apply to pilot</CtaButton>
+        <Reveal className="mt-12 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          <CtaButton href="/demo">Join the waitlist</CtaButton>
+          <CtaButton href="/#what-it-does" variant="secondary">See Looped in action</CtaButton>
         </Reveal>
       </div>
     </div>
