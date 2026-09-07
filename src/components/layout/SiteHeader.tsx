@@ -52,7 +52,7 @@ export function SiteHeader(): React.ReactElement {
             href="/demo"
             className="hidden cursor-pointer items-center rounded-full bg-grad px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--grad-emph)] transition-transform hover:-translate-y-0.5 md:inline-flex"
           >
-            Start with an event
+            Join the waitlist
           </Link>
 
           <div className="md:hidden">
@@ -90,7 +90,7 @@ export function SiteHeader(): React.ReactElement {
                       className="mt-2 inline-flex w-fit rounded-full bg-grad px-5 py-2.5 text-sm font-semibold text-white"
                       onClick={() => setMobileOpen(false)}
                     >
-                      Start with an event
+                      Join the waitlist
                     </Link>
                   </div>
                 </Dialog.Content>
