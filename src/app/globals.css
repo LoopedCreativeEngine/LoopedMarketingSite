@@ -246,3 +246,18 @@ h4 {
     transform: none;
   }
 }
+
+/* Evidence cycle: the loop ring marches clockwise (marching ants). */
+.cycle-spin {
+  animation: cycle-spin 3.5s linear infinite;
+}
+@keyframes cycle-spin {
+  to {
+    stroke-dashoffset: -260;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cycle-spin {
+    animation: none;
+  }
+}

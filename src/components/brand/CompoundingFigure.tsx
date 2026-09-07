@@ -6,10 +6,10 @@
  * learning arc travels from each stage into the next. Buyer value only.
  */
 const STAGES = [
-  { label: "One event", sub: "Value from the first edition", r: 22 },
-  { label: "Next edition", sub: "Starts where the last one finished", r: 30 },
-  { label: "Brand", sub: "Editions teach each other", r: 38 },
-  { label: "Portfolio", sub: "Events learn from each other", r: 46 },
+  { label: "One edition", sub: "Where the event stands now", r: 22 },
+  { label: "Next edition", sub: "Starts with what last time taught", r: 30 },
+  { label: "Brand", sub: "Events learn from each other", r: 38 },
+  { label: "Portfolio", sub: "Patterns worth reusing", r: 46 },
   { label: "Organisation", sub: "Knowledge the business keeps", r: 54 },
 ];
 

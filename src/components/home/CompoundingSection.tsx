@@ -5,16 +5,16 @@ import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 
 const LEVELS = [
-  { name: "One event", body: "A current picture, better decisions and measured outcomes from the first edition." },
-  { name: "Edition over edition", body: "Your next event shouldn't start from zero. What the audience did, what the market did and which calls paid off are there on day one." },
-  { name: "Across a brand", body: "The awards learns from the conference. The conference learns from the awards." },
-  { name: "Across the portfolio", body: "Shared audiences, shared sponsors and shared objections become shared intelligence, not six separate discoveries." },
-  { name: "Across the organisation", body: "Intelligence stops living in individual teams and editions and becomes knowledge the business keeps." },
+  { name: "One edition", body: "A live picture of where the event stands, what is changing and which decisions matter now." },
+  { name: "Edition over edition", body: "The next edition starts with what worked, what failed and what the market taught you last time." },
+  { name: "Across a brand", body: "Shared audiences, sponsors, themes and behaviour become intelligence each event can learn from." },
+  { name: "Across the portfolio", body: "Patterns across events reveal common risks, growth opportunities and proven interventions worth reusing." },
+  { name: "Across the organisation", body: "Intelligence becomes business knowledge instead of staying trapped in individual teams and events." },
 ];
 
 export function CompoundingSection(): React.ReactElement {
   return (
-    <Panel tone="stone" index="04" kicker="From one event to the whole business">
+    <Panel tone="stone" index="05" kicker="From one event to the whole business">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
         <Reveal className="lg:col-span-5">
           <h2 className="text-balance display-section">Event intelligence that compounds.</h2>
@@ -22,9 +22,10 @@ export function CompoundingSection(): React.ReactElement {
         </Reveal>
         <Reveal className="space-y-5 lg:col-span-7 lg:pt-2">
           <p className="text-base leading-relaxed text-slate sm:text-lg">
-            One event creates value. Several events create something more: intelligence that learns from each of them
-            and carries the lesson to all of them. The more of your business Looped sees, the richer the picture every
-            team works from, and the learning survives the edition, the reorganisation and the person who moves on.
+            One event creates value. Several events create something more: intelligence that learns from each of them and
+            carries the lesson to all of them. The more of your business that flows through Looped, the richer the
+            picture every team works from, and the learning survives the edition, the reorganisation and the person who
+            moves on.
           </p>
         </Reveal>
       </div>

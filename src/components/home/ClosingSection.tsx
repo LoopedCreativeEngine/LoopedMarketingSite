@@ -15,15 +15,15 @@ export function ClosingSection(): React.ReactElement {
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
         <Reveal>
           <div className="flex items-center justify-center gap-3">
-            <span className="kicker text-lavender">11</span>
+            <span className="kicker text-lavender">12</span>
             <span className="kicker text-mist">Start</span>
           </div>
           <h2 className="mx-auto mt-6 max-w-2xl text-balance display-section">
             The art of events is yours. The intelligence is Looped.
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-mist sm:text-lg">
-            Know your next move before your competitors do. Early access is opening to a small number of event
-            organisations following the founding pilot.
+            Know your next move before your competitors do. Early access will open to a small number of event
+            organisations following our founding pilot.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <CtaButton href="/demo" tone="ink">

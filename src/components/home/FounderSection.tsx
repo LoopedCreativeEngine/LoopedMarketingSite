@@ -2,48 +2,56 @@
 
 import Link from "next/link";
 
-import { LoopMark } from "@/components/brand/LoopMark";
 import { Reveal } from "@/components/motion/Reveal";
 
 /**
- * "Why Looped exists". RECOVERED closing-plate composition (5ca71de
- * FinalCTASection: ink, watermark LoopMark, centred column) with a founder
- * signature. The repository holds no portrait asset — the slot is marked.
+ * "Why Looped exists". People-first founder note on the ink plate. No decorative
+ * loop graphic here: the only brand loop on the page is the animated Ribbon in
+ * the hero. The repository holds no portrait asset, so the slot is a monogram.
  */
 export function FounderSection(): React.ReactElement {
   return (
     <section id="why-looped-exists" className="on-night relative scroll-mt-24 overflow-hidden bg-night py-24 text-mist sm:py-32">
-      <LoopMark
-        aria-hidden
-        className="pointer-events-none absolute -left-24 top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 text-lavender opacity-[0.06]"
-      />
       <div className="relative mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
         <Reveal>
           <div className="flex items-center gap-3">
-            <span className="kicker text-lavender">10</span>
+            <span className="kicker text-lavender">11</span>
             <span className="kicker text-mist">Why Looped exists</span>
           </div>
-          <h2 className="mt-6 max-w-2xl text-balance display-section">Built by someone who has stood at the back of the room.</h2>
+          <h2 className="mt-6 max-w-2xl text-balance display-section">Built for the people who make events happen.</h2>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-mist sm:text-lg">
             <p>
-              I have run the campaigns, sold the sponsorship and sat in the planning meetings where the best people in
-              the business spend their week reconstructing context and coordinating repetitive work. Their real value
-              is judgement, creativity, relationships and a feel for the market, and those are the things the week
-              leaves least room for.
+              I spent years working inside event teams, focused on audience growth, campaign performance and helping each
+              edition reach its potential.
             </p>
             <p>
-              The systems the industry runs on preserve workflows far better than they preserve intelligence. They
-              remember what was done. They forget why, what it changed, and what the market did next.
+              What stayed with me was not a lack of talent or effort. It was how hard it was to keep the whole picture
+              current. A new speaker would be confirmed. A campaign would move. A deadline would change. A sponsor would
+              come in. The market would shift. Important context existed, but it did not always reach the right person at
+              the right moment.
             </p>
-            <p>Looped exists to strengthen those people, not to replace them.</p>
+            <p>
+              Too much time went into reconstructing what had changed, chasing updates and deciding what to do next with
+              only part of the picture.
+            </p>
+            <p>
+              I built Looped because event specialists deserve better information at the moment they have to make the
+              call. Not AI for the sake of AI, and not another system teams have to become experts in. The complexity
+              should sit behind the product. The experience should feel simple.
+            </p>
+            <p>
+              Looped brings together the systems, signals and intelligence around an event, then gives people a clearer
+              view of what matters, what changed and what the strongest move looks like.
+            </p>
+            <p>The people still make the judgement. Looped helps make sure they have the right information when they do.</p>
           </div>
           <div className="mt-9 flex items-center gap-4">
             <span
               data-media-slot="Founder portrait"
-              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/15 bg-night-raised"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/15 bg-night-raised font-serif text-lg text-lavender"
               aria-hidden
             >
-              <LoopMark className="h-6 w-6 text-lavender" />
+              NE
             </span>
             <div>
               <p className="font-serif text-xl text-snow">Natalie Entwistle</p>

@@ -9,7 +9,7 @@ const JOURNEYS = [
   {
     layer: "Journey 01",
     title: "Join the early access list",
-    body: "We are opening early access to a small number of event organisations following the founding pilot. Join the waitlist and we will be in touch as places open, with product updates and Looped intelligence in the meantime.",
+    body: "Early access will open to a small number of selected event organisations following our founding pilot. Join the waitlist and we will be in touch as places open, with product updates and Looped intelligence in the meantime.",
     cta: "Join the waitlist",
     href: "/demo",
     primary: true,
@@ -26,13 +26,12 @@ const JOURNEYS = [
 
 export function StartSection(): React.ReactElement {
   return (
-    <Panel tone="paper" id="start" index="09" kicker="Early access">
+    <Panel tone="paper" id="start" index="10" kicker="Early access">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Be among the first events on Looped.</h2>
         <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
-          The founding pilot is underway. Early access opens to a small number of event organisations next, one or two
-          events first, at whatever point in the cycle they are, with whatever data you have. Join the waitlist to hold
-          your place.
+          Early access will open to a small number of selected event organisations following our founding pilot, at
+          whatever point in the cycle they are and with whatever data they have. Join the waitlist to hold your place.
         </p>
       </Reveal>
       <div className="mt-12 grid gap-5 md:grid-cols-2">

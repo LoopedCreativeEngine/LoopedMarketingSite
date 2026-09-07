@@ -9,7 +9,7 @@ export default function WaitlistPage(): React.ReactElement {
           <p className="kicker text-purple">Early access</p>
           <h1 className="mt-4 font-serif text-4xl tracking-tight text-ink sm:text-5xl">Join the early access list.</h1>
           <p className="mt-6 text-lg leading-relaxed text-slate">
-            The founding pilot is underway. We are opening early access to a small number of event organisations next.
+            Early access will open to a small number of selected event organisations following our founding pilot.
             Join the waitlist for early access, product updates and Looped intelligence.
           </p>
         </Reveal>
@@ -25,8 +25,8 @@ export default function WaitlistPage(): React.ReactElement {
           <ul className="mt-4 list-inside list-disc space-y-2 text-sm leading-relaxed text-slate">
             <li>We confirm your place on the early access list.</li>
             <li>You get product updates and Looped intelligence while the pilot runs.</li>
-            <li>As places open, we get in touch to start with one or two of your events.</li>
-            <li>You see what Looped can spot, why it matters and the move it would propose, on your own data.</li>
+            <li>As places open, we get in touch to begin where it makes sense for your business.</li>
+            <li>You see what Looped surfaces, why it matters and the move it would propose, on your own data.</li>
           </ul>
         </Reveal>
       </div>

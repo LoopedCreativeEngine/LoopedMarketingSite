@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { Ribbon } from "@/components/brand/Ribbon";
 import { CtaButton } from "@/components/ui/CtaButton";
 
-const CREDIBILITY = ["Start with one event", "Works with the data you already have", "Gets smarter with every edition"];
+const CREDIBILITY = ["Brings your event intelligence together", "Works with the tools you already use", "Gets smarter with every edition"];
 
 export function HomeHero(): React.ReactElement {
   const rootRef = useRef<HTMLElement>(null);
@@ -43,8 +43,9 @@ export function HomeHero(): React.ReactElement {
 
           <p data-hero-rise className="mt-8 max-w-xl text-pretty text-lg leading-[1.6] text-slate opacity-0 sm:text-xl">
             <span className="font-semibold text-ink">The AI operating system for conference &amp; awards businesses.</span>{" "}
-            Looped sees what your teams would otherwise miss, explains why it matters and proposes the strongest move.
-            You decide. Looped executes the chosen strategy and tracks what happened.
+            Looped brings your event intelligence together, shows what is changing and where the biggest opportunities or
+            risks sit. It recommends the strongest move. You decide. Looped carries the decision into action and tracks
+            what happens next.
           </p>
 
           <div data-hero-rise className="mt-9 flex flex-col gap-3 opacity-0 sm:flex-row sm:items-center sm:gap-4">
@@ -57,7 +58,7 @@ export function HomeHero(): React.ReactElement {
           </div>
 
           <p data-hero-rise className="mt-5 max-w-xl text-sm leading-relaxed text-muted opacity-0">
-            We are opening early access to a small number of event organisations following the founding pilot.
+            Early access opens to a small number of event organisations following our founding pilot.
           </p>
 
           <ul data-hero-rise className="mt-12 flex flex-wrap gap-x-7 gap-y-3 opacity-0">

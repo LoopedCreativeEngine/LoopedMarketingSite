@@ -1,25 +1,39 @@
 "use client";
 
 /**
- * Intelligence working: live signals flow into the Loop, an insight becomes
- * a recommendation and an action, and the result flows back in as learning.
- * Shows buyer value, not architecture. Pure SVG + CSS: dashes travel along
- * the inbound and outbound paths; the return path carries the learning back.
- * Stops under prefers-reduced-motion (globals.css).
+ * The intelligence flow, as buyer value (not architecture): the signals around
+ * an event come together into one understood picture, Looped recommends the
+ * strongest move, the person decides, Looped executes and measures, and what
+ * works becomes part of the next decision. Decide is drawn as the human-control
+ * moment. Pure SVG + CSS; dashes travel the paths and stop under
+ * prefers-reduced-motion (globals.css). Laid out so no label sits under a line.
  */
 const SIGNALS = [
-  { label: "Audience & bookings", color: "#7c3aed", y: 60 },
-  { label: "Campaign performance", color: "#ec4899", y: 130 },
-  { label: "Market & competitors", color: "#fb923c", y: 200 },
-  { label: "Your own decisions", color: "#a78bdb", y: 270 },
+  { label: "Audience & bookings", color: "#7c3aed", y: 54 },
+  { label: "Campaign performance", color: "#ec4899", y: 112 },
+  { label: "Market & competitors", color: "#fb923c", y: 170 },
+  { label: "Your team's actions", color: "#a78bdb", y: 228 },
 ];
-const STEPS = ["Insight", "Recommendation", "Action", "Result"];
+
+/** The move, after understanding. Decide is the human step and is marked. */
+const STEPS = [
+  { label: "Recommend", human: false },
+  { label: "Decide", human: true },
+  { label: "Execute", human: false },
+  { label: "Measure", human: false },
+];
 
 export function SignalLoopFigure(): React.ReactElement {
-  const loopX = 330;
-  const loopY = 165;
+  const loopX = 300;
+  const loopY = 150;
+  const loopR = 50;
+  const pillW = 116;
+  const pillH = 46;
+  const pillY = loopY;
+  const xs = [452, 592, 732, 872];
+
   return (
-    <svg viewBox="0 0 900 340" className="h-auto w-full" role="img" aria-label="Signals flow into the Loop; insights become recommendations and actions; results flow back as learning">
+    <svg viewBox="0 0 960 372" className="h-auto w-full" role="img" aria-label="The signals around an event come together into one understood picture; Looped recommends, a person decides, Looped executes and measures, and what works becomes part of the next decision">
       <defs>
         <linearGradient id="slf-grad" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stopColor="#7c3aed" />
@@ -28,16 +42,16 @@ export function SignalLoopFigure(): React.ReactElement {
         </linearGradient>
       </defs>
 
-      {/* inbound signals */}
+      {/* inbound signals coming together */}
       {SIGNALS.map((s) => (
         <g key={s.label}>
-          <circle cx="18" cy={s.y} r="5" fill={s.color} />
-          <text x="32" y={s.y + 4} className="fill-[#475569]" fontFamily="var(--font-hanken)" fontSize="15">
+          <circle cx="16" cy={s.y} r="5" fill={s.color} />
+          <text x="30" y={s.y + 4} className="fill-[#475569]" fontFamily="var(--font-hanken)" fontSize="14.5">
             {s.label}
           </text>
-          <path d={`M 215 ${s.y} C 265 ${s.y}, 265 ${loopY}, ${loopX - 62} ${loopY}`} fill="none" stroke="#ece9e4" strokeWidth="2" />
+          <path d={`M 196 ${s.y} C 236 ${s.y}, 236 ${loopY}, ${loopX - loopR - 10} ${loopY}`} fill="none" stroke="#ece9e4" strokeWidth="2" />
           <path
-            d={`M 215 ${s.y} C 265 ${s.y}, 265 ${loopY}, ${loopX - 62} ${loopY}`}
+            d={`M 196 ${s.y} C 236 ${s.y}, 236 ${loopY}, ${loopX - loopR - 10} ${loopY}`}
             fill="none"
             stroke={s.color}
             strokeWidth="2.5"
@@ -47,35 +61,51 @@ export function SignalLoopFigure(): React.ReactElement {
         </g>
       ))}
 
-      {/* the Loop: the mark's geometry, drawn here so it scales with the figure */}
-      <circle cx={loopX} cy={loopY} r="54" fill="none" stroke="url(#slf-grad)" strokeWidth="6" />
-      <text x={loopX} y={loopY + 88} textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="11" letterSpacing="2.4" className="fill-[#64748b]">
-        UNDERSTAND
+      {/* Understand: the one picture */}
+      <circle cx={loopX} cy={loopY} r={loopR} fill="none" stroke="url(#slf-grad)" strokeWidth="6" />
+      <text x={loopX} y={loopY - 4} textAnchor="middle" fontFamily="var(--font-newsreader)" fontSize="19" className="fill-[#0f172a]">
+        Understand
+      </text>
+      <text x={loopX} y={loopY + 16} textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="9.5" letterSpacing="1.6" className="fill-[#64748b]">
+        ONE PICTURE
       </text>
 
-      {/* outbound: insight → recommendation → action → result */}
+      {/* the move: recommend, decide (human), execute, measure */}
       {STEPS.map((step, i) => {
-        const x = 440 + i * 112;
+        const x = xs[i];
+        const prevRight = i === 0 ? loopX + loopR + 6 : xs[i - 1] + pillW / 2 + 6;
+        const left = x - pillW / 2 - 6;
         return (
-          <g key={step}>
-            <path d={`M ${i === 0 ? loopX + 62 : x - 112 + 84} ${loopY} L ${x} ${loopY}`} fill="none" stroke="#ece9e4" strokeWidth="2" />
-            <path d={`M ${i === 0 ? loopX + 62 : x - 112 + 84} ${loopY} L ${x} ${loopY}`} fill="none" stroke="url(#slf-grad)" strokeWidth="2.5" strokeLinecap="round" className="signal-flow" style={{ animationDelay: `${0.9 + i * 0.6}s` }} />
-            <rect x={x} y={loopY - 22} width="84" height="44" rx="12" fill="#ffffff" stroke="#ece9e4" />
-            <text x={x + 42} y={loopY + 5} textAnchor="middle" fontFamily="var(--font-hanken)" fontSize="14" fontWeight="600" className="fill-[#0f172a]">
-              {step}
+          <g key={step.label}>
+            <path d={`M ${prevRight} ${pillY} L ${left} ${pillY}`} fill="none" stroke="#ece9e4" strokeWidth="2" />
+            <path d={`M ${prevRight} ${pillY} L ${left} ${pillY}`} fill="none" stroke="url(#slf-grad)" strokeWidth="2.5" strokeLinecap="round" className="signal-flow" style={{ animationDelay: `${0.8 + i * 0.55}s` }} />
+            <rect
+              x={x - pillW / 2}
+              y={pillY - pillH / 2}
+              width={pillW}
+              height={pillH}
+              rx="13"
+              fill={step.human ? "#faf5ff" : "#ffffff"}
+              stroke={step.human ? "#ec4899" : "#ece9e4"}
+              strokeWidth={step.human ? "2.4" : "1.4"}
+            />
+            <text x={x} y={pillY + 5} textAnchor="middle" fontFamily="var(--font-hanken)" fontSize="15" fontWeight="600" className="fill-[#0f172a]">
+              {step.label}
             </text>
-            <text x={x + 42} y={loopY + 44} textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="10" letterSpacing="2" className="fill-[#64748b]">
-              {["DECIDE", "DECIDE", "ACT", "MEASURE"][i]}
-            </text>
+            {step.human ? (
+              <text x={x} y={pillY - pillH / 2 - 12} textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="10" letterSpacing="1.8" className="fill-[#db2777]">
+                YOU DECIDE
+              </text>
+            ) : null}
           </g>
         );
       })}
 
-      {/* learning returns to the Loop */}
-      <path d={`M 860 ${loopY + 22} C 860 300, ${loopX} 320, ${loopX} ${loopY + 62}`} fill="none" stroke="#ece9e4" strokeWidth="2" />
-      <path d={`M 860 ${loopY + 22} C 860 300, ${loopX} 320, ${loopX} ${loopY + 62}`} fill="none" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" className="signal-flow signal-flow-slow" style={{ animationDelay: "3.2s" }} />
-      <text x="600" y="322" textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="11" letterSpacing="2.4" className="fill-[#7c3aed]">
-        LEARN · CARRIED INTO THE NEXT DECISION
+      {/* learning returns: what works becomes part of the next decision */}
+      <path d={`M ${xs[3]} ${pillY + pillH / 2 + 4} C ${xs[3]} 300, ${loopX} 316, ${loopX} ${loopY + loopR + 6}`} fill="none" stroke="#ece9e4" strokeWidth="2" />
+      <path d={`M ${xs[3]} ${pillY + pillH / 2 + 4} C ${xs[3]} 300, ${loopX} 316, ${loopX} ${loopY + loopR + 6}`} fill="none" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" className="signal-flow signal-flow-slow" style={{ animationDelay: "3s" }} />
+      <text x="590" y="352" textAnchor="middle" fontFamily="var(--font-newsreader)" fontSize="16" fontStyle="italic" className="fill-[#7c3aed]">
+        What works becomes part of the next decision.
       </text>
     </svg>
   );

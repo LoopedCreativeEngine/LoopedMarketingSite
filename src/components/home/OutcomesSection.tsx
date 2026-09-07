@@ -8,40 +8,56 @@ import { cn } from "@/lib/cn";
 
 /** Concrete things the intelligence does, by the person who feels them. Illustrative, not claims. */
 const EXAMPLES = [
-  { who: "Marketing", signal: "Registrations up 18%. Senior buyers down 11%.", insight: "A normal dashboard calls that growth. Looped calls it a problem: the audience gap is opening under a healthy-looking number.", action: "Looped can recommend a pivot that keeps registrations growing while rebalancing towards senior buyers. On approval, it updates targeting, messaging, channel priorities and personalised outreach." },
+  { who: "Marketing", signal: "Registrations up 18%. Senior buyers down 11%.", insight: "A healthy-looking number can hide a shifting audience. Looped reads the two together and flags the gap opening under the growth.", action: "Looped can recommend a pivot that keeps registrations growing while rebalancing towards senior buyers. On approval, it updates targeting, messaging, channel priorities and personalised outreach." },
   { who: "Sponsorship", signal: "£26k of sponsorship, hiding in plain sight.", insight: "Audience demand, content themes and commercial whitespace point to the strongest sponsor categories and the best-fit accounts.", action: "On approval, Looped can build the target list, account plan, personalised outreach and the proposition most likely to land." },
-  { who: "Audience", signal: "This event does not need more registrations. It needs 63 different people.", insight: "Registration volume is healthy, but the buyer mix is wrong. Looped names the organisations that matter and the people inside them.", action: "On approval, Looped can build the targeting, campaign content, personalised outreach and follow-up around exactly those people." },
+  { who: "Audience", signal: "This edition may not need more registrations. It may need 63 different people.", insight: "Registration volume is healthy, but the buyer mix is worth a look. Looped names the organisations that matter and the people inside them.", action: "On approval, Looped can build the targeting, campaign content, personalised outreach and follow-up around exactly those people." },
   { who: "Telesales", signal: "400 names on a call list. 74 worth calling first.", insight: "Looped ranks who is most likely to convert now, why they matter and what is relevant to them.", action: "On approval, Looped can reorder the call list, rewrite the scripts and give each prospect its own talking points. Ask why anyone ranks where they do." },
-  { who: "Commercial", signal: "This event is heading for a £74k sponsorship shortfall.", insight: "The pace of renewals and new business does not close the gap on the current plan. One partner could be worth £18k more.", action: "On approval, Looped can reshape account strategy, rebuild propositions from what the audience actually did, and reprioritise the pipeline." },
-  { who: "Portfolio", signal: "Three events. Same problem. One answer worth reusing.", insight: "An objection that looks like an event problem is a portfolio problem, and the same answer applies across all three.", action: "On approval, Looped can carry the change across every event and measure each one's outcome." },
+  { who: "Commercial", signal: "This event is tracking towards a £74k sponsorship shortfall.", insight: "The pace of renewals and new business may not close the gap on the current plan. One partner could be worth £18k more.", action: "On approval, Looped can reshape account strategy, rebuild propositions from what the audience actually did, and reprioritise the pipeline." },
+  { who: "Portfolio", signal: "Three events. Same problem. One answer worth reusing.", insight: "An objection that looks like an event problem is often a portfolio problem, and the same answer applies across all three.", action: "On approval, Looped can carry the change across every event and measure each one's outcome." },
 ];
+
+const ROTATE_MS = 13000;
 
 export function OutcomesSection(): React.ReactElement {
   const [active, setActive] = useState(0);
+  const [userPicked, setUserPicked] = useState(false);
+  const [paused, setPaused] = useState(false);
+
   useEffect(() => {
+    if (userPicked || paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const t = window.setInterval(() => setActive((a) => (a + 1) % EXAMPLES.length), 5200);
+    const t = window.setInterval(() => setActive((a) => (a + 1) % EXAMPLES.length), ROTATE_MS);
     return () => window.clearInterval(t);
-  }, []);
+  }, [userPicked, paused]);
+
   const e = EXAMPLES[active];
 
   return (
     <Panel tone="stone" id="what-it-does" index="02" kicker="What the intelligence does">
       <Reveal className="max-w-3xl">
-        <h2 className="text-balance display-section">Sees it early. Explains why. Proposes the move. Executes once you decide.</h2>
+        <h2 className="text-balance display-section">See it. Understand it. Decide. Move.</h2>
         <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
-          Not a dashboard to read and not a chatbot to prompt: intelligence that arrives with the evidence and the
-          recommendation, for the person who has to decide.
+          Looped connects the evidence, recommends the strongest route and waits for your decision before consequential
+          action.
         </p>
       </Reveal>
 
-      <div className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10">
+      <div
+        className="mt-12 grid gap-8 lg:grid-cols-12 lg:gap-10"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocusCapture={() => setPaused(true)}
+        onBlurCapture={() => setPaused(false)}
+      >
         <RevealStagger className="grid gap-2 sm:grid-cols-2 lg:col-span-4 lg:grid-cols-1">
           {EXAMPLES.map((x, i) => (
             <RevealItem key={x.who}>
               <button
                 type="button"
-                onClick={() => setActive(i)}
+                onClick={() => {
+                  setActive(i);
+                  setUserPicked(true);
+                }}
                 className={cn(
                   "w-full cursor-pointer rounded-full border px-4 py-2.5 text-left text-sm font-medium transition-colors",
                   i === active ? "border-transparent bg-grad text-white" : "border-hairline bg-paper text-slate hover:text-ink",
@@ -70,13 +86,13 @@ export function OutcomesSection(): React.ReactElement {
               </div>
             ))}
           </div>
-          <p className="mt-3 kicker text-muted">Illustrative examples of the kind of intelligence Looped surfaces</p>
+          <p className="mt-3 kicker text-muted">Illustrative Looped intelligence</p>
         </Reveal>
       </div>
 
       <Reveal>
         <p className="mx-auto mt-12 max-w-4xl text-balance text-center font-serif text-2xl italic leading-snug text-ink sm:text-3xl">
-          Time saved isn&apos;t the outcome. Better events are.
+          Time saved isn&apos;t the outcome. <span className="text-grad">Better events are.</span>
         </p>
       </Reveal>
     </Panel>
