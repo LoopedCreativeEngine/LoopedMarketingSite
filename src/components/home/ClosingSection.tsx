@@ -1,23 +1,22 @@
 "use client";
 
-import { LoopMark } from "@/components/brand/LoopMark";
+import { Ribbon } from "@/components/brand/Ribbon";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 
-/** RECOVERED closing plate (5ca71de FinalCTASection): ink, the loop closes at right, centred CTAs. */
+/** Closing plate: ink, centred CTAs. The one approved brand loop (the animated Ribbon) cropped off the right edge for continuity. */
 export function ClosingSection(): React.ReactElement {
   return (
     <section className="on-night relative overflow-hidden bg-night py-24 text-mist sm:py-32">
-      <LoopMark
+      <div
         aria-hidden
-        className="pointer-events-none absolute -right-16 top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 text-lavender opacity-[0.06]"
-      />
+        className="pointer-events-none absolute -right-[16vw] top-1/2 hidden h-[min(72vh,34rem)] w-[min(58vw,42rem)] -translate-y-1/2 opacity-70 sm:block"
+      >
+        <Ribbon cxf={0.62} weight={0.8} />
+      </div>
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
         <Reveal>
-          <div className="flex items-center justify-center gap-3">
-            <span className="kicker text-lavender">12</span>
-            <span className="kicker text-mist">Start</span>
-          </div>
+          <span className="kicker text-lavender">Start</span>
           <h2 className="mx-auto mt-6 max-w-2xl text-balance display-section">
             The art of events is yours. The intelligence is Looped.
           </h2>

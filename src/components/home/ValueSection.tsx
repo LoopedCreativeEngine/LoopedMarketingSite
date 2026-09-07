@@ -13,7 +13,7 @@ const VIEWS = [
 
 export function ValueSection(): React.ReactElement {
   return (
-    <Panel tone="paper" index="01" kicker="What you get">
+    <Panel tone="paper" kicker="What you get">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
         <Reveal className="lg:col-span-5">
           <h2 className="text-balance display-section">A better view of your event, kept current for you.</h2>

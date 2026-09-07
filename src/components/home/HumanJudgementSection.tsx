@@ -5,7 +5,7 @@ import { Reveal } from "@/components/motion/Reveal";
 
 export function HumanJudgementSection(): React.ReactElement {
   return (
-    <Panel tone="night" index="06" kicker="Human judgement">
+    <Panel tone="night" kicker="Human judgement">
       <Reveal className="max-w-4xl">
         <h2 className="text-balance display-section">Great event teams do not lack judgement. They lack a complete view.</h2>
         <div className="mt-6 max-w-3xl space-y-5 text-base leading-relaxed text-mist sm:text-lg">

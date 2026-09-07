@@ -14,10 +14,7 @@ export function FounderSection(): React.ReactElement {
     <section id="why-looped-exists" className="on-night relative scroll-mt-24 overflow-hidden bg-night py-24 text-mist sm:py-32">
       <div className="relative mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
         <Reveal>
-          <div className="flex items-center gap-3">
-            <span className="kicker text-lavender">11</span>
-            <span className="kicker text-mist">Why Looped exists</span>
-          </div>
+          <span className="kicker text-lavender">Why Looped exists</span>
           <h2 className="mt-6 max-w-2xl text-balance display-section">Built for the people who make events happen.</h2>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-mist sm:text-lg">
             <p>

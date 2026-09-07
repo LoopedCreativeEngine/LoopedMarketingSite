@@ -7,7 +7,7 @@ import { CtaButton } from "@/components/ui/CtaButton";
 /** RECOVERED card row (5ca71de OptionalAutomationSection), two journeys. */
 const JOURNEYS = [
   {
-    layer: "Journey 01",
+    layer: "Early access",
     title: "Join the early access list",
     body: "Early access will open to a small number of selected event organisations following our founding pilot. Join the waitlist and we will be in touch as places open, with product updates and Looped intelligence in the meantime.",
     cta: "Join the waitlist",
@@ -15,7 +15,7 @@ const JOURNEYS = [
     primary: true,
   },
   {
-    layer: "Journey 02",
+    layer: "Or take a look",
     title: "See Looped in action",
     body: "A walkthrough built around an event in your sector: what Looped would see, why it matters and the move it would propose. No founder-run sales meeting required.",
     cta: "See Looped in action",
@@ -26,7 +26,7 @@ const JOURNEYS = [
 
 export function StartSection(): React.ReactElement {
   return (
-    <Panel tone="paper" id="start" index="10" kicker="Early access">
+    <Panel tone="paper" id="start" kicker="Early access">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Be among the first events on Looped.</h2>
         <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">

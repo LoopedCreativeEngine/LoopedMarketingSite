@@ -29,7 +29,7 @@ const FAQS = [
 
 export function FaqSection(): React.ReactElement {
   return (
-    <Panel tone="paper" id="faq" index="09" kicker="Questions">
+    <Panel tone="paper" id="faq" kicker="Questions">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Straight answers on control, connection and trust.</h2>
       </Reveal>

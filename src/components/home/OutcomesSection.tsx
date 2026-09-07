@@ -33,7 +33,7 @@ export function OutcomesSection(): React.ReactElement {
   const e = EXAMPLES[active];
 
   return (
-    <Panel tone="stone" id="what-it-does" index="02" kicker="What the intelligence does">
+    <Panel tone="stone" id="what-it-does" kicker="What the intelligence does">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">See it. Understand it. Decide. Move.</h2>
         <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">

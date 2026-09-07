@@ -96,7 +96,7 @@ function EvidenceCycle(): React.ReactElement {
 
 export function EvidenceSection(): React.ReactElement {
   return (
-    <Panel tone="night" index="07" kicker="Proof">
+    <Panel tone="night" kicker="Proof">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
         <Reveal className="lg:col-span-5">
           <h2 className="text-balance display-section">Judged on what changed, not what it generated.</h2>

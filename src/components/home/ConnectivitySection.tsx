@@ -1,70 +1,80 @@
 "use client";
 
 import { Panel } from "@/components/layout/Panel";
-import { Reveal } from "@/components/motion/Reveal";
+import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
+import { cn } from "@/lib/cn";
 
-/** Looped sits across the tools you already use. One depth-of-connection progression, shown once. */
-const LEVELS = [
-  { title: "Start with what you have", body: "Spreadsheets, exports and team updates.", color: "#7c3aed" },
-  { title: "Connect selectively", body: "The systems that matter most, first.", color: "#ec4899" },
-  { title: "Connect deeply", body: "Registrations, CRM, campaign and commercial data, continuously.", color: "#fb923c" },
+/**
+ * The adoption story: Looped is useful before any integration, from the data and
+ * knowledge teams already have, and gets deeper as they connect more. Three
+ * progressively richer bands where the Looped output visibly grows. No repetition
+ * with the copy above.
+ */
+const BANDS = [
+  {
+    label: "Start now",
+    inputs: "Files · exports · spreadsheets · type · talk",
+    output: "A current picture and clear recommendations, from day one.",
+    fill: 1,
+  },
+  {
+    label: "Connect what matters",
+    inputs: "CRM · registration · email · programme · commercial",
+    output: "Live signals and stronger prioritisation as the systems come in.",
+    fill: 2,
+  },
+  {
+    label: "Connect deeply",
+    inputs: "Continuous connection across your stack",
+    output: "Continuous intelligence and more of the work prepared for you.",
+    fill: 3,
+  },
 ];
-
-const SOURCES = ["CRM", "Registration", "Email", "Programme", "Commercial", "Spreadsheets", "Team updates"];
 
 export function ConnectivitySection(): React.ReactElement {
   return (
-    <Panel tone="stone" index="04" kicker="Connectivity">
+    <Panel tone="stone" kicker="Connectivity">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
         <Reveal className="lg:col-span-5">
-          <h2 className="text-balance display-section">Works with the stack you already have.</h2>
+          <h2 className="text-balance display-section">You do not need to connect everything to start.</h2>
         </Reveal>
         <Reveal className="lg:col-span-7 lg:pt-2">
           <p className="text-base leading-relaxed text-slate sm:text-lg">
-            Looped sits across your existing event technology. Your stack stays in place, and Looped connects at the
-            level that works for you.
+            Looped can begin with the data and knowledge your teams already have. Connect more of your stack when it
+            makes sense, and the picture becomes deeper, more current and more powerful.
           </p>
         </Reveal>
       </div>
 
-      <Reveal className="mt-12 rounded-[20px] border border-hairline bg-paper p-6 shadow-[var(--lift-light)] sm:p-8">
-        {/* Looped as one live view above the tools you already use */}
-        <div className="rounded-2xl bg-grad px-5 py-4 text-center shadow-[var(--grad-emph)]">
-          <p className="text-base font-semibold tracking-tight text-white sm:text-lg">Looped</p>
-          <p className="mt-0.5 text-xs text-white/85">One live view across your stack</p>
-        </div>
-        <div className="flex justify-center gap-6 py-1" aria-hidden>
-          {[0, 1, 2, 3, 4].map((i) => (
-            <span key={i} className="h-6 w-px bg-gradient-to-b from-purple/50 to-transparent" />
-          ))}
-        </div>
-        <div className="flex flex-wrap justify-center gap-2.5">
-          {SOURCES.map((sname) => (
-            <span key={sname} className="rounded-xl border border-hairline bg-stone px-4 py-2 text-sm font-medium text-slate">
-              {sname}
-            </span>
-          ))}
-        </div>
-
-        {/* one depth-of-connection progression, shown once */}
-        <div className="mt-10 grid gap-3 sm:grid-cols-3 sm:gap-0">
-          {LEVELS.map((l, i) => (
-            <div key={l.title} className="relative sm:px-5">
-              {i > 0 ? <span className="absolute left-0 top-3 hidden text-muted sm:block" aria-hidden>&rarr;</span> : null}
-              <p className="flex items-center gap-2 text-sm font-semibold text-ink">
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: l.color }} aria-hidden />
-                {l.title}
-              </p>
-              <p className="mt-1.5 text-sm leading-relaxed text-slate">{l.body}</p>
+      <RevealStagger className="mt-12 grid gap-4 md:grid-cols-3">
+        {BANDS.map((b, i) => (
+          <RevealItem
+            key={b.label}
+            className={cn(
+              "flex flex-col rounded-[20px] bg-paper p-6 shadow-[var(--lift-light)] sm:p-7",
+              i === 2 ? "border-2 border-purple/40" : "border border-hairline",
+            )}
+          >
+            <div className="flex items-center justify-between">
+              <p className="kicker text-purple">{b.label}</p>
+              <div className="flex gap-1" aria-hidden>
+                {[0, 1, 2].map((seg) => (
+                  <span
+                    key={seg}
+                    className={cn("h-1.5 w-5 rounded-full", seg < b.fill ? "bg-grad" : "bg-hairline")}
+                  />
+                ))}
+              </div>
             </div>
-          ))}
-        </div>
-      </Reveal>
+            <p className="mt-4 text-xs font-medium uppercase tracking-[0.04em] text-muted">{b.inputs}</p>
+            <p className="mt-4 flex-1 font-serif text-lg leading-snug text-ink">{b.output}</p>
+          </RevealItem>
+        ))}
+      </RevealStagger>
 
       <Reveal>
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
-          The more connected the picture becomes, the more Looped can understand, recommend and act on. You are never
-          asked to replace what already works.
+          Useful from the first upload, and never a demo mode. You are never asked to replace what already works.
         </p>
       </Reveal>
     </Panel>
