@@ -26,14 +26,14 @@ const STEPS = [
 export function SignalLoopFigure(): React.ReactElement {
   const loopX = 300;
   const loopY = 150;
-  const loopR = 50;
+  const loopR = 44;
   const pillW = 116;
   const pillH = 46;
   const pillY = loopY;
   const xs = [452, 592, 732, 872];
 
   return (
-    <svg viewBox="0 0 960 372" className="h-auto w-full" role="img" aria-label="The signals around an event come together into one understood picture; Looped recommends, a person decides, Looped executes and measures, and what works becomes part of the next decision">
+    <svg viewBox="0 -8 960 380" className="h-auto w-full" role="img" aria-label="The signals around an event come together into one understood picture; Looped recommends, a person decides, Looped executes and measures, and what works becomes part of the next decision">
       <defs>
         <linearGradient id="slf-grad" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stopColor="#7c3aed" />
@@ -61,11 +61,11 @@ export function SignalLoopFigure(): React.ReactElement {
         </g>
       ))}
 
-      {/* Understand: the one picture. Label sits clear above the loop, never over the stroke. */}
-      <text x={loopX} y={loopY - loopR - 16} textAnchor="middle" fontFamily="var(--font-newsreader)" fontSize="19" className="fill-[#0f172a]">
+      {/* Understand / One picture: both labels sit clearly ABOVE the loop with a generous gap, never on the stroke. */}
+      <text x={loopX} y={loopY - loopR - 30} textAnchor="middle" fontFamily="var(--font-newsreader)" fontSize="19" className="fill-[#0f172a]">
         Understand
       </text>
-      <text x={loopX} y={loopY - loopR - 2} textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="9" letterSpacing="1.6" className="fill-[#64748b]">
+      <text x={loopX} y={loopY - loopR - 14} textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="9" letterSpacing="1.8" className="fill-[#64748b]">
         ONE PICTURE
       </text>
       <circle cx={loopX} cy={loopY} r={loopR} fill="none" stroke="url(#slf-grad)" strokeWidth="6" />

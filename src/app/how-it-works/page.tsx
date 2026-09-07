@@ -103,8 +103,50 @@ function ExecutionMoment(): React.ReactElement {
   );
 }
 
+const SURFACED = [
+  "A competitor has added a speaker your programme shortlisted.",
+  "Registration pace in the senior segment has slipped against plan.",
+  "A sponsor renewal conversation has gone quiet.",
+];
+function IntelligenceMoment(): React.ReactElement {
+  return (
+    <div className="rounded-2xl border border-hairline bg-paper p-6 shadow-[var(--lift-light)] sm:p-8">
+      <p className="kicker text-muted">What matters this week</p>
+      <ul className="mt-5 space-y-3">
+        {SURFACED.map((line, i) => (
+          <li key={line} className="flex items-start gap-3 border-t border-hairline pt-3 text-sm leading-relaxed text-ink">
+            <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full" style={{ background: ["#7c3aed", "#ec4899", "#fb923c"][i] }} aria-hidden />
+            {line}
+          </li>
+        ))}
+      </ul>
+      <p className="mt-4 kicker text-muted">Each arrives with the evidence behind it</p>
+    </div>
+  );
+}
+
+const HERO_ASKS = ["What should I be worried about right now?", "Where is the £26k of sponsorship hiding?", "Who are the 74 to call first?"];
+function HeroAsk(): React.ReactElement {
+  return (
+    <div className="on-night rounded-2xl border border-white/10 bg-night p-6 shadow-[var(--lift-ink)] sm:p-8">
+      <p className="kicker text-lavender">Ask Looped</p>
+      <div className="mt-4 flex items-center justify-between rounded-xl border border-white/15 bg-night-raised px-4 py-3">
+        <span className="text-sm text-mist">Ask anything about your event business</span>
+        <span className="rounded-full bg-grad px-3 py-1 text-xs font-semibold text-white">Ask</span>
+      </div>
+      <div className="mt-4 space-y-2">
+        {HERO_ASKS.map((q) => (
+          <p key={q} className="rounded-lg border border-white/10 px-3 py-2 text-sm text-snow">{q}</p>
+        ))}
+      </div>
+      <p className="mt-4 kicker text-mist/80">Answers arrive with the evidence, and consequential actions wait for you</p>
+    </div>
+  );
+}
+
 function visualFor(n: string): React.ReactElement | null {
   if (n === "01") return <InputMoment />;
+  if (n === "03") return <IntelligenceMoment />;
   if (n === "04") return <DecisionMoment />;
   if (n === "05") return <ExecutionMoment />;
   return null;
@@ -113,18 +155,27 @@ function visualFor(n: string): React.ReactElement | null {
 export default function HowItWorksPage(): React.ReactElement {
   return (
     <div className="bg-paper pb-24 pt-28 sm:pt-32">
-      <div className="mx-auto max-w-3xl px-5 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="kicker text-purple">How it works</p>
-          <h1 className="mt-4 text-balance font-serif text-4xl tracking-tight text-ink sm:text-5xl">
-            What it feels like to work with Looped.
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate">
-            No transformation programme and no blank prompt. You tell Looped what you know, it builds the current
-            picture, and it shows you what matters. You decide, Looped does the work, and the picture gets sharper every
-            edition.
-          </p>
-        </Reveal>
+      <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
+          <Reveal className="lg:col-span-6">
+            <p className="kicker text-purple">How it works</p>
+            <h1 className="mt-4 text-balance font-serif text-4xl tracking-tight text-ink sm:text-6xl">
+              What it feels like to work with Looped.
+            </h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate">
+              No transformation programme and no blank prompt. You tell Looped what you know, it builds the current
+              picture and shows you what matters. You decide, Looped does the work, and the picture gets sharper every
+              edition.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
+              <CtaButton href="/demo">Join the waitlist</CtaButton>
+              <CtaButton href="/#what-it-does" variant="secondary">See Looped in action</CtaButton>
+            </div>
+          </Reveal>
+          <Reveal className="lg:col-span-6">
+            <HeroAsk />
+          </Reveal>
+        </div>
       </div>
 
       <div className="mx-auto mt-16 max-w-5xl px-5 sm:px-6 lg:px-8">

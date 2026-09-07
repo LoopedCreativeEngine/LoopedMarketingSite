@@ -3,28 +3,41 @@ import { PillarPage } from "@/components/pillars/PillarPage";
 export default function TelesalesPillarPage(): React.ReactElement {
   return (
     <PillarPage
+      kicker="Telesales"
       title="Telesales"
-      tensionStatement="Your callers are only as good as their brief. Looped makes the brief."
-      seatLine="For telesales leaders who need better call quality, clearer targeting, and less wasted dial time."
-      challenges={[
-        "Telesales teams often inherit campaigns with weak context. Lists are broad, scripts are generic, and objections are discovered in real time on calls instead of being prepared in advance.",
-        "The week a competing event announces on your same date can derail outbound performance. Prospects raise concerns immediately, and teams need clear responses that align with marketing and commercial positioning.",
-        "When conversion drops, it is hard to isolate why. Was it list quality, script quality, timing, value proposition, or all four? Most teams lose days diagnosing before they can adjust.",
+      tension="Four hundred names is not a plan. Seventy-four worth calling first is."
+      seatLine="For the audience and telesales leader who needs every call to count."
+      sees={[
+        "Who is most likely to convert now, and why they matter.",
+        "Which names are worth a rep's time and which are noise.",
+        "Conversion signals and the right moment to follow up.",
+        "Audience gaps in the list that volume alone will not fix.",
       ]}
-      howItWorks={[
-        "Looped briefs calling campaigns from approved audience and messaging intelligence before the first dial. Reps and optional voice automation both work from the same objection handling, proof points, and offer framing.",
-        "Your team decides where automation fits. The platform keeps humans in control while making sure every call flow reflects current event context and campaign priorities.",
+      decisions={[
+        "Who to call first, and what to lead with.",
+        "Which follow-ups matter and when to make them.",
+        "Where reps should focus their hours.",
+        "Which approaches are actually converting.",
       ]}
-      deliverables={[
-        "List segmentation by priority, persona fit and propensity, with call-volume recommendations",
-        "Call scripts by segment and objective: openers, objection handlers and close variations",
-        "A versioned, approvable discovery-call playbook, with a whole-campaign pathway quality layer",
-        "For awards: entry-conversion scripts, a peer-to-peer nominations drive, and gala table-sales prioritisation",
-        "Call-log analysis that surfaces objection patterns, conversion bottlenecks and script gaps",
-        "Optional AI voice agents, briefed from the same approved scripts, personas and segments",
-        "Automatic call recording, transcription and AI outcome classification, with a per-event spend cap",
+      afterApproval={[
+        "Reorder the call list by who is worth calling first.",
+        "Write per-prospect scripts and talking points.",
+        "Set follow-up timing around real signals.",
+        "Learn which approaches convert so the next list is sharper.",
       ]}
-      connects="Telesales is fed by marketing and commercial context, and feeds back live objection and conversion signals that improve both. The result is faster campaign correction without re-brief cycles."
+      examples={[
+        {
+          signal: "400 names on a call list. 74 worth calling first.",
+          insight: "Looped ranks who is most likely to convert now, why they matter and what is relevant to them, so reps start where the return is.",
+          action: "On approval, Looped can reorder the list, rewrite the scripts and give each prospect its own talking points. You can ask why anyone ranks where they do.",
+        },
+        {
+          signal: "The list is full, but the people who convert are not being called.",
+          insight: "Effort and outcome have drifted apart: the reps are busy, but the highest-intent names are sitting untouched.",
+          action: "On approval, Looped can resurface the high-intent names, brief the reps on each one and set the follow-up cadence.",
+        },
+      ]}
+      connects="Telesales works from the warm list marketing generates and the accounts commercial prioritises, and what converts on the phone feeds straight back into who marketing targets next."
     />
   );
 }

@@ -3,30 +3,40 @@ import { PillarPage } from "@/components/pillars/PillarPage";
 export default function PortfolioPillarPage(): React.ReactElement {
   return (
     <PillarPage
+      kicker="Portfolio"
       title="Portfolio"
-      tensionStatement="You can't see across your portfolio if every event is an island."
-      seatLine="For portfolio leaders responsible for performance across multiple events, teams, and commercial models."
-      challenges={[
-        "Portfolio directors rarely suffer from lack of data; they suffer from delayed, fragmented, and non-comparable data. Each event team reports differently, and by the time patterns appear, planning cycles are already committed.",
-        "You need to know where audience overlap can be monetised, where formats are plateauing, and where resource should move next quarter. Most organisations only discover this after budgets are set.",
-        "The moment a competitor enters one part of your portfolio, risk can spread quickly. Without a connected intelligence view, each team reacts locally and strategic opportunity is missed globally.",
+      tension="One event teaches you a lesson. A portfolio should teach every event at once."
+      seatLine="For the portfolio director and MD looking across every event, not one at a time."
+      sees={[
+        "Patterns and repeated risks across events, not six separate discoveries.",
+        "Shared audiences and shared sponsors that no single event can see.",
+        "Which events are heading for trouble and which are ahead.",
+        "What is changing across the portfolio right now.",
       ]}
-      howItWorks={[
-        "Looped gives directors a portfolio-level view that still preserves event-level detail. You can see what is repeating, what is improving, and what is underperforming with context from campaigns, sales, and operations.",
-        "It also carries successful decisions forward between events. When one show finds a stronger proposition or channel approach, other teams can apply it immediately with local adjustments.",
+      decisions={[
+        "Where to focus resource and attention.",
+        "Which events need intervention now.",
+        "What is worth reusing across the portfolio.",
+        "Which proven interventions to roll out more widely.",
       ]}
-      deliverables={[
-        "An event scorecard and benchmark across revenue, content, sponsorship and satisfaction",
-        "Financial performance from an uploaded P&L, with optimistic, base and conservative budget reforecasts",
-        "A multi-year sponsor, delegate and speaker pipeline with renewal-risk scoring",
-        "Cross-event audience overlap at person and company level, with speaker-network mapping across the portfolio",
-        "Portfolio-level opportunity detection: new geographies, segments, formats and spin-off events",
-        "Brand segmentation by audience, revenue model and positioning",
-        "A board-level strategic intelligence report that synthesises every upstream signal",
-        "A year-round community strategy for audience ownership between editions",
-        "Decision history that carries what worked from one edition to the next",
+      afterApproval={[
+        "Carry a proven change across the events it fits.",
+        "Prioritise where attention and resource go.",
+        "Roll out an intervention that worked and measure each event's outcome.",
       ]}
-      connects="Portfolio leadership is fed by every pillar and in turn sets direction for all of them. The intelligence flow is two-way: teams provide local reality, directors provide strategic priorities, and Looped keeps both connected."
+      examples={[
+        {
+          signal: "Three events. Same problem. One answer worth reusing.",
+          insight: "An objection that looks like an event problem is often a portfolio problem, and the same answer applies across all three.",
+          action: "On approval, Looped can carry the change across every event it fits and measure each one's outcome.",
+        },
+        {
+          signal: "Two events share 40% of the same audience and neither knows it.",
+          insight: "Shared audiences and sponsors are an opportunity when the portfolio can see them, and a missed cross-sell when it cannot.",
+          action: "On approval, Looped can coordinate the shared audience and sponsor approach across both events without doubling the work.",
+        },
+      ]}
+      connects="The portfolio view is built from every event's intelligence, so a win in one edition becomes a proven play the others can use, and a risk that shows up twice is caught before it shows up a third time."
     />
   );
 }

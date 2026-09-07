@@ -11,14 +11,14 @@ import { Reveal } from "@/components/motion/Reveal";
  */
 type Node = { label: string; color: string; top: number; left: number };
 const NODES: Node[] = [
-  { label: "Programme", color: "#7c3aed", top: 11, left: 26 },
-  { label: "Audience", color: "#ec4899", top: 7, left: 61 },
-  { label: "Marketing", color: "#fb923c", top: 31, left: 85 },
-  { label: "Commercial", color: "#a78bdb", top: 63, left: 86 },
-  { label: "Speakers", color: "#7c3aed", top: 89, left: 63 },
-  { label: "Entries", color: "#ec4899", top: 92, left: 30 },
-  { label: "Operations", color: "#fb923c", top: 64, left: 10 },
-  { label: "Live event", color: "#a78bdb", top: 32, left: 9 },
+  { label: "Audience", color: "#ec4899", top: 15, left: 50 },
+  { label: "Marketing", color: "#fb923c", top: 26, left: 76 },
+  { label: "Commercial", color: "#a78bdb", top: 50, left: 90 },
+  { label: "Speakers", color: "#7c3aed", top: 76, left: 76 },
+  { label: "Live event", color: "#a78bdb", top: 86, left: 50 },
+  { label: "Operations", color: "#fb923c", top: 76, left: 24 },
+  { label: "Entries", color: "#ec4899", top: 50, left: 10 },
+  { label: "Programme", color: "#7c3aed", top: 26, left: 24 },
 ];
 
 export function StartAnywhereSection(): React.ReactElement {
@@ -44,7 +44,7 @@ export function StartAnywhereSection(): React.ReactElement {
         <p className="kicker text-muted">Everything running at once</p>
 
         {/* desktop: a loose orbit of concurrent workstreams around Looped */}
-        <div className="relative mx-auto mt-6 hidden h-[440px] w-full max-w-3xl sm:block">
+        <div className="relative mx-auto mt-5 hidden h-[248px] w-full max-w-2xl sm:block">
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full" aria-hidden>
             <defs>
               <linearGradient id="orbit-grad" x1="0" y1="0" x2="1" y2="1">
@@ -60,15 +60,15 @@ export function StartAnywhereSection(): React.ReactElement {
           {NODES.map((n) => (
             <div
               key={n.label}
-              className="orbit-node absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-full border border-hairline bg-paper px-3.5 py-2 shadow-[var(--lift-light)]"
+              className="orbit-node absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-1.5 rounded-full border border-hairline bg-paper px-3 py-1.5 shadow-[var(--lift-light)]"
               style={{ top: `${n.top}%`, left: `${n.left}%` }}
             >
-              <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: n.color }} aria-hidden />
-              <span className="whitespace-nowrap text-sm font-semibold text-ink">{n.label}</span>
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: n.color }} aria-hidden />
+              <span className="whitespace-nowrap text-xs font-semibold text-ink sm:text-sm">{n.label}</span>
             </div>
           ))}
-          <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center rounded-full bg-grad px-6 py-3 shadow-[var(--grad-emph)]">
-            <span className="text-base font-semibold tracking-tight text-white">Looped</span>
+          <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center rounded-full bg-grad px-5 py-2.5 shadow-[var(--grad-emph)]">
+            <span className="text-sm font-semibold tracking-tight text-white">Looped</span>
           </div>
         </div>
 
