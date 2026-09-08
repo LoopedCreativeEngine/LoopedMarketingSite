@@ -13,7 +13,7 @@ export default function PortfolioPillarPage(): React.ReactElement {
         "Patterns and repeated risks across events, not six separate discoveries.",
         "Shared audiences and shared sponsors that no single event can see.",
         "Which events are heading for trouble and which are ahead.",
-        "What is changing across the portfolio right now.",
+        "What is changing across the portfolio right now, and the questions and objections recurring across every event.",
       ]}
       decisions={[
         "Where to focus resource and attention.",

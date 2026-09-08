@@ -13,7 +13,7 @@ export default function CommercialPillarPage(): React.ReactElement {
         "Revenue risk against plan, early enough to do something about it.",
         "Pipeline quality, sponsor whitespace and under-bought partners.",
         "Category opportunity and where a package is under-priced for its value.",
-        "Renewal risk, and which accounts are worth prioritising now.",
+        "Renewal risk, and which accounts are worth prioritising now, including partners whose fulfilment is running late.",
       ]}
       decisions={[
         "Which accounts to prioritise this week.",
@@ -26,6 +26,7 @@ export default function CommercialPillarPage(): React.ReactElement {
         "Rebuild propositions from what the audience actually did.",
         "Carry approved outreach into the systems your commercial team already works in.",
         "Reprioritise the pipeline from what actually came back: replies, meetings and closes.",
+        "Carry the partner's own journey, so entitlements, deliverables and deadlines stay on track into the renewal conversation.",
       ]}
       examples={[
         {

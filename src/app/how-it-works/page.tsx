@@ -108,6 +108,20 @@ function HeroAsk(): React.ReactElement {
   );
 }
 
+/**
+ * The same seven steps, entered from the participant's side. Context, then a
+ * recommendation, then a decision, then only authorised action, then
+ * verification, then learning that stays with the event.
+ */
+const PARTICIPANT_JOURNEY = [
+  { label: "Context", body: "An entrant opens their submission three days before deadline. Looped already knows who they are, the organisation they enter for, the category they are in and how far the entry has got." },
+  { label: "Recommendation", body: "Two published requirements are still unmet. Looped explains what each one is actually asking for and where in the journey to go back to." },
+  { label: "Decision", body: "The organiser has already set what Looped may help an entrant with. Within that, the entrant decides what to do next. Looped never writes or submits the entry." },
+  { label: "Authorised action", body: "Looped points them to the right part of the journey and sets the reminder the organiser approved, in the organiser's own words." },
+  { label: "Verification", body: "It checks whether the missing items actually arrived, not whether the reminder was sent. Until they do, the entry stays open as an exception." },
+  { label: "Learning", body: "If the same requirement trips up entrant after entrant, that becomes a signal for the organiser now and better guidance next edition." },
+];
+
 type Step = { title: string; body: string };
 type Chapter = { title: string; tone: "paper" | "stone" | "night"; side: "left" | "right" | "none"; steps: Step[]; visuals: React.ReactElement[] };
 
@@ -227,6 +241,33 @@ export default function HowItWorksPage(): React.ReactElement {
       {CHAPTERS.map((ch) => (
         <ChapterBlock key={ch.title} ch={ch} />
       ))}
+
+      {/* the same model, entered from the participant's side */}
+      <Panel tone="paper" kicker="The same steps, from the other side">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-5">
+            <h2 className="text-balance display-section">It works the same way for the people around your event.</h2>
+          </Reveal>
+          <Reveal className="lg:col-span-7 lg:pt-2">
+            <p className="text-base leading-relaxed text-slate sm:text-lg">
+              An entrant, a sponsor, a speaker or an attendee never sees a workflow. They ask a question or hit a
+              problem. Underneath, it is the same model: what Looped understands about them, what it recommends, what
+              you have authorised, what it then does, whether it actually worked, and what your event learns from it.
+            </p>
+          </Reveal>
+        </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {PARTICIPANT_JOURNEY.map((j, i) => (
+            <Reveal key={j.label} delay={(i % 3) * 0.05} className={CARD}>
+              <p className="flex items-center gap-2.5 kicker text-muted">
+                <span className="font-mono text-xs text-purple">0{i + 1}</span>
+                {j.label}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-ink">{j.body}</p>
+            </Reveal>
+          ))}
+        </div>
+      </Panel>
 
       {/* close */}
       <div className="mx-auto max-w-5xl px-5 py-20 text-center sm:px-6 sm:py-28 lg:px-8">

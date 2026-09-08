@@ -25,7 +25,7 @@ export default function TelesalesPillarPage(): React.ReactElement {
         "Reorder the call list in place, by who is worth calling first.",
         "Write per-prospect scripts and talking points.",
         "Work inside your calling, consent and suppression rules, so a name that should not be called is not.",
-        "Record the outcome of each call and feed it into tomorrow's list.",
+        "Record the outcome of each call, and turn the objections raised into intelligence marketing and commercial can use.",
       ]}
       examples={[
         {

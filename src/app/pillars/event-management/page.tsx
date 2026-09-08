@@ -12,8 +12,8 @@ export default function EventManagementPillarPage(): React.ReactElement {
       sees={[
         "The live status of the edition, in one current view.",
         "Milestone and deadline risk before it becomes a crisis.",
-        "Programme and speaker readiness, and entries and judging status for awards.",
-        "Dependencies across teams, and what has just changed.",
+        "Programme and speaker readiness, sponsor fulfilment, and entries and judging status for awards.",
+        "Dependencies across teams, what has just changed, and what entrants, speakers and sponsors are asking about.",
       ]}
       decisions={[
         "What needs attention this week, and what can wait.",
@@ -26,6 +26,7 @@ export default function EventManagementPillarPage(): React.ReactElement {
         "Chase what is outstanding with the sponsors, speakers and suppliers it concerns.",
         "Keep the exception open until the deliverable has actually landed, not from the moment the chaser was sent.",
         "Flag the decisions that need a person, and keep everyone aligned as the edition moves.",
+        "Support the speakers, sponsors and entrants directly, so readiness chases itself instead of landing on your desk.",
       ]}
       examples={[
         {

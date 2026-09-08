@@ -10,7 +10,7 @@ export default function ContentPillarPage(): React.ReactElement {
       tension="A safe agenda fills the room once. The right agenda is why they come back."
       seatLine="For the conference and content director shaping a programme the audience actually wants."
       sees={[
-        "Audience and topic fit: what your audience is responding to and what they keep asking for.",
+        "Audience and topic fit: what your audience is responding to, and the questions they keep asking Looped about the programme.",
         "Emerging themes the market is moving towards, and where the programme is behind them.",
         "Gaps and overlaps in the agenda, and sessions that are carrying more than their share.",
         "Speaker quality and fit, and how competitor programmes are positioned.",
@@ -26,6 +26,7 @@ export default function ContentPillarPage(): React.ReactElement {
         "Prepare the speaker approaches, and send the ones you sign off.",
         "Draft session titles, descriptions and supporting content, and publish what you approve.",
         "Track replies and confirmations, and keep a gap open until the seat is actually filled.",
+        "Turn what delegates and speakers keep asking about into evidence for the next programme.",
       ]}
       examples={[
         {

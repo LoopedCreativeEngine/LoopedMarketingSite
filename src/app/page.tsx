@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 
+import { AroundTheEventSection } from "@/components/home/AroundTheEventSection";
 import { ClosingSection } from "@/components/home/ClosingSection";
 import { CompoundingSection } from "@/components/home/CompoundingSection";
 import { ConnectivitySection } from "@/components/home/ConnectivitySection";
+import { ConversationIntelligenceSection } from "@/components/home/ConversationIntelligenceSection";
 import { EvidenceSection } from "@/components/home/EvidenceSection";
 import { FaqSection } from "@/components/home/FaqSection";
 import { FounderSection } from "@/components/home/FounderSection";
@@ -16,7 +18,7 @@ import { StartSection } from "@/components/home/StartSection";
 import { ValueSection } from "@/components/home/ValueSection";
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE } from "@/lib/site";
 
-/** A benefit-led buyer journey: what you get -> what it does -> start anywhere -> connectivity -> it compounds -> people and judgement -> proof -> working with it -> questions -> early access. */
+/** A benefit-led buyer journey: what you get -> what it does -> start anywhere -> connectivity -> around the event -> conversations become intelligence -> it compounds -> people and judgement -> proof -> working with it -> questions -> early access. */
 
 export const metadata: Metadata = {
   // The homepage carries the site's default title, so it sets `absolute` to
@@ -36,6 +38,8 @@ export default function HomePage(): React.ReactElement {
       <OutcomesSection />
       <StartAnywhereSection />
       <ConnectivitySection />
+      <AroundTheEventSection />
+      <ConversationIntelligenceSection />
       <CompoundingSection />
       <HumanJudgementSection />
       <EvidenceSection />

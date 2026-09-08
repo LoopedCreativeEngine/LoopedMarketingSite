@@ -13,7 +13,7 @@ export default function MarketingPillarPage(): React.ReactElement {
         "Audience quality, not just volume: seniority, sector and the segments that actually convert.",
         "Registration pace against plan, and where it is quietly running behind.",
         "Channel performance and where spend is working or leaking.",
-        "Message relevance by segment, and where a competitor has moved.",
+        "Message relevance by segment, where a competitor has moved, and what prospective attendees keep asking before they book.",
       ]}
       decisions={[
         "Where to pivot the campaign while the window is still open.",

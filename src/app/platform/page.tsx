@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
   title: "Platform: what you can do with Looped",
   description:
-    "Everything your event teams need to know, decide, act and keep learning. Looped connects the picture across the event business, recommends with the evidence, carries approved decisions through the systems you already use and verifies what happened.",
+    "Everything your event teams need to know, decide, act and keep learning. Looped connects the picture across the event business, recommends with the evidence, carries approved decisions through the systems you already use, verifies what happened, and can meet the people around the event as well as the team running it.",
 };
 
 const GROUPS = [
@@ -72,6 +72,26 @@ const ALSO = [
   { title: "Event website tools", body: "A chatbot that answers only from what you approve, an audience-matching quiz, and a secure portal for speakers and partners." },
   { title: "Lead capture", body: "Consent-based capture that routes to the right pipeline, with captured interest landing in real time." },
   { title: "Flexible data connections", body: "Connects to your CRM, email and payment systems at the level that suits you, and can carry approved work back into them." },
+];
+
+/** The same four movements, met from the participant's side. */
+const JOURNEY = [
+  {
+    stage: "Know",
+    body: "Who someone is, which organisation they belong to, the role or roles they hold on this event, where they are in the lifecycle, and what you have authorised Looped to know about them.",
+  },
+  {
+    stage: "Decide",
+    body: "What they need now, what you are trying to achieve with them, and whether this is something Looped may handle inside your rules or something a person should take.",
+  },
+  {
+    stage: "Put to work",
+    body: "The answer, the reminder, the missing item or the next approved step, delivered in their context and inside the boundaries you have set.",
+  },
+  {
+    stage: "Keep learning",
+    body: "What the exchange revealed about demand, confusion and friction, returned to your event intelligence rather than left in a transcript.",
+  },
 ];
 
 const PILLAR_LINKS = [
@@ -139,6 +159,30 @@ export default function PlatformPage(): React.ReactElement {
             you already have.
           </p>
         </Reveal>
+      </div>
+
+      {/* the same four movements, for the people around the event */}
+      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
+        <Reveal>
+          <p className="kicker text-muted">One layer, many experiences</p>
+          <h2 className="mt-5 max-w-3xl text-balance display-section">The same four movements, for the people around the event.</h2>
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
+            Looped is not only a system your team logs into. The same intelligence can meet an entrant, a sponsor, a
+            speaker, a finalist or an attendee, and surface differently for each one. What it knows, what it may say and
+            what it may do change with the role, the context, the lifecycle moment and the permission you have granted.
+          </p>
+        </Reveal>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {JOURNEY.map((j, i) => (
+            <Reveal key={j.stage} delay={i * 0.05} className="rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)]">
+              <p className="flex items-center gap-2.5 text-base font-semibold text-ink">
+                <span className="font-mono text-xs text-purple">0{i + 1}</span>
+                {j.stage}
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-slate">{j.body}</p>
+            </Reveal>
+          ))}
+        </div>
       </div>
 
       {/* also built in */}
