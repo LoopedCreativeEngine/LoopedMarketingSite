@@ -61,12 +61,17 @@ Set on the production host. See `.env.example` for the full annotated list.
 | `NEXT_PUBLIC_POSTHOG_KEY` | Recommended | Without it, no conversion events are sent. |
 | `NEXT_PUBLIC_POSTHOG_HOST` | No | Defaults to `https://eu.i.posthog.com`. |
 | `WAITLIST_FILE_STORE` | **No** | Review hosts only. Must be unset in production. |
+| `SUPABASE_DEMO_TABLE` | No | Defaults to `demo_requests`. Personalised-walkthrough requests from `/demo`. |
+| `DEMO_FILE_STORE` | **No** | Review hosts only. Must be unset in production. |
+| `DEMO_NOTIFY_SLACK_WEBHOOK` | Recommended | Falls back to `WAITLIST_NOTIFY_SLACK_WEBHOOK`. |
+| `DEMO_NOTIFY_WEBHOOK_URL` | Alternative | Falls back to `WAITLIST_NOTIFY_WEBHOOK_URL`. |
 
 - [ ] `NEXT_PUBLIC_*` values are correct for the production domain. They are
       compiled into the client bundle at build time, so changing one means a
       rebuild, not a restart.
 - [ ] `SUPABASE_SERVICE_ROLE_KEY` is set as a secret, not in a committed file.
 - [ ] `WAITLIST_FILE_STORE` is **not** set.
+- [ ] `DEMO_FILE_STORE` is **not** set.
 
 ## 5. Database schema
 
@@ -79,6 +84,14 @@ Set on the production host. See `.env.example` for the full annotated list.
       "you are already on the list".
 - [ ] Confirm row level security is enabled with no policy, so no
       browser-reachable key can read the table.
+- [ ] Apply `supabase/migrations/20260908120000_demo_requests.sql` to the same
+      project. This is what turns `/demo` from a page into a working lead
+      capture; until it exists the endpoint answers 503 and refuses requests
+      rather than losing them.
+- [ ] Confirm `demo_requests` has **no** unique index on `work_email`. That is
+      deliberate: one person may ask for a walkthrough of more than one event,
+      and a second request is intent, not a duplicate.
+- [ ] Confirm row level security is enabled on `demo_requests` with no policy.
 
 ## 6. Analytics configuration
 
@@ -87,10 +100,14 @@ Set on the production host. See `.env.example` for the full annotated list.
 - [ ] Create or choose the PostHog project.
 - [ ] Set `NEXT_PUBLIC_POSTHOG_KEY` (and `NEXT_PUBLIC_POSTHOG_HOST` if the
       project is not on EU cloud) and rebuild.
-- [ ] After the smoke test, confirm these eight events arrive:
+- [ ] After the smoke test, confirm these eleven events arrive:
       `page_view`, `waitlist_cta_click`, `see_looped_in_action_click`,
       `waitlist_form_start`, `waitlist_form_submit`, `waitlist_success`,
+      `demo_request_start`, `demo_request_submit`, `demo_request_success`,
       `newsroom_signup_click`, `newsroom_article_click`.
+- [ ] Note the routing: `waitlist_cta_click` now fires on links to `/waitlist`,
+      and `see_looped_in_action_click` on links to `/demo`. The event names are
+      unchanged so the funnel stays comparable across the move.
 - [ ] Confirm each carries `path`, `referrer`, `landing_page` and the five
       `utm_*` properties.
 
@@ -99,6 +116,8 @@ Set on the production host. See `.env.example` for the full annotated list.
 - [ ] Create the Slack incoming webhook (or the receiving endpoint) and set the
       variable.
 - [ ] Send a test signup and confirm the message arrives.
+- [ ] Send a test walkthrough request from `/demo` and confirm its separate,
+      differently labelled message arrives.
 - [ ] Remember the contract: a notification failure is logged and swallowed. It
       can never fail a signup, so a silent notifier means checking the store,
       not assuming there were no leads.
@@ -130,7 +149,7 @@ Replace `<host>` with the production origin.
 
 ```bash
 # Every public route answers.
-for p in / /how-it-works /newsroom /demo /privacy; do
+for p in / /how-it-works /newsroom /demo /waitlist /privacy; do
   printf '%-16s ' "$p"; curl -s -o /dev/null -w '%{http_code}\n' "https://<host>$p"
 done
 

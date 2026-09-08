@@ -18,7 +18,7 @@ import { StartSection } from "@/components/home/StartSection";
 import { ValueSection } from "@/components/home/ValueSection";
 import { DEFAULT_DESCRIPTION, DEFAULT_TITLE } from "@/lib/site";
 
-/** A benefit-led buyer journey: what you get -> what it does -> start anywhere -> connectivity -> around the event -> conversations become intelligence -> it compounds -> people and judgement -> proof -> working with it -> questions -> early access. */
+/** A benefit-led buyer journey, art-directed so the night plates punctuate rather than pile up: what you get -> what it does -> start anywhere -> connectivity -> around the event -> conversations become intelligence -> it compounds -> people and judgement -> working with it -> proof -> questions -> early access -> why Looped exists. */
 
 export const metadata: Metadata = {
   // The homepage carries the site's default title, so it sets `absolute` to
@@ -42,12 +42,12 @@ export default function HomePage(): React.ReactElement {
       <ConversationIntelligenceSection />
       <CompoundingSection />
       <HumanJudgementSection />
-      <EvidenceSection />
       <ProductExperienceSection />
+      <EvidenceSection />
       <FaqSection />
       <StartSection />
-      <KeepInLoopSection />
       <FounderSection />
+      <KeepInLoopSection />
       <ClosingSection />
     </>
   );

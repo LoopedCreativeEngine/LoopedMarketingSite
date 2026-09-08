@@ -2,7 +2,7 @@
  * Conversion analytics, sent to PostHog when a PostHog project is configured.
  *
  * There is no analytics SDK in the dependency tree on purpose. The site needs
- * eight named conversion events, not autocapture, session replay or a feature
+ * a handful of named conversion events, not autocapture, session replay or a feature
  * flag runtime, and PostHog's capture endpoint takes a plain JSON POST. That
  * keeps the bundle small, adds no third-party script to the critical path and
  * introduces no competing analytics platform.
@@ -22,6 +22,9 @@ export type AnalyticsEvent =
   | "waitlist_form_start"
   | "waitlist_form_submit"
   | "waitlist_success"
+  | "demo_request_start"
+  | "demo_request_submit"
+  | "demo_request_success"
   | "newsroom_signup_click"
   | "newsroom_article_click";
 

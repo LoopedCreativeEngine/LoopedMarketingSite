@@ -84,7 +84,7 @@ export default async function ArticlePage({ params }: ArticleParams): Promise<Re
             Looped is built today. Early access will open to a small number of selected event organisations following our founding pilot.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <CtaButton href="/demo" event="newsroom_signup_click">Join the waitlist</CtaButton>
+            <CtaButton href="/waitlist" event="newsroom_signup_click">Join the waitlist</CtaButton>
             <CtaButton href="/newsroom" variant="secondary">
               Back to the newsroom
             </CtaButton>

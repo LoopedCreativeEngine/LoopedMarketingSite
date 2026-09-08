@@ -52,10 +52,10 @@ export function HomeHero(): React.ReactElement {
           </p>
 
           <div data-hero-rise className="mt-9 flex flex-col gap-3 opacity-0 sm:flex-row sm:items-center sm:gap-4">
-            <CtaButton href="/demo" full>
+            <CtaButton href="/waitlist" full>
               Join the waitlist
             </CtaButton>
-            <CtaButton href="#what-it-does" variant="secondary" full>
+            <CtaButton href="/demo" variant="secondary" full>
               See Looped in action
             </CtaButton>
           </div>

@@ -114,11 +114,11 @@ function HeroAsk(): React.ReactElement {
  * verification, then learning that stays with the event.
  */
 const PARTICIPANT_JOURNEY = [
-  { label: "Context", body: "An entrant opens their submission three days before deadline. Looped already knows who they are, the organisation they enter for, the category they are in and how far the entry has got." },
-  { label: "Recommendation", body: "Two published requirements are still unmet. Looped explains what each one is actually asking for and where in the journey to go back to." },
-  { label: "Decision", body: "The organiser has already set what Looped may help an entrant with. Within that, the entrant decides what to do next. Looped never writes or submits the entry." },
-  { label: "Authorised action", body: "Looped points them to the right part of the journey and sets the reminder the organiser approved, in the organiser's own words." },
-  { label: "Verification", body: "It checks whether the missing items actually arrived, not whether the reminder was sent. Until they do, the entry stays open as an exception." },
+  { label: "Context", body: "An entrant comes back to an unfinished entry, two days out. Looped already knows who they are, which category they are entering and what is still incomplete." },
+  { label: "Recommendation", body: "It tells them what is missing and what the published requirement is actually asking for, then takes them to the right place to finish it." },
+  { label: "Decision", body: "What to write, and whether to enter at all, stays with them. Looped never drafts the entry and never makes the call to submit." },
+  { label: "Authorised action", body: "It guides them back into the journey and sends the reminders the organiser has approved, in the organiser's own words." },
+  { label: "Verification", body: "It checks whether the missing information was actually completed. A reminder that was sent is not an entry that was finished." },
   { label: "Learning", body: "If the same requirement trips up entrant after entrant, that becomes a signal for the organiser now and better guidance next edition." },
 ];
 
@@ -228,8 +228,8 @@ export default function HowItWorksPage(): React.ReactElement {
               verifies what happened, and the picture gets sharper every edition.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-              <CtaButton href="/demo" full>Join the waitlist</CtaButton>
-              <CtaButton href="/#what-it-does" variant="secondary" full>See Looped in action</CtaButton>
+              <CtaButton href="/waitlist" full>Join the waitlist</CtaButton>
+              <CtaButton href="/demo" variant="secondary" full>See Looped in action</CtaButton>
             </div>
           </Reveal>
           <Reveal className="lg:col-span-6">
@@ -276,8 +276,8 @@ export default function HowItWorksPage(): React.ReactElement {
             You bring the judgement. <span className="text-grad">Looped brings the connected picture, the follow-through and the proof.</span>
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <CtaButton href="/demo">Join the waitlist</CtaButton>
-            <CtaButton href="/#what-it-does" variant="secondary">See Looped in action</CtaButton>
+            <CtaButton href="/waitlist">Join the waitlist</CtaButton>
+            <CtaButton href="/demo" variant="secondary">See Looped in action</CtaButton>
           </div>
         </Reveal>
       </div>

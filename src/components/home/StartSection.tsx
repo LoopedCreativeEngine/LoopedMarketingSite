@@ -11,22 +11,22 @@ const JOURNEYS = [
     title: "Join the early access list",
     body: "Early access will open to a small number of selected event organisations following our founding pilot. Join the waitlist and we will be in touch as places open, with product updates and Looped intelligence in the meantime.",
     cta: "Join the waitlist",
-    href: "/demo",
+    href: "/waitlist",
     primary: true,
   },
   {
     layer: "Or take a look",
     title: "See Looped in action",
-    body: "A walkthrough built around an event in your sector: what Looped would see, why it matters, the move it would propose and how it would carry that move through the systems around the event. No founder-run sales meeting required.",
+    body: "A walkthrough built around your own event, not a fictional one: what Looped would see, why it matters, the move it would propose and how it would carry that move through the systems around your event. No founder-run sales meeting required.",
     cta: "See Looped in action",
-    href: "#what-it-does",
+    href: "/demo",
     primary: false,
   },
 ];
 
 export function StartSection(): React.ReactElement {
   return (
-    <Panel tone="paper" id="start" kicker="Early access">
+    <Panel tone="stone" id="start" kicker="Early access">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">Be among the first events on Looped.</h2>
         <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
@@ -42,7 +42,7 @@ export function StartSection(): React.ReactElement {
             className={
               j.primary
                 ? "rounded-2xl border border-purple bg-[rgba(124,58,237,0.05)] p-7 shadow-[var(--grad-emph)]"
-                : "rounded-2xl border border-[rgba(15,23,42,0.12)] bg-stone p-7 shadow-[var(--lift-light)]"
+                : "rounded-2xl border border-[rgba(15,23,42,0.12)] bg-paper p-7 shadow-[var(--lift-light)]"
             }
           >
             <span className={`kicker ${j.primary ? "text-purple" : "text-muted"}`}>{j.layer}</span>

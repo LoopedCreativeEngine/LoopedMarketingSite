@@ -14,7 +14,7 @@ const LEVELS = [
 
 export function CompoundingSection(): React.ReactElement {
   return (
-    <Panel tone="stone" kicker="From one event to the whole business">
+    <Panel tone="paper" kicker="From one event to the whole business">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
         <Reveal className="lg:col-span-5">
           <h2 className="text-balance display-section">Event intelligence that compounds.</h2>
@@ -30,7 +30,7 @@ export function CompoundingSection(): React.ReactElement {
         </Reveal>
       </div>
 
-      <Reveal className="mt-12 rounded-[20px] border border-hairline bg-paper p-5 shadow-[var(--lift-light)] sm:p-8">
+      <Reveal className="mt-12 rounded-[20px] border border-hairline bg-stone p-5 shadow-[var(--lift-light)] sm:p-8">
         <CompoundingFigure />
       </Reveal>
 

@@ -24,10 +24,17 @@ type CtaButtonProps = {
   event?: AnalyticsEvent;
 };
 
-/** The waitlist lives at /demo; the product tour is the what-it-does section. */
+/**
+ * The waitlist lives at /waitlist; "See Looped in action" is the personalised
+ * walkthrough at /demo, not an anchor on the homepage.
+ *
+ * The event names are unchanged so the funnel stays comparable across the
+ * change of destination: `see_looped_in_action_click` is still the name of the
+ * intent, whatever the button now points at.
+ */
 export function eventForHref(href: string): AnalyticsEvent | null {
-  if (href === "/demo" || href.startsWith("/demo")) return "waitlist_cta_click";
-  if (href.includes("#what-it-does")) return "see_looped_in_action_click";
+  if (href === "/waitlist" || href.startsWith("/waitlist")) return "waitlist_cta_click";
+  if (href === "/demo" || href.startsWith("/demo")) return "see_looped_in_action_click";
   return null;
 }
 

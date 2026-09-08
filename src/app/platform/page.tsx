@@ -119,8 +119,8 @@ export default function PlatformPage(): React.ReactElement {
             stays in control of every consequential call.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <CtaButton href="/demo">Join the waitlist</CtaButton>
-            <CtaButton href="/#what-it-does" variant="secondary">See Looped in action</CtaButton>
+            <CtaButton href="/waitlist">Join the waitlist</CtaButton>
+            <CtaButton href="/demo" variant="secondary">See Looped in action</CtaButton>
           </div>
         </Reveal>
       </div>
@@ -226,8 +226,8 @@ export default function PlatformPage(): React.ReactElement {
             our founding pilot.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <CtaButton href="/demo">Join the waitlist</CtaButton>
-            <CtaButton href="/#what-it-does" variant="secondary">See Looped in action</CtaButton>
+            <CtaButton href="/waitlist">Join the waitlist</CtaButton>
+            <CtaButton href="/demo" variant="secondary">See Looped in action</CtaButton>
           </div>
         </Reveal>
       </div>

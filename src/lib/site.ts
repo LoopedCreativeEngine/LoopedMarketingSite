@@ -42,7 +42,7 @@ export const DEFAULT_DESCRIPTION =
  * own. Listing a noindex page in a sitemap asks a crawler to fetch a page you
  * have told it to ignore, so they are excluded here as well as marked there.
  */
-export const PUBLIC_ROUTES = ["/", "/how-it-works", "/newsroom", "/demo", "/privacy"] as const;
+export const PUBLIC_ROUTES = ["/", "/how-it-works", "/newsroom", "/demo", "/waitlist", "/privacy"] as const;
 
 /** Routes shelved from the public journey. Never in the sitemap. */
 export const SHELVED_ROUTES = [

@@ -50,8 +50,8 @@ export function SiteHeader(): React.ReactElement {
 
         <div className="flex items-center gap-2">
           <Link
-            href="/demo"
-            onClick={() => track("waitlist_cta_click", { href: "/demo", placement: "header" })}
+            href="/waitlist"
+            onClick={() => track("waitlist_cta_click", { href: "/waitlist", placement: "header" })}
             className="hidden cursor-pointer items-center rounded-full bg-grad px-5 py-2.5 text-sm font-semibold text-white shadow-[var(--grad-emph)] transition-transform hover:-translate-y-0.5 md:inline-flex"
           >
             Join the waitlist
@@ -88,10 +88,10 @@ export function SiteHeader(): React.ReactElement {
                       </Link>
                     ))}
                     <Link
-                      href="/demo"
+                      href="/waitlist"
                       className="mt-2 inline-flex w-fit rounded-full bg-grad px-5 py-2.5 text-sm font-semibold text-white"
                       onClick={() => {
-                        track("waitlist_cta_click", { href: "/demo", placement: "header-mobile" });
+                        track("waitlist_cta_click", { href: "/waitlist", placement: "header-mobile" });
                         setMobileOpen(false);
                       }}
                     >

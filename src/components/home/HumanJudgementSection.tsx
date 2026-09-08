@@ -3,12 +3,12 @@
 import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 
-/** What your organisation decides Looped may do, in plain language. */
+/** The authority model, in the four words an organiser actually thinks in. */
 const AUTHORITY = [
-  { name: "Observe", body: "What Looped may see across your events and the systems you connect to it." },
-  { name: "Prepare", body: "What it may draft, plan and get ready for a person to look at." },
-  { name: "Act within your rules", body: "What it may carry out on its own, inside the boundaries set for that organisation, that event and that kind of action." },
-  { name: "Ask first", body: "What always comes back for explicit approval before anything leaves your business." },
+  { name: "See", body: "What Looped is allowed to understand about your events, your systems and the people around them." },
+  { name: "Prepare", body: "What it can research, draft and get ready, so the work is waiting rather than starting from nothing." },
+  { name: "Act", body: "What it can carry out on its own, inside rules you have already set for that organisation, event and kind of action." },
+  { name: "Ask", body: "What always comes back to a person first, however routine the rest of the job has become." },
 ];
 
 export function HumanJudgementSection(): React.ReactElement {
@@ -49,25 +49,36 @@ export function HumanJudgementSection(): React.ReactElement {
         </Reveal>
       </div>
 
-      <Reveal className="mt-12">
-        <p className="kicker text-lavender">You set what Looped may do</p>
-        <dl className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4">
-          {AUTHORITY.map((a) => (
-            <div key={a.name} className="border-t border-white/12 pt-4">
-              <dt className="text-base font-semibold text-snow">{a.name}</dt>
-              <dd className="mt-1.5 text-sm leading-relaxed text-mist">{a.body}</dd>
-            </div>
-          ))}
-        </dl>
+      <Reveal className="mt-16">
+        <h3 className="max-w-3xl text-balance font-serif text-3xl leading-tight text-snow sm:text-4xl">
+          You set the boundaries. <span className="text-lavender">Looped works inside them.</span>
+        </h3>
+        <p className="mt-5 max-w-3xl text-base leading-relaxed text-mist sm:text-lg">
+          Looped is genuinely capable of acting. That is exactly why the limits matter, and why you draw them rather
+          than us. Authority can differ by organisation, by event, by person and by the kind of action in question, and
+          it is yours to widen or narrow as trust builds.
+        </p>
+      </Reveal>
+
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {AUTHORITY.map((a, i) => (
+          <Reveal key={a.name} delay={i * 0.05} className="rounded-2xl border border-white/10 bg-night-raised p-6">
+            <p className="font-serif text-2xl leading-snug text-snow">{a.name}</p>
+            <p className="mt-3 text-sm leading-relaxed text-mist">{a.body}</p>
+          </Reveal>
+        ))}
+      </div>
+
+      <Reveal>
         <p className="mt-8 max-w-3xl text-base leading-relaxed text-mist sm:text-lg">
-          Authority can be shaped by organisation, by event and by the kind of action in question. Where Looped cannot
-          establish that an action is permitted, or cannot confirm it completed, it stops and surfaces the exception
-          rather than guessing.
+          Routine work can run on its own inside those rules. Consequential decisions can always stay with people. And
+          if Looped cannot establish that an action is allowed, or cannot confirm that it worked, it stops and surfaces
+          the exception. It never guesses, and it never records an attempt as a result.
         </p>
       </Reveal>
 
       <Reveal>
-        <p className="mx-auto mt-12 max-w-4xl text-balance text-center font-serif text-2xl italic leading-snug text-snow sm:text-3xl">
+        <p className="mx-auto mt-14 max-w-4xl text-balance text-center font-serif text-2xl italic leading-snug text-snow sm:text-3xl">
           The point isn&apos;t to remove people from events. It&apos;s to make more of their time worth being human.
         </p>
       </Reveal>

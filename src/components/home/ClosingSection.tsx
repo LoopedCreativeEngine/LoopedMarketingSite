@@ -25,10 +25,10 @@ export function ClosingSection(): React.ReactElement {
             still open. Early access will open to a small number of event organisations following our founding pilot.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-            <CtaButton href="/demo" tone="ink">
+            <CtaButton href="/waitlist" tone="ink">
               Join the waitlist
             </CtaButton>
-            <CtaButton href="#what-it-does" variant="secondary" tone="ink">
+            <CtaButton href="/demo" variant="secondary" tone="ink">
               See Looped in action
             </CtaButton>
           </div>

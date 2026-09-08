@@ -114,8 +114,8 @@ export function PillarPage({
         </Reveal>
 
         <Reveal className="mt-12 flex flex-col gap-3 border-t border-hairline pt-10 sm:flex-row sm:gap-4">
-          <CtaButton href="/demo">Join the waitlist</CtaButton>
-          <CtaButton href="/#what-it-does" variant="secondary">See Looped in action</CtaButton>
+          <CtaButton href="/waitlist">Join the waitlist</CtaButton>
+          <CtaButton href="/demo" variant="secondary">See Looped in action</CtaButton>
         </Reveal>
       </div>
     </div>
