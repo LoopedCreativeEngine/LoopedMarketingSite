@@ -24,19 +24,21 @@ export default function CommercialPillarPage(): React.ReactElement {
       afterApproval={[
         "Build the target list and account plans.",
         "Rebuild propositions from what the audience actually did.",
-        "Write personalised outreach for each account.",
-        "Reprioritise the pipeline and track the commercial outcome.",
+        "Carry approved outreach into the systems your commercial team already works in.",
+        "Reprioritise the pipeline from what actually came back: replies, meetings and closes.",
       ]}
       examples={[
         {
           signal: "£26k of sponsorship, hiding in plain sight.",
           insight: "Audience demand, programme themes and commercial whitespace point to the strongest sponsor categories and the best-fit accounts you are not yet talking to.",
-          action: "On approval, Looped can build the target list, the account plan and the proposition most likely to land.",
+          action: "Once approved, Looped builds the target list, the account plan and the proposition most likely to land, and carries the outreach into your commercial stack.",
+          result: "Replies, meetings and closes return as evidence against each category and account, so the next set of opportunities is ranked on what converted for this event rather than on a hunch.",
         },
         {
           signal: "This edition is tracking towards a £74k shortfall. One partner could be worth £18k more.",
           insight: "The pace of renewals and new business does not close the gap on the current plan, but the mix of who to prioritise can change the outcome.",
-          action: "On approval, Looped can reshape account strategy, rebuild the priority propositions and sequence a recovery plan.",
+          action: "Once approved, Looped reshapes the account strategy, rebuilds the priority propositions and runs the recovery sequence through the systems the team already uses.",
+          result: "Looped tracks the gap week by week against what has actually been signed, and keeps the shortfall open as an exception until the revenue is really there.",
         },
       ]}
       connects="Commercial builds on the audience and programme picture, so propositions match what the event is really about, and telesales gets a prioritised, briefed list rather than a raw one."

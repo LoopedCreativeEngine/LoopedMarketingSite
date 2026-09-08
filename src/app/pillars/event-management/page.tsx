@@ -23,20 +23,22 @@ export default function EventManagementPillarPage(): React.ReactElement {
       ]}
       afterApproval={[
         "Reorder the plan around what matters now.",
-        "Chase what is outstanding across teams and suppliers.",
-        "Flag the decisions that need a person.",
-        "Keep everyone aligned as the edition moves.",
+        "Chase what is outstanding with the sponsors, speakers and suppliers it concerns.",
+        "Keep the exception open until the deliverable has actually landed, not from the moment the chaser was sent.",
+        "Flag the decisions that need a person, and keep everyone aligned as the edition moves.",
       ]}
       examples={[
         {
           signal: "Three deadlines just moved. One of them matters this week.",
           insight: "Not every slippage is equal. Looped keeps the moving parts in one view and shows which change actually threatens the edition.",
-          action: "On approval, Looped can reorder the plan, reset the dependent dates and flag the one call that needs a person.",
+          action: "Once approved, Looped reorders the plan, resets the dependent dates, chases the people each slipped deadline depends on and flags the one call that needs a person.",
+          result: "Looped confirms each dependency against what has actually been received, and the deadline stays open as an exception until the evidence says it is resolved.",
         },
         {
-          signal: "Entries are up, but judging capacity is not.",
-          insight: "A strong entry run becomes an operational risk if the judging panel and deadlines cannot absorb it. Looped catches the mismatch early.",
-          action: "On approval, Looped can rebalance judging assignments, adjust the deadline plan and brief the teams affected.",
+          signal: "Two sponsors are three weeks from missing their fulfilment deadline.",
+          insight: "Logos, copy, session content and delegate passes are all outstanding, and nobody owns the chase. A missed deliverable is a renewal conversation you lose next year.",
+          action: "Once approved, Looped follows up with each sponsor contact through the channel they already use, with exactly what is missing and by when.",
+          result: "The item is only closed when Looped can see the asset has arrived. Anything it cannot confirm stays open and comes back to the operations lead as an exception.",
         },
       ]}
       connects="Event management holds the readiness picture the whole business depends on: the programme content is landing, commercial commitments are deliverable, and marketing knows exactly what is confirmed to promote."

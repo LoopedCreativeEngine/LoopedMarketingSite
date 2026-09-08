@@ -9,7 +9,7 @@ import { Reveal } from "@/components/motion/Reveal";
 const MODES = [
   { name: "Ask", body: "Ask what is happening across an event or a portfolio and get an answer grounded in current context, not a blank prompt." },
   { name: "Explore", body: "Open the evidence behind any answer: the signals, the numbers, the reasoning, the source." },
-  { name: "Instruct", body: "Hand over the work. Routine, authorised work proceeds; anything consequential comes back for your approval." },
+  { name: "Instruct", body: "Hand over the work. Work inside the rules you have set proceeds; anything consequential comes back for approval, and Looped reports what actually happened at the other end." },
 ];
 
 const SURFACED = [
@@ -29,7 +29,8 @@ export function ProductExperienceSection(): React.ReactElement {
           </p>
           <p className="mt-6 text-base leading-relaxed text-slate sm:text-lg">
             No dashboard hunting and no pulling reports together. Ask a question and get an evidence-backed answer from
-            across the event business. Then decide what happens next: approve it, adjust it, or explore another route.
+            across the event business. Then decide what happens next: approve it and Looped carries it through your
+            systems, adjust it first, or explore another route.
           </p>
           <div className="mt-8 space-y-5">
             {MODES.map((m, i) => (
@@ -63,7 +64,7 @@ export function ProductExperienceSection(): React.ReactElement {
                   ))}
                 </ul>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {["Show me why", "Explore another route", "Adjust", "Build the plan", "Approve"].map((a) => (
+                  {["Show me why", "Explore another route", "Adjust", "Build the plan", "Approve and run it"].map((a) => (
                     <span key={a} className="rounded-full border border-white/20 px-3 py-1 text-xs font-medium text-snow">
                       {a}
                     </span>

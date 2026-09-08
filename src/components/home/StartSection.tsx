@@ -17,7 +17,7 @@ const JOURNEYS = [
   {
     layer: "Or take a look",
     title: "See Looped in action",
-    body: "A walkthrough built around an event in your sector: what Looped would see, why it matters and the move it would propose. No founder-run sales meeting required.",
+    body: "A walkthrough built around an event in your sector: what Looped would see, why it matters, the move it would propose and how it would carry that move through the systems around the event. No founder-run sales meeting required.",
     cta: "See Looped in action",
     href: "#what-it-does",
     primary: false,

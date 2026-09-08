@@ -86,7 +86,7 @@ export default function Image(): ImageResponse {
         </div>
 
         <div style={{ display: "flex", fontSize: 24, color: MUTED }}>
-          One operating system that holds the picture of every event you run.
+          One operating system that understands your events, works across your stack and turns intelligence into action.
         </div>
       </div>
     ),

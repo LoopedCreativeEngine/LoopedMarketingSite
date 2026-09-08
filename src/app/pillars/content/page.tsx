@@ -23,20 +23,22 @@ export default function ContentPillarPage(): React.ReactElement {
       ]}
       afterApproval={[
         "Shape the agenda around what will land with the audience.",
-        "Brief and line up the speakers that fit.",
-        "Draft session titles, descriptions and supporting content.",
-        "Keep the programme aligned with the market as it moves.",
+        "Prepare the speaker approaches, and send the ones you sign off.",
+        "Draft session titles, descriptions and supporting content, and publish what you approve.",
+        "Track replies and confirmations, and keep a gap open until the seat is actually filled.",
       ]}
       examples={[
         {
           signal: "Two sessions are doing the work of the whole agenda.",
           insight: "Attention and demand are concentrating, while other slots underperform. Looped shows which themes are pulling the room and which are filler.",
-          action: "On approval, Looped can rebalance the agenda towards the themes that land and rework the sessions that are not earning their slot.",
+          action: "Once approved, Looped rebalances the agenda towards the themes that land, reworks the sessions that are not earning their slot and updates the programme where it is published.",
+          result: "Engagement against each reworked session comes back as evidence, so next edition's programme starts from what the room actually responded to.",
         },
         {
           signal: "The theme your audience keeps asking about is barely on the programme.",
           insight: "Registration and engagement are clustering around a topic the agenda underweights, and the market is moving the same way.",
-          action: "On approval, Looped can build a session track around the theme, propose the speakers for it and position it against competing programmes.",
+          action: "Once approved, Looped builds a session track around the theme, proposes the speakers who fit and why, prepares a personalised approach to each and sends the ones you authorise.",
+          result: "Looped follows who replies, who declines and who confirms, keeps chasing the gap until a speaker is booked, and learns which kind of approach lands with senior names.",
         },
       ]}
       connects="The programme is shaped by the same audience intelligence marketing works from, and a strong agenda gives commercial the themes and whitespace that sponsors want to be part of."

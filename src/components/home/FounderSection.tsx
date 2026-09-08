@@ -33,14 +33,19 @@ export function FounderSection(): React.ReactElement {
             </p>
             <p>
               I built Looped because event specialists deserve better information at the moment they have to make the
-              call. Not AI for the sake of AI, and not another system teams have to become experts in. The complexity
-              should sit behind the product. The experience should feel simple.
+              call, and should not then lose the next three days to the follow-through. Not AI for the sake of AI, and
+              not another system teams have to become experts in. The complexity should sit behind the product. The
+              experience should feel simple.
             </p>
             <p>
-              Looped brings together the systems, signals and intelligence around an event, then gives people a clearer
-              view of what matters, what changed and what the strongest move looks like.
+              Looped brings together the systems, signals and intelligence around an event, gives people a clear view of
+              what matters and what the strongest move looks like, and then carries the move they approve through the
+              tools they already use, checking what actually happened rather than assuming it.
             </p>
-            <p>The people still make the judgement. Looped helps make sure they have the right information when they do.</p>
+            <p>
+              The people still make the judgement. Looped makes sure they have the right information when they do, and
+              takes the work that surrounds it off their desk.
+            </p>
           </div>
           <div className="mt-9 flex items-center gap-4">
             <span

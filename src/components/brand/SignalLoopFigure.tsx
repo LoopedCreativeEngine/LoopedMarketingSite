@@ -3,9 +3,9 @@
 /**
  * The intelligence flow, as buyer value (not architecture): the signals around
  * an event come together into one understood picture, Looped recommends the
- * strongest move, the person decides, Looped executes and measures, and what
- * works becomes part of the next decision. Decide is drawn as the human-control
- * moment. Pure SVG + CSS; dashes travel the paths and stop under
+ * strongest move, the person decides, Looped acts and verifies, and what
+ * actually happened becomes part of the next decision. Decide is drawn as the
+ * human-control moment. Pure SVG + CSS; dashes travel the paths and stop under
  * prefers-reduced-motion (globals.css). Laid out so no label sits under a line.
  */
 const SIGNALS = [
@@ -19,8 +19,8 @@ const SIGNALS = [
 const STEPS = [
   { label: "Recommend", human: false },
   { label: "Decide", human: true },
-  { label: "Execute", human: false },
-  { label: "Measure", human: false },
+  { label: "Act", human: false },
+  { label: "Verify", human: false },
 ];
 
 export function SignalLoopFigure(): React.ReactElement {
@@ -33,7 +33,7 @@ export function SignalLoopFigure(): React.ReactElement {
   const xs = [452, 592, 732, 872];
 
   return (
-    <svg viewBox="0 -8 960 380" className="h-auto w-full" role="img" aria-label="The signals around an event come together into one understood picture; Looped recommends, a person decides, Looped executes and measures, and what works becomes part of the next decision">
+    <svg viewBox="0 -8 960 386" className="h-auto w-full" role="img" aria-label="The signals around an event come together into one understood picture; Looped recommends, a person decides, Looped acts and verifies, and what actually happened becomes part of the next decision">
       <defs>
         <linearGradient id="slf-grad" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stopColor="#7c3aed" />
@@ -102,11 +102,14 @@ export function SignalLoopFigure(): React.ReactElement {
         );
       })}
 
-      {/* learning returns: what works becomes part of the next decision */}
+      {/* learn: what actually happened returns to the picture */}
       <path d={`M ${xs[3]} ${pillY + pillH / 2 + 4} C ${xs[3]} 300, ${loopX} 316, ${loopX} ${loopY + loopR + 6}`} fill="none" stroke="#ece9e4" strokeWidth="2" />
       <path d={`M ${xs[3]} ${pillY + pillH / 2 + 4} C ${xs[3]} 300, ${loopX} 316, ${loopX} ${loopY + loopR + 6}`} fill="none" stroke="#7c3aed" strokeWidth="2.5" strokeLinecap="round" className="signal-flow signal-flow-slow" style={{ animationDelay: "3s" }} />
-      <text x="590" y="352" textAnchor="middle" fontFamily="var(--font-newsreader)" fontSize="16" fontStyle="italic" className="fill-[#7c3aed]">
-        What works becomes part of the next decision.
+      <text x="590" y="336" textAnchor="middle" fontFamily="var(--font-jetbrains)" fontSize="10" letterSpacing="1.8" className="fill-[#64748b]">
+        LEARN
+      </text>
+      <text x="590" y="358" textAnchor="middle" fontFamily="var(--font-newsreader)" fontSize="16" fontStyle="italic" className="fill-[#7c3aed]">
+        What actually happened becomes part of the next decision.
       </text>
     </svg>
   );

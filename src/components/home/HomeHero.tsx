@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import { Ribbon } from "@/components/brand/Ribbon";
 import { CtaButton } from "@/components/ui/CtaButton";
 
-const CREDIBILITY = ["Brings your event intelligence together", "Works with the tools you already use", "Gets smarter with every edition"];
+const CREDIBILITY = ["Understands the whole event picture", "Acts across the tools you already use", "Verifies the outcome, then learns"];
 
 export function HomeHero(): React.ReactElement {
   const rootRef = useRef<HTMLElement>(null);
@@ -42,10 +42,13 @@ export function HomeHero(): React.ReactElement {
           </h1>
 
           <p data-hero-rise className="mt-8 max-w-xl text-pretty text-lg leading-[1.6] text-slate opacity-0 sm:text-xl">
-            <span className="font-semibold text-ink">The AI operating system for conference &amp; awards businesses.</span>{" "}
-            Looped brings your event intelligence together, shows what is changing and where the biggest opportunities or
-            risks sit. It recommends the strongest move. You decide. Looped carries the decision into action and tracks
-            what happens next.
+            <span className="font-semibold text-ink">
+              One operating system that understands your events, works across the tools your teams already use, and turns
+              intelligence into action.
+            </span>{" "}
+            It brings event, performance, market and team intelligence into one connected picture, shows what matters and
+            why, and recommends the next move. You decide. Looped carries the approved work through the systems you
+            already use, verifies what actually happened and learns from the result.
           </p>
 
           <div data-hero-rise className="mt-9 flex flex-col gap-3 opacity-0 sm:flex-row sm:items-center sm:gap-4">

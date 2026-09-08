@@ -6,13 +6,13 @@ import { WaitlistForm } from "@/components/forms/WaitlistForm";
 export const metadata: Metadata = {
   title: "Join the Looped early access list",
   description:
-    "Early access opens to a small number of selected event organisations following our founding pilot. Join the waitlist for early access, product updates and Looped intelligence.",
+    "See what Looped would surface across your own event, and how it would carry that into governed action across the systems around it. Early access opens to a small number of selected event organisations following our founding pilot.",
   alternates: { canonical: "/demo" },
   openGraph: {
     url: "/demo",
     title: "Join the Looped early access list",
     description:
-      "Early access opens to a small number of selected event organisations following our founding pilot. Join the waitlist for early access, product updates and Looped intelligence.",
+      "See what Looped would surface across your own event, and how it would carry that into governed action across the systems around it. Early access opens to a small number of selected event organisations following our founding pilot.",
   },
 };
 
@@ -24,8 +24,9 @@ export default function WaitlistPage(): React.ReactElement {
           <p className="kicker text-purple">Early access</p>
           <h1 className="mt-4 font-serif text-4xl tracking-tight text-ink sm:text-5xl">Join the early access list.</h1>
           <p className="mt-6 text-lg leading-relaxed text-slate">
-            Early access will open to a small number of selected event organisations following our founding pilot.
-            Join the waitlist for early access, product updates and Looped intelligence.
+            See not just what Looped would recommend for your event, but how it would turn that intelligence into
+            governed action across the systems around it. Early access will open to a small number of selected event
+            organisations following our founding pilot.
           </p>
         </Reveal>
       </div>
@@ -49,7 +50,7 @@ export default function WaitlistPage(): React.ReactElement {
               "Early access as places open following the founding pilot.",
               "Product updates and new Looped intelligence.",
               "Practical thinking on where event businesses can find more value.",
-              "A first look at what Looped could surface across your own event business, when the time is right.",
+              "A first look at what Looped would surface across your own event business, and how it would carry that into action across your systems, when the time is right.",
             ].map((item, i) => (
               <li key={item} className="flex items-start gap-3 border-t border-hairline pt-3 text-sm leading-relaxed text-ink sm:text-base">
                 <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full" style={{ background: ["#7c3aed", "#ec4899", "#fb923c", "#a78bdb"][i] }} aria-hidden />

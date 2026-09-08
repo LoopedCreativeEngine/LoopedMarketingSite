@@ -6,15 +6,15 @@ import type { Metadata } from "next";
  * page and exists only to carry it.
  */
 export const metadata: Metadata = {
-  title: "How Looped works: the loop from signal to decision to action",
+  title: "How Looped works: understand, recommend, decide, act, verify, learn",
   description:
-    "The chapters of a Looped cycle: it notices what changed across your events, brings the evidence, proposes the strongest move, and carries the decision into action so the next edition starts ahead of the last.",
+    "The chapters of a Looped cycle: it builds the picture across your events and connected systems, brings the evidence with the recommendation, waits for your decision, carries the approved work through the tools your teams already use and verifies what actually happened.",
   alternates: { canonical: "/how-it-works" },
   openGraph: {
     url: "/how-it-works",
-    title: "How Looped works: the loop from signal to decision to action",
+    title: "How Looped works: understand, recommend, decide, act, verify, learn",
     description:
-      "The chapters of a Looped cycle: it notices what changed across your events, brings the evidence, proposes the strongest move, and carries the decision into action.",
+      "Looped builds the picture across your events, recommends with the evidence, waits for your decision, carries the approved work through your existing systems and verifies the outcome.",
   },
 };
 

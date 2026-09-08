@@ -22,21 +22,23 @@ export default function MarketingPillarPage(): React.ReactElement {
         "Whether healthy registration growth is masking an audience gap.",
       ]}
       afterApproval={[
-        "Update targeting, segments and messaging by persona.",
+        "Update targeting, segments and messaging by persona in your campaign stack.",
         "Reprioritise channels and budget across the plan.",
-        "Build personalised outreach for the accounts and people that matter.",
-        "Track which actions actually moved the outcome, not just activity.",
+        "Send the personalised outreach to the accounts and people that matter, once authorised.",
+        "Watch the registrations that follow, and feed what responded into the next recommendation.",
       ]}
       examples={[
         {
           signal: "Registrations up 18%. Senior buyers down 11%.",
           insight: "A healthy headline can hide a shifting audience. Looped reads volume and mix together and shows the gap opening under the growth.",
-          action: "On approval, Looped can rebalance targeting, messaging and channel priorities towards the senior audience while keeping overall registrations moving.",
+          action: "Once approved, Looped rebalances targeting, messaging and channel priorities across your campaign tools, towards the senior audience and without stalling overall registrations.",
+          result: "It then reads the registrations that actually arrive, by seniority and sector, not the sends that went out. The mix that responds shapes the next campaign recommendation.",
         },
         {
           signal: "You may not need more registrations. You may need 63 specific people.",
           insight: "When the mix is the problem, more volume does not fix it. Looped names the organisations that matter and the people inside them.",
-          action: "On approval, Looped can build the targeting, campaign content and personalised outreach around exactly those people.",
+          action: "Once approved, Looped builds the targeting and campaign content and runs the personalised outreach to exactly those people through the systems your team already sends from.",
+          result: "Looped checks who was actually reached and who registered, keeps the named gap open until the seats are filled, and remembers which approach worked on which kind of buyer.",
         },
       ]}
       connects="Marketing works from the same market picture as content and commercial. Audience intelligence shapes the programme and the sponsor story, and campaign performance hands telesales a warm, prioritised list rather than a raw one."

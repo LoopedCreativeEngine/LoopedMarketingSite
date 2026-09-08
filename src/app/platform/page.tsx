@@ -9,21 +9,21 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
   title: "Platform: what you can do with Looped",
   description:
-    "Everything your event teams need to know, decide and move forward. Looped connects the picture across the event business, helps each team see what matters, and carries approved decisions into action.",
+    "Everything your event teams need to know, decide, act and keep learning. Looped connects the picture across the event business, recommends with the evidence, carries approved decisions through the systems you already use and verifies what happened.",
 };
 
 const GROUPS = [
   {
     kicker: "Know what matters",
-    heading: "Know what matters, without hunting for it.",
+    heading: "Know what is really happening, without hunting for it.",
     tone: "stone" as const,
     points: [
       "A live picture of each event: where it stands and what needs attention now.",
       "Audience and campaign health, read together rather than in separate reports.",
       "Market shifts, competitor moves and the signals that should change the plan.",
       "Commercial risks and opportunities, early enough to act on.",
+      "Exceptions and shortfalls raised as they appear, with the evidence attached.",
       "Ask Looped a question about an event, a brand, the portfolio or the whole business.",
-      "Visibility across the brand, the portfolio and the organisation.",
     ],
   },
   {
@@ -36,28 +36,29 @@ const GROUPS = [
       "Alternatives to compare when you want another route.",
       "Ask why, and probe the reasoning as far as you want.",
       "Adjust the plan before you commit to it.",
-      "Approve or reject. People stay in control of anything consequential.",
+      "Approve, decline, or let it run: you set which decisions Looped may take inside your rules and which always come back to a person.",
     ],
   },
   {
     kicker: "Put the decision to work",
-    heading: "Put the decision to work.",
+    heading: "Put the decision to work, in the systems you already use.",
     tone: "stone" as const,
     points: [
-      "Campaigns and messaging, ready to run.",
-      "Audience targeting and personalised outreach for the people that matter.",
-      "Call lists ordered by priority, with scripts to match.",
-      "Sponsorship and account plans, and the propositions to go with them.",
-      "Programme and event actions across the edition.",
-      "Team tasks, so the work lands with the right people.",
+      "Approved campaigns, messaging and audience targeting pushed into the tools your teams run them in.",
+      "Personalised outreach prepared and, once authorised, sent from the systems you already work in.",
+      "Call lists reordered in place, with scripts and talking points to match, inside your calling and suppression rules.",
+      "Sponsorship and account actions carried into your commercial systems.",
+      "Programme and event follow-up chased with the speakers, sponsors and suppliers it concerns.",
+      "A direct connection where a system offers one, the software interface itself where that is the better route, and the same governed workflow either way.",
     ],
   },
   {
     kicker: "Keep the business learning",
-    heading: "Keep the business learning.",
+    heading: "Keep the business learning from what actually happened.",
     tone: "paper" as const,
     points: [
-      "Measured outcomes, so you see what actually changed.",
+      "Verified outcomes, checked at the destination rather than assumed from a request that was sent.",
+      "Measured results, so you see what actually changed.",
       "Edition over edition, so the next event starts with what worked.",
       "Brand learning shared across the events inside it.",
       "Portfolio learning, so a win in one event becomes a play for the others.",
@@ -70,7 +71,7 @@ const ALSO = [
   { title: "AI voice for telesales", body: "Voice agents briefed from your approved scripts, using your own calling account, recorded and summarised for you." },
   { title: "Event website tools", body: "A chatbot that answers only from what you approve, an audience-matching quiz, and a secure portal for speakers and partners." },
   { title: "Lead capture", body: "Consent-based capture that routes to the right pipeline, with captured interest landing in real time." },
-  { title: "Flexible data connections", body: "Connects to your CRM, email and payment systems, at the level of connection that suits you." },
+  { title: "Flexible data connections", body: "Connects to your CRM, email and payment systems at the level that suits you, and can carry approved work back into them." },
 ];
 
 const PILLAR_LINKS = [
@@ -93,8 +94,9 @@ export default function PlatformPage(): React.ReactElement {
             Everything your event teams need to know, decide and move forward.
           </h1>
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
-            Looped connects the picture across the event business, helps each team see what matters, and carries approved
-            decisions into action. A person stays in control of every consequential call.
+            Looped connects the picture across the event business, helps each team see what matters, carries the
+            decisions you approve through the systems you already use, and verifies what actually happened. A person
+            stays in control of every consequential call.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
             <CtaButton href="/demo">Join the waitlist</CtaButton>
@@ -130,8 +132,11 @@ export default function PlatformPage(): React.ReactElement {
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <Reveal className="rounded-2xl border border-hairline bg-stone p-6 text-center shadow-[var(--lift-light)] sm:p-7">
           <p className="text-base leading-relaxed text-slate sm:text-lg">
-            A person approves every decision that carries a consequence. Personal data is kept out of the AI, access is
-            scoped by role, and Looped works with the data and systems you already have.
+            You set what Looped may observe, what it may prepare, what it may carry out inside your rules and what must
+            come back for approval, by organisation, by event and by kind of action. Where Looped cannot establish that
+            an action is permitted, or cannot confirm it completed, it surfaces the exception rather than guessing.
+            Personal data is kept out of the AI, access is scoped by role, and Looped works with the data and systems
+            you already have.
           </p>
         </Reveal>
       </div>

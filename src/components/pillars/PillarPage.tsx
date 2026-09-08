@@ -3,7 +3,13 @@ import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 
-export type PillarExample = { signal: string; insight: string; action: string };
+export type PillarExample = {
+  signal: string;
+  insight: string;
+  action: string;
+  /** What comes back once the action has run: the verified result and what Looped keeps from it. */
+  result: string;
+};
 
 type PillarPageProps = {
   /** Pillar name shown as the kicker, e.g. "Marketing / Audience". */
@@ -70,7 +76,7 @@ export function PillarPage({
         <div className="grid gap-4 lg:grid-cols-3">
           <ListCard label="What Looped helps you see" color="#7c3aed" items={sees} />
           <ListCard label="What it helps you decide" color="#ec4899" items={decisions} />
-          <ListCard label="What Looped can do once you approve" color="#fb923c" items={afterApproval} />
+          <ListCard label="What Looped does once you approve" color="#fb923c" items={afterApproval} />
         </div>
       </Panel>
 
@@ -85,9 +91,13 @@ export function PillarPage({
               </p>
               <p className="mt-2 text-sm leading-relaxed text-slate">{e.insight}</p>
               <p className="mt-4 flex items-center gap-2 kicker text-muted">
-                <span className="h-2 w-2 rounded-full bg-orange" aria-hidden /> What Looped can do
+                <span className="h-2 w-2 rounded-full bg-orange" aria-hidden /> What Looped does
               </p>
               <p className="mt-2 text-sm leading-relaxed text-slate">{e.action}</p>
+              <p className="mt-4 flex items-center gap-2 kicker text-muted">
+                <span className="h-2 w-2 rounded-full bg-grad-dot" aria-hidden /> What comes back
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-slate">{e.result}</p>
             </Reveal>
           ))}
         </div>

@@ -32,7 +32,7 @@ export const SITE_NAME = "Looped";
 export const DEFAULT_TITLE = "Looped. The AI operating system for conference & awards businesses";
 
 export const DEFAULT_DESCRIPTION =
-  "The art of events is yours. The intelligence is Looped. One operating system that holds the picture of every event you run, recommends with the evidence attached, carries the routine work and remembers what each edition learned.";
+  "The art of events is yours. The intelligence is Looped. One operating system that understands your events, works across the tools your teams already use and turns intelligence into action: recommended with the evidence attached, approved by you, carried through your stack and verified.";
 
 /**
  * The public launch journey. These, and only these, go in the sitemap.

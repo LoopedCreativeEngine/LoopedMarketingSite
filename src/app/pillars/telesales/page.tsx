@@ -22,21 +22,23 @@ export default function TelesalesPillarPage(): React.ReactElement {
         "Which approaches are actually converting.",
       ]}
       afterApproval={[
-        "Reorder the call list by who is worth calling first.",
+        "Reorder the call list in place, by who is worth calling first.",
         "Write per-prospect scripts and talking points.",
-        "Set follow-up timing around real signals.",
-        "Learn which approaches convert so the next list is sharper.",
+        "Work inside your calling, consent and suppression rules, so a name that should not be called is not.",
+        "Record the outcome of each call and feed it into tomorrow's list.",
       ]}
       examples={[
         {
           signal: "400 names on a call list. 74 worth calling first.",
           insight: "Looped ranks who is most likely to convert now, why they matter and what is relevant to them, so reps start where the return is.",
-          action: "On approval, Looped can reorder the list, rewrite the scripts and give each prospect its own talking points. You can ask why anyone ranks where they do.",
+          action: "Once approved, Looped reorders the list where your reps already work, rewrites the scripts and gives each prospect its own talking points, inside your calling, consent and suppression rules. You can ask why anyone ranks where they do.",
+          result: "Every call outcome comes back into the ranking, so tomorrow's list is built from what actually happened on the phone today rather than from the same static score.",
         },
         {
           signal: "The list is full, but the people who convert are not being called.",
           insight: "Effort and outcome have drifted apart: the reps are busy, but the highest-intent names are sitting untouched.",
-          action: "On approval, Looped can resurface the high-intent names, brief the reps on each one and set the follow-up cadence.",
+          action: "Once approved, Looped resurfaces the high-intent names at the top of the list, briefs the reps on each one and sets the follow-up cadence against real signals.",
+          result: "Looped watches whether those names were actually reached and what they said, and holds the ones that were missed open rather than letting them drop off the bottom of the list.",
         },
       ]}
       connects="Telesales works from the warm list marketing generates and the accounts commercial prioritises, and what converts on the phone feeds straight back into who marketing targets next."

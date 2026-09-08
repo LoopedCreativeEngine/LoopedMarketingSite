@@ -5,12 +5,12 @@ import { Reveal } from "@/components/motion/Reveal";
 
 /** The evidence cycle as the Looped loop: every recommendation stays connected to what happened next. */
 const NODES = [
-  { label: "Evidence", human: false },
-  { label: "Recommendation", human: false },
-  { label: "Human decision", human: true },
-  { label: "Execution", human: false },
-  { label: "Outcome", human: false },
-  { label: "Learning", human: false },
+  { label: "Understand", human: false },
+  { label: "Recommend", human: false },
+  { label: "Decide", human: true },
+  { label: "Act", human: false },
+  { label: "Verify", human: false },
+  { label: "Learn", human: false },
 ];
 
 function EvidenceCycle(): React.ReactElement {
@@ -42,7 +42,7 @@ function EvidenceCycle(): React.ReactElement {
   });
 
   return (
-    <svg viewBox="0 0 720 432" className="mx-auto h-auto w-full max-w-2xl" role="img" aria-label="Evidence becomes a recommendation, a person decides, Looped executes, the outcome is measured and the learning carries back into the next decision">
+    <svg viewBox="0 0 720 432" className="mx-auto h-auto w-full max-w-2xl" role="img" aria-label="Looped understands the picture and recommends, a person decides, Looped acts and verifies what happened, and the learning carries back into the next decision">
       <defs>
         <linearGradient id="ev-grad" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#a78bdb" />
@@ -104,12 +104,14 @@ export function EvidenceSection(): React.ReactElement {
         <Reveal className="space-y-5 lg:col-span-7 lg:pt-2">
           <p className="text-base leading-relaxed text-mist sm:text-lg">
             Most AI is judged on activity: words generated, hours saved. Looped is judged on what changed. Every
-            recommendation stays connected to the decision it informed, the action that followed and the outcome it
-            produced, so you can see which actions actually moved bookings, entries, partners and the room.
+            recommendation stays connected to the decision it informed, the action that followed and the outcome
+            verified at the other end, so you can see which moves actually shifted bookings, entries, partners and the
+            room.
           </p>
           <p className="text-base leading-relaxed text-mist sm:text-lg">
-            The calls that paid off are kept and carried into the next edition. The ones that didn&apos;t are kept too,
-            so nobody repeats them. That is how the intelligence earns its place.
+            An action that was attempted is not an action that worked. Looped checks the destination and records what
+            it finds there. The calls that paid off are carried into the next edition. The ones that didn&apos;t are
+            kept too, so nobody repeats them. That is how the intelligence earns its place.
           </p>
         </Reveal>
       </div>

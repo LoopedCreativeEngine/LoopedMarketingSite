@@ -16,7 +16,7 @@ function InputMoment(): React.ReactElement {
     <div className={CARD}>
       <p className={LABEL}>Tell Looped what changed</p>
       <div className="mt-4 flex flex-wrap gap-2">
-        {["Connect what you have", "Upload", "Type", "Say it"].map((c) => (
+        {["Connect your systems", "Upload", "Type", "Say it"].map((c) => (
           <span key={c} className="rounded-full border border-hairline bg-stone px-3.5 py-1.5 text-sm font-medium text-slate">{c}</span>
         ))}
       </div>
@@ -71,11 +71,11 @@ function DecisionMoment(): React.ReactElement {
   );
 }
 
-const FLOW = ["Approved move", "Execution", "Measured outcome", "Learning"];
+const FLOW = ["Approved", "Looped acts", "Verified", "Learned"];
 function ExecutionMoment(): React.ReactElement {
   return (
     <div className={CARD}>
-      <p className={LABEL}>From approval to measured outcome</p>
+      <p className={LABEL}>From approval to verified outcome</p>
       <ol className="mt-4 flex flex-wrap items-center gap-2.5">
         {FLOW.map((step, i) => (
           <li key={step} className="flex items-center gap-2.5">
@@ -84,7 +84,7 @@ function ExecutionMoment(): React.ReactElement {
           </li>
         ))}
       </ol>
-      <p className="mt-4 text-sm leading-relaxed text-slate">What works becomes part of the next decision.</p>
+      <p className="mt-4 text-sm leading-relaxed text-slate">What actually happened becomes part of the next decision.</p>
     </div>
   );
 }
@@ -116,7 +116,7 @@ const CHAPTERS: Chapter[] = [
     title: "Bring Looped up to speed",
     tone: "paper",
     side: "right",
-    steps: [{ title: "Tell Looped what you know", body: "Connect what you have, upload it, type it or say it. There is no long setup and no single starting point. Looped begins from wherever your event already is." }],
+    steps: [{ title: "Connect what you already have", body: "Bring together the event data, the historical performance and the systems your teams already work in. Connect them, upload what you have, type it or say it. There is no long setup and no single starting point: Looped begins from wherever your event already is." }],
     visuals: [<InputMoment key="i" />],
   },
   {
@@ -124,8 +124,8 @@ const CHAPTERS: Chapter[] = [
     tone: "stone",
     side: "left",
     steps: [
-      { title: "Looped builds the current picture", body: "It brings together your event, your audience, your market and what your team has done, into one live view that stays current as things change." },
-      { title: "Looped shows what matters", body: "The risks, opportunities and changes worth your attention surface on their own, each with the evidence behind it, so you are not hunting through dashboards to find them." },
+      { title: "Looped builds the picture", body: "Your event, your audience and performance, the market around you and what your teams have learned, held as one live view that stays current as things change." },
+      { title: "It shows you what matters", body: "Opportunities, risks, exceptions and shortfalls surface on their own, each with the evidence behind it, so you are not hunting through dashboards to find them." },
     ],
     visuals: [<IntelligenceMoment key="i" />],
   },
@@ -134,18 +134,18 @@ const CHAPTERS: Chapter[] = [
     tone: "paper",
     side: "right",
     steps: [
-      { title: "You explore and decide", body: "Ask why. Probe deeper. Compare routes. Adjust the plan. Then approve or reject. The judgement stays with your team, and nothing consequential happens until you decide." },
-      { title: "Looped does the work", body: "Once you approve, Looped carries the chosen move into the real work: campaigns, personalised outreach, call lists, commercial actions or programme and event tasks." },
+      { title: "You explore and decide", body: "Ask why. Inspect the reasoning and the evidence. Compare routes. Change the recommendation. Then approve or decline. Work inside rules you have already set can run; where judgement matters, the call stays with your team." },
+      { title: "Looped does the work", body: "Once authorised, Looped carries the action across the systems you already use, through a direct connection where one exists or, where that is the better route, through the software itself. Same workflow and same approvals either way." },
     ],
     visuals: [<DecisionMoment key="d" />, <ExecutionMoment key="e" />],
   },
   {
-    title: "Learn what worked",
+    title: "Verify, then learn",
     tone: "night",
     side: "none",
     steps: [
-      { title: "Looped tracks the result", body: "It measures what actually changed and keeps the outcome connected to the decision, so the next call is better informed than the last." },
-      { title: "The picture compounds", body: "What works carries forward: across editions, across a brand, across the portfolio and across the organisation. Every event starts better informed than the one before." },
+      { title: "It verifies the outcome", body: "Looped checks the destination and records what actually happened there. A request that was sent is not treated as a result, and anything it cannot confirm comes back as an exception rather than quietly closing." },
+      { title: "The learning stays", body: "The outcome stays with the event, sharpens the next action, and carries into the next edition and the wider portfolio picture. Every event starts better informed than the one before." },
     ],
     visuals: [],
   },
@@ -209,9 +209,9 @@ export default function HowItWorksPage(): React.ReactElement {
               What it feels like to work with Looped.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate">
-              No transformation programme and no blank prompt. You tell Looped what you know, it builds the current
-              picture and shows you what matters. You decide, Looped does the work, and the picture gets sharper every
-              edition.
+              No transformation programme and no blank prompt. You connect what you already have, Looped builds the
+              current picture and shows you what matters. You decide, Looped carries the work through your systems and
+              verifies what happened, and the picture gets sharper every edition.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
               <CtaButton href="/demo" full>Join the waitlist</CtaButton>
@@ -232,7 +232,7 @@ export default function HowItWorksPage(): React.ReactElement {
       <div className="mx-auto max-w-5xl px-5 py-20 text-center sm:px-6 sm:py-28 lg:px-8">
         <Reveal>
           <p className="mx-auto max-w-2xl font-serif text-2xl italic leading-snug text-ink sm:text-3xl">
-            You bring the judgement. <span className="text-grad">Looped brings the connected picture and the follow-through.</span>
+            You bring the judgement. <span className="text-grad">Looped brings the connected picture, the follow-through and the proof.</span>
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
             <CtaButton href="/demo">Join the waitlist</CtaButton>
