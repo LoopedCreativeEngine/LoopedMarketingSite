@@ -35,26 +35,44 @@ export const DEFAULT_DESCRIPTION =
   "The art of events is yours. The intelligence is Looped. One operating system that understands your events, works across the tools your teams already use and turns intelligence into action: recommended with the evidence attached, approved by you, carried through your stack and verified.";
 
 /**
- * The public launch journey. These, and only these, go in the sitemap.
+ * The public journey. These, and only these, go in the sitemap.
  *
- * The Platform page and the pillar pages are deliberately absent: they are
- * shelved from the public journey and carry robots noindex/nofollow of their
- * own. Listing a noindex page in a sitemap asks a crawler to fetch a page you
- * have told it to ignore, so they are excluded here as well as marked there.
+ * Platform and the working-area pages were shelved for launch and are public
+ * again: the site has to communicate the full breadth of the operating system,
+ * not only the journey through it. They are reached from the single Platform
+ * entry in the navigation rather than from a feature-directory nav.
+ *
+ * `/pillars/sponsorship` is absent on purpose. It is a redirect to
+ * `/pillars/commercial`, and a redirect does not belong in a sitemap.
  */
-export const PUBLIC_ROUTES = ["/", "/how-it-works", "/newsroom", "/demo", "/waitlist", "/privacy"] as const;
-
-/** Routes shelved from the public journey. Never in the sitemap. */
-export const SHELVED_ROUTES = [
+export const PUBLIC_ROUTES = [
+  "/",
+  "/how-it-works",
   "/platform",
-  "/pillars/commercial",
-  "/pillars/content",
-  "/pillars/event-management",
+  "/platform/conversations",
+  "/platform/communications",
+  "/platform/creative",
+  "/platform/data",
+  "/capabilities",
   "/pillars/marketing",
-  "/pillars/portfolio",
-  "/pillars/sponsorship",
+  "/pillars/content",
+  "/pillars/commercial",
   "/pillars/telesales",
+  "/pillars/event-management",
+  "/pillars/portfolio",
+  "/newsroom",
+  "/demo",
+  "/waitlist",
+  "/privacy",
 ] as const;
+
+/**
+ * Routes shelved from the public journey. Never in the sitemap.
+ *
+ * Empty rather than deleted: robots.txt still reads this list, so shelving a
+ * page again stays a one-line change in one file.
+ */
+export const SHELVED_ROUTES: readonly string[] = [];
 
 /** An absolute URL on this site, for canonicals and the sitemap. */
 export function absoluteUrl(path: string): string {

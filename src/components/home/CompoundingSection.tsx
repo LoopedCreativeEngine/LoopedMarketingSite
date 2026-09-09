@@ -3,6 +3,7 @@
 import { CompoundingFigure } from "@/components/brand/CompoundingFigure";
 import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
+import { OnwardLink } from "@/components/ui/OnwardLink";
 
 const LEVELS = [
   { name: "One edition", body: "A live picture of where the event stands, what is changing and which decisions matter now." },
@@ -46,6 +47,9 @@ export function CompoundingSection(): React.ReactElement {
             </div>
           ))}
         </dl>
+      </Reveal>
+      <Reveal className="mt-10">
+        <OnwardLink href="/pillars/portfolio">Portfolio intelligence in practice</OnwardLink>
       </Reveal>
     </Panel>
   );

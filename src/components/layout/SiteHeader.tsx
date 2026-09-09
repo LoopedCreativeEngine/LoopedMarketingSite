@@ -14,6 +14,7 @@ import { cn } from "@/lib/cn";
 const navLinks = [
   { href: "/#what-it-does", label: "What it does" },
   { href: "/how-it-works", label: "How it works" },
+  { href: "/platform", label: "Platform" },
   { href: "/#why-looped-exists", label: "Why Looped" },
   { href: "/newsroom", label: "Newsroom" },
 ];
@@ -40,7 +41,7 @@ export function SiteHeader(): React.ReactElement {
           <Wordmark />
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-6 md:flex lg:gap-8" aria-label="Primary">
           {navLinks.map((l) => (
             <Link key={l.href} href={l.href} className="text-[0.95rem] font-medium text-slate transition-colors hover:text-ink">
               {l.label}

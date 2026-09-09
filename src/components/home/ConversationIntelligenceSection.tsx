@@ -2,6 +2,7 @@
 
 import { Panel } from "@/components/layout/Panel";
 import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
+import { OnwardLink } from "@/components/ui/OnwardLink";
 
 /** What an exchange leaves behind. */
 const SIGNALS = [
@@ -82,6 +83,9 @@ export function ConversationIntelligenceSection(): React.ReactElement {
           The value isn&apos;t what Looped can show you in one session.{" "}
           <span className="text-grad">It&apos;s what it knows by the next one.</span>
         </p>
+      </Reveal>
+      <Reveal className="mt-10">
+        <OnwardLink href="/platform/communications">One journey across every channel</OnwardLink>
       </Reveal>
     </Panel>
   );

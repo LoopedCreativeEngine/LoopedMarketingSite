@@ -2,6 +2,7 @@
 
 import { Panel } from "@/components/layout/Panel";
 import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
+import { OnwardLink } from "@/components/ui/OnwardLink";
 
 /**
  * The same engine, met from the other side. Not a second product and not a
@@ -117,6 +118,9 @@ export function AroundTheEventSection(): React.ReactElement {
           is judged. And it can tell an authorised guest where they are sitting without letting anyone rearrange the
           room, browse who else is there, or make an introduction nobody approved.
         </p>
+      </Reveal>
+      <Reveal className="mt-10">
+        <OnwardLink href="/platform/conversations">How Looped meets each of them</OnwardLink>
       </Reveal>
     </Panel>
   );

@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
+
 import { PillarPage } from "@/components/pillars/PillarPage";
 
-export const metadata = { robots: { index: false, follow: false } };
+export const metadata: Metadata = {
+  title: "Event portfolio intelligence for leadership",
+  description:
+    "For portfolio and managing directors: comparable performance across events, audience and account overlap, and where the next intervention should go.",
+  alternates: { canonical: "/pillars/portfolio" },
+  openGraph: {
+    url: "/pillars/portfolio",
+    title: "Event portfolio intelligence for leadership",
+    description:
+      "For portfolio and managing directors: comparable performance across events, audience and account overlap, and where the next intervention should go.",
+  },
+};
 
 export default function PortfolioPillarPage(): React.ReactElement {
   return (
@@ -14,17 +27,26 @@ export default function PortfolioPillarPage(): React.ReactElement {
         "Shared audiences and shared sponsors that no single event can see.",
         "Which events are heading for trouble and which are ahead.",
         "What is changing across the portfolio right now, and the questions and objections recurring across every event.",
+        "Every event on the same scorecard, so performance is finally comparable rather than reported six different ways.",
+        "Sponsor whitespace: accounts buying one event that should be buying three.",
+        "Event trajectory: which are growing, holding, or quietly declining while the headline still looks acceptable.",
+        "The committed plan and the current modelled outlook, held side by side rather than one quietly replacing the other.",
       ]}
       decisions={[
         "Where to focus resource and attention.",
         "Which events need intervention now.",
         "What is worth reusing across the portfolio.",
         "Which proven interventions to roll out more widely.",
+        "Whether the number the business is run against is still reachable, and what would have to be true.",
+        "Where a spin-off, a new geography or a new format is worth testing.",
       ]}
       afterApproval={[
         "Carry a proven change across the events it fits, through each event's own systems.",
         "Prioritise where attention and resource go.",
         "Verify the outcome event by event, so a play is proven or retired on evidence rather than on reputation.",
+        "Coordinate a cross-sell across events from real overlap, without double-contacting anyone.",
+        "Refresh the budget scenarios against current performance, ready for the conversation you are about to have.",
+        "Keep the institutional memory: what worked, what did not, and why, so it outlasts the reorganisation.",
       ]}
       examples={[
         {

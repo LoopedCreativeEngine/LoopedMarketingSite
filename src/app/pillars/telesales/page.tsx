@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
+
 import { PillarPage } from "@/components/pillars/PillarPage";
 
-export const metadata = { robots: { index: false, follow: false } };
+export const metadata: Metadata = {
+  title: "Event telesales software: call lists and AI voice",
+  description:
+    "For telesales leads: prioritised call lists with the reason to call, objection intelligence, and AI voice on your own calling account.",
+  alternates: { canonical: "/pillars/telesales" },
+  openGraph: {
+    url: "/pillars/telesales",
+    title: "Event telesales software: call lists and AI voice",
+    description:
+      "For telesales leads: prioritised call lists with the reason to call, objection intelligence, and AI voice on your own calling account.",
+  },
+};
 
 export default function TelesalesPillarPage(): React.ReactElement {
   return (
@@ -14,18 +27,26 @@ export default function TelesalesPillarPage(): React.ReactElement {
         "Which names are worth a rep's time and which are noise.",
         "Conversion signals and the right moment to follow up.",
         "Audience gaps in the list that volume alone will not fix.",
+        "What has already been sent to this person, and on which channel they answered.",
+        "The objections rising in frequency this week, which usually means the market has moved.",
+        "The times of day each segment actually picks up.",
       ]}
       decisions={[
         "Who to call first, and what to lead with.",
         "Which follow-ups matter and when to make them.",
         "Where reps should focus their hours.",
         "Which approaches are actually converting.",
+        "Where AI voice earns its place, and where a person has to make the call.",
+        "Which names to warm with a message before anyone dials.",
       ]}
       afterApproval={[
         "Reorder the call list in place, by who is worth calling first.",
         "Write per-prospect scripts and talking points.",
         "Work inside your calling, consent and suppression rules, so a name that should not be called is not.",
         "Record the outcome of each call, and turn the objections raised into intelligence marketing and commercial can use.",
+        "Run AI voice on your own calling account, with every call recorded, transcribed and its outcome classified, inside a spend ceiling you set.",
+        "Hand a live conversation to a person with the context attached, rather than restarting it.",
+        "Reconcile the registrations that followed back against the calls and campaigns that produced them.",
       ]}
       examples={[
         {

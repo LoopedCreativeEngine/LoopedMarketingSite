@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
+
 import { PillarPage } from "@/components/pillars/PillarPage";
 
-export const metadata = { robots: { index: false, follow: false } };
+export const metadata: Metadata = {
+  title: "Awards management AI and event operations",
+  description:
+    "For event delivery and awards teams: the critical path, readiness and risk, and the awards year from categories through judging to winners.",
+  alternates: { canonical: "/pillars/event-management" },
+  openGraph: {
+    url: "/pillars/event-management",
+    title: "Awards management AI and event operations",
+    description:
+      "For event delivery and awards teams: the critical path, readiness and risk, and the awards year from categories through judging to winners.",
+  },
+};
 
 export default function EventManagementPillarPage(): React.ReactElement {
   return (
@@ -14,12 +27,17 @@ export default function EventManagementPillarPage(): React.ReactElement {
         "Milestone and deadline risk before it becomes a crisis.",
         "Programme and speaker readiness, sponsor fulfilment, and entries and judging status for awards.",
         "Dependencies across teams, what has just changed, and what entrants, speakers and sponsors are asking about.",
+        "For awards: entry pace by category against forecast, and which categories are quietly short.",
+        "Judging readiness: whether each panel is staffed, conflicted or still to score.",
+        "The half-finished entries sitting in the system as the deadline closes.",
       ]}
       decisions={[
         "What needs attention this week, and what can wait.",
         "Which milestones are at risk and where a slipped deadline ripples.",
         "What to escalate, and to whom.",
         "How to keep every team working from the current picture.",
+        "Which categories to intervene in before entries close.",
+        "What the awards night needs decided this week: tables, guests, access and running order.",
       ]}
       afterApproval={[
         "Reorder the plan around what matters now.",
@@ -27,6 +45,9 @@ export default function EventManagementPillarPage(): React.ReactElement {
         "Keep the exception open until the deliverable has actually landed, not from the moment the chaser was sent.",
         "Flag the decisions that need a person, and keep everyone aligned as the edition moves.",
         "Support the speakers, sponsors and entrants directly, so readiness chases itself instead of landing on your desk.",
+        "Guide entrants on category fit and what a complete entry involves, without ever writing the entry itself.",
+        "Coordinate judges: recruitment, conflicts, reminders and what is still outstanding before scoring closes.",
+        "Produce the finalist and winner assets the moment the result is confirmed, ready for one approval.",
       ]}
       examples={[
         {

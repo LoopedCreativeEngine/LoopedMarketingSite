@@ -4,6 +4,7 @@ import { LoopMark } from "@/components/brand/LoopMark";
 import { Panel } from "@/components/layout/Panel";
 import { MediaFrame } from "@/components/media/MediaFrame";
 import { Reveal } from "@/components/motion/Reveal";
+import { OnwardLink } from "@/components/ui/OnwardLink";
 
 /** RECOVERED frame-beside-copy composition (5ca71de LiveIntelligenceSection) with an illustrative exchange in the frame. */
 const MODES = [
@@ -76,6 +77,9 @@ export function ProductExperienceSection(): React.ReactElement {
           </MediaFrame>
         </Reveal>
       </div>
+      <Reveal className="mt-12">
+        <OnwardLink href="/capabilities">The full capability index</OnwardLink>
+      </Reveal>
     </Panel>
   );
 }

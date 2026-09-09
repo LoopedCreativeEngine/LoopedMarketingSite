@@ -4,10 +4,17 @@ import Link from "next/link";
 import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
+import { OnwardLink } from "@/components/ui/OnwardLink";
 
 export const metadata: Metadata = {
-  robots: { index: false, follow: false },
   title: "Platform: what you can do with Looped",
+  alternates: { canonical: "/platform" },
+  openGraph: {
+    url: "/platform",
+    title: "Platform: what you can do with Looped",
+    description:
+      "The complete Looped operating system: know what is happening, decide with the evidence, put approved decisions to work in the systems you already use, and keep the business learning.",
+  },
   description:
     "Everything your event teams need to know, decide, act and keep learning. Looped connects the picture across the event business, recommends with the evidence, carries approved decisions through the systems you already use, verifies what happened, and can meet the people around the event as well as the team running it.",
 };
@@ -91,6 +98,30 @@ const JOURNEY = [
   {
     stage: "Keep learning",
     body: "What the exchange revealed about demand, confusion and friction, returned to your event intelligence rather than left in a transcript.",
+  },
+];
+
+/** The four chapters that go deeper than the movements above. */
+const DOMAINS = [
+  {
+    name: "Conversations",
+    href: "/platform/conversations",
+    body: "The same intelligence, met by an entrant, a sponsor, a speaker, a judge or an attendee — and what it will not do for any of them.",
+  },
+  {
+    name: "Communications",
+    href: "/platform/communications",
+    body: "One journey per person across email, messaging and voice, with contact pressure, eligibility and outcome held together.",
+  },
+  {
+    name: "Creative",
+    href: "/platform/creative",
+    body: "The campaign assets an event actually consumes, produced at volume with the event intelligence already attached.",
+  },
+  {
+    name: "Data & systems",
+    href: "/platform/data",
+    body: "Your systems stay your systems. What Looped resolves between them, and the permission model around it.",
   },
 ];
 
@@ -200,11 +231,49 @@ export default function PlatformPage(): React.ReactElement {
         </div>
       </div>
 
+      {/* the platform in depth */}
+      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
+        <Reveal>
+          <p className="kicker text-muted">The platform in depth</p>
+          <h2 className="mt-5 max-w-3xl text-balance display-section">Four chapters, one operating system.</h2>
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
+            These are not separate products bolted to the side. They are the same intelligence and the same approval
+            model, expressed through the surfaces an event business actually runs on.
+          </p>
+        </Reveal>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {DOMAINS.map((d) => (
+            <Reveal key={d.href}>
+              <Link
+                href={d.href}
+                className="group block rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)] transition-colors hover:border-purple/40"
+              >
+                <span className="flex items-center justify-between gap-3">
+                  <span className="font-serif text-2xl text-ink transition-colors group-hover:text-purple">{d.name}</span>
+                  <span className="text-purple transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
+                    &rarr;
+                  </span>
+                </span>
+                <span className="mt-2 block text-sm leading-relaxed text-slate">{d.body}</span>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal className="mt-8">
+          <OnwardLink href="/capabilities">Does Looped do X? The full capability index</OnwardLink>
+        </Reveal>
+      </div>
+
       {/* explore by team */}
       <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
         <Reveal>
           <p className="kicker text-muted">Explore by team</p>
-          <div className="mt-5 flex flex-wrap gap-2">
+          <h2 className="mt-5 max-w-3xl text-balance display-section">Six working areas, one connected picture.</h2>
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
+            Each team meets Looped through the work they already own. The intelligence underneath is the same, which is
+            why a shift in one area reaches the others without a handover meeting.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-2">
             {PILLAR_LINKS.map((pillar) => (
               <Link
                 key={pillar.href}

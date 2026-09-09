@@ -2,6 +2,7 @@
 
 import { Panel } from "@/components/layout/Panel";
 import { Reveal, RevealItem, RevealStagger } from "@/components/motion/Reveal";
+import { OnwardLink } from "@/components/ui/OnwardLink";
 import { cn } from "@/lib/cn";
 
 /**
@@ -85,6 +86,9 @@ export function ConnectivitySection(): React.ReactElement {
             Your systems remain your systems. Looped becomes the intelligence and action layer across them.
           </span>
         </p>
+      </Reveal>
+      <Reveal className="mt-10">
+        <OnwardLink href="/platform/data" tone="night">Your data, your systems, your rules</OnwardLink>
       </Reveal>
     </Panel>
   );

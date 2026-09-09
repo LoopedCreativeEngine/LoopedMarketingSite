@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
+
 import { PillarPage } from "@/components/pillars/PillarPage";
 
-export const metadata = { robots: { index: false, follow: false } };
+export const metadata: Metadata = {
+  title: "Event programme management AI: agenda and speakers",
+  description:
+    "For content and programme leads: topic and speaker intelligence, agenda balance, and the speaker workflows that keep a programme moving.",
+  alternates: { canonical: "/pillars/content" },
+  openGraph: {
+    url: "/pillars/content",
+    title: "Event programme management AI: agenda and speakers",
+    description:
+      "For content and programme leads: topic and speaker intelligence, agenda balance, and the speaker workflows that keep a programme moving.",
+  },
+};
 
 export default function ContentPillarPage(): React.ReactElement {
   return (
@@ -14,12 +27,17 @@ export default function ContentPillarPage(): React.ReactElement {
         "Emerging themes the market is moving towards, and where the programme is behind them.",
         "Gaps and overlaps in the agenda, and sessions that are carrying more than their share.",
         "Speaker quality and fit, and how competitor programmes are positioned.",
+        "Which formats earned their complexity last time, and which quietly did not.",
+        "Where a theme is peaking across the sector, and where it has already passed.",
+        "Which speakers appear across your portfolio, how often, and whether that is an asset or a habit.",
       ]}
       decisions={[
         "Which themes to lead with this edition.",
         "Where the agenda has gaps worth filling and where it repeats itself.",
         "Which formats and speakers to prioritise.",
         "What to change before the programme locks.",
+        "Which sessions are worth a sponsor conversation, and which are not for sale.",
+        "What to do when a speaker drops four weeks out.",
       ]}
       afterApproval={[
         "Shape the agenda around what will land with the audience.",
@@ -27,6 +45,9 @@ export default function ContentPillarPage(): React.ReactElement {
         "Draft session titles, descriptions and supporting content, and publish what you approve.",
         "Track replies and confirmations, and keep a gap open until the seat is actually filled.",
         "Turn what delegates and speakers keep asking about into evidence for the next programme.",
+        "Collect bios, headshots, logos and slides through a secure link, and chase what has not arrived.",
+        "Issue briefing packs, chair notes and runsheets from the programme as it actually stands.",
+        "Show what a change breaks downstream: the copy already in market, the sponsor commitment attached, the session either side of it.",
       ]}
       examples={[
         {

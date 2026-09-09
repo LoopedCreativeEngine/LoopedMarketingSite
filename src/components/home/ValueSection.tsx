@@ -3,6 +3,7 @@
 import { SignalLoopFigure } from "@/components/brand/SignalLoopFigure";
 import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
+import { OnwardLink } from "@/components/ui/OnwardLink";
 
 /** The four buyer outcomes, in order: know, decide, act, verify. */
 const OUTCOMES = [
@@ -48,6 +49,9 @@ export function ValueSection(): React.ReactElement {
             </div>
           ))}
         </dl>
+      </Reveal>
+      <Reveal className="mt-10">
+        <OnwardLink href="/platform">See everything Looped does</OnwardLink>
       </Reveal>
     </Panel>
   );
