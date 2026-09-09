@@ -3,12 +3,14 @@ import Link from "next/link";
 
 import { Reveal } from "@/components/motion/Reveal";
 import { getArticles } from "@/lib/newsroom";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Newsroom: notes and announcements from Looped",
   description:
     "Notes, announcements and thinking from the team building Looped, the intelligence layer for event teams.",
-};
+  path: "/newsroom",
+});
 
 export default function NewsroomPage(): React.ReactElement {
   const articles = getArticles();

@@ -17,7 +17,7 @@ export function FinalCTASection(): React.ReactElement {
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-6 lg:px-8">
         <Reveal>
           <div className="flex items-center justify-center gap-3">
-            <span className="kicker text-iris">13</span>
+            <span className="kicker text-iris">14</span>
             <span className="kicker text-bone-dim">Founder note</span>
           </div>
           <h2 className="mx-auto mt-6 max-w-2xl text-balance display-section">

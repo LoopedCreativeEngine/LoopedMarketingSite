@@ -10,14 +10,18 @@ import { useState } from "react";
 import { Wordmark } from "@/components/brand/LoopMark";
 import { cn } from "@/lib/cn";
 
-const navLinks = [
-  { href: "/platform", label: "Platform" },
-  { href: "/how-it-works", label: "How it works" },
-  { href: "/newsroom", label: "Newsroom" },
-  { href: "/#pricing", label: "Pricing" },
+/** The platform story: what Looped is and how it runs. */
+const platformLinks = [
+  { href: "/platform", label: "Overview" },
+  { href: "/how-it-works", label: "How Looped works" },
+  { href: "/agents-and-conversations", label: "AI conversations" },
+  { href: "/communications", label: "Communications" },
+  { href: "/creative", label: "Creative" },
+  { href: "/data-and-integrations", label: "Data & integrations" },
 ];
 
-const pillarLinks = [
+/** One page per seat at the table. */
+const teamLinks = [
   { href: "/pillars/marketing", label: "Marketing" },
   { href: "/pillars/content", label: "Content" },
   { href: "/pillars/sponsorship", label: "Commercial" },
@@ -25,6 +29,59 @@ const pillarLinks = [
   { href: "/pillars/event-management", label: "Event Management" },
   { href: "/pillars/portfolio", label: "Portfolio" },
 ];
+
+const flatLinks = [
+  { href: "/capabilities", label: "Capabilities" },
+  { href: "/newsroom", label: "Newsroom" },
+  { href: "/#pricing", label: "Pricing" },
+];
+
+function DropdownPanel({ links }: { links: { href: string; label: string }[] }): React.ReactElement {
+  return (
+    <NavigationMenu.Content className="absolute left-0 top-8 w-64 rounded-2xl border border-[rgba(23,19,31,0.10)] bg-paper p-2.5 shadow-[var(--lift-light)]">
+      <div className="grid gap-0.5">
+        {links.map((link) => (
+          <NavigationMenu.Link asChild key={link.href}>
+            <Link
+              href={link.href}
+              className="rounded-lg px-3 py-2 text-sm text-graphite transition-colors hover:bg-sand/70 hover:text-ink-text"
+            >
+              {link.label}
+            </Link>
+          </NavigationMenu.Link>
+        ))}
+      </div>
+    </NavigationMenu.Content>
+  );
+}
+
+function MobileGroup({
+  heading,
+  links,
+  onNavigate,
+}: {
+  heading: string;
+  links: { href: string; label: string }[];
+  onNavigate: () => void;
+}): React.ReactElement {
+  return (
+    <div>
+      <p className="kicker text-muted-ink">{heading}</p>
+      <div className="mt-3 flex flex-col gap-3">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="text-sm font-medium text-graphite hover:text-violet"
+            onClick={onNavigate}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function SiteHeader(): React.ReactElement {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -34,6 +91,8 @@ export function SiteHeader(): React.ReactElement {
   useMotionValueEvent(scrollY, "change", (y) => {
     setElevated(y > 16);
   });
+
+  const closeMobile = (): void => setMobileOpen(false);
 
   return (
     <motion.header
@@ -50,31 +109,30 @@ export function SiteHeader(): React.ReactElement {
           <Wordmark />
         </Link>
 
-        <NavigationMenu.Root className="hidden md:block">
+        <NavigationMenu.Root className="hidden lg:block">
           <NavigationMenu.List className="flex items-center gap-7">
             <NavigationMenu.Item className="relative">
               <NavigationMenu.Trigger className="cursor-pointer text-sm font-medium text-graphite transition-colors hover:text-violet">
-                Pillars
+                Platform
               </NavigationMenu.Trigger>
-              <NavigationMenu.Content className="absolute left-0 top-8 w-64 rounded-2xl border border-[rgba(23,19,31,0.10)] bg-paper p-2.5 shadow-[var(--lift-light)]">
-                <div className="grid gap-0.5">
-                  {pillarLinks.map((l) => (
-                    <Link
-                      key={l.href}
-                      href={l.href}
-                      className="rounded-lg px-3 py-2 text-sm text-graphite transition-colors hover:bg-sand/70 hover:text-ink-text"
-                    >
-                      {l.label}
-                    </Link>
-                  ))}
-                </div>
-              </NavigationMenu.Content>
+              <DropdownPanel links={platformLinks} />
             </NavigationMenu.Item>
-            {navLinks.map((l) => (
-              <NavigationMenu.Item key={l.href}>
+
+            <NavigationMenu.Item className="relative">
+              <NavigationMenu.Trigger className="cursor-pointer text-sm font-medium text-graphite transition-colors hover:text-violet">
+                Teams
+              </NavigationMenu.Trigger>
+              <DropdownPanel links={teamLinks} />
+            </NavigationMenu.Item>
+
+            {flatLinks.map((link) => (
+              <NavigationMenu.Item key={link.href}>
                 <NavigationMenu.Link asChild>
-                  <Link href={l.href} className="text-sm font-medium text-graphite transition-colors hover:text-violet">
-                    {l.label}
+                  <Link
+                    href={link.href}
+                    className="text-sm font-medium text-graphite transition-colors hover:text-violet"
+                  >
+                    {link.label}
                   </Link>
                 </NavigationMenu.Link>
               </NavigationMenu.Item>
@@ -85,18 +143,18 @@ export function SiteHeader(): React.ReactElement {
         <div className="flex items-center gap-2">
           <Link
             href="/demo"
-            className="hidden cursor-pointer items-center rounded-full border border-[rgba(23,19,31,0.22)] px-4 py-2 text-sm font-semibold text-ink-text transition-colors hover:bg-sand/70 md:inline-flex"
+            className="hidden cursor-pointer items-center rounded-full border border-[rgba(23,19,31,0.22)] px-4 py-2 text-sm font-semibold text-ink-text transition-colors hover:bg-sand/70 xl:inline-flex"
           >
             Join the waitlist
           </Link>
           <Link
             href="/demo"
-            className="hidden cursor-pointer items-center rounded-full bg-violet px-4 py-2 text-sm font-semibold text-bone shadow-[var(--violet-emph)] transition-transform hover:-translate-y-0.5 md:inline-flex"
+            className="hidden cursor-pointer items-center rounded-full bg-violet px-4 py-2 text-sm font-semibold text-bone shadow-[var(--violet-emph)] transition-transform hover:-translate-y-0.5 sm:inline-flex"
           >
             Apply to pilot
           </Link>
 
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <Dialog.Root open={mobileOpen} onOpenChange={setMobileOpen}>
               <Dialog.Trigger asChild>
                 <button
@@ -109,7 +167,7 @@ export function SiteHeader(): React.ReactElement {
               </Dialog.Trigger>
               <Dialog.Portal>
                 <Dialog.Overlay className="fixed inset-0 z-50 bg-ink/40 backdrop-blur-sm" />
-                <Dialog.Content className="fixed right-0 top-0 z-50 flex h-full w-[min(100%,320px)] flex-col border-l border-[rgba(23,19,31,0.10)] bg-bone p-6 shadow-xl outline-none">
+                <Dialog.Content className="fixed right-0 top-0 z-50 flex h-full w-[min(100%,340px)] flex-col overflow-y-auto border-l border-[rgba(23,19,31,0.10)] bg-bone p-6 shadow-xl outline-none">
                   <div className="mb-8 flex items-center justify-between">
                     <Dialog.Title className="text-ink-text">
                       <Wordmark />
@@ -124,49 +182,36 @@ export function SiteHeader(): React.ReactElement {
                       </button>
                     </Dialog.Close>
                   </div>
-                  <div className="flex flex-col gap-4">
+
+                  <div className="flex flex-col gap-7">
                     <Link
                       href="/"
                       className="text-sm font-medium text-graphite hover:text-violet"
-                      onClick={() => setMobileOpen(false)}
+                      onClick={closeMobile}
                     >
                       Home
                     </Link>
-                    {navLinks.map((l) => (
+
+                    <MobileGroup heading="Platform" links={platformLinks} onNavigate={closeMobile} />
+                    <MobileGroup heading="Teams" links={teamLinks} onNavigate={closeMobile} />
+                    <MobileGroup heading="More" links={flatLinks} onNavigate={closeMobile} />
+
+                    <div className="flex flex-col gap-3 pb-6">
                       <Link
-                        key={l.href}
-                        href={l.href}
-                        className="text-sm font-medium text-graphite hover:text-violet"
-                        onClick={() => setMobileOpen(false)}
+                        href="/demo"
+                        className="inline-flex w-fit rounded-full bg-violet px-5 py-2.5 text-sm font-semibold text-bone"
+                        onClick={closeMobile}
                       >
-                        {l.label}
+                        Apply to pilot
                       </Link>
-                    ))}
-                    <div className="my-1 h-px w-full bg-[rgba(23,19,31,0.10)]" />
-                    {pillarLinks.map((l) => (
                       <Link
-                        key={l.href}
-                        href={l.href}
-                        className="text-sm font-medium text-graphite hover:text-violet"
-                        onClick={() => setMobileOpen(false)}
+                        href="/demo"
+                        className="inline-flex w-fit rounded-full border border-[rgba(23,19,31,0.22)] px-5 py-2.5 text-sm font-semibold text-ink-text"
+                        onClick={closeMobile}
                       >
-                        {l.label}
+                        Join the waitlist
                       </Link>
-                    ))}
-                    <Link
-                      href="/demo"
-                      className="mt-2 inline-flex w-fit rounded-full bg-violet px-5 py-2.5 text-sm font-semibold text-bone"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      Apply to pilot
-                    </Link>
-                    <Link
-                      href="/demo"
-                      className="inline-flex w-fit rounded-full border border-[rgba(23,19,31,0.22)] px-5 py-2.5 text-sm font-semibold text-ink-text"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      Join the waitlist
-                    </Link>
+                    </div>
                   </div>
                 </Dialog.Content>
               </Dialog.Portal>

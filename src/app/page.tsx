@@ -6,6 +6,7 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { LiveIntelligenceSection } from "@/components/sections/LiveIntelligenceSection";
 import { OptionalAutomationSection } from "@/components/sections/OptionalAutomationSection";
 import { PillarsSection } from "@/components/sections/PillarsSection";
+import { PlatformBridgeSection } from "@/components/sections/PlatformBridgeSection";
 import { PricingSection } from "@/components/sections/PricingSection";
 import { RaiseBarSection } from "@/components/sections/RaiseBarSection";
 import { ROICalculatorSection } from "@/components/sections/ROICalculatorSection";
@@ -25,6 +26,7 @@ export default function HomePage(): React.ReactElement {
       <TheShiftSection />
       <RaiseBarSection />
       <OptionalAutomationSection />
+      <PlatformBridgeSection />
       <PillarsSection />
       <LiveIntelligenceSection />
       <ROICalculatorSection />

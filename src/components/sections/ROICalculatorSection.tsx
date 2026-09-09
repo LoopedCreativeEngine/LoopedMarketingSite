@@ -44,7 +44,7 @@ export function ROICalculatorSection(): React.ReactElement {
   }, [eventsPerYear, dayRate]);
 
   return (
-    <Panel tone="ink" index="11" kicker="What it's worth" width="narrow">
+    <Panel tone="ink" index="12" kicker="What it's worth" width="narrow">
       <Reveal>
         <h2 className="text-balance text-center display-section">What could Looped be worth to your team?</h2>
         <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-bone-dim">

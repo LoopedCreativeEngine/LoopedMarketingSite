@@ -1,6 +1,15 @@
-import { Reveal } from "@/components/motion/Reveal";
+import type { Metadata } from "next";
 
+import { Reveal } from "@/components/motion/Reveal";
+import { pageMetadata } from "@/lib/seo";
 import { site } from "@/styles/design-system";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Privacy policy",
+  description:
+    "How Looped, a product of Entwistle Digital Group Ltd, handles information collected through this marketing site.",
+  path: "/privacy",
+});
 
 export default function PrivacyPage(): React.ReactElement {
   return (

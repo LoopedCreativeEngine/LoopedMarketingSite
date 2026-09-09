@@ -45,7 +45,9 @@ export function Panel({
   return (
     <section
       id={id}
-      className={cn("relative py-20 sm:py-28", id ? "scroll-mt-24" : undefined, toneClass, className)}
+      /* scroll-mt clears the fixed header plus the sticky section nav some
+         pages add underneath it, so an anchored panel never lands behind them. */
+      className={cn("relative py-20 sm:py-28", id ? "scroll-mt-32" : undefined, toneClass, className)}
     >
       <div className={cn("mx-auto px-5 sm:px-6 lg:px-8", WIDTHS[width], containerClassName)}>
         {index || kicker ? (

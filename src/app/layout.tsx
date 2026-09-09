@@ -7,6 +7,7 @@ import { LoopRail } from "@/components/effects/LoopRail";
 import { SmoothScrollProvider } from "@/components/effects/SmoothScrollProvider";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { SITE_NAME, SITE_URL } from "@/lib/seo";
 
 import "./globals.css";
 
@@ -32,9 +33,29 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Looped: the intelligence layer for event teams",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Looped: the intelligence layer for event teams",
+    template: `%s | ${SITE_NAME}`,
+  },
   description:
-    "Looped turns the work your event teams already do into one connected intelligence engine across marketing, content, operations and sales. Purpose-built by event professionals for conference and awards events.",
+    "Looped turns the work your event teams already do into one connected intelligence engine. Built by event professionals for conferences and awards.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Looped: the intelligence layer for event teams",
+    description:
+      "One intelligence layer for conference and awards organisers: market and audience intelligence, planning, working hubs, creative, AI conversations, communications and governed execution.",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Looped: the intelligence layer for event teams",
+    description:
+      "One intelligence layer for conference and awards organisers, from market intelligence to governed execution.",
+  },
   icons: {
     icon: [{ url: "/loop-mark.svg", type: "image/svg+xml" }],
   },

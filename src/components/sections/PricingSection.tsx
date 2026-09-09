@@ -43,7 +43,7 @@ const BENEFITS = [
 
 export function PricingSection(): React.ReactElement {
   return (
-    <Panel tone="bone" id="pricing" index="12" kicker="Pricing">
+    <Panel tone="bone" id="pricing" index="13" kicker="Pricing">
       <Reveal>
         <h2 className="text-balance text-center display-section">Pricing available on request.</h2>
         <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-relaxed text-graphite sm:text-lg">

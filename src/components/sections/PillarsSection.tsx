@@ -40,7 +40,7 @@ const PILLARS = [
 
 export function PillarsSection(): React.ReactElement {
   return (
-    <Panel tone="ink" id="pillars" index="09" kicker="The pillars">
+    <Panel tone="ink" id="pillars" index="10" kicker="The pillars">
       <Reveal className="max-w-3xl">
         <h2 className="text-balance display-section">AI built for the people who build events.</h2>
         <p className="mt-5 text-lg leading-relaxed text-bone-dim">

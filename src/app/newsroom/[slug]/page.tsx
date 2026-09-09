@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { getArticle, getArticleSlugs } from "@/lib/newsroom";
+import { SITE_URL } from "@/lib/seo";
 
 type ArticleParams = { params: Promise<{ slug: string }> };
 
@@ -21,9 +22,20 @@ export async function generateMetadata({ params }: ArticleParams): Promise<Metad
   if (!article) {
     return { title: "Newsroom" };
   }
+  const path = `/newsroom/${article.slug}`;
   return {
-    title: `${article.title} · Looped Newsroom`,
+    title: article.title,
     description: article.standfirst,
+    alternates: { canonical: path },
+    openGraph: {
+      title: `${article.title} | Looped Newsroom`,
+      description: article.standfirst,
+      url: `${SITE_URL}${path}`,
+      siteName: "Looped",
+      locale: "en_GB",
+      type: "article",
+      publishedTime: article.date,
+    },
   };
 }
 
