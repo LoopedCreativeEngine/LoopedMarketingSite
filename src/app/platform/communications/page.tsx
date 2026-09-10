@@ -4,12 +4,11 @@ import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 import { PageClosing } from "@/components/ui/PageClosing";
 import { PageIntro } from "@/components/ui/PageIntro";
-import { AvailabilityNote, StatusPill, type Availability } from "@/components/ui/StatusPill";
 
 export const metadata: Metadata = {
   title: "Event communications: WhatsApp, SMS, RCS and email",
   description:
-    "One journey per person across email, messaging and voice, with contact pressure, eligibility and outcome held together, not split across four tools.",
+    "One journey per person across email, messaging and voice, with what you have already asked of them and who you may contact held in one place.",
   alternates: { canonical: "/platform/communications" },
   openGraph: {
     url: "/platform/communications",
@@ -22,18 +21,18 @@ export const metadata: Metadata = {
 const JOURNEY: { channel: string; event: string; consequence: string; pivot?: boolean }[] = [
   {
     channel: "Email",
-    event: "Programme announcement opened, nothing clicked",
-    consequence: "Interest noted. Not enough to act on by itself.",
+    event: "Opens the programme announcement, clicks nothing",
+    consequence: "Worth noting. Not worth acting on yet.",
   },
   {
     channel: "RCS",
-    event: "Session line-up sent as a rich card",
-    consequence: "Delivered to a channel they actually read, with the programme visible in the message.",
+    event: "Gets the session line-up as a rich card",
+    consequence: "Lands on a channel they actually read, with the programme visible in the message.",
   },
   {
     channel: "WhatsApp",
-    event: "They reply asking about day two",
-    consequence: "A real signal, and a specific one. The reply reaches the team that owns it.",
+    event: "Replies asking about day two",
+    consequence: "A real signal, and a specific one. It reaches the team that owns the answer.",
     pivot: true,
   },
   {
@@ -44,76 +43,71 @@ const JOURNEY: { channel: string; event: string; consequence: string; pivot?: bo
   {
     channel: "Outcome",
     event: "Registers, and books two colleagues",
-    consequence: "The registration reconciles back against the campaign and the call.",
+    consequence: "The booking is matched back to the campaign and the call that produced it.",
   },
   {
     channel: "Next edition",
-    event: "Carried forward as a known attendee",
-    consequence: "Their channel, their interests and their history start the next journey.",
+    event: "Starts as someone you already know",
+    consequence: "Their channel, their interests and their history are the starting point.",
   },
 ];
 
-const CHANNELS: { name: string; useFor: string; detail: string; status: Availability }[] = [
+const CHANNELS = [
   {
     name: "Email",
-    useFor: "Depth and formality",
+    useFor: "Depth and detail",
     detail:
-      "Runs through your existing sending account and sender reputation, driven by the approved plan rather than rebuilt in a separate tool.",
-    status: "live",
+      "Sent from your own account and your own sender reputation, sequenced from the plan your team approved rather than rebuilt in a separate tool.",
   },
   {
     name: "WhatsApp",
     useFor: "Conversation and reply",
     detail:
-      "For the audiences who will answer a message but never an email, and where the reply is the point rather than a click.",
-    status: "soon",
+      "For the people who will answer a message but never an email, and for the moments when the reply is the whole point.",
   },
   {
     name: "SMS",
     useFor: "Urgency and reach",
     detail: "Deadline reminders, day-before logistics and the messages that simply have to arrive.",
-    status: "soon",
   },
   {
     name: "RCS",
     useFor: "Rich, branded messaging",
     detail:
       "Programme cards, speaker reveals and finalist announcements delivered with the artwork attached, from a verified sender.",
-    status: "soon",
   },
   {
-    name: "Voice and telesales",
+    name: "Voice",
     useFor: "The conversation that closes",
     detail:
-      "Human callers and AI voice working the same prioritised list from the same context, on your own calling account with a spend ceiling per event.",
-    status: "pilot",
+      "Your callers and AI voice working the same list from the same context, on your own calling account and inside a spend ceiling you set.",
   },
 ];
 
 const DISCIPLINE = [
   {
-    title: "Contact pressure",
-    body: "How much your organisation has already asked of someone this month, across every event and channel, before anyone asks again.",
+    title: "How much you have already asked",
+    body: "Looped knows what your organisation has sent this person this month, across every event and channel, before anyone asks them for anything else.",
   },
   {
-    title: "Brand-level coordination",
-    body: "Communication is planned at the level of your brand, not per campaign, so two events in the same portfolio stop competing for the same inbox.",
+    title: "Coordinated across the brand",
+    body: "Communication is planned at brand level, not per campaign, so two of your events stop competing for the same inbox.",
   },
   {
-    title: "Eligibility at the point of sending",
-    body: "Consent, preference and suppression are checked when the message goes, not reconciled afterwards. Seeing a contact is not the same as being allowed to message them.",
+    title: "Eligibility checked when it matters",
+    body: "Consent, preference and suppression are applied at the moment of sending, per channel. Being able to see a contact is not the same as being allowed to message them.",
   },
   {
-    title: "Sequenced around the person",
-    body: "Channels are ordered by what that individual actually responds to, rather than by what is cheapest to send.",
+    title: "Ordered around the person",
+    body: "Channels follow what this individual actually responds to, not what is cheapest to send.",
   },
   {
-    title: "Measured on outcome",
+    title: "Measured on what happened",
     body: "Registrations, revenue and conversations, not opens. A campaign that was opened and ignored has not worked.",
   },
   {
-    title: "Verified, not assumed",
-    body: "Looped checks what arrived at the destination. An attempted send is never quietly counted as a success.",
+    title: "Confirmed, not assumed",
+    body: "Looped checks the message arrived. A send that failed quietly is never counted as a success.",
   },
 ];
 
@@ -123,39 +117,63 @@ export default function CommunicationsPage(): React.ReactElement {
       <PageIntro
         kicker="Communications"
         title="One journey across every channel."
-        lede="Your audience does not experience an email campaign, a messaging campaign and a call list. They experience your brand, repeatedly, in whatever order it arrives."
-        support="Looped runs it as one journey per person rather than five campaigns per team, so a reply in one channel changes what happens in the next."
+        lead="Your audience does not experience an email campaign, a messaging campaign and a call list. They experience your brand, over and over, in whatever order it reaches them."
+        support="Looped runs it as one journey per person, so a reply on one channel changes what happens on the next."
       />
 
       {/* the journey */}
       <Panel tone="stone" kicker="One journey">
-        <Reveal className="max-w-3xl">
-          <h2 className="text-balance display-section">What a single relationship actually looks like.</h2>
-          <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
-            Six touches, four channels, two teams. In most organisations these live in different systems and nobody
-            reconciles them. Here, each one changes what happens next.
-          </p>
-        </Reveal>
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-5">
+            <h2 className="text-balance display-section">What one relationship actually looks like.</h2>
+          </Reveal>
+          <Reveal className="lg:col-span-7 lg:pt-2">
+            <p className="text-base leading-relaxed text-slate sm:text-lg">
+              Six touches, four channels, two teams. In most organisations these sit in different systems and nobody
+              joins them up. Here, each one changes what happens next.
+            </p>
+          </Reveal>
+        </div>
 
         <div className="relative mt-12">
-          <div className="absolute left-[11px] top-2 bottom-2 w-px bg-purple/20 lg:hidden" aria-hidden />
-          <div className="absolute left-0 right-0 top-[11px] hidden h-px bg-purple/20 lg:block" aria-hidden />
+          <div className="absolute left-[11px] top-2 bottom-2 w-px bg-hairline lg:hidden" aria-hidden />
+          <svg
+            className="absolute left-0 right-0 top-[11px] hidden h-px w-full lg:block"
+            viewBox="0 0 1000 2"
+            preserveAspectRatio="none"
+            aria-hidden
+          >
+            <line x1="0" y1="1" x2="1000" y2="1" stroke="#ece9e4" strokeWidth="2" />
+            <line
+              x1="0"
+              y1="1"
+              x2="1000"
+              y2="1"
+              stroke="#ec4899"
+              strokeWidth="2"
+              className="signal-flow signal-flow-slow"
+            />
+          </svg>
           <ol className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-6 lg:gap-3">
             {JOURNEY.map((stop) => (
               <li key={stop.channel} className="relative flex gap-4 lg:block">
                 <span
-                  className="mt-1 h-[23px] w-[23px] shrink-0 rounded-full border border-purple/40 bg-paper lg:mt-0"
+                  className={
+                    stop.pivot
+                      ? "mt-1 h-[23px] w-[23px] shrink-0 rounded-full border-[3px] border-pink bg-paper lg:mt-0"
+                      : "mt-1 h-[23px] w-[23px] shrink-0 rounded-full border-2 border-hairline bg-paper lg:mt-0"
+                  }
                   aria-hidden
                 />
                 <div
                   className={
                     stop.pivot
-                      ? "flex-1 rounded-2xl border border-purple/35 bg-purple/[0.05] p-4 lg:mt-4"
+                      ? "flex-1 rounded-2xl border border-pink/40 bg-pink/[0.04] p-4 lg:mt-4"
                       : "flex-1 rounded-2xl border border-hairline bg-paper p-4 shadow-[var(--lift-light)] lg:mt-4"
                   }
                 >
                   <p className="kicker text-purple">{stop.channel}</p>
-                  <p className="mt-2.5 text-sm font-semibold leading-snug text-ink">{stop.event}</p>
+                  <h3 className="mt-2.5 font-serif text-lg leading-snug text-ink">{stop.event}</h3>
                   <p className="mt-1.5 text-xs leading-relaxed text-slate">{stop.consequence}</p>
                 </div>
               </li>
@@ -166,39 +184,37 @@ export default function CommunicationsPage(): React.ReactElement {
         <Reveal className="mt-8 rounded-2xl border border-hairline bg-paper p-5 shadow-[var(--lift-light)] sm:p-6">
           <p className="flex items-center gap-2.5 kicker text-muted">
             <span className="h-2 w-2 rounded-full bg-grad-dot" aria-hidden />
-            Outcome
+            The point
           </p>
           <p className="mt-3 text-base leading-relaxed text-slate">
-            One person, one journey. The reply changed the call list, the call closed the registration, and the
-            registration reconciled back against both. Nobody had to join those dots by hand.
+            One person, one journey. The reply changed the call list, the call closed the booking, and the booking was
+            matched back to both. Nobody joined those dots by hand.
           </p>
         </Reveal>
       </Panel>
 
       {/* channels */}
       <Panel tone="paper" kicker="Channels">
-        <Reveal className="max-w-3xl">
-          <h2 className="text-balance display-section">The channels your audience actually uses.</h2>
-          <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
-            Each one does something the others cannot. The point is not to be on all of them. It is that they behave as
-            one conversation when you are.
-          </p>
-        </Reveal>
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-5">
+            <h2 className="text-balance display-section">The channels your audience actually uses.</h2>
+          </Reveal>
+          <Reveal className="lg:col-span-7 lg:pt-2">
+            <p className="text-base leading-relaxed text-slate sm:text-lg">
+              Each one does something the others cannot. The point is not being on all of them. It is that they behave
+              as one conversation when you are.
+            </p>
+          </Reveal>
+        </div>
         <ul className="mt-10 divide-y divide-hairline border-y border-hairline">
           {CHANNELS.map((c) => (
             <li key={c.name} className="grid gap-2 py-5 md:grid-cols-12 md:items-baseline md:gap-6">
-              <div className="flex items-center gap-3 md:col-span-3">
-                <h3 className="font-serif text-xl text-ink">{c.name}</h3>
-                <StatusPill status={c.status} />
-              </div>
+              <h3 className="font-serif text-xl text-ink md:col-span-3">{c.name}</h3>
               <p className="text-sm font-semibold text-muted md:col-span-3">{c.useFor}</p>
               <p className="text-sm leading-relaxed text-slate md:col-span-6">{c.detail}</p>
             </li>
           ))}
         </ul>
-        <Reveal className="mt-8">
-          <AvailabilityNote className="max-w-3xl" />
-        </Reveal>
       </Panel>
 
       {/* connected to what you own */}
@@ -209,13 +225,14 @@ export default function CommunicationsPage(): React.ReactElement {
           </Reveal>
           <Reveal className="space-y-5 lg:col-span-7 lg:pt-2">
             <p className="text-base leading-relaxed text-mist sm:text-lg">
-              Looped is not another sending platform to migrate to. It connects to the accounts, numbers and providers
-              you already run, and coordinates them. Your sender reputation stays yours. Your contracts stay yours.
+              Looped is not another sending platform to move to. It works through the accounts, numbers and providers
+              you already run.{" "}
+              <span className="font-semibold text-snow">Your sender reputation stays yours. Your contracts stay yours.</span>
             </p>
             <p className="text-base leading-relaxed text-mist sm:text-lg">
-              Approved work is carried into those systems through a direct connection where one exists, and through the
-              software itself where that is the better route. To your team it is one Looped workflow either way, with
-              the same approvals and the same record of what actually happened.
+              Because Looped knows who someone is and where they are in the event, your team stops rebuilding the same
+              lists every campaign. The right people receive the right thing because their situation has changed, not
+              because somebody rebuilt a segment on a Friday afternoon.
             </p>
           </Reveal>
         </div>
@@ -223,17 +240,21 @@ export default function CommunicationsPage(): React.ReactElement {
 
       {/* the discipline */}
       <Panel tone="stone" kicker="The part most tools skip">
-        <Reveal className="max-w-3xl">
-          <h2 className="text-balance display-section">Anyone can send more messages.</h2>
-          <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
-            The difficult, valuable work is knowing when not to, who is genuinely eligible, and whether any of it made a
-            difference.
-          </p>
-        </Reveal>
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-5">
+            <h2 className="text-balance display-section">Anyone can send more messages.</h2>
+          </Reveal>
+          <Reveal className="lg:col-span-7 lg:pt-2">
+            <p className="text-base leading-relaxed text-slate sm:text-lg">
+              The hard part is knowing when not to, who you are actually allowed to contact, and whether any of it made
+              a difference.
+            </p>
+          </Reveal>
+        </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {DISCIPLINE.map((d) => (
             <Reveal key={d.title} className="rounded-2xl border border-hairline bg-paper p-6 shadow-[var(--lift-light)]">
-              <h3 className="font-serif text-lg text-ink">{d.title}</h3>
+              <h3 className="font-serif text-xl text-ink">{d.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate">{d.body}</p>
             </Reveal>
           ))}
@@ -251,7 +272,7 @@ export default function CommunicationsPage(): React.ReactElement {
           {
             href: "/platform/creative",
             label: "Creative",
-            blurb: "The assets that fill these messages, produced per name rather than per template.",
+            blurb: "The assets that fill these messages, made for each name rather than from a template.",
           },
           {
             href: "/pillars/telesales",

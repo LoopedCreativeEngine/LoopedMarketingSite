@@ -4,23 +4,22 @@ import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 import { PageClosing } from "@/components/ui/PageClosing";
 import { PageIntro } from "@/components/ui/PageIntro";
-import { AvailabilityNote, StatusPill, type Availability } from "@/components/ui/StatusPill";
 import { cn } from "@/lib/cn";
 
 export const metadata: Metadata = {
-  title: "Capabilities: what Looped does, honestly labelled",
+  title: "Capabilities: everything Looped does",
   description:
-    "The full capability index for conference and awards teams, grouped as an event team would ask about it, with a label on anything still rolling out.",
+    "Everything Looped does for a conference and awards business, grouped the way an event team would ask about it.",
   alternates: { canonical: "/capabilities" },
   openGraph: {
     url: "/capabilities",
-    title: "Capabilities: what Looped does, honestly labelled",
+    title: "Capabilities: everything Looped does",
     description:
-      "The diligence page. Every capability grouped for an event team, with an honest label on anything still rolling out.",
+      "Everything Looped does for a conference and awards business, grouped the way an event team would ask about it.",
   },
 };
 
-type Item = { title: string; body: string; status?: Availability };
+type Item = { title: string; body: string };
 type Category = { id: string; name: string; intro: string; items: Item[] };
 type Chapter = { id: string; kicker: string; title: string; lede: string; tone: "paper" | "stone" | "night"; categories: Category[] };
 
@@ -69,8 +68,8 @@ const CHAPTERS: Chapter[] = [
           { title: "Revenue forecasts", body: "Delegate, sponsorship and table revenue modelled together." },
           { title: "Conversion forecasts", body: "Expected conversion by funnel stage and segment." },
           { title: "Renewal risk", body: "Which contracted partners are showing the signals that precede a non-renewal." },
-          { title: "Target achievability", body: "Whether the committed number is still reachable, and what would have to change.", status: "pilot" },
-          { title: "Multi-year pipeline", body: "Sponsor, delegate and speaker pipeline across future editions.", status: "pilot" },
+          { title: "Target achievability", body: "Whether the committed number is still reachable, and what would have to change." },
+          { title: "Multi-year pipeline", body: "Sponsor, delegate and speaker pipeline across future editions." },
         ],
       },
     ],
@@ -95,7 +94,7 @@ const CHAPTERS: Chapter[] = [
           { title: "Search and answer-engine strategy", body: "Keyword research mapped to pages, and copy shaped for how people now search." },
           { title: "Landing and registration copy", body: "Registration page structure and copy, with tracking conventions." },
           { title: "Lapsed and returning audiences", body: "Reactivation of the people who came before and did not come back." },
-          { title: "Abandoned registration recovery", body: "The journeys that pick up people who started and stopped.", status: "pilot" },
+          { title: "Abandoned registration recovery", body: "The journeys that pick up people who started and stopped." },
           { title: "Campaign optimisation", body: "A weekly read on underperformance with budget and creative pivots." },
         ],
       },
@@ -105,9 +104,9 @@ const CHAPTERS: Chapter[] = [
         intro: "One journey per person, across the channels you own.",
         items: [
           { title: "Email", body: "Through your own sending account and sender reputation." },
-          { title: "WhatsApp, SMS and RCS", body: "Messaging through your own numbers and verified sender.", status: "soon" },
+          { title: "WhatsApp, SMS and RCS", body: "Messaging through your own numbers and verified sender." },
           { title: "Shared communications view", body: "What has been sent, what came back and what is queued, visible to every team." },
-          { title: "Reply triage", body: "Incoming replies read, summarised and routed rather than left in an inbox.", status: "pilot" },
+          { title: "Reply triage", body: "Incoming replies read, summarised and routed rather than left in an inbox." },
           { title: "Contact pressure", body: "How much your brand has already asked of someone before anyone asks again." },
           { title: "Suppression and eligibility", body: "Consent, preference and suppression enforced at the point of sending." },
           { title: "Role-aware messaging", body: "The same person addressed correctly as speaker, sponsor contact, judge or delegate." },
@@ -124,9 +123,9 @@ const CHAPTERS: Chapter[] = [
           { title: "Banners and email graphics", body: "Display and email creative across the sizes your channels need." },
           { title: "Share assets", body: "Assets people will genuinely post, not ones they are asked to." },
           { title: "Concept territories", body: "Creative directions with names, visual themes and headline angles." },
-          { title: "Connected image generation", body: "Generation briefed by the approved event context and brand rules.", status: "pilot" },
-          { title: "Short-form video", body: "Video for the few formats where it genuinely helps.", status: "soon" },
-          { title: "Handoff to design tools", body: "Assets and copy leaving in a form your designers can take further.", status: "soon" },
+          { title: "Connected image generation", body: "Generation briefed by the approved event context and brand rules." },
+          { title: "Short-form video", body: "Video for the few formats where it genuinely helps." },
+          { title: "Handoff to design tools", body: "Assets and copy leaving in a form your designers can take further." },
         ],
       },
       {
@@ -136,10 +135,10 @@ const CHAPTERS: Chapter[] = [
         items: [
           { title: "Audience segmentation", body: "Segments built from behaviour and history, not just job title." },
           { title: "Group bookings", body: "Group opportunities, rate strategy and outreach." },
-          { title: "VIP journeys", body: "Distinct treatment for the attendees the event genuinely depends on.", status: "pilot" },
-          { title: "Pre-event information", body: "Practical arrival, agenda and logistics communication.", status: "pilot" },
-          { title: "Dietary and accessibility needs", body: "Collected properly and carried through to the day.", status: "pilot" },
-          { title: "Session and people suggestions", body: "Who and what is worth an attendee's time, from what they came for.", status: "soon" },
+          { title: "VIP journeys", body: "Distinct treatment for the attendees the event genuinely depends on." },
+          { title: "Pre-event information", body: "Practical arrival, agenda and logistics communication." },
+          { title: "Dietary and accessibility needs", body: "Collected properly and carried through to the day." },
+          { title: "Session and people suggestions", body: "Who and what is worth an attendee's time, from what they came for." },
           { title: "Feedback synthesis", body: "Scores, sentiment and comments turned into an actionable report." },
         ],
       },
@@ -148,7 +147,7 @@ const CHAPTERS: Chapter[] = [
   {
     id: "programme",
     kicker: "Programme & speakers",
-    tone: "paper",
+    tone: "night",
     title: "From market signal to a finished programme.",
     lede: "The agenda, and the speaker workflows that turn a plan into a room full of people who turned up prepared.",
     categories: [
@@ -179,7 +178,7 @@ const CHAPTERS: Chapter[] = [
           { title: "Asset collection", body: "Headshots, bios, logos and links submitted through a secure link." },
           { title: "Briefing packs", body: "Objectives, audience profile, AV specification and on-day timeline." },
           { title: "Chair briefings", body: "Discussion prompts, timekeeping and Q&A facilitation notes." },
-          { title: "Deadline tracking", body: "Presentation and material deadlines chased before they slip.", status: "pilot" },
+          { title: "Deadline tracking", body: "Presentation and material deadlines chased before they slip." },
           { title: "Runsheets", body: "Speaker-by-speaker run of show with timing and logistics." },
           { title: "Speaker network", body: "Appearance frequency and relationships across your portfolio." },
         ],
@@ -189,7 +188,7 @@ const CHAPTERS: Chapter[] = [
   {
     id: "commercial",
     kicker: "Commercial & telesales",
-    tone: "stone",
+    tone: "paper",
     title: "One commercial relationship, prospect to renewal.",
     lede: "Finding it, winning it, delivering what was sold, and opening the next conversation with evidence rather than hope.",
     categories: [
@@ -215,11 +214,11 @@ const CHAPTERS: Chapter[] = [
         name: "Sponsorship delivery",
         intro: "The half of the relationship that decides whether they renew.",
         items: [
-          { title: "Sponsor onboarding", body: "What was sold, turned into what now has to happen.", status: "pilot" },
+          { title: "Sponsor onboarding", body: "What was sold, turned into what now has to happen." },
           { title: "Asset and deadline collection", body: "Logos, copy and materials gathered through a secure link." },
-          { title: "Entitlement tracking", body: "Speaking slots, passes and entitlements tracked against the contract.", status: "pilot" },
+          { title: "Entitlement tracking", body: "Speaking slots, passes and entitlements tracked against the contract." },
           { title: "Activation briefs", body: "On-site and digital activation planned rather than improvised." },
-          { title: "Fulfilment readiness", body: "What is outstanding, and who is holding it up.", status: "pilot" },
+          { title: "Fulfilment readiness", body: "What is outstanding, and who is holding it up." },
           { title: "Sponsor FAQ and co-marketing", body: "Recurring questions answered, and assets for partners to amplify." },
           { title: "Post-event ROI report", body: "Delivery against the contracted package, per partner." },
         ],
@@ -230,18 +229,18 @@ const CHAPTERS: Chapter[] = [
         intro: "Better lists, better briefs, better calls.",
         items: [
           { title: "List segmentation", body: "Priority, persona fit and propensity, with call-volume recommendations." },
-          { title: "Dynamic call lists", body: "A queue rebuilt from what has actually happened since yesterday.", status: "pilot" },
+          { title: "Dynamic call lists", body: "A queue rebuilt from what has actually happened since yesterday." },
           { title: "Call reason and context", body: "Why this person, why now, and what they have already seen." },
           { title: "Scripts and objection handling", body: "By segment and objective, with close variations." },
           { title: "Discovery playbook", body: "A versioned, approvable discovery-call playbook." },
-          { title: "Warm-up before the dial", body: "A message on the channel they respond to, before the call.", status: "soon" },
+          { title: "Warm-up before the dial", body: "A message on the channel they respond to, before the call." },
           { title: "Call outcomes and follow-up", body: "Outcomes captured and the next action created." },
           { title: "Call log intelligence", body: "Objection patterns, conversion bottlenecks and script gaps." },
           { title: "AI voice agents", body: "Briefed from your approved scripts, on your own calling account." },
           { title: "Recording and classification", body: "Every call recorded, transcribed and its outcome classified." },
           { title: "Spend ceiling per event", body: "A hard cap on voice spend, set per event." },
-          { title: "Outbound dialling", body: "Off by default. Enabled deliberately, on your own account.", status: "pilot" },
-          { title: "Inbound call handling", body: "Answering inbound calls with event context.", status: "soon" },
+          { title: "Outbound dialling", body: "Off by default. Enabled deliberately, on your own account." },
+          { title: "Inbound call handling", body: "Answering inbound calls with event context." },
         ],
       },
     ],
@@ -249,9 +248,9 @@ const CHAPTERS: Chapter[] = [
   {
     id: "awards",
     kicker: "Awards",
-    tone: "paper",
+    tone: "stone",
     title: "An awards programme is a second business.",
-    lede: "Categories, entries, judging, finalists, the night itself, and turning this year's winners into next year's entrants.",
+    lede: "Categories, entries, judging, finalists and the night itself, then turning this year's winners into next year's advocates, and often next year's entrants too.",
     categories: [
       {
         id: "awards-programme",
@@ -262,8 +261,8 @@ const CHAPTERS: Chapter[] = [
           { title: "Category performance", body: "Which categories carry entries, and which quietly never do." },
           { title: "Programme benchmarking", body: "Your awards structure compared against the market." },
           { title: "Entry forecasting", body: "Expected entry volume by category, against deadline." },
-          { title: "Deadline management", body: "The deadline sequence that actually governs the year.", status: "pilot" },
-          { title: "Awards night logistics", body: "Tickets, tables, guest information and seating.", status: "pilot" },
+          { title: "Deadline management", body: "The deadline sequence that actually governs the year." },
+          { title: "Awards night logistics", body: "Tickets, tables, guest information and seating." },
         ],
       },
       {
@@ -275,10 +274,10 @@ const CHAPTERS: Chapter[] = [
           { title: "Past entrant reactivation", body: "The people who entered before, approached with their own history." },
           { title: "Category matching", body: "A public, consent-gated matcher that shows which categories genuinely fit." },
           { title: "Entry readiness guidance", body: "What a complete entry involves, and what this entrant still needs." },
-          { title: "Stalled entry journeys", body: "The half-finished entries chased before the deadline passes.", status: "pilot" },
+          { title: "Stalled entry journeys", body: "The half-finished entries chased before the deadline passes." },
           { title: "Entry FAQ", body: "Eligibility, process, judging and key dates, answered once." },
           { title: "Entry conversion campaigns", body: "Scripts and sequences for converting interest into submissions." },
-          { title: "Entrant self-submission", body: "Entrants submitting directly into the platform.", status: "soon" },
+          { title: "Entrant self-submission", body: "Entrants submitting directly into the platform." },
         ],
       },
       {
@@ -288,10 +287,10 @@ const CHAPTERS: Chapter[] = [
         items: [
           { title: "Judge discovery", body: "Shortlists per confirmed category, researched by expertise." },
           { title: "Judge assets", body: "Promotional assets and profile copy for confirmed judges." },
-          { title: "Conflict awareness", body: "Conflicts of interest identified before judging begins.", status: "pilot" },
-          { title: "Panel readiness", body: "Whether each category has the panel it needs, in time.", status: "pilot" },
-          { title: "Scoring reminders", body: "Chasing the judges who have not scored yet.", status: "pilot" },
-          { title: "Judge scoring portal", body: "Judges scoring entries directly in the platform.", status: "soon" },
+          { title: "Conflict awareness", body: "Conflicts of interest identified before judging begins." },
+          { title: "Panel readiness", body: "Whether each category has the panel it needs, in time." },
+          { title: "Scoring reminders", body: "Chasing the judges who have not scored yet." },
+          { title: "Judge scoring portal", body: "Judges scoring entries directly in the platform." },
         ],
       },
       {
@@ -304,9 +303,9 @@ const CHAPTERS: Chapter[] = [
           { title: "Creative at volume", body: "Personalised cards and share variants across the full list." },
           { title: "Announcement copy", body: "Platform-specific announcement copy, timed to the reveal." },
           { title: "Winner assets", body: "Winner creative ready when the result is confirmed." },
-          { title: "Winner self-serve downloads", body: "Winners collecting their own assets.", status: "pilot" },
+          { title: "Winner self-serve downloads", body: "Winners collecting their own assets." },
           { title: "Post-event promotion", body: "The follow-through that keeps the win visible." },
-          { title: "Next-year reactivation", body: "This year's finalists approached as next year's entrants." },
+          { title: "Winners as advocates", body: "This year's winners promoting the programme that recognised them, and often entering again." },
         ],
       },
     ],
@@ -326,9 +325,9 @@ const CHAPTERS: Chapter[] = [
           { title: "Delivery timeline", body: "Brief to post-event close, with milestones, owners and critical path." },
           { title: "Run of show", body: "Minute by minute, with AV cues, speaker movements, crew and contingencies." },
           { title: "Risk detection and mitigation", body: "Operational risks surfaced with a plan attached, not just a flag." },
-          { title: "Readiness tracking", body: "Speaker, sponsor and programme readiness in one view.", status: "pilot" },
+          { title: "Readiness tracking", body: "Speaker, sponsor and programme readiness in one view." },
           { title: "Stakeholder deadlines", body: "Every external deadline, and who is late." },
-          { title: "Change management", body: "What a dropped speaker or moved session breaks downstream.", status: "pilot" },
+          { title: "Change management", body: "What a dropped speaker or moved session breaks downstream." },
           { title: "Master FAQ", body: "Logistics-accurate, structured by audience." },
           { title: "Meeting intelligence", body: "Transcripts turned into decisions, actions and follow-ups." },
           { title: "Post-event workflows", body: "Debrief, report and the handover into next year." },
@@ -346,8 +345,8 @@ const CHAPTERS: Chapter[] = [
           { title: "Format and topic movement", body: "What is working, where, and what has stopped." },
           { title: "Event trajectory", body: "Which events are growing, holding, or quietly declining." },
           { title: "Opportunity detection", body: "New geographies, segments, formats and spin-off concepts." },
-          { title: "Resource allocation", body: "Where the next pound and the next person should go.", status: "pilot" },
-          { title: "Plan versus modelled outlook", body: "The committed number and the current evidence, side by side.", status: "pilot" },
+          { title: "Resource allocation", body: "Where the next pound and the next person should go." },
+          { title: "Plan versus modelled outlook", body: "The committed number and the current evidence, side by side." },
         ],
       },
       {
@@ -356,7 +355,7 @@ const CHAPTERS: Chapter[] = [
         intro: "The part that gets asked about in procurement.",
         items: [
           { title: "Human approval", body: "A person approves anything consequential, and the approval is recorded." },
-          { title: "Authority rules", body: "What Looped may observe, prepare, carry out and what must come back — by organisation, event and kind of action." },
+          { title: "Authority rules", body: "What Looped may observe, prepare and carry out, and what must always come back to a person, set by organisation, by event and by kind of action." },
           { title: "Access scoped by role", body: "Role-appropriate access across teams and events." },
           { title: "Eligibility enforcement", body: "Consent and suppression enforced at the point of sending." },
           { title: "Spend ceilings", body: "Per-event caps on compute and voice." },
@@ -388,14 +387,21 @@ export default function CapabilitiesPage(): React.ReactElement {
     <div className="bg-paper pb-8 pt-28 sm:pt-32">
       <PageIntro
         kicker="Capabilities"
-        title="Does Looped do that? The full index, honestly labelled."
-        lede="This is the diligence page. Every capability grouped the way an event team would ask about it, with a plain label on anything not yet fully rolled out."
-        support="If something matters to you and is not here, ask us rather than assuming. We would rather have that conversation now than six weeks into a procurement."
+        title="Does Looped do that?"
+        lead="Everything Looped does for a conference and awards business, in one place."
+        support="Grouped the way an event team would ask about it, so you can go straight to the part that matters to you."
       />
 
       <div className="mx-auto mt-12 max-w-6xl px-5 sm:px-6 lg:px-8">
-        <Reveal className="max-w-3xl rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)]">
-          <AvailabilityNote />
+        <Reveal className="max-w-3xl rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)] sm:p-7">
+          <p className="flex items-center gap-2.5 kicker text-muted">
+            <span className="h-2 w-2 rounded-full bg-grad-dot" aria-hidden />
+            Looking for something specific?
+          </p>
+          <p className="mt-4 text-base leading-relaxed text-slate sm:text-lg">
+            Ask the Looped concierge. It can help you work out what is possible for your events, and we welcome feature
+            requests from teams with a workflow we have not covered yet.
+          </p>
         </Reveal>
       </div>
 
@@ -434,13 +440,6 @@ export default function CapabilitiesPage(): React.ReactElement {
                           <p className={cn("text-sm leading-relaxed", night ? "text-mist" : "text-slate")}>
                             <span className={cn("font-semibold", night ? "text-snow" : "text-ink")}>{item.title}.</span>{" "}
                             {item.body}
-                            {item.status ? (
-                              <StatusPill
-                                status={item.status}
-                                tone={night ? "night" : "light"}
-                                className="ml-2 align-middle"
-                              />
-                            ) : null}
                           </p>
                         </li>
                       ))}

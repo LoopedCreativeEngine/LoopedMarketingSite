@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
+import { SystemsFigure } from "@/components/brand/SystemsFigure";
 import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 import { PageClosing } from "@/components/ui/PageClosing";
 import { PageIntro } from "@/components/ui/PageIntro";
-import { AvailabilityNote, StatusPill, type Availability } from "@/components/ui/StatusPill";
 
 export const metadata: Metadata = {
   title: "Event data and systems: CRM, registration and awards",
   description:
-    "Looped connects to the CRM, registration, awards, programme and marketing systems you already run, and adds the intelligence between them.",
+    "Looped works across the CRM, registration, awards, programme and marketing systems you already run, and makes sense of what sits between them.",
   alternates: { canonical: "/platform/data" },
   openGraph: {
     url: "/platform/data",
@@ -19,97 +19,92 @@ export const metadata: Metadata = {
   },
 };
 
-const SYSTEMS: { name: string; body: string; status?: Availability }[] = [
+const SYSTEMS = [
   {
     name: "CRM",
-    body: "Commercial context reaches the platform, and approved outcomes return to the record your sales team actually lives in.",
+    body: "Commercial history reaches the rest of the business, and approved outcomes go back to the record your sales team lives in.",
   },
   {
     name: "Registration",
-    body: "Bookings, ticket types and pace read as the demand signal they are, rather than as a report someone exports on a Friday.",
-    status: "pilot",
+    body: "Bookings and pace read as the demand signal they are, instead of a report someone exports on a Friday.",
   },
   {
     name: "Awards",
-    body: "Categories, entrants, entry status, judging outcomes, finalists and winners held as one lifecycle rather than four spreadsheets.",
-    status: "pilot",
+    body: "Categories, entrants, entry status, finalists and winners held as one year rather than four spreadsheets.",
   },
   {
     name: "Programme",
-    body: "Sessions, tracks, speakers and timings as living programme data other teams can build on.",
-    status: "pilot",
+    body: "Sessions, tracks, speakers and timings as live programme data the whole team can build on.",
   },
   {
     name: "Marketing and email",
-    body: "Campaigns and audiences connected to the intelligence that shaped them, sending through your own account.",
+    body: "Campaigns and audiences connected to the thinking that shaped them, sending from your own account.",
   },
   {
     name: "Messaging and voice",
-    body: "WhatsApp, SMS, RCS and calling through your own numbers and accounts, as those channels come online.",
-    status: "soon",
+    body: "WhatsApp, SMS, RCS and calling through your own numbers, so the conversation continues wherever the person actually replies.",
   },
   {
     name: "Analytics",
-    body: "Performance read alongside the plan it was measured against, so a number always arrives with its context.",
-    status: "pilot",
+    body: "Performance read next to the plan it was measured against, so a number always arrives with its context.",
   },
   {
     name: "Files and exports",
-    body: "The reality of this industry. Historical attendee lists, P&L files, entrant exports: imported deliberately, with the source and the permitted use recorded.",
+    body: "Bring in the files your event already relies on, from historical attendee lists and entrant exports to P&Ls. Looped keeps track of where the data came from and how it can be used.",
   },
 ];
 
 const RESOLVES = [
   {
-    title: "One person, resolved",
-    body: "The same individual appearing in four systems under three spellings is recognised as one person, so your team stops arguing about which list is right.",
+    title: "One person, not four records",
+    body: "The same individual in four systems under three spellings is recognised as one person, so your team stops arguing about which list is right.",
   },
   {
-    title: "People, organisations and events",
-    body: "Who works where, which account they sit on, which of your events they have touched and in what role.",
+    title: "How everyone is connected",
+    body: "Who works where, which account they belong to, which of your events they have touched and in what role.",
   },
   {
-    title: "History that spans the portfolio",
-    body: "A relationship running across a conference, an awards programme and a sister event reads as one history rather than three unrelated records.",
+    title: "History across the portfolio",
+    body: "A relationship spanning a conference, an awards programme and a sister event reads as one history rather than three strangers.",
   },
   {
-    title: "Source and trust",
-    body: "Every fact carries where it came from and how much weight it deserves. A verified booking is not treated like a scraped guess.",
+    title: "Where a fact came from",
+    body: "Every fact carries its source and how much weight it deserves. A confirmed booking is not treated like a guess.",
   },
   {
-    title: "Freshness",
+    title: "When it was last true",
     body: "Context ages. Looped knows how old something is and says so when a decision is resting on data that has gone stale.",
   },
   {
-    title: "Honest gaps",
-    body: "Where the data does not support an answer, you get that, rather than a confident number nobody can defend in a renewal meeting.",
+    title: "What it does not know",
+    body: "Where the data will not support an answer, you get that, rather than a confident number nobody can defend in front of a partner.",
   },
 ];
 
 const PERMISSION = [
   {
-    title: "Authorised use, recorded",
-    body: "Data is used for the purposes your organisation has authorised, and that authorisation is written down rather than assumed.",
+    title: "Used only as you have agreed",
+    body: "Data is used for the purposes your organisation has authorised, and that is recorded rather than assumed.",
   },
   {
-    title: "Access scoped by role",
+    title: "Scoped by role",
     body: "A telesales caller and a portfolio director are looking at the same platform and not the same data.",
   },
   {
-    title: "Eligibility before sending",
-    body: "Consent, preference and suppression are enforced at the point of sending, per channel.",
+    title: "Checked before anything is sent",
+    body: "Consent, preference and suppression are applied at the moment of sending, per channel.",
   },
   {
-    title: "Your organisation owns it",
-    body: "Your data belongs to your organisation. It is not pooled with other operators, and it does not quietly become someone else's advantage.",
+    title: "It stays yours",
+    body: "Your data belongs to your organisation. It is not pooled with other operators and it does not quietly become someone else's advantage.",
   },
   {
     title: "Personal data kept out of the AI",
-    body: "Personal data is kept out of the model by default rather than by configuration, and the exception is surfaced rather than worked around.",
+    body: "Protected by default rather than by configuration, so nobody has to remember to switch it on.",
   },
   {
-    title: "Exceptions, not guesses",
-    body: "Where Looped cannot establish that an action is permitted, or cannot confirm it completed, it raises the exception instead of proceeding.",
+    title: "Raised, not guessed",
+    body: "Where Looped cannot establish that something is permitted, or cannot confirm it completed, it tells you instead of proceeding.",
   },
 ];
 
@@ -117,10 +112,10 @@ export default function DataPage(): React.ReactElement {
   return (
     <div className="bg-paper pb-8 pt-28 sm:pt-32">
       <PageIntro
-        kicker="Data & systems"
+        kicker="Data and systems"
         title="Your systems stay your systems."
-        lede="Nobody needs another system of record. Event teams already have a CRM, a registration platform, an awards process and a marketing stack. What they do not have is anything that understands the relationships running between them."
-        support="Looped reads the context it needs to keep the picture current and, where you authorise it, carries approved work back into those same systems."
+        lead="Nobody needs another system of record. You already have a CRM, a registration platform, an awards process and a marketing stack. What you do not have is anything that understands how they relate to each other."
+        support="Looped reads what it needs to keep the picture current and, where you authorise it, carries approved work back into those same systems."
       />
 
       {/* the shape of it */}
@@ -131,65 +126,80 @@ export default function DataPage(): React.ReactElement {
           </Reveal>
           <Reveal className="space-y-5 lg:col-span-7 lg:pt-2">
             <p className="text-base leading-relaxed text-slate sm:text-lg">
-              You are never asked to replace what already works. Begin with the data and knowledge you already have, and
-              the picture deepens as more comes in. Some of that runs through a direct connection to a system; some is
-              completed in the software itself. To your team it is one Looped workflow either way.
+              You are never asked to replace what already works. Start with the data you have, and the picture deepens
+              as more comes in.
             </p>
             <p className="text-base leading-relaxed text-slate sm:text-lg">
-              What changes is that the space between your systems stops being a gap your team crosses manually, several
-              times a week, from memory.
+              What changes is that{" "}
+              <span className="font-semibold text-ink">
+                the gap between your systems stops being something your team crosses by hand, several times a week, from
+                memory.
+              </span>
             </p>
           </Reveal>
         </div>
+        <Reveal className="mt-12 rounded-[20px] border border-hairline bg-paper p-5 shadow-[var(--lift-light)] sm:p-8">
+          <SystemsFigure />
+        </Reveal>
+      </Panel>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {/* what it connects */}
+      <Panel tone="paper" kicker="What it works with">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-5">
+            <h2 className="text-balance display-section">The systems an event business already runs.</h2>
+          </Reveal>
+          <Reveal className="lg:col-span-7 lg:pt-2">
+            <p className="text-base leading-relaxed text-slate sm:text-lg">
+              Connect what matters most first. Looped is useful from the first file and gets sharper with every
+              connection you add.
+            </p>
+          </Reveal>
+        </div>
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {SYSTEMS.map((s) => (
-            <Reveal key={s.name} className="rounded-2xl border border-hairline bg-paper p-6 shadow-[var(--lift-light)]">
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
-                <h3 className="font-serif text-lg text-ink">{s.name}</h3>
-                {s.status ? <StatusPill status={s.status} /> : null}
-              </div>
+            <Reveal key={s.name} className="rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)]">
+              <h3 className="font-serif text-xl text-ink">{s.name}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate">{s.body}</p>
             </Reveal>
           ))}
         </div>
-        <Reveal className="mt-8">
-          <AvailabilityNote className="max-w-3xl" />
-        </Reveal>
       </Panel>
 
       {/* what it resolves */}
-      <Panel tone="paper" kicker="The intelligence between">
-        <Reveal className="max-w-3xl">
-          <h2 className="text-balance display-section">The work no individual system was built to do.</h2>
-          <p className="mt-5 text-base leading-relaxed text-slate sm:text-lg">
-            Each of your systems is right about its own corner. None of them can tell you that the person entering the
-            awards is the same person who chaired a session two years ago and sits on an account renewing next month.
-          </p>
-        </Reveal>
+      <Panel tone="stone" kicker="The bit in between">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-5">
+            <h2 className="text-balance display-section">The work no single system was built to do.</h2>
+          </Reveal>
+          <Reveal className="lg:col-span-7 lg:pt-2">
+            <p className="text-base leading-relaxed text-slate sm:text-lg">
+              Each of your systems is right about its own corner. None of them can tell you that the person entering the
+              awards chaired a session two years ago and sits on an account renewing next month.
+            </p>
+          </Reveal>
+        </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {RESOLVES.map((r) => (
-            <Reveal key={r.title} className="rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)]">
-              <h3 className="font-serif text-lg text-ink">{r.title}</h3>
+            <Reveal key={r.title} className="rounded-2xl border border-hairline bg-paper p-6 shadow-[var(--lift-light)]">
+              <h3 className="font-serif text-xl text-ink">{r.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate">{r.body}</p>
             </Reveal>
           ))}
         </div>
       </Panel>
 
-      {/* permission — night, because it is the trust moment */}
+      {/* permission, on the night plate */}
       <Panel tone="night" kicker="Permission">
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
           <Reveal className="lg:col-span-5">
-            <h2 className="text-balance display-section">
-              Seeing data does not give a team the right to use it.
-            </h2>
+            <h2 className="text-balance display-section">Seeing data is not the same as being allowed to use it.</h2>
           </Reveal>
           <Reveal className="lg:col-span-7 lg:pt-2">
             <p className="text-base leading-relaxed text-mist sm:text-lg">
               This is the line the industry gets wrong most often, and the one a partner, a regulator or an attendee
-              will eventually test. Looped treats permitted use as a property of the data itself, not a policy in a
-              document nobody reads.
+              will eventually test. Looped treats permission as part of the data itself, not a policy in a document
+              nobody reads.
             </p>
           </Reveal>
         </div>
@@ -216,12 +226,12 @@ export default function DataPage(): React.ReactElement {
           {
             href: "/how-it-works",
             label: "How Looped works",
-            blurb: "The approval model and the rules that govern what Looped may do on its own.",
+            blurb: "The approval model and the rules that decide what Looped may do on its own.",
           },
           {
             href: "/capabilities",
             label: "Capabilities",
-            blurb: "The full index, including where each connection genuinely sits today.",
+            blurb: "The full picture of what Looped does, grouped the way you would ask about it.",
           },
         ]}
       />

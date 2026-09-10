@@ -21,7 +21,7 @@ export default function MarketingPillarPage(): React.ReactElement {
       kicker="Marketing / Audience"
       title="Marketing & Audience"
       tension="You are measured on registrations. You are judged on who is in the room."
-      seatLine="For the marketing and audience lead who has to hit the numbers without rebuilding strategy from zero every campaign."
+      seatLine="For marketing and audience teams: know who needs converting, what is most likely to move them, and where to focus next."
       sees={[
         "Audience quality, not just volume: seniority, sector and the segments that actually convert.",
         "Registration pace against plan, and where it is quietly running behind.",

@@ -24,9 +24,9 @@ export default function PrivacyPage(): React.ReactElement {
           <p className="kicker text-purple">Legal</p>
           <h1 className="mt-4 font-serif text-3xl tracking-tight text-ink sm:text-4xl">Privacy policy</h1>
           <p className="mt-6 text-sm leading-relaxed text-slate">
-            This page is a placeholder for the public marketing site. {site.name} is operated by {site.company}. A full
-            privacy policy will be published before campaigns drive paid traffic, covering analytics on this site, demo
-            scheduling data, and how enquiry information is processed.
+            {site.name} is operated by {site.company}, registered in England and Wales and registered with the
+            Information Commissioner&rsquo;s Office. Our full privacy policy covers analytics on this site, demo
+            scheduling and how we handle the details you send us.
           </p>
           <p className="mt-4 text-sm leading-relaxed text-slate">
             For product privacy commitments (data residency, subprocessors, and customer content handling), request the

@@ -5,6 +5,7 @@ import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { OnwardLink } from "@/components/ui/OnwardLink";
+import { PageIntro } from "@/components/ui/PageIntro";
 
 export const metadata: Metadata = {
   title: "Platform: what you can do with Looped",
@@ -78,7 +79,7 @@ const ALSO = [
   { title: "AI voice for telesales", body: "Voice agents briefed from your approved scripts, using your own calling account, recorded and summarised for you." },
   { title: "Event website tools", body: "A chatbot that answers only from what you approve, an audience-matching quiz, and a secure portal for speakers and partners." },
   { title: "Lead capture", body: "Consent-based capture that routes to the right pipeline, with captured interest landing in real time." },
-  { title: "Flexible data connections", body: "Connects to your CRM, email and payment systems at the level that suits you, and can carry approved work back into them." },
+  { title: "Meeting intelligence", body: "Turns the meetings your team already runs into decisions, owners and follow-ups, instead of notes nobody revisits." },
 ];
 
 /** The same four movements, met from the participant's side. */
@@ -106,7 +107,7 @@ const DOMAINS = [
   {
     name: "Conversations",
     href: "/platform/conversations",
-    body: "The same intelligence, met by an entrant, a sponsor, a speaker, a judge or an attendee — and what it will not do for any of them.",
+    body: "The same intelligence, met by an entrant, a sponsor, a speaker, a judge or an attendee, and what it will not do for any of them.",
   },
   {
     name: "Communications",
@@ -121,7 +122,7 @@ const DOMAINS = [
   {
     name: "Data & systems",
     href: "/platform/data",
-    body: "Your systems stay your systems. What Looped resolves between them, and the permission model around it.",
+    body: "Stop rebuilding the same picture by hand. Looped works across your CRM, registration, awards and marketing systems so one person is one person, and everyone sees the same history.",
   },
 ];
 
@@ -137,24 +138,12 @@ const PILLAR_LINKS = [
 export default function PlatformPage(): React.ReactElement {
   return (
     <div className="bg-paper pb-8 pt-28 sm:pt-32">
-      {/* hero */}
-      <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="kicker text-purple">The platform</p>
-          <h1 className="mt-4 text-balance font-serif text-4xl tracking-tight text-ink sm:text-6xl">
-            Everything your event teams need to know, decide and move forward.
-          </h1>
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
-            Looped connects the picture across the event business, helps each team see what matters, carries the
-            decisions you approve through the systems you already use, and verifies what actually happened. A person
-            stays in control of every consequential call.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <CtaButton href="/waitlist">Join the waitlist</CtaButton>
-            <CtaButton href="/demo" variant="secondary">See Looped in action</CtaButton>
-          </div>
-        </Reveal>
-      </div>
+      <PageIntro
+        kicker="The platform"
+        title="Everything your event teams need to know, decide and move forward."
+        lead="Looped connects the picture across the event business, helps each team see what matters, carries the decisions you approve through the systems you already use, and checks what actually happened."
+        support="A person stays in control of every call that carries a consequence."
+      />
 
       {/* four outcomes */}
       <div className="mt-14">
@@ -193,10 +182,9 @@ export default function PlatformPage(): React.ReactElement {
       </div>
 
       {/* the same four movements, for the people around the event */}
-      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
+      <Panel tone="stone" kicker="One layer, many experiences">
         <Reveal>
-          <p className="kicker text-muted">One layer, many experiences</p>
-          <h2 className="mt-5 max-w-3xl text-balance display-section">The same four movements, for the people around the event.</h2>
+          <h2 className="max-w-3xl text-balance display-section">The same four movements, for the people around the event.</h2>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
             Looped is not only a system your team logs into. The same intelligence can meet an entrant, a sponsor, a
             speaker, a finalist or an attendee, and surface differently for each one. What it knows, what it may say and
@@ -205,7 +193,7 @@ export default function PlatformPage(): React.ReactElement {
         </Reveal>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {JOURNEY.map((j, i) => (
-            <Reveal key={j.stage} delay={i * 0.05} className="rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)]">
+            <Reveal key={j.stage} delay={i * 0.05} className="rounded-2xl border border-hairline bg-paper p-6 shadow-[var(--lift-light)]">
               <p className="flex items-center gap-2.5 text-base font-semibold text-ink">
                 <span className="font-mono text-xs text-purple">0{i + 1}</span>
                 {j.stage}
@@ -214,31 +202,14 @@ export default function PlatformPage(): React.ReactElement {
             </Reveal>
           ))}
         </div>
-      </div>
-
-      {/* also built in */}
-      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
-        <Reveal>
-          <p className="kicker text-muted">Also built in</p>
-        </Reveal>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {ALSO.map((a) => (
-            <Reveal key={a.title} className="rounded-2xl border border-hairline bg-stone p-6 shadow-[var(--lift-light)]">
-              <h3 className="text-lg text-ink">{a.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate">{a.body}</p>
-            </Reveal>
-          ))}
-        </div>
-      </div>
+      </Panel>
 
       {/* the platform in depth */}
-      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
+      <Panel tone="paper" kicker="The platform in depth">
         <Reveal>
-          <p className="kicker text-muted">The platform in depth</p>
-          <h2 className="mt-5 max-w-3xl text-balance display-section">Four chapters, one operating system.</h2>
+          <h2 className="mt-5 max-w-3xl text-balance display-section">Four chapters. One operating system.</h2>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
-            These are not separate products bolted to the side. They are the same intelligence and the same approval
-            model, expressed through the surfaces an event business actually runs on.
+            Same intelligence, same approvals, four places your team meets it.
           </p>
         </Reveal>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -260,15 +231,38 @@ export default function PlatformPage(): React.ReactElement {
           ))}
         </div>
         <Reveal className="mt-8">
-          <OnwardLink href="/capabilities">Does Looped do X? The full capability index</OnwardLink>
+          <OnwardLink href="/capabilities">See everything Looped does</OnwardLink>
         </Reveal>
-      </div>
+      </Panel>
+
+      {/* the secondary band */}
+      <Panel tone="night" kicker="Also built in">
+        <div className="grid gap-10 lg:grid-cols-12 lg:gap-8">
+          <Reveal className="lg:col-span-5">
+            <h2 className="text-balance display-section">The parts you would otherwise buy separately.</h2>
+          </Reveal>
+          <Reveal className="lg:col-span-7 lg:pt-2">
+            <p className="text-base leading-relaxed text-mist sm:text-lg">
+              Useful on their own, and better because they share the same event picture as everything above.
+            </p>
+          </Reveal>
+        </div>
+        <div className="mt-10 grid gap-x-10 sm:grid-cols-2">
+          {ALSO.map((a) => (
+            <Reveal key={a.title}>
+              <div className="border-t border-white/10 py-6">
+                <h3 className="font-serif text-xl text-snow">{a.title}</h3>
+                <p className="mt-2.5 text-sm leading-relaxed text-mist">{a.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Panel>
 
       {/* explore by team */}
-      <div className="mx-auto mt-14 max-w-6xl px-5 sm:px-6 lg:px-8">
+      <Panel tone="stone" kicker="Explore by team">
         <Reveal>
-          <p className="kicker text-muted">Explore by team</p>
-          <h2 className="mt-5 max-w-3xl text-balance display-section">Six working areas, one connected picture.</h2>
+          <h2 className="max-w-3xl text-balance display-section">Six working areas, one connected picture.</h2>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate sm:text-lg">
             Each team meets Looped through the work they already own. The intelligence underneath is the same, which is
             why a shift in one area reaches the others without a handover meeting.
@@ -285,7 +279,7 @@ export default function PlatformPage(): React.ReactElement {
             ))}
           </div>
         </Reveal>
-      </div>
+      </Panel>
 
       {/* closing */}
       <div className="mx-auto mt-16 max-w-3xl px-5 text-center sm:px-6 lg:px-8">
