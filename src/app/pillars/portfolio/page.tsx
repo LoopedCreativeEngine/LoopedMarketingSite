@@ -110,7 +110,7 @@ export default function PortfolioPillarPage(): React.ReactElement {
             footnote="Each item opens into the event-level detail behind it, so a portfolio decision can be interrogated rather than taken on faith."
           />
         ),
-        note: "An abstraction of the workspace rather than a screenshot. The portfolio view is running with pilot teams and hardening; the underlying cross-event intelligence is available today.",
+        note: "An abstraction of the workspace rather than a screenshot. Items shown illustrate the kinds of thing that appear, not a real portfolio.",
       }}
       produces={[
         "An event scorecard and benchmark across revenue, content, sponsorship and satisfaction",

@@ -1,4 +1,4 @@
-import { StatusPill, type Availability } from "@/components/ui/StatusPill";
+import { type Availability } from "@/components/ui/StatusPill";
 import { cn } from "@/lib/cn";
 
 /**
@@ -42,12 +42,7 @@ export function CapabilityGrid({
       {items.map((item) => (
         <li key={item.title} className={cn("rounded-2xl border p-5", card)}>
           <span className={cn("block h-px w-7", rule)} aria-hidden />
-          <div className="mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-2">
-            <h3 className={cn("font-serif text-lg tracking-tight", titleTone)}>{item.title}</h3>
-            {item.status && item.status !== "live" ? (
-              <StatusPill status={item.status} tone={ink ? "ink" : "light"} />
-            ) : null}
-          </div>
+          <h3 className={cn("mt-4 font-serif text-lg tracking-tight", titleTone)}>{item.title}</h3>
           <p className={cn("mt-2 text-sm leading-relaxed", bodyTone)}>{item.body}</p>
         </li>
       ))}
@@ -80,9 +75,6 @@ export function CapabilityList({
           <span className={cn("mt-2 h-1.5 w-1.5 shrink-0 rounded-full", bullet)} aria-hidden />
           <p className={cn("text-sm leading-relaxed", bodyTone)}>
             <span className={cn("font-medium", titleTone)}>{item.title}.</span> {item.body}
-            {item.status && item.status !== "live" ? (
-              <StatusPill status={item.status} tone={ink ? "ink" : "light"} className="ml-2 align-middle" />
-            ) : null}
           </p>
         </li>
       ))}

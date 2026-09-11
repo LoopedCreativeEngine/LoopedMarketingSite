@@ -1,4 +1,4 @@
-import { StatusPill, type Availability } from "@/components/ui/StatusPill";
+import { type Availability } from "@/components/ui/StatusPill";
 import { cn } from "@/lib/cn";
 
 /**
@@ -50,7 +50,6 @@ export function DataFabric({
             className={cn("inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs", chip)}
           >
             {system.label}
-            {system.status ? <StatusPill status={system.status} tone={ink ? "ink" : "light"} /> : null}
           </li>
         ))}
       </ul>

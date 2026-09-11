@@ -8,14 +8,13 @@ import { ClosingCTA } from "@/components/ui/ClosingCTA";
 import { ExploreNext } from "@/components/ui/ExploreNext";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { AvailabilityNote } from "@/components/ui/StatusPill";
 import { cn } from "@/lib/cn";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Capabilities: what Looped does, honestly labelled",
   description:
-    "The full capability index for conference and awards teams, grouped for diligence, with an honest label on anything not yet fully rolled out.",
+    "The full capability index for conference and awards teams, grouped for diligence across intelligence, planning, marketing, content, commercial, awards and operations.",
   path: "/capabilities",
 });
 
@@ -511,20 +510,10 @@ export default function CapabilitiesPage(): React.ReactElement {
       <PageHero
         kicker="Capabilities"
         title="Does Looped do that? The full index, honestly labelled."
-        lede="This is the diligence page. Every capability grouped the way an event team would ask about it, with a plain label on anything not yet fully rolled out. If something matters to you and is not here, ask us rather than assuming."
+        lede="This is the diligence page. Every capability grouped the way an event team would ask about it. If something matters to you and is not here, ask us rather than assuming."
         secondaryCta={{ href: "/platform", label: "See the platform" }}
         contents={SPINE}
       />
-
-      <Panel tone="paper" kicker="How to read this page">
-        <Reveal className="max-w-3xl">
-          <AvailabilityNote />
-          <p className="mt-4 text-sm leading-relaxed text-muted-ink">
-            Capabilities without a label are available to pilot teams today. We keep this page current rather than
-            aspirational, because the alternative is a procurement conversation that goes badly six weeks in.
-          </p>
-        </Reveal>
-      </Panel>
 
       <AnchorNav items={SPINE} label="Capability chapters" />
 

@@ -1,4 +1,4 @@
-import { StatusPill, type Availability } from "@/components/ui/StatusPill";
+import { type Availability } from "@/components/ui/StatusPill";
 import { cn } from "@/lib/cn";
 
 /**
@@ -33,7 +33,6 @@ export function ChannelMatrix({
         <li key={item.channel} className="grid gap-2 py-5 md:grid-cols-12 md:items-baseline md:gap-6">
           <div className="flex items-center gap-3 md:col-span-3">
             <h3 className={cn("font-serif text-xl tracking-tight", titleTone)}>{item.channel}</h3>
-            <StatusPill status={item.status} tone={ink ? "ink" : "light"} />
           </div>
           <p className={cn("text-sm font-medium md:col-span-3", metaTone)}>{item.useFor}</p>
           <p className={cn("text-sm leading-relaxed md:col-span-6", bodyTone)}>{item.detail}</p>

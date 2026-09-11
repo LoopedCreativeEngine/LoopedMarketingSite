@@ -13,7 +13,6 @@ import { ClosingCTA } from "@/components/ui/ClosingCTA";
 import { ExploreNext } from "@/components/ui/ExploreNext";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { AvailabilityNote } from "@/components/ui/StatusPill";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -516,9 +515,6 @@ export default function PlatformPage(): React.ReactElement {
         />
         <Reveal className="mt-12">
           <CapabilityGrid items={COMMUNICATE} tone="ink" />
-        </Reveal>
-        <Reveal className="mt-8">
-          <AvailabilityNote tone="ink" className="max-w-3xl" />
         </Reveal>
         <Reveal className="mt-8">
           <Link

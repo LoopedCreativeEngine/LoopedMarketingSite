@@ -9,7 +9,6 @@ import { ClosingCTA } from "@/components/ui/ClosingCTA";
 import { ExploreNext } from "@/components/ui/ExploreNext";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { AvailabilityNote } from "@/components/ui/StatusPill";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -71,7 +70,7 @@ const ESTATE: Capability[] = [
   },
   {
     title: "Messaging",
-    body: "WhatsApp, SMS and RCS connected through your own numbers and verified sender, as those channels come online.",
+    body: "WhatsApp, SMS and RCS connected through your own numbers and verified sender, run as one journey alongside email rather than as separate blasts.",
     status: "soon",
   },
   {
@@ -221,13 +220,10 @@ export default function DataAndIntegrationsPage(): React.ReactElement {
       <Panel tone="bone" id="estate" index="02" kicker="The estate">
         <SectionHeading
           title="What Looped connects to."
-          lede="A focused set of real, end-to-end connections rather than a directory of logos. Each one switches on with your own account or key, and we would rather tell you which are live today than count the ones that are not."
+          lede="A focused set of real, end-to-end connections rather than a directory of logos. Each one switches on with your own account or key, and each is a working two-way connection rather than a badge on a page."
         />
         <Reveal className="mt-12">
           <CapabilityGrid items={ESTATE} />
-        </Reveal>
-        <Reveal className="mt-8">
-          <AvailabilityNote className="max-w-3xl" />
         </Reveal>
       </Panel>
 

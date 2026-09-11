@@ -9,7 +9,6 @@ import { ClosingCTA } from "@/components/ui/ClosingCTA";
 import { ExploreNext } from "@/components/ui/ExploreNext";
 import { PageHero } from "@/components/ui/PageHero";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { AvailabilityNote } from "@/components/ui/StatusPill";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -209,9 +208,6 @@ export default function CommunicationsPage(): React.ReactElement {
         <Reveal className="mt-10">
           <ChannelMatrix rows={CHANNELS} />
         </Reveal>
-        <Reveal className="mt-8">
-          <AvailabilityNote className="max-w-3xl" />
-        </Reveal>
       </Panel>
 
       <Panel tone="ink" id="operating" index="03" kicker="How it runs">
@@ -244,7 +240,7 @@ export default function CommunicationsPage(): React.ReactElement {
 
       <ClosingCTA
         title="Run one journey instead of five campaigns."
-        body="Pilot teams usually start by connecting email and the call list, then add messaging as the channels come online for their audience."
+        body="Most teams start by connecting email and the call list, then bring messaging into the same journey for their audience."
       />
     </>
   );
