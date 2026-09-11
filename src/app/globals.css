@@ -178,6 +178,92 @@ h4 {
   fill: none;
 }
 
+/*
+ * Flowing connectors. A short dash travels along a link so a connection reads
+ * as live movement rather than a static line: intelligence moving up to a
+ * team's AI, permitted actions moving down to a system. Used by the product
+ * diagrams (interoperability, pillar connections, portfolio drill). Purely
+ * decorative; the diagram is fully legible with no motion, and the
+ * prefers-reduced-motion block below neutralises the animation entirely.
+ */
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.flow-line {
+  stroke-dasharray: 2 7;
+  animation: flow-dash 1.7s linear infinite;
+}
+
+.flow-line--rev {
+  animation-direction: reverse;
+}
+
+/* A soft node pulse for the point a diagram wants the eye to settle on. */
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+.pulse-node {
+  animation: soft-pulse 2.6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/*
+ * Drill beads. A bead falls down one thread (drilling from the portfolio to a
+ * single signal) while another rises up the return thread (a proven signal
+ * rolling back up to inform the whole portfolio). Position is animated so the
+ * two directions are legible at a glance; the diagram still reads with no
+ * motion, and reduced motion stops the beads.
+ */
+@keyframes drill-bead-down {
+  0% {
+    top: 2%;
+    opacity: 0;
+  }
+  12%,
+  88% {
+    opacity: 1;
+  }
+  100% {
+    top: 94%;
+    opacity: 0;
+  }
+}
+
+@keyframes drill-bead-up {
+  0% {
+    top: 94%;
+    opacity: 0;
+  }
+  12%,
+  88% {
+    opacity: 1;
+  }
+  100% {
+    top: 2%;
+    opacity: 0;
+  }
+}
+
+.drill-bead-down {
+  animation: drill-bead-down 3.6s ease-in-out infinite;
+}
+
+.drill-bead-up {
+  animation: drill-bead-up 3.6s ease-in-out infinite;
+}
+
 /* Ink plates: headings flip to bone; body colour is set on the panel. */
 .on-ink h1,
 .on-ink h2,
