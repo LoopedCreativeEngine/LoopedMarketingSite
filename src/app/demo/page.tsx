@@ -15,7 +15,7 @@ const EXPECT = [
   "We use a real event type from your portfolio, not a generic demo account.",
   "You see the intelligence a real brief produces: market and competitor context, audience segmentation, messaging and a campaign plan.",
   "We show the working hub for your team's discipline, and the outputs it produces, so you can judge the quality rather than the pitch.",
-  "We are honest about what is live today, what is in pilot and what is still rolling out.",
+  "We are straight about how each capability applies to a portfolio like yours, and what it takes to set up.",
   "We discuss pricing based on your portfolio size and event mix.",
 ];
 
@@ -43,12 +43,15 @@ export default function DemoPage(): React.ReactElement {
 
       <div className="mx-auto mt-12 max-w-3xl px-5 sm:px-6 lg:px-8">
         <Reveal>
-          <div
-            className="flex min-h-[520px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[rgba(23,19,31,0.20)] bg-paper p-8 text-center"
-            data-calendly-placeholder
-          >
-            <p className="font-mono text-xs font-semibold leading-relaxed text-violet sm:text-sm">
-              [CALENDLY_EMBED — replace src/app/demo/page.tsx placeholder with real Calendly URL]
+          <div className="rounded-2xl border border-[rgba(23,19,31,0.12)] bg-paper p-8 text-center shadow-[var(--lift-light)] sm:p-10">
+            <p className="kicker text-violet">Pilot intake</p>
+            <h2 className="mx-auto mt-4 max-w-xl text-balance font-serif text-2xl tracking-tight text-ink-text sm:text-3xl">
+              Pilot places are limited, and set up personally.
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl text-pretty text-base leading-relaxed text-graphite">
+              Every pilot is configured around a real event from your portfolio, so each session is arranged directly
+              with the founding team rather than booked from a generic calendar. Tell us the event you have in mind and
+              the two or three capabilities that would decide it, and we will set up your 45 minutes.
             </p>
           </div>
         </Reveal>
@@ -86,8 +89,8 @@ export default function DemoPage(): React.ReactElement {
               <Link href="/capabilities" className="font-medium text-violet underline underline-offset-4">
                 full capability index
               </Link>{" "}
-              first. It is the diligence page, and it labels honestly what is live today, what is in pilot and what is
-              still rolling out. If your deciding capability is not there, that is worth an email rather than a demo.
+              first. It is the diligence page: every capability Looped covers, grouped by the work it does. If your
+              deciding capability is not there, that is worth a conversation rather than a demo.
             </p>
           </div>
         </Reveal>
