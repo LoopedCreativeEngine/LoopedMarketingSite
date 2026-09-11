@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 
+import { Panel } from "@/components/layout/Panel";
+import { Reveal } from "@/components/motion/Reveal";
 import { PillarPage } from "@/components/pillars/PillarPage";
+import { JourneyTrack } from "@/components/product/JourneyTrack";
 import { WorkspaceBoard } from "@/components/product/WorkspaceBoard";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -176,6 +180,29 @@ export default function MarketingPillarPage(): React.ReactElement {
           body: "When pace drops, the options arrive with their cost and trade-off rather than as a red number.",
         },
       ]}
+      extra={
+        <Panel tone="ink" kicker="One journey, not five campaigns">
+          <SectionHeading
+            tone="ink"
+            title="Every touch chosen from what Looped already knows."
+            lede="Not a campaign in email, another in paid, and a call list nobody reconciled. One acquisition journey per person, with each step picked from the segment they sit in and the phase the campaign is in."
+          />
+          <Reveal className="mt-12">
+            <JourneyTrack
+              tone="ink"
+              stops={[
+                { channel: "Paid social", event: "First touch from a lookalike of last year's best attendees", consequence: "Added to the segment it fits, not one undifferentiated list." },
+                { channel: "Email", event: "Persona nurture sequence opens", consequence: "Copy shaped by the segment and the phase of the campaign." },
+                { channel: "Retargeting", event: "Read the agenda, did not register", consequence: "A recovery journey starts on the right channel with the right nudge.", pivot: true },
+                { channel: "WhatsApp", event: "Early-bird deadline reminder", consequence: "Sent through your own verified sender, timed to the deadline." },
+                { channel: "Registration", event: "Registered for the conference", consequence: "The journey switches from acquisition to onboarding automatically." },
+                { channel: "Handover", event: "High-value delegate flagged to telesales", consequence: "A prioritised call with the context, not a cold name on a list." },
+              ]}
+              outcome="One person, one journey across channels, each step chosen from what Looped already knows rather than five campaigns arriving in an order nobody planned."
+            />
+          </Reveal>
+        </Panel>
+      }
       watches={[
         "Registration pace against target, by segment rather than in aggregate",
         "Channels quietly underperforming while the headline number still looks acceptable",

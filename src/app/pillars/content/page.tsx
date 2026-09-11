@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 
+import { Panel } from "@/components/layout/Panel";
+import { Reveal } from "@/components/motion/Reveal";
 import { PillarPage } from "@/components/pillars/PillarPage";
+import { ChainFlow } from "@/components/product/ChainFlow";
 import { WorkspaceBoard } from "@/components/product/WorkspaceBoard";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -159,6 +163,28 @@ export default function ContentPillarPage(): React.ReactElement {
           body: "Clashes, thin slots and theme collisions raised while the agenda can still absorb the change.",
         },
       ]}
+      extra={
+        <Panel tone="ink" kicker="How it comes together">
+          <SectionHeading
+            tone="ink"
+            title="From a market signal to a finished programme."
+            lede="A programme is not assembled in one meeting. It develops from live market research into themes, tracks, sessions and speakers, with each stage building on the one your team has already signed off rather than starting the argument again."
+          />
+          <Reveal className="mt-12">
+            <ChainFlow
+              tone="ink"
+              steps={[
+                { label: "Market signal", output: "Live sector research, trend detection and competitor programmes, kept current." },
+                { label: "Themes", output: "The highest-signal topics, and the white space nobody else is programming." },
+                { label: "Tracks", output: "Themes mapped into an agenda architecture with pacing and balance." },
+                { label: "Sessions", output: "Formats and descriptions built against real demand, not filled to a template." },
+                { label: "Speakers", output: "Discovery, suitability and outreach per track, then briefing and materials." },
+                { label: "Programme", output: "A published agenda and briefed speakers the whole team works from." },
+              ]}
+            />
+          </Reveal>
+        </Panel>
+      }
       watches={[
         "Speaker confirmations and the materials that have not arrived",
         "Agenda balance: tracks running thin, themes doubling up, formats over-used",
