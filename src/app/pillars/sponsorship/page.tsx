@@ -245,6 +245,19 @@ export default function CommercialPillarPage(): React.ReactElement {
         </Panel>
       }
       connects="Commercial is fed by marketing's audience evidence and content's programme detail, which is what makes a proposal specific rather than generic. It feeds telesales the accounts worth a call and the reason to make it, gives marketing the partner commitments that have to appear in campaign copy, and hands event management the delivery obligations that shape the run of show. Portfolio sees the account picture across every event at once."
+      connections={{
+        draws: [
+          { team: "Marketing", signal: "Audience evidence for a specific proposal" },
+          { team: "Content", signal: "Programme detail that makes a pitch concrete" },
+        ],
+        feeds: [
+          { team: "Telesales", signal: "The accounts worth a call, and the reason to call" },
+          { team: "Marketing", signal: "Partner commitments that must appear in campaigns" },
+          { team: "Event Management", signal: "Delivery obligations that shape the run of show" },
+          { team: "Portfolio", signal: "The account picture across every event" },
+        ],
+        note: "One partner record serves the pitch, the call and the delivery, rather than three versions of the truth.",
+      }}
       explore={[
         {
           href: "/pillars/telesales",

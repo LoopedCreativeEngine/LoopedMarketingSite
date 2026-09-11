@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 import { CapabilityGrid, type Capability } from "@/components/product/CapabilityGrid";
+import { PillarConnections, type ConnectionFlow } from "@/components/product/PillarConnections";
 import { ClosingCTA } from "@/components/ui/ClosingCTA";
 import { CtaButton } from "@/components/ui/CtaButton";
 import { ExploreNext, type ExploreLink } from "@/components/ui/ExploreNext";
@@ -33,6 +34,8 @@ type PillarPageProps = {
   watches: string[];
   learns: string[];
   connects: string;
+  /** Optional cross-pillar flow visual for the "how this connects" section. */
+  connections?: { draws: ConnectionFlow[]; feeds: ConnectionFlow[]; note?: string };
   /** Optional bespoke panel, rendered after execution. Supply a full Panel. */
   extra?: React.ReactNode;
   explore: ExploreLink[];
@@ -62,6 +65,7 @@ export function PillarPage({
   watches,
   learns,
   connects,
+  connections,
   extra,
   explore,
   closing,
@@ -191,13 +195,23 @@ export function PillarPage({
         </div>
       </Panel>
 
-      <Panel tone="bone" id="connects" index={next()} kicker="How this connects" width="narrow">
-        <Reveal>
+      <Panel tone="bone" id="connects" index={next()} kicker="How this connects">
+        <Reveal className="max-w-3xl">
           <h2 className="font-serif text-3xl tracking-tight text-ink-text sm:text-4xl">
             How this connects to the rest of the event.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-graphite sm:text-lg">{connects}</p>
         </Reveal>
+        {connections ? (
+          <Reveal className="mt-12">
+            <PillarConnections
+              pillar={title}
+              draws={connections.draws}
+              feeds={connections.feeds}
+              note={connections.note}
+            />
+          </Reveal>
+        ) : null}
       </Panel>
 
       <ExploreNext links={explore} tone="paper" />

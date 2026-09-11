@@ -174,6 +174,17 @@ export default function TelesalesPillarPage(): React.ReactElement {
         "What next year's calling plan should look like, before anyone builds a list",
       ]}
       connects="Telesales is fed by marketing's audience and messaging work and by commercial's account priorities, which is what turns a list into a queue. It feeds both back the thing only a phone call produces: what real people say when they are asked directly. Objection patterns reach marketing the same week, not in a post-event debrief, and account intelligence from a good call updates the commercial record immediately."
+      connections={{
+        draws: [
+          { team: "Marketing", signal: "Audience and messaging work that warms the list" },
+          { team: "Commercial", signal: "Account priorities that set the order to call" },
+        ],
+        feeds: [
+          { team: "Marketing", signal: "Objection patterns, the same week" },
+          { team: "Commercial", signal: "Account intelligence from every call, immediately" },
+        ],
+        note: "A call is never a dead end. What someone says on the phone updates the picture every other team works from.",
+      }}
       explore={[
         {
           href: "/communications",

@@ -194,6 +194,19 @@ export default function MarketingPillarPage(): React.ReactElement {
         "What the next edition should start from, rather than what it should start with",
       ]}
       connects="Marketing is fed by sector and competitor intelligence, by audience insight from content, and by what commercial and telesales hear in real conversations. It feeds programme planning with what the audience is responding to, gives commercial the audience evidence a partner will accept, and hands telesales a warmed, prioritised list instead of a spreadsheet. When positioning changes here, every other team is working from the new version the same day."
+      connections={{
+        draws: [
+          { team: "Content", signal: "Audience insight that sharpens who to target" },
+          { team: "Commercial", signal: "What partners are asking for in the market" },
+          { team: "Telesales", signal: "What prospects say when they are called" },
+        ],
+        feeds: [
+          { team: "Content", signal: "What the audience is responding to, for the programme" },
+          { team: "Commercial", signal: "Audience evidence a partner will accept" },
+          { team: "Telesales", signal: "A warmed, prioritised call list" },
+        ],
+        note: "The exchange runs both ways. When positioning changes here, every other team is working from the new version the same day.",
+      }}
       explore={[
         {
           href: "/communications",

@@ -176,6 +176,18 @@ export default function ContentPillarPage(): React.ReactElement {
         "The programme decisions worth repeating next year, held against the event",
       ]}
       connects="Content is fed by market and audience intelligence from marketing, and by what commercial hears partners asking for. It feeds marketing the proof points and reveal moments a campaign is built around, gives commercial the session-level evidence that makes a sponsorship conversation specific, and hands event management the programme reality that drives the run of show. When the programme changes, everyone downstream sees it without a meeting."
+      connections={{
+        draws: [
+          { team: "Marketing", signal: "Market and audience intelligence" },
+          { team: "Commercial", signal: "What partners are asking for" },
+        ],
+        feeds: [
+          { team: "Marketing", signal: "Proof points and reveal moments to build a campaign around" },
+          { team: "Commercial", signal: "Session-level evidence that makes a pitch specific" },
+          { team: "Event Management", signal: "The programme reality that drives the run of show" },
+        ],
+        note: "When the programme changes, everyone downstream sees it without a meeting.",
+      }}
       explore={[
         {
           href: "/pillars/marketing",

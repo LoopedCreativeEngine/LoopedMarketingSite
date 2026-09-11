@@ -246,6 +246,19 @@ export default function EventManagementPillarPage(): React.ReactElement {
         </Panel>
       }
       connects="Event management is fed by content's programme, commercial's delivery obligations and marketing's registration pace, which together determine what actually has to happen and when. It feeds every other team the operational reality: the deadlines that are real, the changes that have knock-on effects, and the constraints a plan has to respect. On awards, it drives telesales campaigns for entries and tables, and hands marketing the finalist and winner moments the campaign is built around."
+      connections={{
+        draws: [
+          { team: "Content", signal: "The programme that has to be delivered" },
+          { team: "Commercial", signal: "The delivery obligations that were sold" },
+          { team: "Marketing", signal: "Registration pace and demand" },
+        ],
+        feeds: [
+          { team: "Every team", signal: "The real deadlines and knock-on changes a plan must respect" },
+          { team: "Telesales", signal: "Awards entry and table campaigns to run" },
+          { team: "Marketing", signal: "Finalist and winner moments to build campaigns around" },
+        ],
+        note: "Operational reality is a live constraint every plan respects, not a status report at the end.",
+      }}
       explore={[
         {
           href: "/pillars/content",

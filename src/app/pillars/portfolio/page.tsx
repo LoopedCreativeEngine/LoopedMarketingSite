@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 import { PillarPage } from "@/components/pillars/PillarPage";
+import { PortfolioDrill } from "@/components/product/PortfolioDrill";
 import { ScenarioBoard } from "@/components/product/ScenarioBoard";
 import { WorkspaceBoard } from "@/components/product/WorkspaceBoard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -170,6 +171,26 @@ export default function PortfolioPillarPage(): React.ReactElement {
         "Institutional knowledge kept in the organisation rather than in the people who might leave",
       ]}
       extra={
+        <>
+        <Panel tone="paper" kicker="More than a dashboard">
+          <SectionHeading
+            title="A dashboard stops at the chart. Looped opens the number."
+            lede="The reason a portfolio view is more than business intelligence is that any number opens all the way down to the decision behind it, and what one event proves travels back up to the brand and the portfolio."
+          />
+          <Reveal className="mt-12">
+            <PortfolioDrill
+              tone="light"
+              levels={[
+                { name: "Portfolio", detail: "Every event, brand and revenue model on one comparable footing." },
+                { name: "Brand", detail: "A single show and its editions, with its own trajectory and audience." },
+                { name: "Event", detail: "One edition: its plan, its pace, its commercial pipeline and its programme." },
+                { name: "Pillar", detail: "A team's view inside that event: marketing, content, commercial, telesales or operations." },
+                { name: "Signal, decision or evidence", detail: "The specific thing moving the number, and the decision taken about it: a segment behind pace, a renewal slipping, a topic fading." },
+              ]}
+              caption="An abstraction of the drill path, not a screenshot. The point is the two-way movement: leadership can interrogate a number down to its evidence, and evidence from one event informs every other."
+            />
+          </Reveal>
+        </Panel>
         <Panel tone="ink" kicker="Planning">
           <SectionHeading
             tone="ink"
@@ -225,8 +246,23 @@ export default function PortfolioPillarPage(): React.ReactElement {
             </p>
           </Reveal>
         </Panel>
+        </>
       }
       connects="Portfolio is fed by every pillar and in turn sets direction for all of them. Marketing supplies audience movement, commercial supplies account reality, content supplies what the programme proved and event management supplies what delivery actually cost. The flow is deliberately two-way: teams provide local truth, leadership provides strategic priority, and Looped keeps both connected instead of letting them meet once a quarter in a slide deck."
+      connections={{
+        draws: [
+          { team: "Marketing", signal: "Audience movement" },
+          { team: "Commercial", signal: "Account reality" },
+          { team: "Content", signal: "What the programme proved" },
+          { team: "Event Management", signal: "What delivery actually cost" },
+        ],
+        feeds: [
+          { team: "Every team", signal: "Strategic priority, set from the whole picture" },
+          { team: "Commercial", signal: "Cross-sell and whitespace across events" },
+          { team: "Marketing", signal: "Where audience overlap can be monetised" },
+        ],
+        note: "The flow is deliberately two-way: teams provide local truth, leadership provides strategic priority.",
+      }}
       explore={[
         {
           href: "/pillars/sponsorship",
