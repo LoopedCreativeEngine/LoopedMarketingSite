@@ -6,6 +6,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { AnchorNav } from "@/components/product/AnchorNav";
 import { CapabilityGrid, type Capability } from "@/components/product/CapabilityGrid";
 import { ChainFlow, type ChainStep } from "@/components/product/ChainFlow";
+import { InteroperabilityLayer } from "@/components/product/InteroperabilityLayer";
 import { ScenarioBoard } from "@/components/product/ScenarioBoard";
 import { WorkspaceBoard } from "@/components/product/WorkspaceBoard";
 import { ClosingCTA } from "@/components/ui/ClosingCTA";
@@ -40,6 +41,7 @@ const SPINE = [
   { id: "communicate", label: "Communicate" },
   { id: "act", label: "Act" },
   { id: "learn", label: "Learn" },
+  { id: "wider-ai", label: "Your AI" },
 ];
 
 const UNDERSTAND: Capability[] = [
@@ -556,6 +558,54 @@ export default function PlatformPage(): React.ReactElement {
         />
         <Reveal className="mt-12">
           <CapabilityGrid items={LEARN} tone="ink" />
+        </Reveal>
+      </Panel>
+
+      <Panel tone="bone" id="wider-ai" index="09" kicker="Your wider AI">
+        <SectionHeading
+          title="Your AI already knows your business. Looped knows your events."
+          lede="Your organisation is building its own AI environment, and it should. Looped is not another one to choose between. It is the specialist event layer your wider AI can draw on: the operating model, the decision history, the event relationships, the portfolio intelligence and the governed actions a general assistant was never going to hold on its own."
+        />
+        <Reveal className="mt-12">
+          <InteroperabilityLayer
+            aiItems={[
+              { label: "Enterprise assistants" },
+              { label: "Team copilots" },
+              { label: "Analytics and BI agents" },
+              { label: "Custom internal AI" },
+            ]}
+            loopItems={[
+              "The event operating model, from understanding through to learning",
+              "Decision and outcome history, with the evidence behind each one",
+              "The event, person and account relationships no single system holds",
+              "Portfolio intelligence across every event you run",
+              "Actions your team has approved, carried out within set limits",
+            ]}
+            systemsItems={[
+              { label: "CRM" },
+              { label: "Registration" },
+              { label: "Email" },
+              { label: "Awards" },
+              { label: "Programme" },
+              { label: "Voice" },
+            ]}
+            caption="An abstraction of the relationship, not a network diagram. Your wider AI reads what Looped is permitted to share and asks Looped to act within limits you set. Looped stays the authority on the event."
+          />
+        </Reveal>
+        <Reveal className="mt-8">
+          <p className="max-w-3xl text-balance font-serif text-2xl italic leading-snug text-ink-text sm:text-3xl">
+            Your systems stay your systems. Your AI keeps its reach. Looped becomes the intelligence and action layer
+            across the event.
+          </p>
+        </Reveal>
+        <Reveal className="mt-8">
+          <Link
+            href="/data-and-integrations"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-violet transition-colors hover:text-ink-text"
+          >
+            See how ownership and permission work
+            <span aria-hidden>&rarr;</span>
+          </Link>
         </Reveal>
       </Panel>
 

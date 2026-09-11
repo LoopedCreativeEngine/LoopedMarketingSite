@@ -36,6 +36,27 @@ export function PlatformBridgeSection(): React.ReactElement {
       </Reveal>
 
       <Reveal className="mt-12">
+        <div className="rounded-2xl border border-violet/30 bg-violet/[0.05] p-6 sm:p-7">
+          <p className="kicker text-violet">Works with your AI</p>
+          <h3 className="mt-3 text-balance font-serif text-2xl tracking-tight text-ink-text sm:text-3xl">
+            Your AI already knows your business. Looped knows your events.
+          </h3>
+          <p className="mt-3 max-w-2xl text-pretty text-base leading-relaxed text-graphite">
+            You do not have to choose between the AI your organisation is building and Looped. Your wider AI environment
+            can draw on Looped&rsquo;s event intelligence through a governed interface, while Looped keeps the authority
+            on the event itself.
+          </p>
+          <Link
+            href="/platform#wider-ai"
+            className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-violet transition-colors hover:text-ink-text"
+          >
+            See how Looped works with your AI
+            <span aria-hidden>&rarr;</span>
+          </Link>
+        </div>
+      </Reveal>
+
+      <Reveal className="mt-10">
         <Link
           href="/platform"
           className="inline-flex items-center gap-1.5 text-sm font-semibold text-violet transition-colors hover:text-ink-text"

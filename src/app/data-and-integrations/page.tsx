@@ -4,6 +4,7 @@ import { Panel } from "@/components/layout/Panel";
 import { Reveal } from "@/components/motion/Reveal";
 import { CapabilityGrid, type Capability } from "@/components/product/CapabilityGrid";
 import { DataFabric } from "@/components/product/DataFabric";
+import { InteroperabilityLayer } from "@/components/product/InteroperabilityLayer";
 import { ClosingCTA } from "@/components/ui/ClosingCTA";
 import { ExploreNext } from "@/components/ui/ExploreNext";
 import { PageHero } from "@/components/ui/PageHero";
@@ -156,6 +157,7 @@ const CONTENTS = [
   { id: "estate", label: "What Looped connects to" },
   { id: "between", label: "The intelligence between" },
   { id: "permission", label: "Permission and ownership" },
+  { id: "wider-ai", label: "Your AI, and Looped" },
 ];
 
 const EXPLORE = [
@@ -252,6 +254,41 @@ export default function DataAndIntegrationsPage(): React.ReactElement {
           <p className="max-w-3xl text-balance font-serif text-2xl italic leading-snug text-ink-text sm:text-3xl">
             Your accounts. Your data. Your channels. Looped intelligence across all of them.
           </p>
+        </Reveal>
+      </Panel>
+
+      <Panel tone="ink" id="wider-ai" index="05" kicker="Your AI, and Looped">
+        <SectionHeading
+          tone="ink"
+          title="Your other AI can draw on Looped. On your terms."
+          lede="The same discipline that governs what Looped does with your data governs what your wider AI environment can do with Looped. Your assistants and agents consume the event intelligence you permit, through a governed interface, and ask Looped to act within the limits you set. Looped stays the authority on the tenant, the policy, the security and the consequential action."
+        />
+        <Reveal className="mt-12">
+          <InteroperabilityLayer
+            tone="ink"
+            aiItems={[
+              { label: "Enterprise assistants" },
+              { label: "Team copilots" },
+              { label: "Analytics and BI agents" },
+              { label: "Custom internal AI" },
+            ]}
+            loopItems={[
+              "Event intelligence, shared to the scope you permit",
+              "Relationships across people, organisations and events",
+              "Decision and outcome history, with its evidence",
+              "Portfolio intelligence across every event you run",
+              "Actions your team has approved, inside set limits",
+            ]}
+            systemsItems={[
+              { label: "CRM" },
+              { label: "Registration" },
+              { label: "Email" },
+              { label: "Awards" },
+              { label: "Programme" },
+              { label: "Voice" },
+            ]}
+            caption="Governed interoperability, not open access. Your wider AI reads only what it is permitted to read and can request only what it is permitted to request. Nothing here lets an external model step around a tenant boundary, a permission or a human decision."
+          />
         </Reveal>
       </Panel>
 
